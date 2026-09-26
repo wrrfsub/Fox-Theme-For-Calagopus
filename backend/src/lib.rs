@@ -6,6 +6,8 @@ use std::sync::Arc;
 
 mod banner;
 mod cta;
+mod history;
+mod presets;
 mod routes;
 pub mod settings;
 mod updates;
@@ -33,6 +35,14 @@ impl Extension for ExtensionStruct {
                     .nest(
                         "/extensions/dev.caloptreyx.mint/announcement-ctas",
                         cta::admin(&state),
+                    )
+                    .nest(
+                        "/extensions/dev.caloptreyx.mint/presets",
+                        presets::admin(&state),
+                    )
+                    .nest(
+                        "/extensions/dev.caloptreyx.mint/history",
+                        history::admin(&state),
                     )
             })
             .add_client_api_router(|routes| {

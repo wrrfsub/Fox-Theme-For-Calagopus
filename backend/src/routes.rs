@@ -1,10 +1,10 @@
 use shared::State;
 use utoipa_axum::{router::OpenApiRouter, routes};
 
-const MAX_THEME_BYTES: usize = 64 * 1024;
+pub(crate) const MAX_THEME_BYTES: usize = 64 * 1024;
 
 /// Empty or unparsable settings mean "use the built-in look".
-fn parse(raw: &str) -> Option<serde_json::Value> {
+pub(crate) fn parse(raw: &str) -> Option<serde_json::Value> {
     serde_json::from_str::<serde_json::Value>(raw)
         .ok()
         .filter(|v| v.is_object())
@@ -21,18 +21,23 @@ mod get {
     #[derive(ToSchema, Serialize)]
     struct Response {
         theme: Option<serde_json::Value>,
+        /// The presets users may pick as their own theme.
+        choices: crate::presets::Choices,
     }
 
     #[utoipa::path(get, path = "/", responses((status = OK, body = inline(Response))))]
     pub async fn route(state: GetState) -> ApiResponseResult {
         let settings = state.settings.get().await?;
-        let theme = settings
+        let stored = settings
             .find_extension_settings::<crate::settings::ExtensionSettingsData>()
-            .ok()
-            .and_then(|s| super::parse(&s.theme));
+            .ok();
+        let theme = stored.and_then(|s| super::parse(&s.theme));
+        let choices = stored
+            .map(|s| crate::presets::choices(&s.presets))
+            .unwrap_or_default();
         drop(settings);
 
-        ApiResponse::new_serialized(Response { theme }).ok()
+        ApiResponse::new_serialized(Response { theme, choices }).ok()
     }
 }
 
@@ -41,7 +46,10 @@ mod put {
     use serde::{Deserialize, Serialize};
     use shared::{
         GetState,
-        models::{admin_activity::GetAdminActivityLogger, user::GetPermissionManager},
+        models::{
+            admin_activity::GetAdminActivityLogger,
+            user::{GetPermissionManager, GetUser},
+        },
         response::{ApiResponse, ApiResponseResult},
     };
     use utoipa::ToSchema;
@@ -62,6 +70,7 @@ mod put {
     pub async fn route(
         state: GetState,
         permissions: GetPermissionManager,
+        user: GetUser,
         activity_logger: GetAdminActivityLogger,
         shared::Payload(data): shared::Payload<Payload>,
     ) -> ApiResponseResult {
@@ -83,9 +92,14 @@ mod put {
         }
 
         let mut settings = state.settings.get_mut().await?;
-        settings
-            .find_mut_extension_settings::<crate::settings::ExtensionSettingsData>()?
-            .theme = serialized.into();
+        let stored =
+            settings.find_mut_extension_settings::<crate::settings::ExtensionSettingsData>()?;
+        // the replaced theme goes to the history, unless nothing changed
+        if stored.theme != serialized.as_str() {
+            stored.theme_history =
+                crate::history::push(&stored.theme_history, &stored.theme, &user.username)?.into();
+        }
+        stored.theme = serialized.into();
         settings.save().await?;
 
         activity_logger
