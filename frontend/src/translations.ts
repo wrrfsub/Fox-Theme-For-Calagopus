@@ -62,6 +62,30 @@ const translations = defineTranslations({
         grid: 'Grid view',
       },
     },
+    serverSort: {
+      sortBy: 'Sort by',
+      sort: {
+        none: 'Default order',
+        name: 'Sort by name',
+        status: 'Sort by status',
+        game: 'Sort by game',
+        location: 'Sort by location',
+        cpu: 'Sort by CPU',
+        ram: 'Sort by RAM',
+        uptime: 'Sort by uptime',
+        id: 'Sort by ID',
+      },
+      ascending: 'Ascending, click to reverse',
+      descending: 'Descending, click to reverse',
+      groupBy: 'Group by',
+      group: {
+        none: 'No grouping',
+        location: 'Group by location',
+        game: 'Group by game',
+        status: 'Group by status',
+      },
+      selectGroup: 'Select all in {name}',
+    },
     account: {
       changeBanner: 'Change banner',
       removeBanner: 'Remove banner',
@@ -110,7 +134,29 @@ const translations = defineTranslations({
     topBar: {
       navigation: 'Main menu',
     },
+    bottomNav: {
+      label: 'Phone navigation',
+      menu: 'Menu',
+    },
     editor: {
+      contrast: {
+        title: 'Some colours are hard to read',
+        description: 'Below the WCAG minimum; saving still works.',
+        pair: '{fg} on {bg}: {ratio}:1 (aim for {min}:1)',
+        low: 'Low contrast with {other}: {ratio}:1 (aim for {min}:1)',
+        lowAs: 'Low contrast as {role} on {other}: {ratio}:1 (aim for {min}:1)',
+        named: '{name} ({role})',
+        roles: {
+          links: 'links',
+          dimmed: 'dimmed text',
+        },
+      },
+      favicon: {
+        label: 'Browser tab icon',
+        description:
+          'Replaces the panel icon in browser tabs and on home screens, login pages included. Leave empty to keep the panel icon. A square PNG, ICO or SVG works best.',
+        preview: 'Tab preview',
+      },
       close: 'Close editor',
       undo: 'Undo',
       redo: 'Redo',
@@ -141,13 +187,14 @@ const translations = defineTranslations({
       },
       section: {
         presets: 'Presets',
-        presetsDescription: 'Start from a ready made colour set.',
+        presetsDescription: 'Start from a ready made look, save your own, and choose which ones users can pick.',
         colours: 'Colours',
         coloursDescription: 'Everything else is mixed from these five.',
         style: 'Style',
         styleDescription: 'Font and corner rounding.',
         background: 'Background',
-        backgroundDescription: 'An image behind the whole panel, dimmed with the page colour.',
+        backgroundDescription:
+          'An image behind the whole panel, dimmed with the page colour, and the browser tab icon.',
         home: 'Home page',
         homeDescription: 'Banner and game images for the landing page.',
         articles: 'Getting started',
@@ -467,7 +514,7 @@ const translations = defineTranslations({
         title: 'Layout',
         layout: 'Dashboard layout',
         layoutDescription:
-          'How the menu sits beside the pages on desktop. Slim is a fixed icon rail that names its links on hover. Phones always use the slide out menu.',
+          'How the menu sits beside the pages on desktop. Slim is a fixed icon rail that names its links on hover. Phones use the phone navigation below.',
         layouts: {
           default: 'Default',
           floating: 'Floating',
@@ -485,6 +532,55 @@ const translations = defineTranslations({
           top: 'Top',
         },
         mockConsole: 'Console',
+      },
+      mobileNav: {
+        label: 'Phone navigation',
+        description:
+          "Below desktop width: core's floating menu button, or a bar at the bottom of the screen with the main pages and a Menu button for the full menu.",
+        options: {
+          drawer: 'Drawer',
+          bottomBar: 'Bottom bar',
+        },
+      },
+    },
+    library: {
+      saveAsPreset: 'Save as preset',
+      saveAsPresetDescription:
+        'Keeps the look of the draft (colours, fonts, blocks, navigation) as a preset of your own. Content like articles and the login page is not part of a preset.',
+      name: 'Name',
+      save: 'Save',
+      cancel: 'Cancel',
+      created: 'Preset saved.',
+      custom: 'Your presets',
+      builtin: 'Built in',
+      empty: 'No presets of your own yet.',
+      limit: 'At most {max} presets; delete one to save another.',
+      rename: 'Rename',
+      renameTitle: 'Rename preset',
+      delete: 'Delete',
+      deleteTitle: 'Delete preset',
+      deleteConfirm: 'Delete {name}? Users who picked it go back to the panel default.',
+      users: 'Users can choose this',
+      nameProblem: {
+        empty: 'Enter a name.',
+        long: 'At most {max} characters.',
+        control: 'No line breaks or control characters.',
+      },
+      history: 'History',
+      historyTitle: 'Saved theme history',
+      historyDescription:
+        'The themes the last {max} saves replaced. Loading one puts it in the editor; press Save to use it.',
+      historyEmpty: 'No earlier saves yet.',
+      historyUnknown: 'Saved before history was kept',
+      historyBy: '{time} by {user}',
+      historyCurrent: 'In use: saved {time} by {user}',
+      load: 'Load into editor',
+      loaded: 'Loaded into the editor. Press Save to use it.',
+      choice: {
+        title: 'Theme',
+        label: 'Your theme',
+        description: 'How the panel looks for you. Only you see it, on every device you sign in on.',
+        default: 'Panel default',
       },
     },
   },

@@ -14,19 +14,23 @@ An extension is a Rust crate plus a TypeScript frontend that the panel compiles 
 ```
 Metadata.toml              package name, display name, panel version range
 backend/src/lib.rs         Extension impl: mounts the routers, hands over the settings deserializer
-backend/src/settings.rs    two opaque settings: `theme` (the editor's JSON) and `announcement_ctas`
+backend/src/settings.rs    four opaque settings: `theme` (the editor's JSON), `announcement_ctas`, `presets`, `theme_history`
 backend/src/routes.rs      GET /mint/theme (public) and PUT /api/admin/.../theme (settings.update)
 backend/src/banner.rs      per user account banner upload/remove (client API)
 backend/src/cta.rs         announcement call to action buttons: GET (client API) and PUT (admin API)
+backend/src/presets.rs     custom presets and user selectable presets: GET/POST/PATCH/DELETE (admin API)
+backend/src/history.rs     the last 10 replaced themes (written by the theme PUT), GET (admin API)
 backend/src/updates.rs     check_for_updates: GitHub releases of Caloptreyx/Mint-Theme, cached an hour
 frontend/src/index.ts      entry point: hooks, route interceptors, Mantine theme
 frontend/src/lib/theme.ts  the theme model, normalizeTheme() and buildCss()
-frontend/src/lib/apply.ts  applies CSS, caches it, live preview bridge, useNebulaTheme()
+frontend/src/lib/apply.ts  applies CSS (the site theme or the user's pick), caches it, preview bridge, useNebulaTheme()
+frontend/src/lib/library.ts  presets, users' theme choices and history: ids, normalizers, resolveUserTheme()
 frontend/src/pages/        ServerHome, ServerConsole, ServerList (dashboard), ThemeEditor
-frontend/src/elements/     account/, home/, dashboard/, editor/, sidebar/, page/ pieces
+frontend/src/elements/     account/, home/, dashboard/, editor/, library/ (presets, history, theme choice), sidebar/, page/ pieces
 frontend/src/app.css       static CSS: @font-face, flush sidebar, active link, sidebar sections, keyframes
 frontend/src/translations.ts  every user facing string
 tests/theme.test.ts        node:test cases for normalizeTheme() and buildCss() (not shipped)
+tests/library.test.ts      node:test cases for lib/library.ts and the per user fields (not shipped)
 scripts/package.py         builds the release zip; .github/workflows/release.yml runs it on v* tags
 ```
 
@@ -41,10 +45,24 @@ editor can repaint the panel live without a reload.
 - Palettes are generated from five colours (accent, highlight, background, surface, text). Everything
   else is optional and falls back to a derived value; `derivedColors()` returns those fallbacks so the
   editor can show the colour actually in use.
+- `contrastIssues()` checks the pairs actually painted (derived values included, links in their anchor shade,
+  light mode's own text, surface and dimmed text, button text only for solid buttons (text on accent when only
+  that is set), text on accent for the solid menu styles, 3:1 for iconPill's icon) and returns those below
+  WCAG AA. The Colours section lists them on top and under each input (`ContrastWarnings.tsx`); they never
+  block saving. Keep the pairs in step with `buildCss` when a colour moves.
+- `favicon` is not CSS: `applyTheme()` parks core's icon links (`.app-icon`, whose href core's App sets from
+  `settings.app.icon`) under another rel and adds its own `icon` and `apple-touch-icon` links, so core can keep
+  updating its links and clearing the option restores them. The public theme route covers logged out pages.
 - Button styles (solid, tinted, outline, glass) are CSS rules keyed off `--button-bg`, the per-colour
   value Mantine sets inline. That keeps red and green buttons their own colour.
 - `buttonColor` redefines the accent variables **on the button element**, so the inline
   `var(--mantine-color-blue-filled)` reference resolves to it without touching anything else.
+- `textOnAccent`: core and Mantine pin `--mantine-primary-color-contrast` on `:root[data-mantine-color-scheme]`,
+  which the plain `html:root` block loses to, so a set colour goes in both scheme blocks. Mantine gives filled
+  buttons, action icons and badges white text through inline `--button-color`/`--ai-color`/`--badge-color`, so
+  those are replaced (`!important`) where the inline fill is `var(--mantine-color-blue-filled)`; a badge with no
+  colour or variant has no inline style and is the accent. Only the variable changes, so tinted, outline and
+  glass buttons and `buttonText` (they set `color`) still win. Empty emits nothing: core's white.
 - "Blocks" are Mantine cards (the sidebar is one) and bordered papers. `blockOpacity` turns
   `--nebula-card` into an rgba colour and paints cards with it, so treat `--nebula-card` as possibly
   translucent; overlays (modals, menus, popovers, dialogs, the fixed bulk action bar) are never matched and
@@ -53,8 +71,14 @@ editor can repaint the panel live without a reload.
   `.mantine-active:active` 1px nudge.
 - `boxStyle` restyles the title row of titled cards: core's `TitleCard` (`#title-card-header`, which the Home
   cards use too; its divider is an inline style, hence `!important`) and `ChartBlock` (a `border-b` header
-  holding an h3). `statStyle` reshapes core's `StatCard`, which is not hookable, by its structure: a card
-  whose row holds a `ThemeIcon` then the label column. Custom tiles only follow it if they render `StatCard`.
+  holding an h3). Admin Settings (1.2.0 and 1.2.2) has no titled cards, only flat FormEngine grids, so there it
+  styles the section structure instead, scoped by `:has()` to the content after core's tab list with the
+  `/admin/settings/webauthn` tab: each tab's heading row, an open `CollapsibleSection` header (User; open when
+  the collapse after the button has `aria-hidden="false"`), the Mail templates panes' header bands (a
+  `bg-(--mantine-color-default)` div before a `Divider`) and card titles (Ratelimits). The ratelimit endpoint
+  cards only carry a `Code` label, no title. `statStyle` reshapes core's `StatCard`, which is not hookable, by
+  its structure: a card whose row holds a `ThemeIcon` then the label column. Custom tiles only follow it if they
+  render `StatCard`.
 - `navHover` restyles core's menu links (`Sidebar.Link`: a NavLink around a subtle `Button` that gets `active`)
   in `#sidebar-content`, the top bar's `.nebula-topnav` and its portaled `.nebula-topnav-menu` dropdowns, hovered
   (inside `@media (hover:hover)`) and current.
@@ -64,7 +88,17 @@ editor can repaint the panel live without a reload.
   near white with a hint of accent, and Mantine's `gray` scale plus `white`/`black` are repainted,
   because that is what Mantine's light styles draw cards, inputs, borders and hovers from. The dark only
   overrides (raised, overlay, muted, faint, hairline) are ignored there; `lightBackground`,
-  `lightSurface` and `lightText` override the three base colours.
+  `lightSurface` and `lightText` override the three base colours. It also repaints what core hardcodes for
+  a white page: xterm's viewport (core's light terminal theme paints `#ffffff` inline on
+  `.xterm-scrollable-element`, which core's xterm.css misses) goes transparent and its default text takes the
+  theme's, the chart tick grey becomes the dimmed colour, and so do core's Tailwind greys (`text-neutral-400`,
+  `text-gray-400/500/600`, bare, `!` and `light:`). Those are `!important` utilities in a layer, which nothing
+  unlayered beats, so `buildCss` redefines the `--color-*` variable they read on those elements.
+- A first visit has no cached theme (`nebula:theme`): `applyCachedTheme()` paints nothing and sets
+  `data-nebula-pending` on html, which `app.css` turns into a hidden body, until `loadTheme()` settles (the
+  fetched theme, or the default if it failed) or 1.5s pass; `repaint()` does nothing meanwhile. The trade off is
+  a blank page in core's background for one small request instead of the default look switching to the real
+  one. A cached theme never waits.
 - The editor's light/dark toggle only affects the preview frame. `listenForPreview()` sets the
   attribute and fires a synthetic `storage` event so Mantine's React state follows (terminal colours,
   logos), and blocks the frame's writes of `mantine-color-scheme-value`: the frame shares localStorage
@@ -104,26 +138,62 @@ and break silently when core moves a file. Everything here is runtime:
   gets `RailTip` (a `Sidebar.Link` render interceptor, a tooltip only inside the desktop card) and `RailLogo`
   (an `AppIcon` one, the square icon), and GroupedNav renders every section's links there under a rule.
   `applyTheme()` mirrors both options onto html as `data-nebula-layout` and `data-nebula-dock` for static CSS.
+- `mobileNav: 'bottomBar'` (`elements/sidebar/BottomNav.tsx`), a second `Sidebar.addRenderInterceptor` registered after
+  the shell: below `lg` a fixed bottom bar (safe area aware) with up to four links taken from the menu the Sidebar
+  received, wrappers kept, so a `ServerCan` without access renders nothing and the next link fills in (the nav hides
+  children past the fifth, Menu included). Server pages prefer Home, Console, Files, Backups, Settings; the admin area
+  Back, Overview, Servers, Users; the dashboard Servers, Account, Admin. Core keeps the drawer's open state inside the
+  Sidebar, so Menu clicks core's own floating menu button: the bar renders a hidden
+  `[data-nebula-bottom-nav-marker]` just before core's element, whose first node is that button's card, and app.css
+  hides the card after it. The bar uses core's `lg:` variant (a container query in 1.2.2), measures itself into
+  `--nebula-bottom-nav-h` on html and sets `data-nebula-bottom-nav` while displayed, which app.css turns into bottom
+  padding for the content column and a lift for core's `ActionBar`, bottom toasts and the uploads card. 'drawer' returns
+  core's element untouched.
 - `routes.addServerRouteInterceptor` puts Home at `/` and moves the console to `/console`, swapping its
   element for `ServerConsole`: core's terminal with the `consoleLayout` widgets (`elements/console/`) in rows
   above and below it and in columns beside it, which stack under it below `lg` (`xl` when both are used).
-  Core's `ServerStats` only exports all three charts together, so `ChartsWidget` builds each from core's
-  `ChartBlock`/`StreamChart`/`useStreamChart` and feeds them the same way; core's `statBlocks` slot follows
-  the last chart run, or the extension cards when no chart is placed. The default is the page from before.
+  Core's `ServerStats` only exports all three charts together, so `ConsoleChartsProvider` runs core's
+  `useStreamChart` for each and feeds them the same way, and `ChartsWidget` renders core's `ChartBlock`/`StreamChart`
+  from that context. The provider wraps the whole page, above the slots, so a chart moved to another slot (a
+  remount) keeps its history. Core's `statBlocks` slot follows the last chart run, or the extension cards when no
+  chart is placed. The default is the page from before.
 - `pages.dashboard.account.container` hides the account title and prepends `ProfileCard`. The banner is
   uploaded to `PUT/DELETE /api/client/extensions/dev.caloptreyx.mint/banner` (`backend/src/banner.rs`, the
   avatar route's checks, re-encoded to a 1500x500 JPEG at `publicdata/nebula/banners/<user>.jpg`, the
   storage prefix core serves for extensions). Its URL sits in core's synced user settings
   (`nebula::account_banner`) and is still checked with `SAFE_URL` before use. The avatar opens core's
   `AvatarContainer` in a modal; `app.css` hides the grid copy (`.order-60`).
+- Presets, users' own themes and the theme history (`backend/src/presets.rs`, `history.rs`, `lib/library.ts`,
+  `elements/library/`). Custom presets are full normalized themes in the `presets` setting
+  (`{ custom: [{ id, name, theme, users }], builtin: [id] }`, at most 20, each theme under the theme PUT's
+  64 KiB and all four times that; built-in ones are only ids, `builtinId()` slugs of `PRESETS` names).
+  Admin API under `/api/admin/extensions/dev.caloptreyx.mint/presets`: GET (`settings.read`), POST, and
+  PATCH/DELETE `/{id}` (`settings.update`, activity `mint:preset.create|update|delete`); a built-in id can
+  only toggle `users`. Applying a preset in the editor lays its **look** over the draft (`pickUserTheme()`).
+  The public `GET /mint/theme` also returns `choices` (the user selectable ones, custom ones with their
+  theme); users pick one in `ThemeChoiceCard`, appended to core's account grid through
+  `pages.dashboard.account.accountContainers`, stored in core's synced user setting `nebula::theme_choice`.
+  `apply.ts` paints `withUserTheme(site, pick)`: the site theme with only `USER_THEME_FIELDS` (theme.ts)
+  taken from the pick, so content, layouts, auth pages and every field not listed stay site wide; a pick no
+  longer offered is the site theme. `watchUserTheme()` follows core's user settings store (live, other tabs,
+  sign out), and `holdSiteTheme()` forces the site theme on auth pages (`AuthScope`), in the editor and in
+  its preview frame (which then shows the draft). Every theme PUT that changes the theme moves the replaced
+  one into `theme_history` with who saved it and when (last 10); the editor's clock icon lists them
+  (`GET .../history`, `settings.read`) and loads one into the draft.
 - `routes.addAdminRoute` adds the editor; it is also the extension's `cardConfigurationPage`.
 - `pages.dashboard.home.enterContainerAll(...).addPropsInterceptor` replaces the servers list. The
   list route is hardcoded in the panel's router, so this props interceptor (it can replace `children`
-  and `title`) is the only runtime way in.
+  and `title`) is the only runtime way in. Its sort and grouping (`elements/dashboard/serverOrder.ts`,
+  tested in `tests/serverOrder.test.ts`) order the loaded page only: core's servers API has no sort
+  parameter. CPU, RAM and uptime come from core's user store (`serverResourceUsage`, filled by each row's
+  `useServerStats`), read only while sorting by one of them; status comes from the rows' `onStatus`.
+  Group headings are siblings of the rows (grid: `col-span-full`), so a row changing group moves, not
+  remounts. Sort, group and view persist as `nebula:server-sort`, `nebula:server-group`, `nebula:server-view`.
 - `pages.server.console.xterm` init, after open and unmount handlers (`lib/terminal.ts`) hand the
-  theme's `monoFont` to xterm, which paints on a canvas and ignores CSS. The font is only set once
-  `document.fonts` has loaded it, because xterm measures its cells when the option changes; a font
-  still loading leaves the grid sized for the fallback.
+  theme's `monoFont` to xterm, which sizes its cell grid from its `fontFamily` option, not the CSS. The font
+  is only set once `document.fonts` has loaded it, because xterm measures its cells when the option changes;
+  a font still loading leaves the grid sized for the fallback. Its colours are core's `getXtermTheme()`, reset
+  on every scheme change; xterm 6 draws with DOM spans, so light mode fixes them in `buildCss` instead.
 - `pages.auth.prependComponent(AuthScope)` (`elements/auth/AuthScope.tsx`) puts `nebula-auth` on html
   while any auth page is mounted; `buildCss` scopes `loginBackground` to it. `AppIcon.addRenderInterceptor`
   wraps core's logo in `AuthLogo`, which shows `loginLogo` instead only while that scope is active.
@@ -192,14 +262,18 @@ exist in older ones. Page level imports (`@/pages/server/console/...`) are why t
 - Extension frontends may only import the panel's direct dependencies.
 - Every user facing string goes through `translations.ts`; keys are type checked and throw at runtime
   if missing.
+- Other languages live in `frontend/public/translations/<lang>/dev.caloptreyx.mint.json` (same keys as the
+  English in `translations.ts`); add, rename or remove keys there too whenever the English keys change.
 - Keep custom CSS minimal; use panel components and Tailwind utilities with Mantine variables.
 
 ## Verifying a change
 
 `normalizeTheme()` and `buildCss()` have tests in `tests/theme.test.ts`, the announcement button checks
-in `tests/cta.test.ts` (plain `node:test`, no dependencies, kept outside `frontend/src` so the panel never
-compiles them). Run them with `node --test "tests/*.test.ts"` (Node 24 strips the types; a bare `tests/`
-is not accepted as a path). Add a case there whenever a theme field or a validation helper changes.
+in `tests/cta.test.ts`, presets, user choices and history in `tests/library.test.ts` (plain `node:test`, no
+dependencies, kept outside `frontend/src` so the panel never compiles them). Run them with
+`node --test "tests/*.test.ts"` (Node 24 strips the types; a bare `tests/` is not accepted as a path). Add a
+case there whenever a theme field or a validation helper changes; a new theme field that users should get
+from a picked preset also goes into `USER_THEME_FIELDS`.
 
 Everything else needs the panel: stage the extension into a panel checkout and run the real
 toolchain; there is no standalone build.

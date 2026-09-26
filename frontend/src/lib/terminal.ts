@@ -9,7 +9,7 @@ const SAMPLE = 'aĀ';
 let panelFont: string | undefined;
 const unsubscribes = new Map<Terminal, () => void>();
 
-/** xterm draws on a canvas, so the monospace choice has to reach its options instead of the CSS. */
+/** xterm styles its rows with the `fontFamily` option and sizes its cells from it, so the CSS never reaches it. */
 export function initTerminalFont(options: ITerminalOptions & ITerminalInitOnlyOptions) {
   panelFont = options.fontFamily;
   const family = MONO_FONT_STACKS[currentTheme().monoFont];

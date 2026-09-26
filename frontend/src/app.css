@@ -172,6 +172,11 @@ html {
   background-color: transparent;
 }
 
+/* a first visit waits for the theme (lib/apply.ts), 1.5s at most, instead of flashing the default look */
+html[data-nebula-pending] body {
+  visibility: hidden;
+}
+
 #sidebar-desktop {
   margin: 0;
   top: 0;
@@ -465,6 +470,25 @@ html[data-nebula-layout="slim"] #sidebar-desktop .nebula-nav-search-icon {
   flex-direction: column;
   gap: 0.125rem;
   min-width: 12rem;
+}
+
+/* BottomNav (`mobileNav: 'bottomBar'`): core's floating menu button, the element after the bar's marker, gives way to
+   the bar, whose Menu button still clicks it. While the bar shows, html carries its measured height, which the
+   content column, core's bottom action bar (bulk file actions) and bottom placed toasts and uploads clear */
+[data-nebula-bottom-nav-marker] + .mantine-Card-root {
+  display: none !important;
+}
+
+html[data-nebula-bottom-nav] [data-nebula-bottom-nav-marker] ~ :is(#dashboard-root, #server-root, #admin-root) {
+  padding-bottom: var(--nebula-bottom-nav-h);
+}
+
+html[data-nebula-bottom-nav] body > .fixed.bottom-0.z-90 {
+  bottom: var(--nebula-bottom-nav-h);
+}
+
+html[data-nebula-bottom-nav] :is(.fixed.z-999, .z-998).bottom-4 {
+  bottom: calc(1rem + var(--nebula-bottom-nav-h));
 }
 
 /* page transitions and the glassy toast's countdown; lib/theme.ts picks one (PAGE_ANIMATIONS), the editor's tiles play them all */

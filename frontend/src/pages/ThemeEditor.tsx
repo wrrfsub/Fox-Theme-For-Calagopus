@@ -5,6 +5,7 @@ import {
   faArrowUpRightFromSquare,
   faBars,
   faBookOpen,
+  faClockRotateLeft,
   faCubes,
   faDownload,
   faDroplet,
@@ -40,7 +41,16 @@ import { useToast } from '@/providers/ToastProvider.tsx';
 import updateTheme from '../api/updateTheme.ts';
 import { LOGIN_PREVIEW_PATH } from '../elements/auth/AuthScope.tsx';
 import Sections, { type Section } from '../elements/editor/Sections.tsx';
-import { loadTheme, type PreviewScheme, READY_MSG, rememberTheme, savedTheme, sendPreview } from '../lib/apply.ts';
+import HistoryModal from '../elements/library/HistoryModal.tsx';
+import {
+  holdSiteTheme,
+  loadTheme,
+  type PreviewScheme,
+  READY_MSG,
+  rememberTheme,
+  savedTheme,
+  sendPreview,
+} from '../lib/apply.ts';
 import { DEFAULT_THEME, type NebulaTheme, normalizeTheme } from '../lib/theme.ts';
 import { useExtTranslations } from '../translations.ts';
 
@@ -119,6 +129,7 @@ export default function ThemeEditor() {
   const [page, setPage] = useState('/');
   const [serverId, setServerId] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  const [historyOpen, setHistoryOpen] = useState(false);
   const [stage, setStage] = useState({ width: 0, height: 0 });
 
   const frame = useRef<HTMLIFrameElement>(null);
@@ -130,6 +141,9 @@ export default function ThemeEditor() {
 
   const set = (patch: Partial<NebulaTheme>) => setDraft((d) => ({ ...d, ...patch }));
   const dirty = JSON.stringify(normalizeTheme(draft, saved)) !== JSON.stringify(saved);
+
+  // the editor edits the site theme, so it shows that, never the admin's own pick
+  useEffect(() => holdSiteTheme(), []);
 
   useEffect(() => {
     loadTheme().then((theme) => {
@@ -289,6 +303,7 @@ export default function ThemeEditor() {
           <Group gap={2} wrap='nowrap'>
             {iconButton(t('editor.undo', {}), faArrowRotateLeft, history.undo, !history.canUndo)}
             {iconButton(t('editor.redo', {}), faArrowRotateRight, history.redo, !history.canRedo)}
+            {iconButton(t('library.history', {}), faClockRotateLeft, () => setHistoryOpen(true))}
           </Group>
         </Group>
 
@@ -327,6 +342,7 @@ export default function ThemeEditor() {
             {t('editor.save', {})}
           </Button>
         </Group>
+        <HistoryModal opened={historyOpen} onClose={() => setHistoryOpen(false)} onLoad={setDraft} />
       </aside>
 
       <main className='flex flex-col flex-1 min-w-0'>

@@ -10,15 +10,21 @@ import {
   buildCss,
   CLICK_EFFECTS,
   CONSOLE_WIDGETS,
+  contrastIssues,
+  contrastRatio,
   DEFAULT_CONSOLE_LAYOUT,
   DEFAULT_LAYOUT,
   DEFAULT_THEME,
+  derivedColors,
   DOCK_POSITIONS,
   FONTS,
   HOME_CARDS,
   MAX_ARTICLES,
   MAX_SUPPORT_LINKS,
+  MIN_TEXT_CONTRAST,
+  MIN_UI_CONTRAST,
   MONO_FONTS,
+  MOBILE_NAVS,
   NAV_HOVERS,
   type NebulaTheme,
   normalizeTheme,
@@ -56,7 +62,7 @@ const OPTIONAL_COLORS = [
   'chartOne',
   'chartTwo',
 ] as const;
-const URL_FIELDS = ['backgroundImage', 'homeBanner', 'loginBackground', 'loginLogo'] as const;
+const URL_FIELDS = ['backgroundImage', 'homeBanner', 'loginBackground', 'loginLogo', 'favicon'] as const;
 
 const BAD_COLORS: unknown[] = [
   '#abc',
@@ -851,6 +857,48 @@ describe('box and stat card styles', () => {
     }
   });
 
+  test('box styles reach the admin Settings sections, scoped to that page and only while chosen', () => {
+    const SCOPE = 'html:root .mantine-Tabs-root:has(a[href$="/admin/settings/webauthn"]) ~ ';
+    const settings = (boxStyle: string) =>
+      buildCss(normalizeTheme({ boxStyle }))
+        .split('\n')
+        .filter((rule) => rule.includes('/admin/settings/'));
+    const ruleFor = (rules: string[], part: string) => rules.filter((rule) => rule.includes(part)).join('\n');
+
+    for (const css of [buildCss(DEFAULT_THEME), buildCss(normalizeTheme({ accent: '#2fbf8f', boxStyle: 'nope' }))]) {
+      assert.equal(css.includes('/admin/settings/'), false);
+    }
+
+    for (const style of ['line', 'fill', 'pill']) {
+      const rules = settings(style);
+      assert.ok(rules.length > 0, style);
+      assert.ok(braces(rules.join('\n')), style);
+      for (const selector of rules.flatMap((rule) => rule.slice(0, rule.indexOf('{')).split(','))) {
+        // never another admin page's heading or a Tabs list elsewhere
+        assert.ok(selector.startsWith(SCOPE), selector);
+        // a collapsed CollapsibleSection is a plain toggle row, so only an open one is restyled
+        if (selector.includes('UnstyledButton')) assert.ok(selector.includes(':has(+ [aria-hidden="false"]:last-child)'), selector);
+      }
+    }
+
+    const line = settings('line');
+    assert.ok(ruleFor(line, 'h2.mantine-Title-root').includes('border-bottom:1px solid var(--mantine-color-default-border)'));
+    assert.ok(ruleFor(line, 'UnstyledButton').includes('border-bottom:1px solid'));
+    assert.equal(line.join('\n').includes('blue-light'), false);
+
+    const fill = settings('fill');
+    assert.ok(ruleFor(fill, 'h2.mantine-Title-root').includes('background:var(--mantine-color-blue-light)'));
+    assert.ok(fill.some((r) => r.includes('mantine-Paper-root') && r.includes('+ .mantine-Divider-root{border-top-color:transparent;}')));
+    // core sets the section and card titles' dimmed colour inline, so the accent colour must be !important
+    assert.ok(fill.some((r) => r.includes('> .mantine-Text-root') && r.endsWith('{color:var(--mantine-color-blue-light-color)!important;}')));
+
+    const pill = settings('pill');
+    assert.ok(pill.some((r) => r.includes('> h2,') && r.includes('border-radius:999px') && r.includes('width:fit-content')));
+    // the section title is flex:1 inline; it has to shrink or the pill spans the whole header
+    assert.ok(pill.some((r) => r.endsWith('> .mantine-Text-root{flex:0 1 auto!important;margin-right:auto;}')));
+    assert.equal(pill.some((r) => r.includes('padding:var(--mantine-spacing-xs) var(--mantine-spacing-md)')), false);
+  });
+
   test('stat styles move the icon to the other side and or drop its square', () => {
     // only the stat rules, so options added by other sections cannot trip these
     const rules = (statStyle: string) =>
@@ -1293,5 +1341,189 @@ describe('dashboard layout and dock position', () => {
       for (const dock of ['header', 'top']) assert.ok(laid(layout, dock).includes(HIDDEN), `${layout}/${dock}`);
     }
     for (const dock of DOCK_POSITIONS) assert.equal(laid('horizontal', dock), laid('horizontal'), dock);
+  });
+});
+
+describe('browser tab icon', () => {
+  test("defaults to '', the panel's own icon, and themes saved before it keep it", () => {
+    assert.equal(DEFAULT_THEME.favicon, '');
+    assert.equal(normalizeTheme({ accent: '#2fbf8f' }).favicon, '');
+  });
+
+  test('is swapped at runtime and adds no css', () => {
+    assert.equal(buildCss(normalizeTheme({ favicon: '/icon.png' })), buildCss(DEFAULT_THEME));
+  });
+});
+
+describe('contrast warnings', () => {
+  const issuesOf = (patch: Partial<NebulaTheme>) => contrastIssues(normalizeTheme({ ...DEFAULT_THEME, ...patch }));
+  const pairs = (patch: Partial<NebulaTheme>) =>
+    issuesOf(patch).map((issue) => [issue.fg, issue.bg, issue.role ?? '', issue.min].join('/'));
+
+  test('contrastRatio is the WCAG ratio, whichever colour comes first', () => {
+    assert.equal(contrastRatio('#000000', '#ffffff'), 21);
+    assert.equal(contrastRatio('#ffffff', '#000000'), 21);
+    assert.equal(contrastRatio('#abcdef', '#abcdef'), 1);
+    assert.equal(contrastRatio('#777777', '#666666').toFixed(2), '1.28');
+    assert.equal(contrastRatio('#767676', '#ffffff').toFixed(2), '4.54');
+  });
+
+  test('the default theme and every preset, with the default styles, read fine in both schemes', () => {
+    assert.deepEqual(contrastIssues(DEFAULT_THEME), []);
+    for (const preset of PRESETS) assert.deepEqual(issuesOf(preset.theme), [], preset.name);
+  });
+
+  test('text too close to the surface is reported with its ratio, and only then', () => {
+    const [issue] = issuesOf({ text: '#777777', surface: '#666666' }).filter((i) => i.fg === 'text' && i.bg === 'surface');
+    assert.equal(issue.min, MIN_TEXT_CONTRAST);
+    assert.equal(issue.ratio.toFixed(2), '1.28');
+    assert.deepEqual(pairs({ text: '#ffffff', surface: '#000000', background: '#000000' }), []);
+  });
+
+  test('every reported pair is below its minimum', () => {
+    const issues = issuesOf({ text: '#777777', surface: '#666666', background: '#6a6a6a', navHover: 'pill' });
+    assert.ok(issues.length > 0);
+    for (const issue of issues) assert.ok(issue.ratio < issue.min, JSON.stringify(issue));
+  });
+
+  test('muted text is checked in the colour painted: the derived one while empty, the set one otherwise', () => {
+    // the derived muted text is mixed from text and background
+    assert.ok(pairs({ text: '#8a8a8a', background: '#444444', surface: '#444444' }).includes('textMuted/surface//4.5'));
+    assert.ok(!pairs({ textMuted: '#ffffff', surface: '#000000' }).includes('textMuted/surface//4.5'));
+    assert.ok(pairs({ textMuted: '#1a1a1a', surface: '#000000' }).includes('textMuted/surface//4.5'));
+  });
+
+  test('links are checked in the shade painted, against both surfaces', () => {
+    assert.ok(pairs({ accent: '#ffffff', surface: '#ffffff', text: '#000000' }).includes('accent/surface/links/4.5'));
+    // #3355aa itself is 2.76:1 on the default surface, its link shade 4.82:1
+    assert.ok(!pairs({ accent: '#3355aa' }).includes('accent/surface/links/4.5'));
+    assert.ok(pairs({ accent: '#2a4a8a' }).includes('accent/surface/links/4.5'));
+    // light mode pulls the link shade toward the ink until it reads, so it only fails when the ink does
+    assert.ok(!pairs({ accent: '#ffff00' }).includes('accent/lightSurface/links/4.5'));
+    assert.ok(pairs({ accent: '#ffff00', lightText: '#eeeeee' }).includes('accent/lightSurface/links/4.5'));
+  });
+
+  test('light mode checks its own text, surface, background, dimmed text and links', () => {
+    assert.deepEqual(pairs({ lightText: '#aaaaaa', lightSurface: '#ffffff', lightBackground: '#ffffff' }), [
+      'lightText/lightBackground//4.5',
+      'lightText/lightSurface//4.5',
+      'lightText/lightSurface/dimmed/4.5',
+      'accent/lightSurface/links/4.5',
+    ]);
+    // dimmed text is a mix toward the surface, so it fails before the text does
+    assert.deepEqual(pairs({ lightText: '#595959', lightSurface: '#ffffff' }), ['lightText/lightSurface/dimmed/4.5']);
+  });
+
+  test('button text is only checked on solid buttons, against the button colour when one is set', () => {
+    assert.deepEqual(pairs({ buttonText: '#ffffff', buttonColor: '#ffff00' }), []);
+    assert.deepEqual(pairs({ buttonStyle: 'filled', buttonText: '#ffffff', buttonColor: '#ffff00' }), [
+      'buttonText/buttonColor//4.5',
+    ]);
+    assert.deepEqual(pairs({ buttonStyle: 'filled', buttonText: '#000000', buttonColor: '#ffff00' }), []);
+    // derived: white on the accent
+    assert.deepEqual(pairs({ buttonStyle: 'filled', accent: '#2fbf8f' }), ['buttonText/buttonColor//4.5']);
+  });
+
+  test('text on accent is only checked where a solid menu style paints it, icons only needing 3:1', () => {
+    // #2fbf8f derives white text on accent, 2.34:1
+    assert.deepEqual(pairs({ accent: '#2fbf8f' }), []);
+    assert.deepEqual(pairs({ accent: '#2fbf8f', navHover: 'filledSecondary' }), []);
+    for (const navHover of ['filled', 'pill'] as const) {
+      assert.deepEqual(pairs({ accent: '#2fbf8f', navHover }), [`textOnAccent/accent//${MIN_TEXT_CONTRAST}`]);
+    }
+    assert.deepEqual(pairs({ accent: '#2fbf8f', navHover: 'iconPill' }), [`textOnAccent/accent//${MIN_UI_CONTRAST}`]);
+    // 3.89:1 fails for text but is enough for an icon
+    assert.deepEqual(pairs({ navHover: 'pill' }), [`textOnAccent/accent//${MIN_TEXT_CONTRAST}`]);
+    assert.deepEqual(pairs({ navHover: 'iconPill' }), []);
+    assert.deepEqual(pairs({ accent: '#2fbf8f', textOnAccent: '#000000', navHover: 'pill' }), []);
+  });
+});
+
+describe('phone navigation', () => {
+  test("the default and themes saved before the option keep core's drawer", () => {
+    assert.equal(DEFAULT_THEME.mobileNav, 'drawer');
+    assert.equal(normalizeTheme({ accent: '#2fbf8f', sidebarLayout: 'pill' }).mobileNav, 'drawer');
+  });
+
+  test('mobileNav only accepts its allow list and falls back to the given theme', () => {
+    for (const nav of MOBILE_NAVS) assert.equal(normalizeTheme({ mobileNav: nav }).mobileNav, nav);
+    for (const bad of ['BottomBar', 'bottom', 'tabs', '', 'constructor', 'drawer;}', 1, null, true, ['bottomBar']]) {
+      assert.equal(normalizeTheme({ mobileNav: bad }).mobileNav, 'drawer', String(bad));
+    }
+    const d = { ...DEFAULT_THEME, mobileNav: 'bottomBar' } as const;
+    assert.equal(normalizeTheme({ mobileNav: 'dock' }, d).mobileNav, 'bottomBar');
+  });
+});
+
+describe('light mode leftovers and text on accent', () => {
+  const LIGHT = 'html:root[data-mantine-color-scheme="light"]';
+  /** Every rule whose selector contains `part`, as `selector{body}`, with at-rules unwrapped. */
+  const rules = (css: string, part: string) =>
+    [...css.matchAll(/([^{}]+)\{([^{}]*)\}/g)].filter(([, s]) => s.includes(part)).map(([, s, b]) => `${s.trim()}{${b}}`);
+  const schemeBlock = (css: string, scheme: 'dark' | 'light') =>
+    rules(css, `html:root[data-mantine-color-scheme="${scheme}"]`).find((r) => r.startsWith(`html:root[data-mantine-color-scheme="${scheme}"]{`)) ?? '';
+
+  test("empty text on accent keeps core's white on every accent fill, and the editor shows white", () => {
+    const css = buildCss(DEFAULT_THEME);
+    for (const marker of ['--mantine-primary-color-contrast', '--button-color', '--badge-color', '--ai-color']) {
+      assert.equal(css.includes(marker), false, marker);
+    }
+    // a bright accent used to claim dark text that core never painted
+    for (const accent of ['#1e88c7', '#ffff00', '#8fe3c8']) {
+      const t = normalizeTheme({ accent });
+      assert.equal(derivedColors(t).textOnAccent, '#ffffff', accent);
+      assert.equal(derivedColors(t).buttonText, '#ffffff', accent);
+    }
+  });
+
+  test('a set text on accent outranks the per scheme pins of core and Mantine in both schemes', () => {
+    const css = buildCss(normalizeTheme({ textOnAccent: '#123456' }));
+    // core and Mantine set it on `:root[data-mantine-color-scheme]`, which the bare html:root block loses to
+    const shared = rules(css, 'html:root').find((r) => r.startsWith('html:root{')) ?? '';
+    assert.ok(shared.includes('--mantine-radius-md:'), shared);
+    assert.equal(shared.includes('--mantine-primary-color-contrast'), false);
+    for (const scheme of ['dark', 'light'] as const) {
+      assert.match(schemeBlock(css, scheme), /--mantine-primary-color-contrast:#123456;/, scheme);
+    }
+    assert.equal(derivedColors(normalizeTheme({ textOnAccent: '#123456' })).buttonText, '#123456');
+  });
+
+  test('text on accent swaps the text of accent filled buttons, action icons and badges', () => {
+    const css = buildCss(normalizeTheme({ textOnAccent: '#123456' }));
+    const accent = (fill: string) => `[style*="${fill}: var(--mantine-color-blue-filled);"]`;
+    assert.ok(css.includes(`html:root .mantine-Button-root${accent('--button-bg')}{--button-color:#123456!important;}`));
+    assert.ok(css.includes(`html:root .mantine-ActionIcon-root${accent('--ai-bg')}{--ai-color:#123456!important;}`));
+    // a badge with no colour or variant has no inline style and is the primary colour by default
+    assert.ok(
+      css.includes(
+        `html:root .mantine-Badge-root:is(${accent('--badge-bg')},:not([style*="--badge-bg"])){--badge-color:#123456!important;}`,
+      ),
+    );
+    // the variable, not `color`, so the other button styles and `buttonText` (which set `color`) still win on buttons
+    for (const rule of rules(css, '--mantine-color-blue-filled);"]')) assert.doesNotMatch(rule, /[{;]color:/, rule);
+  });
+
+  test("light mode clears xterm's opaque white viewport and paints its text in the theme's; dark mode is left alone", () => {
+    const css = buildCss(DEFAULT_THEME);
+    assert.deepEqual(rules(css, '.xterm'), [
+      `${LIGHT} .xterm .xterm-scrollable-element{background-color:transparent!important;}`,
+      `${LIGHT} .xterm .xterm-rows{color:var(--mantine-color-text);}`,
+    ]);
+  });
+
+  test("core's Tailwind greys read the dimmed text in light mode only, however core writes the class", () => {
+    const css = buildCss(DEFAULT_THEME);
+    const [grey, ...rest] = rules(css, '[class~=');
+    assert.equal(rest.length, 0);
+    assert.ok(grey.startsWith(`${LIGHT} :is(`), grey);
+    for (const cls of ['text-neutral-400', 'text-neutral-400!', 'text-gray-400!', 'text-gray-500', 'light:text-gray-500!', 'light:text-gray-600!']) {
+      assert.ok(grey.includes(`[class~="${cls}"]`), cls);
+    }
+    // Tailwind's `!` utilities sit in a layer and beat any unlayered !important, so the variable they read is redefined
+    for (const shade of ['neutral-400', 'gray-400', 'gray-500', 'gray-600']) {
+      assert.ok(grey.includes(`--color-${shade}:var(--mantine-color-dimmed);`), shade);
+    }
+    assert.match(schemeBlock(css, 'light'), /--chart-tick-color:var\(--mantine-color-dimmed\);/);
+    assert.doesNotMatch(schemeBlock(css, 'dark'), /--chart-tick-color/);
   });
 });

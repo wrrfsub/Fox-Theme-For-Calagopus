@@ -14,19 +14,22 @@ import {
   BUTTON_STYLES,
   type ButtonStyle,
   CLICK_EFFECTS,
+  contrastIssues,
   derivedColors,
   type Font,
   MAX_ARTICLES,
   type MonoFont,
   type NebulaTheme,
-  PRESETS,
 } from '../../lib/theme.ts';
 import { useExtTranslations } from '../../translations.ts';
+import PresetsSection from '../library/PresetsSection.tsx';
 import AuthLayoutFields, { SupportLinksFields } from './AuthLayoutFields.tsx';
 import BoxFields from './BoxFields.tsx';
 import ChoiceCards from './ChoiceCards.tsx';
 import ConsoleLayoutField from './ConsoleLayoutField.tsx';
+import { ContrastSummary, ContrastWarnings } from './ContrastWarnings.tsx';
 import EggImagesField from './EggImagesField.tsx';
+import FaviconField from './FaviconField.tsx';
 import InterfaceField from './InterfaceField.tsx';
 import LayoutField from './LayoutField.tsx';
 import NavStyleFields from './NavStyleFields.tsx';
@@ -133,61 +136,45 @@ export default function Sections({ section, theme, set }: Props) {
 
   switch (section) {
     case 'presets':
-      return (
-        <Stack gap='xs'>
-          {PRESETS.map((preset) => (
-            <Card key={preset.name} hoverable p='sm' onClick={() => set(preset.theme)}>
-              <Group justify='space-between' wrap='nowrap'>
-                <Text fw={600}>{preset.name}</Text>
-                <Group gap={4} wrap='nowrap'>
-                  {[preset.theme.background, preset.theme.surface, preset.theme.accent, preset.theme.highlight].map(
-                    (swatch) => (
-                      <span
-                        key={swatch}
-                        className='size-5 rounded-full border border-(--mantine-color-default-border)'
-                        style={{ background: swatch }}
-                      />
-                    ),
-                  )}
-                </Group>
-              </Group>
-            </Card>
-          ))}
-        </Stack>
-      );
-    case 'colours':
+      return <PresetsSection theme={theme} set={set} />;
+    case 'colours': {
+      const issues = contrastIssues(theme);
       return (
         <Stack gap='lg'>
+          <ContrastSummary issues={issues} />
           {COLOR_GROUPS.map(({ group, keys, optional }) => (
             <Stack gap='xs' key={group}>
               <Text size='xs' fw={600} tt='uppercase' c='dimmed' className='tracking-wider'>
                 {t(`editor.group.${group}`, {})}
               </Text>
               {keys.map((key) => (
-                <ColorInput
-                  key={key}
-                  label={t(`editor.${key}`, {})}
-                  description={optional && !theme[key] ? t('editor.derived', {}) : undefined}
-                  value={theme[key] || derived[key] || ''}
-                  onChange={(value) => set({ [key]: value })}
-                  rightSection={
-                    optional && theme[key] ? (
-                      <ActionIcon
-                        variant='subtle'
-                        color='gray'
-                        aria-label={t('editor.clearColor', {})}
-                        onClick={() => set({ [key]: '' })}
-                      >
-                        <FontAwesomeIcon icon={faRotateLeft} />
-                      </ActionIcon>
-                    ) : undefined
-                  }
-                />
+                <div key={key}>
+                  <ColorInput
+                    label={t(`editor.${key}`, {})}
+                    description={optional && !theme[key] ? t('editor.derived', {}) : undefined}
+                    value={theme[key] || derived[key] || ''}
+                    onChange={(value) => set({ [key]: value })}
+                    rightSection={
+                      optional && theme[key] ? (
+                        <ActionIcon
+                          variant='subtle'
+                          color='gray'
+                          aria-label={t('editor.clearColor', {})}
+                          onClick={() => set({ [key]: '' })}
+                        >
+                          <FontAwesomeIcon icon={faRotateLeft} />
+                        </ActionIcon>
+                      ) : undefined
+                    }
+                  />
+                  <ContrastWarnings field={key} issues={issues} />
+                </div>
               ))}
             </Stack>
           ))}
         </Stack>
       );
+    }
     case 'style':
       return (
         <Stack gap='lg'>
@@ -319,6 +306,7 @@ export default function Sections({ section, theme, set }: Props) {
               onChange={(backgroundDim) => set({ backgroundDim })}
             />
           </Labelled>
+          <FaviconField theme={theme} set={set} />
         </Stack>
       );
     case 'login':

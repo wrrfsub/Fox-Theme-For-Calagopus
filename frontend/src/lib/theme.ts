@@ -26,12 +26,15 @@ export type NavHover = (typeof NAV_HOVERS)[number];
 /** Under the sidebar logo: 'palette' is core's Quick actions button, with its server switcher at the bottom. */
 export const SEARCH_COMPONENTS = ['palette', 'serverSelector', 'searchBar'] as const;
 export type SearchComponent = (typeof SEARCH_COMPONENTS)[number];
-/** Desktop navigation: 'default' is the flush full height sidebar (app.css); below lg every layout is core's drawer. */
+/** Desktop navigation: 'default' is the flush full height sidebar (app.css); below lg `mobileNav` takes over. */
 export const SIDEBAR_LAYOUTS = ['default', 'floating', 'pill', 'slim', 'horizontal'] as const;
 export type SidebarLayout = (typeof SIDEBAR_LAYOUTS)[number];
 /** Where the sidebar's header block (logo, search, the server block) sits; the horizontal layout ignores it. */
 export const DOCK_POSITIONS = ['sidebar', 'header', 'top'] as const;
 export type DockPosition = (typeof DOCK_POSITIONS)[number];
+/** Phone navigation below lg: 'drawer' is core's floating menu button, 'bottomBar' a fixed bar of links (BottomNav). */
+export const MOBILE_NAVS = ['drawer', 'bottomBar'] as const;
+export type MobileNav = (typeof MOBILE_NAVS)[number];
 
 export interface Article {
   title: string;
@@ -183,6 +186,9 @@ export interface NebulaTheme {
   searchComponent: SearchComponent;
   sidebarLayout: SidebarLayout;
   dockPosition: DockPosition;
+  /** The browser tab and home screen icon; '' keeps the panel's own. */
+  favicon: string;
+  mobileNav: MobileNav;
 }
 
 export const DEFAULT_THEME: NebulaTheme = {
@@ -244,6 +250,8 @@ export const DEFAULT_THEME: NebulaTheme = {
   searchComponent: 'palette',
   sidebarLayout: 'default',
   dockPosition: 'sidebar',
+  favicon: '',
+  mobileNav: 'drawer',
 };
 
 export const PRESETS: { name: string; theme: Partial<NebulaTheme> }[] = [
@@ -272,6 +280,73 @@ export const PRESETS: { name: string; theme: Partial<NebulaTheme> }[] = [
     theme: { accent: '#6c7cff', highlight: '#b9c0ff', background: '#16171b', surface: '#101114', text: '#e7e8ec' },
   },
 ];
+
+/**
+ * What a user's own theme choice (a preset an admin made selectable) takes from the preset: the look.
+ * Everything else stays the site's: content (home banner, articles, egg images, the Home and console
+ * layouts), the auth pages and any field not listed here, so a field added later is site wide by default.
+ */
+export const USER_THEME_FIELDS: readonly (keyof NebulaTheme)[] = [
+  'accent',
+  'highlight',
+  'background',
+  'surface',
+  'text',
+  'font',
+  'buttonStyle',
+  'buttonColor',
+  'buttonText',
+  'surfaceRaised',
+  'surfaceOverlay',
+  'textMuted',
+  'textFaint',
+  'textOnAccent',
+  'line',
+  'success',
+  'warning',
+  'danger',
+  'offline',
+  'chartOne',
+  'chartTwo',
+  'sidebarGroups',
+  'radius',
+  'elementRadius',
+  'backgroundImage',
+  'backgroundDim',
+  'monoFont',
+  'lightBackground',
+  'lightSurface',
+  'lightText',
+  'blockOpacity',
+  'glass',
+  'blockBorder',
+  'inputBorder',
+  'clickEffect',
+  'toastStyle',
+  'pageTransition',
+  'pageTitles',
+  'boxStyle',
+  'statStyle',
+  'serverCardStyle',
+  'tableStyle',
+  'navHover',
+  'searchComponent',
+  'sidebarLayout',
+  'dockPosition',
+];
+
+/** Only the `USER_THEME_FIELDS` a preset sets; a built-in preset sets just its five colours. */
+export function pickUserTheme(preset: unknown): Partial<NebulaTheme> {
+  const r = (preset && typeof preset === 'object' ? preset : {}) as Record<string, unknown>;
+  const out: Record<string, unknown> = {};
+  for (const key of USER_THEME_FIELDS) if (key in r) out[key] = r[key];
+  return out as Partial<NebulaTheme>;
+}
+
+/** The site theme with a preset's look laid over it; invalid preset values keep the site's. */
+export function withUserTheme(site: NebulaTheme, preset: unknown): NebulaTheme {
+  return normalizeTheme({ ...site, ...pickUserTheme(preset) }, site);
+}
 
 const HEX = /^#[0-9a-f]{6}$/i;
 // anything that could close the url("...") or the rule it sits in is refused outright; `//host` is
@@ -432,6 +507,8 @@ export function normalizeTheme(raw: unknown, d: NebulaTheme = DEFAULT_THEME): Ne
     searchComponent: SEARCH_COMPONENTS.find((search) => search === r.searchComponent) ?? d.searchComponent,
     sidebarLayout: SIDEBAR_LAYOUTS.find((layout) => layout === r.sidebarLayout) ?? d.sidebarLayout,
     dockPosition: DOCK_POSITIONS.find((position) => position === r.dockPosition) ?? d.dockPosition,
+    favicon: url(r.favicon, d.favicon),
+    mobileNav: MOBILE_NAVS.find((nav) => nav === r.mobileNav) ?? d.mobileNav,
   };
 }
 
@@ -457,7 +534,7 @@ const luminance = (hex: string) => {
   return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 };
 
-const contrastRatio = (a: string, b: string) => {
+export const contrastRatio = (a: string, b: string) => {
   const [hi, lo] = [luminance(a), luminance(b)].sort((x, y) => y - x);
   return (hi + 0.05) / (lo + 0.05);
 };
@@ -527,10 +604,11 @@ export function derivedColors(t: NebulaTheme) {
     surfaceOverlay: mix(t.text, t.background, 0.1),
     textMuted: dark[2],
     textFaint: dark[3],
-    textOnAccent: luminance(t.accent) > 0.45 ? '#0b0b10' : '#ffffff',
+    // core and Mantine pin it to `--mantine-color-white`, which light mode paints as its surface
+    textOnAccent: '#ffffff',
     line: dark[4],
     buttonColor: t.accent,
-    buttonText: '#ffffff',
+    buttonText: t.textOnAccent || '#ffffff',
     success: '#40c057',
     warning: '#fab005',
     danger: '#fa5252',
@@ -543,6 +621,74 @@ export function derivedColors(t: NebulaTheme) {
   };
 }
 
+/** WCAG AA: 4.5:1 for text, 3:1 for icons and other UI graphics. */
+export const MIN_TEXT_CONTRAST = 4.5;
+export const MIN_UI_CONTRAST = 3;
+
+export type ContrastField =
+  | 'accent'
+  | 'background'
+  | 'surface'
+  | 'text'
+  | 'textMuted'
+  | 'textOnAccent'
+  | 'buttonColor'
+  | 'buttonText'
+  | 'lightBackground'
+  | 'lightSurface'
+  | 'lightText';
+
+export interface ContrastIssue {
+  fg: ContrastField;
+  bg: ContrastField;
+  /** Set when the colour painted is derived from `fg` rather than `fg` itself: the link shade, light mode's dimmed text. */
+  role?: 'links' | 'dimmed';
+  ratio: number;
+  min: number;
+}
+
+/** The pairs the panel really paints (derived fallbacks included) that fall below their WCAG minimum. */
+export function contrastIssues(t: NebulaTheme): ContrastIssue[] {
+  const blue = accentShades(t.accent);
+  const dark = surfaceShades(t);
+  const light = lightBase(t);
+  type Pair = [ContrastField, ContrastField, string, string, ContrastIssue['role']?];
+  const pairs: Pair[] = [
+    ['text', 'background', t.text, t.background],
+    ['text', 'surface', t.text, t.surface],
+    ['textMuted', 'surface', t.textMuted || dark[2], t.surface],
+    // links and `c='blue'` text are the anchor shade, not the accent itself
+    ['accent', 'surface', blue[4], t.surface, 'links'],
+    ['lightText', 'lightBackground', light.text, light.background],
+    ['lightText', 'lightSurface', light.text, light.surface],
+    ['lightText', 'lightSurface', mix(light.text, light.surface, 0.62), light.surface, 'dimmed'],
+    ['accent', 'lightSurface', readable(t.accent, light.text, light.surface), light.surface, 'links'],
+  ];
+  // the other button styles tint the label toward the page's ink; only solid buttons put it on the colour
+  if (t.buttonStyle === 'filled') {
+    pairs.push(['buttonText', 'buttonColor', t.buttonText || t.textOnAccent || '#ffffff', t.buttonColor || t.accent]);
+  }
+  const issues: ContrastIssue[] = pairs.map(([fg, bg, a, b, role]) => ({
+    fg,
+    bg,
+    ...(role && { role }),
+    ratio: contrastRatio(a, b),
+    min: MIN_TEXT_CONTRAST,
+  }));
+  // text on accent also paints accent filled buttons (the pair above) and badges; it is checked where the solid
+  // menu styles paint it: the current link's label, or just its icon for 'iconPill'
+  if (t.navHover === 'filled' || t.navHover === 'pill' || t.navHover === 'iconPill') {
+    const onAccent = t.textOnAccent || '#ffffff';
+    issues.push({
+      fg: 'textOnAccent',
+      bg: 'accent',
+      ratio: contrastRatio(onAccent, t.accent),
+      min: t.navHover === 'iconPill' ? MIN_UI_CONTRAST : MIN_TEXT_CONTRAST,
+    });
+  }
+  return issues.filter((issue) => issue.ratio < issue.min);
+}
+
 const FONT_STACKS: Partial<Record<Font, string>> = {
   exo: "'Exo 2', Helvetica, Arial, sans-serif",
   montserrat: "'Montserrat', Helvetica, Arial, sans-serif",
@@ -551,7 +697,7 @@ const FONT_STACKS: Partial<Record<Font, string>> = {
   space: "'Space Grotesk', Helvetica, Arial, sans-serif",
 };
 
-/** Also read by the console terminal, which draws on a canvas and never sees the CSS variables. */
+/** Also read by the console terminal, which takes its font from xterm's options, not the CSS variables. */
 export const MONO_FONT_STACKS: Partial<Record<MonoFont, string>> = {
   jetbrains: "'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace",
   fira: "'Fira Code', ui-monospace, Menlo, Consolas, monospace",
@@ -736,13 +882,11 @@ export function buildCss(t: NebulaTheme): string {
   const vars = (entries: [string, string][]) => entries.map(([k, v]) => `${k}:${v};`).join('');
   const scale = (name: string, shades: string[]) =>
     shades.map((v, i) => [`--mantine-color-${name}-${i}`, v] as [string, string]);
-  const contrast = luminance(t.accent) > 0.45 ? '#0b0b10' : '#ffffff';
 
   const shared: [string, string][] = [
     ...scale('blue', blue),
     ...scale('dark', dark),
     ['--nebula-highlight', t.highlight],
-    ['--mantine-primary-color-contrast', t.textOnAccent || contrast],
     ['--mantine-radius-xs', `${Math.round(t.elementRadius * 0.6)}px`],
     ['--mantine-radius-sm', `${t.elementRadius}px`],
     ['--mantine-radius-default', `${t.elementRadius}px`],
@@ -814,7 +958,15 @@ export function buildCss(t: NebulaTheme): string {
     ['--mantine-color-blue-outline-hover', alpha(t.accent, 0.05)],
     ['--mantine-color-blue-text', accentInk],
     ['--chart-series-1', t.chartOne || blue[6]],
+    // core's chart axis labels are a fixed grey there
+    ['--chart-tick-color', 'var(--mantine-color-dimmed)'],
   ];
+  // core and Mantine pin `--mantine-primary-color-contrast` per scheme (`:root[data-mantine-color-scheme]`), so a
+  // set colour goes in both scheme blocks; empty keeps theirs, `--mantine-color-white`
+  if (t.textOnAccent) {
+    darkScheme.push(['--mantine-primary-color-contrast', t.textOnAccent]);
+    lightScheme.push(['--mantine-primary-color-contrast', t.textOnAccent]);
+  }
 
   // status colours repaint the whole Mantine palette they belong to, plus the server state dots
   const status: [string, string, string][] = [
@@ -869,11 +1021,40 @@ export function buildCss(t: NebulaTheme): string {
     `html:root[data-mantine-color-scheme="light"]{${vars(lightScheme)}}`,
   ];
 
+  // light mode repaints what core hardcodes for a white page. xterm paints its viewport in the terminal theme's
+  // background, inline, and core's light one is `#ffffff` (its xterm.css only clears the other layers); the
+  // Tailwind greys on auth subtitles, links and hints are `!` utilities, which live in a layer and so beat any
+  // unlayered `!important`, hence the variable they read is redefined on the element instead
+  const LIGHT = 'html:root[data-mantine-color-scheme="light"]';
+  const GREYS = ['neutral-400', 'gray-400', 'gray-500', 'gray-600'];
+  const greyClasses = GREYS.flatMap((g) => [`text-${g}`, `text-${g}!`, `light:text-${g}!`]).map(
+    (c) => `[class~="${c}"]`,
+  );
+  css.push(
+    `${LIGHT} .xterm .xterm-scrollable-element{background-color:transparent!important;}`,
+    `${LIGHT} .xterm .xterm-rows{color:var(--mantine-color-text);}`,
+    `${LIGHT} :is(${greyClasses.join(',')}){${GREYS.map((g) => `--color-${g}:var(--mantine-color-dimmed);`).join('')}}`,
+  );
+
   if (BUTTON_CSS[t.buttonStyle]) css.push(BUTTON_CSS[t.buttonStyle]);
 
   if (t.buttonText) {
     css.push(
       `html:root .mantine-Button-root[data-variant="filled"]:not([data-disabled]):not(:disabled){color:${t.buttonText}!important;}`,
+    );
+  }
+
+  // Mantine gives accent filled buttons, action icons and badges `--mantine-color-white` text through an inline
+  // variable next to the inline fill, so the text is swapped where that fill is the accent; a badge with no colour
+  // or variant has no inline style and is the accent by default. On buttons the other styles and `buttonText`
+  // set `color` itself and still win.
+  if (t.textOnAccent) {
+    const on = `${t.textOnAccent}!important`;
+    const accent = (fill: string) => `[style*="${fill}: var(--mantine-color-blue-filled);"]`;
+    css.push(
+      `html:root .mantine-Button-root${accent('--button-bg')}{--button-color:${on};}`,
+      `html:root .mantine-ActionIcon-root${accent('--ai-bg')}{--ai-color:${on};}`,
+      `html:root .mantine-Badge-root:is(${accent('--badge-bg')},:not([style*="--badge-bg"])){--badge-color:${on};}`,
     );
   }
 
@@ -1017,6 +1198,43 @@ export function buildCss(t: NebulaTheme): string {
       css.push(
         `${HEAD}{background:transparent;border-bottom-color:transparent!important;padding-bottom:0;}`,
         `${TITLE}{padding:4px 12px;border-radius:999px;background:var(--mantine-color-blue-light);color:var(--mantine-color-blue-light-color);}`,
+      );
+    }
+
+    // admin Settings has no titled cards (flat FormEngine grids), so there it restyles each tab's heading row (the
+    // header right after core's tab list, found by its Webauthn tab), open CollapsibleSection headers (User: route
+    // order; open when the collapse after the button is), the Mail templates panes' header bands (a band, then a
+    // Divider) and card titles (Ratelimits: exemptions). `!important` colours beat Mantine's inline `c='dimmed'`.
+    const SETTINGS = 'html:root .mantine-Tabs-root:has(a[href$="/admin/settings/webauthn"]) ~';
+    const HEADING = `${SETTINGS} div:has(> h2.mantine-Title-root:first-child)`;
+    const HEADING_ROW = `${SETTINGS} .mantine-Group-root:has(> div:first-child > h2.mantine-Title-root:first-child)`;
+    const CARD_TITLE = `${SETTINGS} form .mantine-Card-root > .mantine-Stack-root > h3.mantine-Title-root:first-child`;
+    const SECTION = `${SETTINGS} form .mantine-UnstyledButton-root:first-child:has(+ [aria-hidden="false"]:last-child)`;
+    const BAND = `${SETTINGS} * .mantine-Paper-root > div[class~="bg-(--mantine-color-default)"]:has(+ .mantine-Divider-root)`;
+    const ROWS = `${HEADING},${HEADING_ROW},${CARD_TITLE}`;
+    const TITLES = `${HEADING} > h2,${HEADING_ROW} > div > h2,${CARD_TITLE},${SECTION} > .mantine-Text-root,${BAND} .mantine-Text-root`;
+    const accent = 'color:var(--mantine-color-blue-light-color)!important;';
+    if (t.boxStyle === 'line') {
+      css.push(
+        `${ROWS}{padding-bottom:var(--mantine-spacing-xs);border-bottom:1px solid ${line};}`,
+        `${SECTION}{border-bottom:1px solid ${line};}`,
+        `${BAND}{background:transparent;}`,
+      );
+    }
+    if (t.boxStyle === 'fill') {
+      css.push(
+        `${ROWS}{padding:var(--mantine-spacing-xs) var(--mantine-spacing-md);border-radius:var(--mantine-radius-md);background:var(--mantine-color-blue-light);}`,
+        `${SECTION},${BAND}{background:var(--mantine-color-blue-light);}`,
+        `${BAND} + .mantine-Divider-root{border-top-color:transparent;}`,
+        `${TITLES}{${accent}}`,
+      );
+    }
+    if (t.boxStyle === 'pill') {
+      css.push(
+        `${BAND}{background:transparent;}`,
+        `${BAND} + .mantine-Divider-root{border-top-color:transparent;}`,
+        `${SECTION} > .mantine-Text-root{flex:0 1 auto!important;margin-right:auto;}`,
+        `${TITLES}{width:fit-content;padding:4px 12px;border-radius:999px;background:var(--mantine-color-blue-light);${accent}}`,
       );
     }
   }

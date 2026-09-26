@@ -16,13 +16,15 @@ import { withAnnouncementCta, withServerAnnouncements } from './elements/announc
 import AnnouncementCtaTab from './elements/announcements/AnnouncementCtaTab.tsx';
 import { AuthLayout, withFormLinks } from './elements/auth/AuthLayout.tsx';
 import { AuthLogo, AuthScope, LOGIN_PREVIEW_PATH } from './elements/auth/AuthScope.tsx';
+import ThemeChoiceCard from './elements/library/ThemeChoiceCard.tsx';
 import { hidePageTitle } from './elements/page/PageTitles.tsx';
 import PageTransition from './elements/page/PageTransition.tsx';
+import BottomNav from './elements/sidebar/BottomNav.tsx';
 import GroupedNav from './elements/sidebar/GroupedNav.tsx';
 import { withNavSearch } from './elements/sidebar/NavSearch.tsx';
 import { RailLogo, RailTip } from './elements/sidebar/Rail.tsx';
 import SidebarShell from './elements/sidebar/SidebarShell.tsx';
-import { applyCachedTheme, listenForPreview, loadTheme } from './lib/apply.ts';
+import { applyCachedTheme, listenForPreview, loadTheme, watchUserTheme } from './lib/apply.ts';
 import { attachTerminalFont, detachTerminalFont, initTerminalFont } from './lib/terminal.ts';
 import ServerConsole from './pages/ServerConsole.tsx';
 import ServerHome from './pages/ServerHome.tsx';
@@ -49,6 +51,9 @@ class DevCaloptreyxMintExtension extends Extension {
     // `sidebarLayout` and `dockPosition`: the shell adds the bars across the content (a render interceptor, so it
     // sees the props above), the slim rail names its links in tooltips and shows the square app icon
     Sidebar.addRenderInterceptor((element, props) => createElement(SidebarShell, { ...props, element }));
+    // `mobileNav: 'bottomBar'`: below lg a bottom bar of menu links whose Menu button opens core's drawer; registered
+    // after the shell so its first node stays core's floating menu button, which the bar clicks
+    Sidebar.addRenderInterceptor((element, props) => createElement(BottomNav, { ...props, element }));
     Sidebar.Link.addRenderInterceptor((element, props) => createElement(RailTip, { ...props, link: element }));
     AppIcon.addRenderInterceptor((element, props) =>
       createElement(RailLogo, { fallback: element, className: props.className }),
@@ -56,6 +61,8 @@ class DevCaloptreyxMintExtension extends Extension {
 
     applyCachedTheme();
     void loadTheme();
+    // a user's own pick among the presets an admin offers replaces the site look for them (lib/apply.ts)
+    watchUserTheme();
     listenForPreview();
 
     // the servers list route is hardcoded in the core router, so the page is replaced through its own container registry
@@ -72,6 +79,8 @@ class DevCaloptreyxMintExtension extends Extension {
     ctx.extensionRegistry.pages.dashboard.account.container
       .addPropsInterceptor((props) => ({ ...props, hideTitleComponent: true }))
       .prependContentComponent(ProfileCard);
+    // users pick their own theme among the presets an admin offers, in a card of core's account grid
+    ctx.extensionRegistry.pages.dashboard.account.accountContainers.appendComponent(ThemeChoiceCard);
 
     // the login background and logo only apply while an auth page is mounted
     ctx.extensionRegistry.pages.auth.prependComponent(AuthScope);
@@ -89,7 +98,7 @@ class DevCaloptreyxMintExtension extends Extension {
       element: () => createElement(Login),
     });
 
-    // the console terminal paints on a canvas, so the theme's monospace font is handed to xterm directly
+    // xterm takes its font from its options, not the CSS, so the theme's monospace font is handed to it directly
     ctx.extensionRegistry.pages.server.console.xterm
       .addInitHandler(initTerminalFont)
       .addAfterOpenHandler(attachTerminalFont)

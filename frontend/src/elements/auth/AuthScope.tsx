@@ -1,6 +1,6 @@
 import { createContext, type ReactElement, useContext, useLayoutEffect, useSyncExternalStore } from 'react';
 import { useGlobalStore } from '@/stores/global.ts';
-import { useNebulaTheme } from '../../lib/apply.ts';
+import { holdSiteTheme, useNebulaTheme } from '../../lib/apply.ts';
 
 const AUTH_CLASS = 'nebula-auth';
 /** A global route rendering core's login page, so signed in admins can preview it (auth routes redirect them). */
@@ -17,17 +17,20 @@ const subscribe = (listener: () => void) => {
 /**
  * Rendered at the top of every auth page through `pages.auth.prependComponent`. While one is mounted
  * html carries `nebula-auth`, which scopes the login background in buildCss, and AuthLogo takes over.
- * A layout effect so both land before the first paint instead of flashing the normal look.
+ * Auth pages are the site's face, so a user's own theme choice gives way to the site theme there.
+ * A layout effect so all of it lands before the first paint instead of flashing the normal look.
  */
 export function AuthScope() {
   useLayoutEffect(() => {
     mounted++;
     document.documentElement.classList.add(AUTH_CLASS);
+    const release = holdSiteTheme();
     for (const listener of listeners) listener();
 
     return () => {
       mounted--;
       if (!mounted) document.documentElement.classList.remove(AUTH_CLASS);
+      release();
       for (const listener of listeners) listener();
     };
   }, []);
