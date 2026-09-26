@@ -48,4 +48,6 @@ jobs:
           if ! gh release view "${TAG}" > /dev/null 2>&1; then
             gh release create "${TAG}" --verify-tag --title "Mint Theme ${VERSION}" --generate-notes
           fi
-          gh release upload "${TAG}" dist/dev_caloptreyx_mint.c7s.zip --clobber
+          # 1.2.1 and older (ID dev.s4way.nebula) only look for this asset name when they check for updates
+          cp dist/dev_caloptreyx_mint.c7s.zip dist/dev_s4way_nebula.c7s.zip
+          gh release upload "${TAG}" dist/dev_caloptreyx_mint.c7s.zip dist/dev_s4way_nebula.c7s.zip --clobber
