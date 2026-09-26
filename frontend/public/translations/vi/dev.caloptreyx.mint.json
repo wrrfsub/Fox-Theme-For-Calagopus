@@ -134,6 +134,19 @@
       "label": "Điều hướng trên điện thoại",
       "menu": "Menu"
     },
+    "mobileEditor": {
+      "toolbar": "Phím trình soạn thảo",
+      "undo": "Hoàn tác",
+      "redo": "Làm lại",
+      "indent": "Thụt lề",
+      "outdent": "Giảm thụt lề",
+      "find": "Tìm",
+      "left": "Di chuyển con trỏ sang trái",
+      "right": "Di chuyển con trỏ sang phải",
+      "up": "Di chuyển con trỏ lên",
+      "down": "Di chuyển con trỏ xuống",
+      "type": "Gõ {key}"
+    },
     "editor": {
       "contrast": {
         "title": "Một số màu khó đọc",
@@ -391,7 +404,9 @@
           "fadeScale": "Hiện dần phóng to"
         },
         "pageTitles": "Hiện tiêu đề trang",
-        "pageTitlesDescription": "Tiêu đề trên các trang máy chủ như Tệp và Cơ sở dữ liệu. Ô tìm kiếm và các nút vẫn được giữ."
+        "pageTitlesDescription": "Tiêu đề trên các trang máy chủ như Tệp và Cơ sở dữ liệu. Ô tìm kiếm và các nút vẫn được giữ.",
+        "mobileEditor": "Trình sửa tệp thân thiện với điện thoại",
+        "mobileEditorDescription": "Trên điện thoại, trình soạn mã sẽ ngắt dòng, ẩn bản đồ thu nhỏ và cửa sổ bật lên, dùng phông chữ 16px và có một hàng phím phía trên bàn phím: hoàn tác, thụt lề, tìm, ký hiệu và mũi tên. Máy tính giữ nguyên."
       },
       "boxes": {
         "title": "Hộp",

@@ -134,6 +134,19 @@
       "label": "Smartphone-Navigation",
       "menu": "Menü"
     },
+    "mobileEditor": {
+      "toolbar": "Editortasten",
+      "undo": "Rückgängig",
+      "redo": "Wiederholen",
+      "indent": "Einrücken",
+      "outdent": "Ausrücken",
+      "find": "Suchen",
+      "left": "Cursor nach links",
+      "right": "Cursor nach rechts",
+      "up": "Cursor nach oben",
+      "down": "Cursor nach unten",
+      "type": "{key} eingeben"
+    },
     "editor": {
       "contrast": {
         "title": "Einige Farben sind schwer lesbar",
@@ -391,7 +404,9 @@
           "fadeScale": "Einblenden und skalieren"
         },
         "pageTitles": "Seitentitel anzeigen",
-        "pageTitlesDescription": "Die Überschrift auf Serverseiten wie Dateien und Datenbanken. Suche und Buttons bleiben erhalten."
+        "pageTitlesDescription": "Die Überschrift auf Serverseiten wie Dateien und Datenbanken. Suche und Buttons bleiben erhalten.",
+        "mobileEditor": "Handyfreundlicher Dateieditor",
+        "mobileEditorDescription": "Auf Handys bricht der Code-Editor Zeilen um, blendet Minimap und Popups aus, nutzt eine 16px-Schrift und bekommt eine Tastenleiste über der Tastatur: Rückgängig, Einrücken, Suchen, Symbole und Pfeile. Am Desktop bleibt alles, wie es ist."
       },
       "boxes": {
         "title": "Boxen",

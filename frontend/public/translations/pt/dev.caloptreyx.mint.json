@@ -134,6 +134,19 @@
       "label": "Navegação no celular",
       "menu": "Menu"
     },
+    "mobileEditor": {
+      "toolbar": "Teclas do editor",
+      "undo": "Desfazer",
+      "redo": "Refazer",
+      "indent": "Aumentar recuo",
+      "outdent": "Diminuir recuo",
+      "find": "Localizar",
+      "left": "Mover o cursor para a esquerda",
+      "right": "Mover o cursor para a direita",
+      "up": "Mover o cursor para cima",
+      "down": "Mover o cursor para baixo",
+      "type": "Digitar {key}"
+    },
     "editor": {
       "contrast": {
         "title": "Algumas cores são difíceis de ler",
@@ -391,7 +404,9 @@
           "fadeScale": "Surgir com zoom"
         },
         "pageTitles": "Mostrar títulos de página",
-        "pageTitlesDescription": "O título nas páginas do servidor como Arquivos e Bancos de Dados. A pesquisa e os botões continuam."
+        "pageTitlesDescription": "O título nas páginas do servidor como Arquivos e Bancos de Dados. A pesquisa e os botões continuam.",
+        "mobileEditor": "Editor de arquivos para celular",
+        "mobileEditorDescription": "Nos celulares, o editor de código quebra as linhas, esconde o minimapa e os pop-ups, usa uma fonte de 16px e ganha uma fileira de teclas acima do teclado: desfazer, recuo, localizar, símbolos e setas. No desktop nada muda."
       },
       "boxes": {
         "title": "Caixas",

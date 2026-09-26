@@ -138,6 +138,19 @@ const translations = defineTranslations({
       label: 'Phone navigation',
       menu: 'Menu',
     },
+    mobileEditor: {
+      toolbar: 'Editor keys',
+      undo: 'Undo',
+      redo: 'Redo',
+      indent: 'Indent',
+      outdent: 'Outdent',
+      find: 'Find',
+      left: 'Move cursor left',
+      right: 'Move cursor right',
+      up: 'Move cursor up',
+      down: 'Move cursor down',
+      type: 'Type {key}',
+    },
     editor: {
       contrast: {
         title: 'Some colours are hard to read',
@@ -400,6 +413,9 @@ const translations = defineTranslations({
         },
         pageTitles: 'Show page titles',
         pageTitlesDescription: 'The heading on server pages like Files and Databases. Their search and buttons stay.',
+        mobileEditor: 'Phone-friendly file editor',
+        mobileEditorDescription:
+          'On phones the code editor wraps lines, hides the minimap and popups, uses a 16px font and gets a row of keys above the keyboard: undo, indent, find, symbols and arrows. Desktops stay as they are.',
       },
       boxes: {
         title: 'Boxes',

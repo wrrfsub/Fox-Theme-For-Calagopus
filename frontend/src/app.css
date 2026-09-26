@@ -491,6 +491,18 @@ html[data-nebula-bottom-nav] :is(.fixed.z-999, .z-998).bottom-4 {
   bottom: calc(1rem + var(--nebula-bottom-nav-h));
 }
 
+/* the phone file editor's key row (EditorKeys) with the on-screen keyboard closed: on the bottom edge clear of the
+   home indicator, or on Mint's bottom bar; an open keyboard sets its offset inline */
+html [data-nebula-editor-keys] {
+  bottom: 0;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+html[data-nebula-bottom-nav] [data-nebula-editor-keys] {
+  bottom: var(--nebula-bottom-nav-h);
+  padding-bottom: 0;
+}
+
 /* page transitions and the glassy toast's countdown; lib/theme.ts picks one (PAGE_ANIMATIONS), the editor's tiles play them all */
 @keyframes nebula-page-fade {
   from {

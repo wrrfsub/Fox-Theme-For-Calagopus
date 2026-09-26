@@ -134,6 +134,19 @@
       "label": "Mobilnavigation",
       "menu": "Menu"
     },
+    "mobileEditor": {
+      "toolbar": "Editortaster",
+      "undo": "Fortryd",
+      "redo": "Gentag",
+      "indent": "Indryk",
+      "outdent": "Ryk ud",
+      "find": "Søg",
+      "left": "Flyt markøren til venstre",
+      "right": "Flyt markøren til højre",
+      "up": "Flyt markøren op",
+      "down": "Flyt markøren ned",
+      "type": "Skriv {key}"
+    },
     "editor": {
       "contrast": {
         "title": "Nogle farver er svære at læse",
@@ -391,7 +404,9 @@
           "fadeScale": "Tone og skaler"
         },
         "pageTitles": "Vis sidetitler",
-        "pageTitlesDescription": "Overskriften på serversider som Filer og Databaser. Deres søgning og knapper bliver."
+        "pageTitlesDescription": "Overskriften på serversider som Filer og Databaser. Deres søgning og knapper bliver.",
+        "mobileEditor": "Telefonvenlig fileditor",
+        "mobileEditorDescription": "På telefoner ombryder kodeeditoren linjer, skjuler minikortet og pop op-vinduer, bruger en 16px skrift og får en række taster over tastaturet: fortryd, indryk, søg, symboler og pile. Computere forbliver som de er."
       },
       "boxes": {
         "title": "Bokse",

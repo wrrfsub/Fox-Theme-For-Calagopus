@@ -134,6 +134,19 @@
       "label": "手機導覽",
       "menu": "選單"
     },
+    "mobileEditor": {
+      "toolbar": "編輯器按鍵",
+      "undo": "復原",
+      "redo": "重做",
+      "indent": "增加縮排",
+      "outdent": "減少縮排",
+      "find": "尋找",
+      "left": "游標左移",
+      "right": "游標右移",
+      "up": "游標上移",
+      "down": "游標下移",
+      "type": "輸入 {key}"
+    },
     "editor": {
       "contrast": {
         "title": "部分顏色難以閱讀",
@@ -391,7 +404,9 @@
           "fadeScale": "縮放淡入"
         },
         "pageTitles": "顯示頁面標題",
-        "pageTitlesDescription": "「檔案」與「資料庫」等伺服器頁面上的標題。其搜尋與按鈕仍會保留。"
+        "pageTitlesDescription": "「檔案」與「資料庫」等伺服器頁面上的標題。其搜尋與按鈕仍會保留。",
+        "mobileEditor": "手機友善的檔案編輯器",
+        "mobileEditorDescription": "在手機上，程式碼編輯器會自動換行、隱藏縮圖與彈出視窗、使用 16px 字型，並在鍵盤上方顯示一排按鍵：復原、縮排、尋找、符號與方向鍵。桌面裝置維持不變。"
       },
       "boxes": {
         "title": "方框",

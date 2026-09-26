@@ -36,6 +36,9 @@ A dark theme for [Calagopus Panel](https://calagopus.com) with a live, built-in 
   (name, status, power buttons) can move out of it into a header or a floating bar above the pages.
 - **Phone navigation**: phones keep core's slide out menu or get a bottom bar with the main pages (Home,
   Console, Files and more on a server; Servers, Account, Admin on the dashboard) and a Menu button for the rest.
+- **Phone file editor**: on phones the file editor (Monaco) wraps lines, drops the minimap and popups, uses a
+  16px font and gets a row of keys above the keyboard: undo, redo, indent, find, the symbols phone keyboards
+  hide and arrows. On by default; desktops are unchanged.
 - **Menu links and search**: menu links can highlight filled, as a pill, or with just the icon in a tile, and
   the top of the menu can hold Quick actions, a server selector or a search bar for servers (and users, for
   admins).

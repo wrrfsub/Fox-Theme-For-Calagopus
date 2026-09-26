@@ -134,6 +134,19 @@
       "label": "Tālruņa navigācija",
       "menu": "Izvēlne"
     },
+    "mobileEditor": {
+      "toolbar": "Redaktora taustiņi",
+      "undo": "Atsaukt",
+      "redo": "Atcelt atsaukšanu",
+      "indent": "Palielināt atkāpi",
+      "outdent": "Samazināt atkāpi",
+      "find": "Meklēt",
+      "left": "Pārvietot kursoru pa kreisi",
+      "right": "Pārvietot kursoru pa labi",
+      "up": "Pārvietot kursoru uz augšu",
+      "down": "Pārvietot kursoru uz leju",
+      "type": "Ievadīt {key}"
+    },
     "editor": {
       "contrast": {
         "title": "Dažas krāsas ir grūti salasāmas",
@@ -391,7 +404,9 @@
           "fadeScale": "Parādīšanās ar mērogošanu"
         },
         "pageTitles": "Rādīt lapu virsrakstus",
-        "pageTitlesDescription": "Virsraksts servera lapās, piemēram, Faili un Datubāzes. To meklēšana un pogas paliek."
+        "pageTitlesDescription": "Virsraksts servera lapās, piemēram, Faili un Datubāzes. To meklēšana un pogas paliek.",
+        "mobileEditor": "Tālrunim piemērots failu redaktors",
+        "mobileEditorDescription": "Tālruņos koda redaktors aplauž rindas, paslēpj minikarti un uznirstošos logus, izmanto 16px fontu un virs tastatūras rāda taustiņu rindu: atsaukt, atkāpe, meklēt, simboli un bultiņas. Datoros viss paliek kā bijis."
       },
       "boxes": {
         "title": "Bloki",

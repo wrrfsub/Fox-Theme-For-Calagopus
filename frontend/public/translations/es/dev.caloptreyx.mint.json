@@ -134,6 +134,19 @@
       "label": "Navegación móvil",
       "menu": "Menú"
     },
+    "mobileEditor": {
+      "toolbar": "Teclas del editor",
+      "undo": "Deshacer",
+      "redo": "Rehacer",
+      "indent": "Aumentar sangría",
+      "outdent": "Reducir sangría",
+      "find": "Buscar",
+      "left": "Mover el cursor a la izquierda",
+      "right": "Mover el cursor a la derecha",
+      "up": "Mover el cursor arriba",
+      "down": "Mover el cursor abajo",
+      "type": "Escribir {key}"
+    },
     "editor": {
       "contrast": {
         "title": "Algunos colores son difíciles de leer",
@@ -391,7 +404,9 @@
           "fadeScale": "Aparecer con escala"
         },
         "pageTitles": "Mostrar títulos de página",
-        "pageTitlesDescription": "El encabezado de páginas del servidor como Archivos y Bases de datos. Su búsqueda y sus botones se mantienen."
+        "pageTitlesDescription": "El encabezado de páginas del servidor como Archivos y Bases de datos. Su búsqueda y sus botones se mantienen.",
+        "mobileEditor": "Editor de archivos adaptado a móviles",
+        "mobileEditorDescription": "En móviles el editor de código ajusta las líneas, oculta el minimapa y las ventanas emergentes, usa una fuente de 16px y muestra una fila de teclas sobre el teclado: deshacer, sangría, buscar, símbolos y flechas. En escritorio no cambia nada."
       },
       "boxes": {
         "title": "Cajas",

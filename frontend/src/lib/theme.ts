@@ -189,6 +189,8 @@ export interface NebulaTheme {
   /** The browser tab and home screen icon; '' keeps the panel's own. */
   favicon: string;
   mobileNav: MobileNav;
+  /** Phones (touch, editor under 768px wide): Monaco gets phone settings and the file editor a key row. */
+  mobileEditor: boolean;
 }
 
 export const DEFAULT_THEME: NebulaTheme = {
@@ -252,6 +254,7 @@ export const DEFAULT_THEME: NebulaTheme = {
   dockPosition: 'sidebar',
   favicon: '',
   mobileNav: 'drawer',
+  mobileEditor: true,
 };
 
 export const PRESETS: { name: string; theme: Partial<NebulaTheme> }[] = [
@@ -509,6 +512,7 @@ export function normalizeTheme(raw: unknown, d: NebulaTheme = DEFAULT_THEME): Ne
     dockPosition: DOCK_POSITIONS.find((position) => position === r.dockPosition) ?? d.dockPosition,
     favicon: url(r.favicon, d.favicon),
     mobileNav: MOBILE_NAVS.find((nav) => nav === r.mobileNav) ?? d.mobileNav,
+    mobileEditor: typeof r.mobileEditor === 'boolean' ? r.mobileEditor : d.mobileEditor,
   };
 }
 

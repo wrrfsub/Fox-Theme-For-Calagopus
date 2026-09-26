@@ -38,6 +38,7 @@ import {
   SUPPORT_LINK_ICONS,
   TABLE_STYLES,
   TOAST_STYLES,
+  withUserTheme,
 } from '../frontend/src/lib/theme.ts';
 
 const UUID_A = '0f8fad5b-d9cb-469f-a165-70867728950e';
@@ -1452,6 +1453,28 @@ describe('phone navigation', () => {
     }
     const d = { ...DEFAULT_THEME, mobileNav: 'bottomBar' } as const;
     assert.equal(normalizeTheme({ mobileNav: 'dock' }, d).mobileNav, 'bottomBar');
+  });
+
+  test('the phone file editor is on by default, also for themes saved before the option', () => {
+    assert.equal(DEFAULT_THEME.mobileEditor, true);
+    assert.equal(normalizeTheme({ accent: '#2fbf8f', mobileNav: 'bottomBar' }).mobileEditor, true);
+  });
+
+  test('mobileEditor only accepts booleans and falls back to the given theme', () => {
+    assert.equal(normalizeTheme({ mobileEditor: false }).mobileEditor, false);
+    assert.equal(normalizeTheme({ mobileEditor: true }, { ...DEFAULT_THEME, mobileEditor: false }).mobileEditor, true);
+    for (const bad of ['false', 'no', 0, 1, null, [], {}]) {
+      assert.equal(normalizeTheme({ mobileEditor: bad }).mobileEditor, true, String(bad));
+      assert.equal(
+        normalizeTheme({ mobileEditor: bad }, { ...DEFAULT_THEME, mobileEditor: false }).mobileEditor,
+        false,
+        String(bad),
+      );
+    }
+  });
+
+  test('mobileEditor is site wide, not part of a picked preset', () => {
+    assert.equal(withUserTheme(DEFAULT_THEME, { mobileEditor: false }).mobileEditor, true);
   });
 });
 

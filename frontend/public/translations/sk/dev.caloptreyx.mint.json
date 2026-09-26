@@ -134,6 +134,19 @@
       "label": "Navigácia na telefóne",
       "menu": "Ponuka"
     },
+    "mobileEditor": {
+      "toolbar": "Klávesy editora",
+      "undo": "Späť",
+      "redo": "Znova",
+      "indent": "Zväčšiť odsadenie",
+      "outdent": "Zmenšiť odsadenie",
+      "find": "Hľadať",
+      "left": "Posunúť kurzor doľava",
+      "right": "Posunúť kurzor doprava",
+      "up": "Posunúť kurzor nahor",
+      "down": "Posunúť kurzor nadol",
+      "type": "Napísať {key}"
+    },
     "editor": {
       "contrast": {
         "title": "Niektoré farby sú zle čitateľné",
@@ -391,7 +404,9 @@
           "fadeScale": "Prelínanie so zväčšením"
         },
         "pageTitles": "Zobraziť nadpisy stránok",
-        "pageTitlesDescription": "Nadpis na stránkach servera, ako sú Súbory a Databázy. Ich vyhľadávanie a tlačidlá zostanú."
+        "pageTitlesDescription": "Nadpis na stránkach servera, ako sú Súbory a Databázy. Ich vyhľadávanie a tlačidlá zostanú.",
+        "mobileEditor": "Editor súborov vhodný pre mobil",
+        "mobileEditorDescription": "Na telefónoch editor kódu zalamuje riadky, skryje minimapu a vyskakovacie okná, použije písmo 16px a nad klávesnicou zobrazí rad kláves: späť, odsadenie, hľadať, symboly a šípky. Na počítačoch zostáva všetko po starom."
       },
       "boxes": {
         "title": "Boxy",

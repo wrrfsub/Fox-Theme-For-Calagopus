@@ -134,6 +134,19 @@
       "label": "Nawigacja na telefonie",
       "menu": "Menu"
     },
+    "mobileEditor": {
+      "toolbar": "Klawisze edytora",
+      "undo": "Cofnij",
+      "redo": "Ponów",
+      "indent": "Zwiększ wcięcie",
+      "outdent": "Zmniejsz wcięcie",
+      "find": "Znajdź",
+      "left": "Przesuń kursor w lewo",
+      "right": "Przesuń kursor w prawo",
+      "up": "Przesuń kursor w górę",
+      "down": "Przesuń kursor w dół",
+      "type": "Wpisz {key}"
+    },
     "editor": {
       "contrast": {
         "title": "Niektóre kolory są słabo czytelne",
@@ -391,7 +404,9 @@
           "fadeScale": "Pojawienie ze skalowaniem"
         },
         "pageTitles": "Pokazuj tytuły stron",
-        "pageTitlesDescription": "Nagłówek na stronach serwera, takich jak Pliki i Bazy danych. Wyszukiwarka i przyciski pozostają."
+        "pageTitlesDescription": "Nagłówek na stronach serwera, takich jak Pliki i Bazy danych. Wyszukiwarka i przyciski pozostają.",
+        "mobileEditor": "Edytor plików przyjazny telefonom",
+        "mobileEditorDescription": "Na telefonach edytor kodu zawija wiersze, ukrywa minimapę i wyskakujące okienka, używa czcionki 16px i pokazuje nad klawiaturą rząd klawiszy: cofnij, wcięcie, znajdź, symbole i strzałki. Na komputerach nic się nie zmienia."
       },
       "boxes": {
         "title": "Pola",

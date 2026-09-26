@@ -66,7 +66,7 @@ function TransitionMock({ transition }: { transition: PageTransition }) {
   );
 }
 
-/** Toasts, page transitions and page titles. */
+/** Toasts, page transitions, page titles and the phone file editor. */
 export default function InterfaceField({ theme, set }: Props) {
   const { t } = useExtTranslations();
 
@@ -99,6 +99,12 @@ export default function InterfaceField({ theme, set }: Props) {
         description={t('editor.interface.pageTitlesDescription', {})}
         checked={theme.pageTitles}
         onChange={(e) => set({ pageTitles: e.currentTarget.checked })}
+      />
+      <Switch
+        label={t('editor.interface.mobileEditor', {})}
+        description={t('editor.interface.mobileEditorDescription', {})}
+        checked={theme.mobileEditor}
+        onChange={(e) => set({ mobileEditor: e.currentTarget.checked })}
       />
     </Stack>
   );

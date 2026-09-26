@@ -16,6 +16,7 @@ import { withAnnouncementCta, withServerAnnouncements } from './elements/announc
 import AnnouncementCtaTab from './elements/announcements/AnnouncementCtaTab.tsx';
 import { AuthLayout, withFormLinks } from './elements/auth/AuthLayout.tsx';
 import { AuthLogo, AuthScope, LOGIN_PREVIEW_PATH } from './elements/auth/AuthScope.tsx';
+import EditorKeys from './elements/files/EditorKeys.tsx';
 import ThemeChoiceCard from './elements/library/ThemeChoiceCard.tsx';
 import { hidePageTitle } from './elements/page/PageTitles.tsx';
 import PageTransition from './elements/page/PageTransition.tsx';
@@ -25,6 +26,7 @@ import { withNavSearch } from './elements/sidebar/NavSearch.tsx';
 import { RailLogo, RailTip } from './elements/sidebar/Rail.tsx';
 import SidebarShell from './elements/sidebar/SidebarShell.tsx';
 import { applyCachedTheme, listenForPreview, loadTheme, watchUserTheme } from './lib/apply.ts';
+import { mountMobileEditor } from './lib/mobileEditor.ts';
 import { attachTerminalFont, detachTerminalFont, initTerminalFont } from './lib/terminal.ts';
 import ServerConsole from './pages/ServerConsole.tsx';
 import ServerHome from './pages/ServerHome.tsx';
@@ -103,6 +105,11 @@ class DevCaloptreyxMintExtension extends Extension {
       .addInitHandler(initTerminalFont)
       .addAfterOpenHandler(attachTerminalFont)
       .addOnUnmountHandler(detachTerminalFont);
+
+    // `mobileEditor`: every Monaco editor gets phone settings on a phone, and the file editor page a row of the
+    // keys phone keyboards lack, above the on-screen keyboard
+    ctx.extensionRegistry.elements.monacoEditor.addOnMountHandler(mountMobileEditor);
+    ctx.extensionRegistry.pages.server.files.editorContainer.appendContentComponent(EditorKeys);
 
     // route changes animate the content column; the theme's CSS picks the animation, 'none' has no rule
     ctx.extensionRegistry.global.prependComponent(PageTransition);

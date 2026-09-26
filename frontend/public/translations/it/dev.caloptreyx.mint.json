@@ -134,6 +134,19 @@
       "label": "Navigazione su telefono",
       "menu": "Menu"
     },
+    "mobileEditor": {
+      "toolbar": "Tasti dell'editor",
+      "undo": "Annulla",
+      "redo": "Ripeti",
+      "indent": "Aumenta rientro",
+      "outdent": "Riduci rientro",
+      "find": "Trova",
+      "left": "Sposta il cursore a sinistra",
+      "right": "Sposta il cursore a destra",
+      "up": "Sposta il cursore in alto",
+      "down": "Sposta il cursore in basso",
+      "type": "Digita {key}"
+    },
     "editor": {
       "contrast": {
         "title": "Alcuni colori sono difficili da leggere",
@@ -391,7 +404,9 @@
           "fadeScale": "Dissolvenza con zoom"
         },
         "pageTitles": "Mostra i titoli delle pagine",
-        "pageTitlesDescription": "L'intestazione nelle pagine del server come File e Database. La ricerca e i pulsanti restano."
+        "pageTitlesDescription": "L'intestazione nelle pagine del server come File e Database. La ricerca e i pulsanti restano.",
+        "mobileEditor": "Editor di file adatto ai telefoni",
+        "mobileEditorDescription": "Sui telefoni l'editor di codice manda a capo le righe, nasconde la minimappa e i popup, usa un carattere da 16px e mostra una fila di tasti sopra la tastiera: annulla, rientro, trova, simboli e frecce. Sui computer non cambia nulla."
       },
       "boxes": {
         "title": "Riquadri",

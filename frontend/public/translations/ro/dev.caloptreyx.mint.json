@@ -134,6 +134,19 @@
       "label": "Navigare pe telefon",
       "menu": "Meniu"
     },
+    "mobileEditor": {
+      "toolbar": "Tastele editorului",
+      "undo": "Anulează",
+      "redo": "Refă",
+      "indent": "Mărește indentarea",
+      "outdent": "Micșorează indentarea",
+      "find": "Caută",
+      "left": "Mută cursorul la stânga",
+      "right": "Mută cursorul la dreapta",
+      "up": "Mută cursorul în sus",
+      "down": "Mută cursorul în jos",
+      "type": "Tastează {key}"
+    },
     "editor": {
       "contrast": {
         "title": "Unele culori sunt greu de citit",
@@ -391,7 +404,9 @@
           "fadeScale": "Apariție cu scalare"
         },
         "pageTitles": "Afișează titlurile paginilor",
-        "pageTitlesDescription": "Titlul de pe paginile serverului, precum Fișiere și Baze de date. Căutarea și butoanele lor rămân."
+        "pageTitlesDescription": "Titlul de pe paginile serverului, precum Fișiere și Baze de date. Căutarea și butoanele lor rămân.",
+        "mobileEditor": "Editor de fișiere potrivit pentru telefon",
+        "mobileEditorDescription": "Pe telefoane, editorul de cod încadrează rândurile, ascunde minimap-ul și ferestrele pop-up, folosește un font de 16px și afișează un rând de taste deasupra tastaturii: anulare, indentare, căutare, simboluri și săgeți. Pe desktop nu se schimbă nimic."
       },
       "boxes": {
         "title": "Casete",

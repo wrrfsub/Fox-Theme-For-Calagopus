@@ -134,6 +134,19 @@
       "label": "Mobilnavigering",
       "menu": "Meny"
     },
+    "mobileEditor": {
+      "toolbar": "Redigerartangenter",
+      "undo": "Ångra",
+      "redo": "Gör om",
+      "indent": "Öka indrag",
+      "outdent": "Minska indrag",
+      "find": "Sök",
+      "left": "Flytta markören åt vänster",
+      "right": "Flytta markören åt höger",
+      "up": "Flytta markören uppåt",
+      "down": "Flytta markören nedåt",
+      "type": "Skriv {key}"
+    },
     "editor": {
       "contrast": {
         "title": "Vissa färger är svåra att läsa",
@@ -391,7 +404,9 @@
           "fadeScale": "Tona och skala"
         },
         "pageTitles": "Visa sidrubriker",
-        "pageTitlesDescription": "Rubriken på serversidor som Filer och Databaser. Deras sökning och knappar finns kvar."
+        "pageTitlesDescription": "Rubriken på serversidor som Filer och Databaser. Deras sökning och knappar finns kvar.",
+        "mobileEditor": "Mobilvänlig filredigerare",
+        "mobileEditorDescription": "På telefoner radbryter kodredigeraren rader, döljer minikartan och popup-fönster, använder ett 16px-teckensnitt och får en rad tangenter ovanför tangentbordet: ångra, indrag, sök, symboler och pilar. Datorer förblir som de är."
       },
       "boxes": {
         "title": "Rutor",

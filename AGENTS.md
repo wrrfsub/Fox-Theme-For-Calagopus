@@ -26,7 +26,7 @@ frontend/src/lib/theme.ts  the theme model, normalizeTheme() and buildCss()
 frontend/src/lib/apply.ts  applies CSS (the site theme or the user's pick), caches it, preview bridge, useNebulaTheme()
 frontend/src/lib/library.ts  presets, users' theme choices and history: ids, normalizers, resolveUserTheme()
 frontend/src/pages/        ServerHome, ServerConsole, ServerList (dashboard), ThemeEditor
-frontend/src/elements/     account/, home/, dashboard/, editor/, library/ (presets, history, theme choice), sidebar/, page/ pieces
+frontend/src/elements/     account/, home/, dashboard/, editor/, files/ (phone editor keys), library/ (presets, history, theme choice), sidebar/, page/ pieces
 frontend/src/app.css       static CSS: @font-face, flush sidebar, active link, sidebar sections, keyframes
 frontend/src/translations.ts  every user facing string
 tests/theme.test.ts        node:test cases for normalizeTheme() and buildCss() (not shipped)
@@ -194,6 +194,20 @@ and break silently when core moves a file. Everything here is runtime:
   is only set once `document.fonts` has loaded it, because xterm measures its cells when the option changes;
   a font still loading leaves the grid sized for the fallback. Its colours are core's `getXtermTheme()`, reset
   on every scheme change; xterm 6 draws with DOM spans, so light mode fixes them in `buildCss` instead.
+- `mobileEditor` (`lib/mobileEditor.ts`, `elements/files/EditorKeys.tsx`). `elements.monacoEditor.addOnMountHandler`
+  runs for every Monaco editor (file editor, tree pane, database console, logs; not diff editors): on a touch device
+  whose editor node is under 768px wide it swaps in phone options (wrap, no minimap, folding, gutter extras or
+  popups, font at least 16px so iOS doesn't zoom) and restores them when a layout change (rotation) or the option
+  says so. `@monaco-editor/react` hands core's `options` prop (wordWrap, minimap, fontSize from the file manager's
+  editor settings) to `updateOptions` on every render, so the handler wraps that editor's `updateOptions` while the
+  phone options are on: a repeated value keeps the phone value, a changed one is the user's and stands (fonts only
+  from 16px up). The handler keeps a registry of mounted editors, most recently focused last.
+  `pages.server.files.editorContainer.appendContentComponent(EditorKeys)` adds the key row to the file editor
+  page: the editor it drives is the registry's latest one inside the same content div, shown only for the
+  'monaco' engine (core defaults touch devices to 'pierre', left alone) and editable editors, `lg:hidden!`. It is
+  fixed above the on-screen keyboard (core's `useVisualViewportBottomInset`), else app.css puts it on the bottom
+  edge or on `--nebula-bottom-nav-h`; it reserves the strip it covers with Monaco's `padding.bottom` and
+  `cursorSurroundingLines`. Keys `preventDefault` pointer and mouse down so the editor keeps focus.
 - `pages.auth.prependComponent(AuthScope)` (`elements/auth/AuthScope.tsx`) puts `nebula-auth` on html
   while any auth page is mounted; `buildCss` scopes `loginBackground` to it. `AppIcon.addRenderInterceptor`
   wraps core's logo in `AuthLogo`, which shows `loginLogo` instead only while that scope is active.
@@ -322,6 +336,9 @@ replaced by hand today).
 - The panel's `sm`/`md`/`lg`/`xl` (and `max-*`) are container queries on the page content beside the
   sidebar (`@container page`, see core's `breakpoints.css`), not the window, so the same class switches
   at a wider window when the sidebar is showing. Check layouts at real window sizes.
+- The panel builds with the React Compiler, which caches a component's calls by their arguments. A call that
+  reads a module level store must take that store's `useSyncExternalStore` value as an argument, or the
+  component keeps the first answer (see `activeEditorIn(scope, version)` in `lib/mobileEditor.ts`).
 - Tailwind utilities live in a CSS layer and Mantine's styles do not, so Mantine wins over a plain
   utility on its own components (a card's `outline-2` computes to none). Add `!` (`outline-2!`).
 - Core pins the desktop sidebar's `display`, `position` and width with Tailwind `!` utilities. A layered

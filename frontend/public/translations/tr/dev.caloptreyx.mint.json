@@ -134,6 +134,19 @@
       "label": "Telefon gezinmesi",
       "menu": "Menü"
     },
+    "mobileEditor": {
+      "toolbar": "Düzenleyici tuşları",
+      "undo": "Geri al",
+      "redo": "Yinele",
+      "indent": "Girintiyi artır",
+      "outdent": "Girintiyi azalt",
+      "find": "Bul",
+      "left": "İmleci sola taşı",
+      "right": "İmleci sağa taşı",
+      "up": "İmleci yukarı taşı",
+      "down": "İmleci aşağı taşı",
+      "type": "{key} yaz"
+    },
     "editor": {
       "contrast": {
         "title": "Bazı renklerin okunması zor",
@@ -391,7 +404,9 @@
           "fadeScale": "Ölçekli belirme"
         },
         "pageTitles": "Sayfa başlıklarını göster",
-        "pageTitlesDescription": "Dosyalar ve Veritabanları gibi sunucu sayfalarındaki başlık. Arama ve butonları yerinde kalır."
+        "pageTitlesDescription": "Dosyalar ve Veritabanları gibi sunucu sayfalarındaki başlık. Arama ve butonları yerinde kalır.",
+        "mobileEditor": "Telefon dostu dosya düzenleyici",
+        "mobileEditorDescription": "Telefonlarda kod düzenleyici satırları kaydırır, mini haritayı ve açılır pencereleri gizler, 16px yazı tipi kullanır ve klavyenin üstünde bir tuş sırası gösterir: geri al, girinti, bul, semboller ve oklar. Masaüstü olduğu gibi kalır."
       },
       "boxes": {
         "title": "Kutular",
