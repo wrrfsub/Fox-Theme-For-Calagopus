@@ -1,10 +1,20 @@
-import { faList, faTableCellsLarge } from '@fortawesome/free-solid-svg-icons';
+import {
+  faArrowDownShortWide,
+  faArrowDownWideShort,
+  faList,
+  faSort,
+  faSortDown,
+  faSortUp,
+  faTableCellsLarge,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Pagination } from '@mantine/core';
 import { useCallback, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import type { z } from 'zod';
 import getServers from '@/api/server/getServers.ts';
+import ActionIcon from '@/elements/ActionIcon.tsx';
+import Badge from '@/elements/Badge.tsx';
 import { AdminCan } from '@/elements/Can.tsx';
 import Card from '@/elements/Card.tsx';
 import Group from '@/elements/Group.tsx';
@@ -24,8 +34,26 @@ import { useBulkPowerActions } from '@/plugins/server/useBulkPowerActions.ts';
 import { useServerListShowOthers } from '@/plugins/server/useServerListShowOthers.ts';
 import { useStartOnGroupedServers } from '@/plugins/server/useStartOnGroupedServers.ts';
 import { useTranslations } from '@/providers/TranslationProvider.tsx';
+import { useUserStore } from '@/stores/user.ts';
 import ServerCard, { GRID_CLASS } from '../elements/dashboard/ServerCard.tsx';
 import ServerRow, { COLUMN_CLASS, COLUMNS, ROW_GRID, type RowStatus } from '../elements/dashboard/ServerRow.tsx';
+import {
+  GROUP_KEYS,
+  GROUP_STORAGE_KEY,
+  type GroupKey,
+  groupServers,
+  LIVE_SORT_KEYS,
+  nextSort,
+  type OrderContext,
+  parseGroup,
+  parseSort,
+  type ServerGroup,
+  SORT_KEYS,
+  SORT_STORAGE_KEY,
+  type Sort,
+  serializeSort,
+  sortServers,
+} from '../elements/dashboard/serverOrder.ts';
 import { useNebulaTheme } from '../lib/apply.ts';
 import { useExtTranslations } from '../translations.ts';
 
@@ -34,11 +62,21 @@ type Filter = 'all' | RowStatus;
 const VIEW_KEY = 'nebula:server-view';
 const FILTERS: Filter[] = ['all', 'running', 'offline', 'suspended'];
 
-function storedView(): View {
+function stored(key: string): string | null {
   try {
-    return localStorage.getItem(VIEW_KEY) === 'grid' ? 'grid' : 'list';
+    return localStorage.getItem(key);
   } catch {
-    return 'list';
+    return null;
+  }
+}
+
+/** Remembers a toolbar choice for this browser; `null` forgets it. */
+function store(key: string, value: string | null) {
+  try {
+    if (value === null) localStorage.removeItem(key);
+    else localStorage.setItem(key, value);
+  } catch {
+    // the choice just won't survive a reload
   }
 }
 
@@ -50,11 +88,18 @@ export default function ServerList() {
   const { pathname } = useLocation();
   const [startOnGrouped] = useStartOnGroupedServers();
   const [showOthers, setShowOthers] = useServerListShowOthers();
-  const [view, setView] = useState<View>(storedView);
+  const [view, setView] = useState<View>(() => (stored(VIEW_KEY) === 'grid' ? 'grid' : 'list'));
+  const [sort, setSort] = useState<Sort | null>(() => parseSort(stored(SORT_STORAGE_KEY)));
+  const [group, setGroup] = useState<GroupKey>(() => parseGroup(stored(GROUP_STORAGE_KEY)));
   const [filter, setFilter] = useState<Filter>('all');
   const [statuses, setStatuses] = useState<Record<string, RowStatus>>({});
   const [selected, setSelected] = useState<string[]>([]);
   const { handleBulkPowerAction, bulkActionLoading } = useBulkPowerActions();
+
+  // Each row subscribes to its node through core's useServerStats, which fills this store. The list reads
+  // the same store, and only while it sorts by a live value, so it does not re-render on every stats tick.
+  const liveSort = sort !== null && LIVE_SORT_KEYS.includes(sort.key);
+  const usage = useUserStore((state) => (liveSort ? state.serverResourceUsage : null));
 
   const {
     data: servers,
@@ -76,11 +121,15 @@ export default function ServerList() {
 
   const changeView = (next: View) => {
     setView(next);
-    try {
-      localStorage.setItem(VIEW_KEY, next);
-    } catch {
-      // the choice just won't survive a reload
-    }
+    store(VIEW_KEY, next);
+  };
+  const changeSort = (next: Sort | null) => {
+    setSort(next);
+    store(SORT_STORAGE_KEY, serializeSort(next));
+  };
+  const changeGroup = (next: GroupKey) => {
+    setGroup(next);
+    store(GROUP_STORAGE_KEY, next);
   };
 
   // core keeps the grouped list on '/' when the user starts there, so the tabs follow that setting
@@ -89,7 +138,14 @@ export default function ServerList() {
 
   const rows = servers?.data ?? [];
   const matches = (uuid: string) => filter === 'all' || statuses[uuid] === filter;
-  const visible = rows.filter((server) => matches(server.uuid));
+  // the servers API has no sort parameter, so sorting and grouping order the page that is loaded
+  const order: OrderContext = { status: (uuid) => statuses[uuid], usage: (uuid) => usage?.[uuid] };
+  const visible = sortServers(
+    rows.filter((server) => matches(server.uuid)),
+    sort,
+    order,
+  );
+  const groups = groupServers(visible, group, sort, order);
   const pages = Math.ceil((servers?.total ?? 0) / (servers?.perPage || 1));
 
   // Only what is on screen can be selected. A server hidden by the filter, the search or a page change is
@@ -115,39 +171,103 @@ export default function ServerList() {
     setSelected([]);
   };
 
-  const cards = theme.tableStyle === 'cards';
-  // the header's transparent border lines its columns up with the rows' when each row is a bordered card
-  const listHeader = (
-    <div
-      className={`${ROW_GRID} ${cards ? 'py-2 border border-transparent' : 'py-3 border-b border-(--mantine-color-default-border)'} text-xs font-semibold tracking-wider uppercase text-(--mantine-color-dimmed)`}
-    >
-      <div>
+  // a group's heading ticks or clears just that group's servers
+  const groupHeading = (entry: ServerGroup, className: string) => {
+    const ids = entry.servers.map((server) => server.uuid);
+    const picked = ids.filter((uuid) => chosen.includes(uuid)).length;
+    const name = group === 'status' ? tExt(`servers.filter.${entry.key as RowStatus}`, {}) : entry.label;
+    return (
+      <div key={`group:${entry.key}`} className={`flex min-w-0 items-center gap-3 ${className}`}>
         <Checkbox
-          checked={allChosen}
-          indeterminate={chosen.length > 0 && !allChosen}
-          onChange={() => setSelected(allChosen ? [] : visibleIds)}
-          aria-label={tExt('servers.selectAll', {})}
+          checked={picked === ids.length}
+          indeterminate={picked > 0 && picked < ids.length}
+          onChange={() =>
+            setSelected((prev) => [
+              ...prev.filter((uuid) => !ids.includes(uuid)),
+              ...(picked === ids.length ? [] : ids),
+            ])
+          }
+          aria-label={tExt('serverSort.selectGroup', { name })}
         />
+        <Text component='h3' fw={600} size='sm' truncate>
+          {name}
+        </Text>
+        <Badge variant='light' color='gray' size='sm' className='shrink-0'>
+          {ids.length}
+        </Badge>
       </div>
-      {COLUMNS.map((column) => (
-        <span key={column} className={`${COLUMN_CLASS[column]} ${column === 'game' ? 'max-md:invisible' : ''}`}>
-          {tExt(`servers.column.${column}`, {})}
-        </span>
-      ))}
+    );
+  };
+  const grouped = group !== 'none';
+
+  const cards = theme.tableStyle === 'cards';
+  // the header's transparent border lines its columns up with the rows' when each row is a bordered card;
+  // the table role is only there so the column headers can carry aria-sort
+  const listHeader = (
+    <div role='table' aria-label={tExt('servers.title', {})}>
+      <div
+        role='row'
+        className={`${ROW_GRID} ${cards ? 'py-2 border border-transparent' : 'py-3 border-b border-(--mantine-color-default-border)'} text-xs font-semibold tracking-wider uppercase text-(--mantine-color-dimmed)`}
+      >
+        <div role='columnheader'>
+          <Checkbox
+            checked={allChosen}
+            indeterminate={chosen.length > 0 && !allChosen}
+            onChange={() => setSelected(allChosen ? [] : visibleIds)}
+            aria-label={tExt('servers.selectAll', {})}
+          />
+        </div>
+        {COLUMNS.map((column) => {
+          const dir = sort?.key === column ? sort.dir : null;
+          return (
+            <div
+              key={column}
+              role='columnheader'
+              aria-sort={dir === 'asc' ? 'ascending' : dir === 'desc' ? 'descending' : 'none'}
+              className={`min-w-0 ${COLUMN_CLASS[column]} ${column === 'game' ? 'max-md:invisible' : ''}`}
+            >
+              <button
+                type='button'
+                onClick={() => changeSort(nextSort(sort, column))}
+                className='inline-flex max-w-full cursor-pointer items-center gap-1.5 rounded-sm font-semibold tracking-wider uppercase hover:text-(--mantine-color-text) focus-visible:outline-2 focus-visible:outline-(--mantine-color-blue-filled)'
+              >
+                <span className='truncate'>{tExt(`servers.column.${column}`, {})}</span>
+                <FontAwesomeIcon
+                  icon={dir === 'asc' ? faSortUp : dir === 'desc' ? faSortDown : faSort}
+                  className={dir ? 'text-(--mantine-color-text)' : 'opacity-40'}
+                />
+              </button>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
-  const listRows = visible.map((server) => (
-    <ServerRow
-      key={server.uuid}
-      server={server}
-      art={theme.eggs[server.egg.uuid]?.banner || theme.homeBanner}
-      icon={theme.eggs[server.egg.uuid]?.icon}
-      card={cards}
-      selected={chosen.includes(server.uuid)}
-      onSelect={onSelect(server.uuid)}
-      onStatus={onStatus}
-    />
-  ));
+  // every row and heading stays a sibling, so a row that changes group moves instead of remounting
+  const listRows = groups.flatMap((entry) => [
+    ...(grouped
+      ? [
+          groupHeading(
+            entry,
+            cards
+              ? 'px-4 pt-3 border-x border-transparent'
+              : 'px-4 py-2 border-b border-(--mantine-color-default-border) bg-(--mantine-color-default-hover)',
+          ),
+        ]
+      : []),
+    ...entry.servers.map((server) => (
+      <ServerRow
+        key={server.uuid}
+        server={server}
+        art={theme.eggs[server.egg.uuid]?.banner || theme.homeBanner}
+        icon={theme.eggs[server.egg.uuid]?.icon}
+        card={cards}
+        selected={chosen.includes(server.uuid)}
+        onSelect={onSelect(server.uuid)}
+        onStatus={onStatus}
+      />
+    )),
+  ]);
 
   return (
     <>
@@ -181,6 +301,38 @@ export default function ServerList() {
           onChange={(value) => setFilter((value as Filter) ?? 'all')}
           w={150}
         />
+        <Select
+          data={GROUP_KEYS.map((value) => ({ value, label: tExt(`serverSort.group.${value}`, {}) }))}
+          value={group}
+          onChange={(value) => changeGroup(parseGroup(value))}
+          aria-label={tExt('serverSort.groupBy', {})}
+          w={170}
+        />
+        {/* the list's headers sort once every column shows; until then (and in the grid) this does */}
+        <div className={`flex items-center gap-1 ${view === 'list' ? 'lg:hidden' : ''}`}>
+          <Select
+            data={[
+              { value: 'none', label: tExt('serverSort.sort.none', {}) },
+              ...SORT_KEYS.map((value) => ({ value, label: tExt(`serverSort.sort.${value}`, {}) })),
+            ]}
+            value={sort?.key ?? 'none'}
+            onChange={(value) => {
+              const key = SORT_KEYS.find((option) => option === value);
+              changeSort(key ? { key, dir: sort?.dir ?? 'asc' } : null);
+            }}
+            aria-label={tExt('serverSort.sortBy', {})}
+            w={160}
+          />
+          <ActionIcon
+            variant='default'
+            size='input-sm'
+            disabled={!sort}
+            onClick={() => sort && changeSort({ ...sort, dir: sort.dir === 'asc' ? 'desc' : 'asc' })}
+            aria-label={tExt(sort?.dir === 'desc' ? 'serverSort.descending' : 'serverSort.ascending', {})}
+          >
+            <FontAwesomeIcon icon={sort?.dir === 'desc' ? faArrowDownWideShort : faArrowDownShortWide} />
+          </ActionIcon>
+        </div>
         <SegmentedControl
           value={view}
           onChange={(value) => changeView(value as View)}
@@ -210,19 +362,23 @@ export default function ServerList() {
       ) : rows.length === 0 ? (
         <Text c='dimmed'>{t('pages.account.home.noServers', {})}</Text>
       ) : view === 'grid' ? (
+        // headings span the whole row whatever the card style's column count, and the cards stay siblings
         <div className={GRID_CLASS[theme.serverCardStyle]}>
-          {visible.map((server) => (
-            <ServerCard
-              key={server.uuid}
-              server={server}
-              art={theme.eggs[server.egg.uuid]?.banner || theme.homeBanner}
-              variant={theme.serverCardStyle}
-              icon={theme.eggs[server.egg.uuid]?.icon}
-              selected={chosen.includes(server.uuid)}
-              onSelect={onSelect(server.uuid)}
-              onStatus={onStatus}
-            />
-          ))}
+          {groups.flatMap((entry) => [
+            ...(grouped ? [groupHeading(entry, 'col-span-full px-1 not-first:mt-2')] : []),
+            ...entry.servers.map((server) => (
+              <ServerCard
+                key={server.uuid}
+                server={server}
+                art={theme.eggs[server.egg.uuid]?.banner || theme.homeBanner}
+                variant={theme.serverCardStyle}
+                icon={theme.eggs[server.egg.uuid]?.icon}
+                selected={chosen.includes(server.uuid)}
+                onSelect={onSelect(server.uuid)}
+                onStatus={onStatus}
+              />
+            )),
+          ])}
         </div>
       ) : cards ? (
         // the 'cards' table style: every row is a card of its own under a plain header, like core's tables
