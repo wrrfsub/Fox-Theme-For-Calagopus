@@ -9,7 +9,7 @@ import {
   faPowerOff,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { type ReactNode, useEffect, useMemo, useRef, useState } from 'react';
+import { createContext, type ReactNode, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 import CopyOnClick from '@/elements/CopyOnClick.tsx';
 import ChartBlock from '@/elements/charts/ChartBlock.tsx';
@@ -19,7 +19,14 @@ import ExtensionSlot from '@/elements/ExtensionSlot.tsx';
 import Group from '@/elements/Group.tsx';
 import StatCard from '@/elements/StatCard.tsx';
 import TitleCard from '@/elements/TitleCard.tsx';
-import { formatBytes, formatBytesRate, formatPercent, useStreamChart } from '@/lib/chart.ts';
+import {
+  type ChartLegendProps,
+  formatBytes,
+  formatBytesRate,
+  formatPercent,
+  type StreamChartProps,
+  useStreamChart,
+} from '@/lib/chart.ts';
 import { formatAllocation, serverStatusInfo } from '@/lib/server.ts';
 import { bytesToString, mbToBytes } from '@/lib/size.ts';
 import { formatMilliseconds } from '@/lib/time.ts';
@@ -241,16 +248,29 @@ function StatBlocks() {
   );
 }
 
+/** What a chart widget draws from one of core's `useStreamChart` hooks. */
+interface StreamChartData {
+  props: StreamChartProps;
+  legend: ChartLegendProps;
+  value: string | null;
+}
+
+interface ConsoleCharts {
+  cpu: StreamChartData;
+  memory: StreamChartData;
+  network: StreamChartData;
+  offline: boolean;
+}
+
+const ConsoleChartsContext = createContext<ConsoleCharts | null>(null);
+
 /**
- * A run of core's live charts, fed exactly like core's `ServerStats` (which only exports all three at once).
- * Three charts in a row use core's own grid, so the default page is unchanged.
+ * The data behind the chart widgets, fed exactly like core's `ServerStats` (which only exports all three at once).
+ * It wraps the page instead of living in `ChartsWidget`, so a chart moved to another slot (a remount) comes back
+ * with the history it already drew, and the feed runs once however the charts are split. The page unmounts when
+ * the server changes, which starts the history over like core's.
  */
-export function ChartsWidget({
-  charts,
-  withBlocks,
-  placement,
-  className,
-}: WidgetProps & { charts: ChartWidget[]; withBlocks: boolean }) {
+export function ConsoleChartsProvider({ children }: { children: ReactNode }) {
   const { t } = useTranslations();
   const server = useServerStore((state) => state.server);
   const stats = useServerStore((state) => state.stats);
@@ -318,6 +338,23 @@ export function ChartsWidget({
       timestamp: now,
     };
   }, [stats, offline, cpu.push, memory.push, network.push]);
+
+  return (
+    <ConsoleChartsContext.Provider value={{ cpu, memory, network, offline }}>{children}</ConsoleChartsContext.Provider>
+  );
+}
+
+/** A run of core's live charts; three in a row use core's own grid, so the default page is unchanged. */
+export function ChartsWidget({
+  charts,
+  withBlocks,
+  placement,
+  className,
+}: WidgetProps & { charts: ChartWidget[]; withBlocks: boolean }) {
+  const { t } = useTranslations();
+  const data = useContext(ConsoleChartsContext);
+  if (!data) throw new Error('ChartsWidget renders inside ConsoleChartsProvider');
+  const { cpu, memory, network, offline } = data;
 
   const overlayIcon = <FontAwesomeIcon icon={faPowerOff} className='text-2xl' />;
   const overlayLabel = offline ? t('pages.server.console.stats.offline', {}) : undefined;

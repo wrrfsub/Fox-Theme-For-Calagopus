@@ -7,6 +7,7 @@ import {
   BannerWidget,
   ChartsWidget,
   type ChartWidget,
+  ConsoleChartsProvider,
   ExtensionCardsWidget,
   InfoWidget,
   isChartWidget,
@@ -88,38 +89,43 @@ export default function ServerConsole() {
       hideTitleComponent
       registry={window.extensionContext.extensionRegistry.pages.server.console.container}
     >
-      {slots.top.map((block) => render(block, 'row', 'mb-4'))}
+      {/* the chart data lives above the slots, so a chart moved to another slot keeps its history */}
+      <ConsoleChartsProvider>
+        {slots.top.map((block) => render(block, 'row', 'mb-4'))}
 
-      {/*
-        The terminal comes first so it stays mounted when columns come and go, and so the columns stack under
-        it on narrow pages; the left column is ordered in front of it once they sit side by side. xterm refits
-        on any size change of its box (core's ResizeObserver), so the columns do not break it.
-      */}
-      <div className={`flex flex-col gap-4 ${both ? 'xl:flex-row' : 'lg:flex-row'} ${hasBottom ? 'mb-4' : ''}`}>
-        <div
-          className={`flex flex-col h-[62vh] min-h-72 min-w-0 ${both ? 'xl:flex-1' : 'lg:flex-1'}`}
-          style={
-            keyboardInset > 0 ? { height: `max(8rem, min(62vh, calc(100dvh - ${keyboardInset}px - 7rem)))` } : undefined
-          }
-        >
-          <Console />
+        {/*
+          The terminal comes first so it stays mounted when columns come and go, and so the columns stack under
+          it on narrow pages; the left column is ordered in front of it once they sit side by side. xterm refits
+          on any size change of its box (core's ResizeObserver), so the columns do not break it.
+        */}
+        <div className={`flex flex-col gap-4 ${both ? 'xl:flex-row' : 'lg:flex-row'} ${hasBottom ? 'mb-4' : ''}`}>
+          <div
+            className={`flex flex-col h-[62vh] min-h-72 min-w-0 ${both ? 'xl:flex-1' : 'lg:flex-1'}`}
+            style={
+              keyboardInset > 0
+                ? { height: `max(8rem, min(62vh, calc(100dvh - ${keyboardInset}px - 7rem)))` }
+                : undefined
+            }
+          >
+            <Console />
+          </div>
+          {(['left', 'right'] as const).map(
+            (side) =>
+              slots[side].length > 0 && (
+                <div
+                  key={side}
+                  className={`flex flex-col gap-4 min-w-0 shrink-0 ${both ? 'xl:w-80 2xl:w-96' : 'lg:w-80 2xl:w-96'} ${
+                    side === 'right' ? '' : both ? 'xl:order-first' : 'lg:order-first'
+                  }`}
+                >
+                  {slots[side].map((block) => render(block, 'side'))}
+                </div>
+              ),
+          )}
         </div>
-        {(['left', 'right'] as const).map(
-          (side) =>
-            slots[side].length > 0 && (
-              <div
-                key={side}
-                className={`flex flex-col gap-4 min-w-0 shrink-0 ${both ? 'xl:w-80 2xl:w-96' : 'lg:w-80 2xl:w-96'} ${
-                  side === 'right' ? '' : both ? 'xl:order-first' : 'lg:order-first'
-                }`}
-              >
-                {slots[side].map((block) => render(block, 'side'))}
-              </div>
-            ),
-        )}
-      </div>
 
-      {slots.bottom.map((block, index) => render(block, 'row', index < slots.bottom.length - 1 ? 'mb-4' : undefined))}
+        {slots.bottom.map((block, index) => render(block, 'row', index < slots.bottom.length - 1 ? 'mb-4' : undefined))}
+      </ConsoleChartsProvider>
     </ServerContentContainer>
   );
 }
