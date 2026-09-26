@@ -1,0 +1,569 @@
+{
+  "items": {},
+  "translations": {
+    "nav": {
+      "editor": "Temaeditor"
+    },
+    "home": {
+      "title": "Hjem",
+      "address": "Serveradresse",
+      "location": "Lokation",
+      "gettingStarted": "Kom godt i gang",
+      "information": "Serverinformation",
+      "installed": "Installeret",
+      "serverName": "Servernavn",
+      "status": "Status",
+      "uptime": "Oppetid",
+      "node": "Node",
+      "memory": "Hukommelse",
+      "image": "Image",
+      "console": "Konsol",
+      "fullLog": "Fuld serverlog",
+      "usage": "Forbrug",
+      "cpu": "CPU",
+      "ram": "RAM",
+      "storage": "Lagerplads",
+      "network": "Netværk",
+      "inbound": "Indgående",
+      "outbound": "Udgående",
+      "sftp": "SFTP"
+    },
+    "servers": {
+      "title": "Mine servere",
+      "subtitle": "Dine servere og dem, der er delt med dig.",
+      "actions": "Serverhandlinger",
+      "cpu": "CPU",
+      "disk": "Disk",
+      "showing": "Viser {count}",
+      "select": "Vælg {name}",
+      "selectAll": "Vælg alle synlige servere",
+      "column": {
+        "id": "ID",
+        "name": "Navn",
+        "game": "Spil",
+        "status": "Status",
+        "location": "Lokation",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "uptime": "Oppetid",
+        "memory": "Hukommelse"
+      },
+      "filter": {
+        "all": "Alle servere",
+        "running": "Online",
+        "offline": "Offline",
+        "suspended": "Suspenderet",
+        "other": "Andet"
+      },
+      "view": {
+        "list": "Listevisning",
+        "grid": "Gittervisning"
+      }
+    },
+    "serverSort": {
+      "sortBy": "Sortér efter",
+      "sort": {
+        "none": "Standardrækkefølge",
+        "name": "Sortér efter navn",
+        "status": "Sortér efter status",
+        "game": "Sortér efter spil",
+        "location": "Sortér efter lokation",
+        "cpu": "Sortér efter CPU",
+        "ram": "Sortér efter RAM",
+        "uptime": "Sortér efter oppetid",
+        "id": "Sortér efter ID"
+      },
+      "ascending": "Stigende, klik for at vende",
+      "descending": "Faldende, klik for at vende",
+      "groupBy": "Gruppér efter",
+      "group": {
+        "none": "Ingen gruppering",
+        "location": "Gruppér efter lokation",
+        "game": "Gruppér efter spil",
+        "status": "Gruppér efter status"
+      },
+      "selectGroup": "Vælg alle i {name}"
+    },
+    "account": {
+      "changeBanner": "Skift banner",
+      "removeBanner": "Fjern banner",
+      "changeAvatar": "Skift avatar",
+      "bannerFile": "Billede",
+      "bannerHint": "PNG, JPEG, WebP eller GIF. Træk for at vælge den del, der vises. Kun du kan se det.",
+      "admin": "Administrator",
+      "twoFactorOn": "2FA aktiveret",
+      "twoFactorOff": "2FA deaktiveret"
+    },
+    "announcementCta": {
+      "tab": "Call to action",
+      "title": "Call to action",
+      "description": "Vis en knap på meddelelsen.",
+      "enable": "Aktivér call to action",
+      "enableDescription": "Tilføjer en knap under meddelelsens tekst i meddelelsens farve.",
+      "buttonTitle": "Knaptitel",
+      "buttonTitleDescription": "Teksten på knappen, op til {max} tegn.",
+      "buttonTitlePlaceholder": "Besøg butikken",
+      "buttonLink": "Knaplink",
+      "buttonLinkDescription": "Hvor den fører hen: en panelside som /account åbnes på stedet, en fuld https://-adresse åbnes i en ny fane.",
+      "buttonLinkPlaceholder": "/account eller https://example.com",
+      "titleRequired": "Giv knappen en titel.",
+      "titleTooLong": "Titlen må højst være på {max} tegn.",
+      "titleInvalid": "Fjern tabulatorer og linjeskift fra titlen.",
+      "linkInvalid": "Brug en panelsti, der starter med en enkelt /, eller en fuld http://- eller https://-adresse uden mellemrum, anførselstegn, vinkelparenteser, parenteser, krøllede parenteser, semikolonner eller omvendte skråstreger.",
+      "linkTooLong": "Linket må højst være på {max} tegn.",
+      "saved": "Call to action gemt.",
+      "removed": "Call to action fjernet."
+    },
+    "auth": {
+      "supportLinks": "Supportlinks"
+    },
+    "navSearch": {
+      "placeholder": "Søg...",
+      "servers": "Servere",
+      "allServers": "Alle servere",
+      "users": "Brugere",
+      "empty": "Intet fundet",
+      "everything": "Søg overalt efter »{query}«",
+      "quickActions": "Åbn hurtige handlinger",
+      "switchServer": "Skift server"
+    },
+    "topBar": {
+      "navigation": "Hovedmenu"
+    },
+    "bottomNav": {
+      "label": "Mobilnavigation",
+      "menu": "Menu"
+    },
+    "editor": {
+      "contrast": {
+        "title": "Nogle farver er svære at læse",
+        "description": "Under WCAG-minimum; du kan stadig gemme.",
+        "pair": "{fg} på {bg}: {ratio}:1 (sigt efter {min}:1)",
+        "low": "Lav kontrast med {other}: {ratio}:1 (sigt efter {min}:1)",
+        "lowAs": "Lav kontrast som {role} på {other}: {ratio}:1 (sigt efter {min}:1)",
+        "named": "{name} ({role})",
+        "roles": {
+          "links": "links",
+          "dimmed": "nedtonet tekst"
+        }
+      },
+      "favicon": {
+        "label": "Ikon i browserfane",
+        "description": "Erstatter panelets ikon i browserfaner og på startskærme, også på loginsider. Lad feltet stå tomt for at beholde panelets ikon. En kvadratisk PNG, ICO eller SVG fungerer bedst.",
+        "preview": "Forhåndsvisning af fane"
+      },
+      "close": "Luk editor",
+      "undo": "Fortryd",
+      "redo": "Gentag",
+      "reset": "Nulstil til standard",
+      "import": "Importér tema",
+      "export": "Eksportér tema",
+      "importFailed": "Den fil er ikke et Mint-tema.",
+      "save": "Gem",
+      "saved": "Tema gemt.",
+      "refresh": "Genindlæs forhåndsvisning",
+      "openTab": "Åbn i ny fane",
+      "device": {
+        "desktop": "Computer",
+        "tablet": "Tablet",
+        "mobile": "Mobil"
+      },
+      "scheme": {
+        "dark": "Mørk",
+        "light": "Lys"
+      },
+      "pages": {
+        "home": "Serverens forside",
+        "console": "Serverkonsol",
+        "servers": "Servere",
+        "account": "Konto",
+        "admin": "Admin",
+        "login": "Loginside"
+      },
+      "section": {
+        "presets": "Forudindstillinger",
+        "presetsDescription": "Start fra et færdigt look, gem dine egne, og vælg hvilke brugerne kan vælge imellem.",
+        "colours": "Farver",
+        "coloursDescription": "Alt andet blandes ud fra disse fem.",
+        "style": "Stil",
+        "styleDescription": "Skrifttype og afrundede hjørner.",
+        "background": "Baggrund",
+        "backgroundDescription": "Et billede bag hele panelet, nedtonet med sidens farve, samt ikonet i browserfanen.",
+        "home": "Forside",
+        "homeDescription": "Banner og spilbilleder til forsiden.",
+        "articles": "Kom godt i gang",
+        "articlesDescription": "Links, der vises på hver servers forside.",
+        "layout": "Layout",
+        "layoutDescription": "Hvilke kort forsiden viser, og hvor.",
+        "login": "Loginside",
+        "loginDescription": "Layout, baggrund, logo og supportlinks til login-, registrerings- og adgangskodesider.",
+        "interface": "Brugerflade",
+        "interfaceDescription": "Notifikationer, sideovergange og sidetitler.",
+        "navigation": "Navigation",
+        "navigationDescription": "Sidebjælkens layout, menuens hover-effekt og søgning.",
+        "components": "Komponenter",
+        "componentsDescription": "Serverkort, tabeller, bokse og statistikkort.",
+        "console": "Konsol",
+        "consoleDescription": "Hvad konsolsiden viser omkring terminalen, og hvor."
+      },
+      "accent": "Accent",
+      "accentDescription": "Knapper, links og det aktive menupunkt",
+      "highlight": "Fremhævning",
+      "highlightDescription": "Statistikikoner på konsolbanneret",
+      "background": "Baggrund",
+      "backgroundDescription": "Siden bag alt andet",
+      "surface": "Overflade",
+      "surfaceDescription": "Kort, sidebjælke og konsol",
+      "text": "Tekst",
+      "textDescription": "Nedtonet tekst og kanter blandes ud fra denne",
+      "derived": "Afledt af farverne ovenfor",
+      "clearColor": "Tilbage til den afledte farve",
+      "group": {
+        "accents": "Accenter",
+        "surfaces": "Overflader",
+        "surfacesExtra": "Lag ovenpå",
+        "text": "Tekst",
+        "textExtra": "Mere tekst",
+        "lines": "Linjer",
+        "buttons": "Knapper",
+        "status": "Status",
+        "charts": "Diagrammer",
+        "light": "Lys tilstand"
+      },
+      "surfaceRaised": "Hævet",
+      "surfaceOverlay": "Overlay",
+      "textMuted": "Dæmpet tekst",
+      "textFaint": "Svag tekst",
+      "textOnAccent": "Tekst på accent",
+      "line": "Hårlinje",
+      "buttonText": "Knaptekst",
+      "success": "Succes",
+      "warning": "Advarsel",
+      "danger": "Fare",
+      "offline": "Offline",
+      "chartOne": "Serie et",
+      "chartTwo": "Serie to",
+      "lightBackground": "Lys baggrund",
+      "lightSurface": "Lys overflade",
+      "lightText": "Lys tekst",
+      "font": "Skrifttype",
+      "fontExo": "Exo 2",
+      "fontMontserrat": "Montserrat",
+      "fontPanel": "Panelets standard",
+      "fontOutfit": "Outfit",
+      "fontJakarta": "Plus Jakarta Sans",
+      "fontSpace": "Space Grotesk",
+      "monoFont": "Monospace-skrifttype",
+      "monoFontDescription": "Kode, ID'er og serverkonsollen.",
+      "monoFontJetbrains": "JetBrains Mono",
+      "monoFontFira": "Fira Code",
+      "sidebarGroups": "Gruppér servermenuen",
+      "sidebarGroupsDescription": "Sammenklappelige sektioner for Administration, Konfiguration og Adgang.",
+      "buttonStyle": "Knapstil",
+      "buttonAccent": "Knapper bruger accentfarven",
+      "buttonColor": "Knapfarve",
+      "buttons": {
+        "filled": "Udfyldt",
+        "tinted": "Tonet",
+        "outline": "Omrids",
+        "glass": "Glas"
+      },
+      "radius": "Korthjørner",
+      "elementRadius": "Hjørner på knapper og felter",
+      "blocks": {
+        "title": "Blokke",
+        "opacity": "Blokkenes opacitet",
+        "opacityDescription": "Under 100 % skinner sidens baggrund eller baggrundsbillede igennem kort og sidebjælke.",
+        "glass": "Glaseffekt",
+        "glassHint": "For et glasagtigt look skal du sætte blokkenes opacitet til ca. 80 % og aktivere Glaseffekt og Blokkant.",
+        "glassOff": "Standard",
+        "glassOn": "Glasagtig",
+        "border": "Blokkant",
+        "withBorder": "Med kant",
+        "withoutBorder": "Uden kant"
+      },
+      "elements": {
+        "title": "Elementer",
+        "inputBorder": "Feltkant",
+        "withBorder": "Med kant",
+        "withoutBorder": "Uden kant",
+        "clickEffect": "Klikeffekt",
+        "clickEffectDescription": "Hvordan knapper reagerer, når der trykkes på dem.",
+        "click": {
+          "none": "Ingen",
+          "drop": "Sænk",
+          "shrink": "Skrump",
+          "outline": "Omrids"
+        },
+        "create": "Opret"
+      },
+      "backgroundImage": "Billede-URL",
+      "backgroundImageDescription": "Lad feltet stå tomt for en ensfarvet baggrund.",
+      "backgroundDim": "Nedtoning",
+      "homeBanner": "URL til standardbannerbillede",
+      "homeBannerDescription": "Bruges til eggs uden deres eget banner. Lad feltet stå tomt for en accentgradient.",
+      "articles": "Kom godt i gang-links",
+      "articlesDescription": "Op til {max} links til dine guides eller din vidensbase.",
+      "articleTitle": "Titel",
+      "articleDescription": "Beskrivelse",
+      "articleUrl": "URL",
+      "addArticle": "Tilføj link",
+      "removeArticle": "Fjern link",
+      "eggImages": "Spilbilleder",
+      "eggImagesDescription": "Et banner og et ikon til hvert egg. Eggs uden banner bruger det ovenfor.",
+      "egg": "Egg",
+      "eggBanner": "URL til bannerbillede",
+      "eggIcon": "URL til ikonbillede",
+      "layoutDescription": "Træk for at ændre rækkefølgen, flyt et kort til den anden kolonne, eller skjul det.",
+      "columnEmpty": "Ingen kort her endnu.",
+      "moveColumn": "Flyt til den anden kolonne",
+      "hideCard": "Skjul kort",
+      "showCard": "Vis kort",
+      "column": {
+        "left": "Venstre kolonne",
+        "right": "Højre kolonne"
+      },
+      "card": {
+        "information": "Serverinformation",
+        "installed": "Installeret",
+        "articles": "Kom godt i gang-links",
+        "console": "Konsol",
+        "usage": "Forbrug",
+        "network": "Netværk"
+      },
+      "login": {
+        "background": "URL til baggrundsbillede",
+        "backgroundDescription": "Lad feltet stå tomt for at bruge den normale baggrund.",
+        "dim": "Nedtoning",
+        "logo": "Logo-URL",
+        "logoDescription": "Erstatter panelets logo på disse sider. Lad feltet stå tomt for at beholde det.",
+        "preview": "Forhåndsvisningen viser loginsiden, som den ser ud for besøgende, der ikke er logget ind."
+      },
+      "authLayout": {
+        "layoutTitle": "Layout",
+        "layout": "Loginlayout",
+        "layoutDescription": "Banneret viser loginbaggrunden, ellers panelets baggrund, ellers en accentgradient. Telefoner viser kun formularen.",
+        "layouts": {
+          "default": "Standard",
+          "flat": "Flad",
+          "sideBanner": "Sidebanner",
+          "floatingBanner": "Svævende banner",
+          "panels": "Paneler"
+        },
+        "logoPosition": "Logoplacering",
+        "positions": {
+          "header": "Topbjælke",
+          "aboveForm": "Over formularen"
+        },
+        "appearanceTitle": "Baggrund og logo",
+        "linksTitle": "Supportlinks",
+        "linksDescription": "Op til {max} links, f.eks. din Discord, dokumentation eller statusside. Links uden etiket eller URL vises ikke.",
+        "linkLabel": "Etiket",
+        "linkUrl": "URL",
+        "linkIcon": "Ikon",
+        "noIcon": "Intet ikon",
+        "icons": {
+          "discord": "Discord",
+          "github": "GitHub",
+          "docs": "Dokumentation",
+          "status": "Status",
+          "mail": "Mail",
+          "link": "Link"
+        },
+        "addLink": "Tilføj link",
+        "removeLink": "Fjern link",
+        "linksPosition": "Linkplacering",
+        "mockTitle": "Log ind"
+      },
+      "interface": {
+        "toastStyle": "Notifikationsstil",
+        "toastStyleDescription": "De beskeder, der dukker op efter at gemme, kopiere og andre handlinger.",
+        "toasts": {
+          "default": "Standard",
+          "glassy": "Glasagtig"
+        },
+        "pageTransition": "Sideovergang",
+        "pageTransitionDescription": "Afspilles på sidens indhold, når en anden side åbnes. Hold musen over et felt for at se den.",
+        "transitions": {
+          "none": "Ingen",
+          "fade": "Tone ind",
+          "fadeUp": "Tone op",
+          "fadeScale": "Tone og skaler"
+        },
+        "pageTitles": "Vis sidetitler",
+        "pageTitlesDescription": "Overskriften på serversider som Filer og Databaser. Deres søgning og knapper bliver."
+      },
+      "boxes": {
+        "title": "Bokse",
+        "boxStyle": "Boksstil",
+        "boxStyleDescription": "Titelrækken på kort som forsidens kort, kontoindstillinger, adminformularer og diagrammer.",
+        "styles": {
+          "default": "Standard",
+          "line": "Linje",
+          "fill": "Udfyldt",
+          "pill": "Pille"
+        },
+        "statsTitle": "Grafer og statistik",
+        "statStyle": "Stil for statistikkort",
+        "statStyleDescription": "De små felter med et ikon, som i adminoversigten og konsoldetaljerne.",
+        "stats": {
+          "default": "Standard",
+          "reversed": "Omvendt",
+          "minimal": "Minimal",
+          "minimalReversed": "Minimal omvendt"
+        },
+        "mockTitle": "Bokstitel",
+        "mockLabel": "Feltetiket",
+        "mockButton": "Gem",
+        "mockStat": "CPU-belastning"
+      },
+      "consoleLayout": {
+        "title": "Konsolside",
+        "description": "Træk komponenter for at ændre rækkefølgen eller flytte dem til en anden plads. Terminalen bliver i midten; sidekolonnerne står ved siden af den på brede skærme og under den på smalle.",
+        "terminal": "Terminal",
+        "add": "Tilføj komponent",
+        "addTo": "Tilføj en komponent til: {slot}",
+        "remove": "Fjern {name}",
+        "allPlaced": "Alle komponenter er allerede på siden.",
+        "reset": "Gendan standardlayoutet",
+        "slot": {
+          "top": "Over terminalen",
+          "left": "Til venstre for terminalen",
+          "right": "Til højre for terminalen",
+          "bottom": "Under terminalen"
+        },
+        "widget": {
+          "banner": "Banner og strømknapper",
+          "stats": "Live-statistikfelter",
+          "info": "Serverinformation",
+          "cpuChart": "CPU-diagram",
+          "memoryChart": "Hukommelsesdiagram",
+          "networkChart": "Netværksdiagram",
+          "extensionCards": "Udvidelseskort"
+        },
+        "widgetDescription": {
+          "banner": "Servernavn, adresse, live-statistik og strømknapperne.",
+          "stats": "Kompakte felter for oppetid, CPU, hukommelse, disk og netværk.",
+          "info": "Navn, adresse, status, lokation, node og SFTP.",
+          "cpuChart": "Live-graf over CPU-belastning.",
+          "memoryChart": "Live-graf over hukommelse.",
+          "networkChart": "Live-graf over indgående og udgående trafik.",
+          "extensionCards": "Statistikkort, som andre udvidelser tilføjer til konsollen."
+        }
+      },
+      "navStyle": {
+        "title": "Menu",
+        "hover": "Hover-effekt",
+        "hoverDescription": "Hvordan menulinks ser ud under markøren, og mens deres side er åben. Hold musen over et felt for at se begge.",
+        "hovers": {
+          "default": "Standard",
+          "filled": "Udfyldt",
+          "filledSecondary": "Udfyldt sekundær",
+          "iconPill": "Ikonpille",
+          "pill": "Pille",
+          "pillSecondary": "Pille sekundær"
+        },
+        "mockLink": "Konsol",
+        "search": "Søgekomponent",
+        "searchDescription": "Det, der står under logoet i menuen. Genvejen til Hurtige handlinger virker med dem alle.",
+        "searches": {
+          "palette": "Hurtige handlinger (standard)",
+          "serverSelector": "Servervælger",
+          "searchBar": "Søgelinje"
+        },
+        "searchHints": {
+          "palette": "Panelets knap til Hurtige handlinger. Dens serverskifter bliver nederst i menuen.",
+          "serverSelector": "En rullemenu til at hoppe til en anden server, øverst i menuen i stedet for Hurtige handlinger.",
+          "searchBar": "Et søgefelt, der viser servere, mens du skriver; i adminområdet også alle servere og brugere. Den sidste række åbner Hurtige handlinger."
+        }
+      },
+      "serverCards": {
+        "title": "Serverliste",
+        "cardStyle": "Stil for serverkort",
+        "cardStyleDescription": "Kortene i gittervisningen af serverlisten. Alle stilarter beholder afkrydsningsfeltet, status og strømmenuen.",
+        "styles": {
+          "default": "Standard",
+          "banner": "Banner",
+          "flat": "Flad",
+          "linear": "Lineær",
+          "minimal": "Minimal",
+          "compact": "Kompakt"
+        },
+        "tablesTitle": "Tabeller",
+        "tableStyle": "Tabelstil",
+        "tableStyleDescription": "Lister i hele panelet, som filer, backups, databaser og adminsiderne, samt listevisningen af serverlisten.",
+        "tables": {
+          "table": "Tabel",
+          "cards": "Kort"
+        }
+      },
+      "navLayout": {
+        "title": "Layout",
+        "layout": "Dashboard-layout",
+        "layoutDescription": "Hvordan menuen står ved siden af siderne på computer. Slim er en fast ikonskinne, der viser linkenes navne ved hover. Telefoner bruger mobilnavigationen nedenfor.",
+        "layouts": {
+          "default": "Standard",
+          "floating": "Svævende",
+          "pill": "Pille",
+          "slim": "Slim",
+          "horizontal": "Vandret"
+        },
+        "dock": "Dockplacering",
+        "dockDescription": "Hvor logoet, søgningen og, på serversider, servernavn, status og strømknapper sidder.",
+        "dockHorizontal": "Det vandrette layout holder altid disse i topbjælken.",
+        "docks": {
+          "sidebar": "Sidebjælke",
+          "header": "Header",
+          "top": "Top"
+        },
+        "mockConsole": "Konsol"
+      },
+      "mobileNav": {
+        "label": "Mobilnavigation",
+        "description": "Under computerbredde: kernens svævende menuknap eller en bjælke nederst på skærmen med hovedsiderne og en Menu-knap til hele menuen.",
+        "options": {
+          "drawer": "Skuffe",
+          "bottomBar": "Bundbjælke"
+        }
+      }
+    },
+    "library": {
+      "saveAsPreset": "Gem som forudindstilling",
+      "saveAsPresetDescription": "Gemmer kladdens look (farver, skrifttyper, blokke, navigation) som din egen forudindstilling. Indhold som artikler og loginsiden er ikke en del af en forudindstilling.",
+      "name": "Navn",
+      "save": "Gem",
+      "cancel": "Annuller",
+      "created": "Forudindstilling gemt.",
+      "custom": "Dine forudindstillinger",
+      "builtin": "Indbyggede",
+      "empty": "Ingen egne forudindstillinger endnu.",
+      "limit": "Højst {max} forudindstillinger; slet en for at gemme en ny.",
+      "rename": "Omdøb",
+      "renameTitle": "Omdøb forudindstilling",
+      "delete": "Slet",
+      "deleteTitle": "Slet forudindstilling",
+      "deleteConfirm": "Slet {name}? Brugere, der har valgt den, går tilbage til panelets standard.",
+      "users": "Brugere kan vælge denne",
+      "nameProblem": {
+        "empty": "Indtast et navn.",
+        "long": "Højst {max} tegn.",
+        "control": "Ingen linjeskift eller kontroltegn."
+      },
+      "history": "Historik",
+      "historyTitle": "Historik over gemte temaer",
+      "historyDescription": "De temaer, som de seneste {max} gemninger erstattede. Indlæsning af et tema lægger det i editoren; tryk på Gem for at bruge det.",
+      "historyEmpty": "Ingen tidligere gemninger endnu.",
+      "historyUnknown": "Gemt før historikken blev ført",
+      "historyBy": "{time} af {user}",
+      "historyCurrent": "I brug: gemt {time} af {user}",
+      "load": "Indlæs i editor",
+      "loaded": "Indlæst i editoren. Tryk på Gem for at bruge det.",
+      "choice": {
+        "title": "Tema",
+        "label": "Dit tema",
+        "description": "Sådan ser panelet ud for dig. Kun du kan se det, på alle enheder, du logger ind på.",
+        "default": "Panelets standard"
+      }
+    }
+  }
+}

@@ -1,0 +1,569 @@
+{
+  "items": {},
+  "translations": {
+    "nav": {
+      "editor": "Temaredigerare"
+    },
+    "home": {
+      "title": "Hem",
+      "address": "Serveradress",
+      "location": "Plats",
+      "gettingStarted": "Kom igång",
+      "information": "Serverinformation",
+      "installed": "Installerad",
+      "serverName": "Servernamn",
+      "status": "Status",
+      "uptime": "Drifttid",
+      "node": "Nod",
+      "memory": "Minne",
+      "image": "Avbild",
+      "console": "Konsol",
+      "fullLog": "Fullständig serverlogg",
+      "usage": "Användning",
+      "cpu": "CPU",
+      "ram": "RAM",
+      "storage": "Lagring",
+      "network": "Nätverk",
+      "inbound": "Inkommande",
+      "outbound": "Utgående",
+      "sftp": "SFTP"
+    },
+    "servers": {
+      "title": "Mina servrar",
+      "subtitle": "Dina servrar och de som delats med dig.",
+      "actions": "Serveråtgärder",
+      "cpu": "CPU",
+      "disk": "Disk",
+      "showing": "Visar {count}",
+      "select": "Välj {name}",
+      "selectAll": "Välj alla synliga servrar",
+      "column": {
+        "id": "ID",
+        "name": "Namn",
+        "game": "Spel",
+        "status": "Status",
+        "location": "Plats",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "uptime": "Drifttid",
+        "memory": "Minne"
+      },
+      "filter": {
+        "all": "Alla servrar",
+        "running": "Online",
+        "offline": "Offline",
+        "suspended": "Suspenderade",
+        "other": "Övriga"
+      },
+      "view": {
+        "list": "Listvy",
+        "grid": "Rutnätsvy"
+      }
+    },
+    "serverSort": {
+      "sortBy": "Sortera efter",
+      "sort": {
+        "none": "Standardordning",
+        "name": "Sortera efter namn",
+        "status": "Sortera efter status",
+        "game": "Sortera efter spel",
+        "location": "Sortera efter plats",
+        "cpu": "Sortera efter CPU",
+        "ram": "Sortera efter RAM",
+        "uptime": "Sortera efter drifttid",
+        "id": "Sortera efter ID"
+      },
+      "ascending": "Stigande, klicka för att vända",
+      "descending": "Fallande, klicka för att vända",
+      "groupBy": "Gruppera efter",
+      "group": {
+        "none": "Ingen gruppering",
+        "location": "Gruppera efter plats",
+        "game": "Gruppera efter spel",
+        "status": "Gruppera efter status"
+      },
+      "selectGroup": "Välj alla i {name}"
+    },
+    "account": {
+      "changeBanner": "Byt banner",
+      "removeBanner": "Ta bort banner",
+      "changeAvatar": "Byt avatar",
+      "bannerFile": "Bild",
+      "bannerHint": "PNG, JPEG, WebP eller GIF. Dra för att välja vilken del som visas. Bara du ser den.",
+      "admin": "Administratör",
+      "twoFactorOn": "2FA aktiverad",
+      "twoFactorOff": "2FA inaktiverad"
+    },
+    "announcementCta": {
+      "tab": "Uppmaning",
+      "title": "Uppmaning till handling",
+      "description": "Visa en knapp i meddelandet.",
+      "enable": "Aktivera uppmaning till handling",
+      "enableDescription": "Lägger till en knapp under meddelandets text, i meddelandets färg.",
+      "buttonTitle": "Knapptext",
+      "buttonTitleDescription": "Texten på knappen, högst {max} tecken.",
+      "buttonTitlePlaceholder": "Besök butiken",
+      "buttonLink": "Knapplänk",
+      "buttonLinkDescription": "Vart den leder: en panelsida som /account öppnas direkt, en fullständig https://-adress öppnas i en ny flik.",
+      "buttonLinkPlaceholder": "/account eller https://example.com",
+      "titleRequired": "Ge knappen en text.",
+      "titleTooLong": "Håll texten till högst {max} tecken.",
+      "titleInvalid": "Ta bort tabbar och radbrytningar från texten.",
+      "linkInvalid": "Använd en panelsökväg som börjar med ett enda / eller en fullständig http://- eller https://-adress, utan mellanslag, citattecken, vinkelparenteser, parenteser, klammerparenteser, semikolon eller omvända snedstreck.",
+      "linkTooLong": "Håll länken till högst {max} tecken.",
+      "saved": "Uppmaningen till handling har sparats.",
+      "removed": "Uppmaningen till handling har tagits bort."
+    },
+    "auth": {
+      "supportLinks": "Supportlänkar"
+    },
+    "navSearch": {
+      "placeholder": "Sök...",
+      "servers": "Servrar",
+      "allServers": "Alla servrar",
+      "users": "Användare",
+      "empty": "Inget hittades",
+      "everything": "Sök överallt efter ”{query}”",
+      "quickActions": "Öppna snabbåtgärder",
+      "switchServer": "Byt server"
+    },
+    "topBar": {
+      "navigation": "Huvudmeny"
+    },
+    "bottomNav": {
+      "label": "Mobilnavigering",
+      "menu": "Meny"
+    },
+    "editor": {
+      "contrast": {
+        "title": "Vissa färger är svåra att läsa",
+        "description": "Under WCAG-minimum; det går ändå att spara.",
+        "pair": "{fg} på {bg}: {ratio}:1 (sikta på {min}:1)",
+        "low": "Låg kontrast mot {other}: {ratio}:1 (sikta på {min}:1)",
+        "lowAs": "Låg kontrast som {role} på {other}: {ratio}:1 (sikta på {min}:1)",
+        "named": "{name} ({role})",
+        "roles": {
+          "links": "länkar",
+          "dimmed": "nedtonad text"
+        }
+      },
+      "favicon": {
+        "label": "Ikon för webbläsarflik",
+        "description": "Ersätter panelikonen i webbläsarflikar och på hemskärmar, inklusive inloggningssidor. Lämna tomt för att behålla panelikonen. En kvadratisk PNG, ICO eller SVG fungerar bäst.",
+        "preview": "Förhandsvisning av flik"
+      },
+      "close": "Stäng redigeraren",
+      "undo": "Ångra",
+      "redo": "Gör om",
+      "reset": "Återställ till standard",
+      "import": "Importera tema",
+      "export": "Exportera tema",
+      "importFailed": "Filen är inte ett Mint-tema.",
+      "save": "Spara",
+      "saved": "Temat har sparats.",
+      "refresh": "Ladda om förhandsvisning",
+      "openTab": "Öppna i ny flik",
+      "device": {
+        "desktop": "Dator",
+        "tablet": "Surfplatta",
+        "mobile": "Mobil"
+      },
+      "scheme": {
+        "dark": "Mörkt",
+        "light": "Ljust"
+      },
+      "pages": {
+        "home": "Serverns startsida",
+        "console": "Serverkonsol",
+        "servers": "Servrar",
+        "account": "Konto",
+        "admin": "Admin",
+        "login": "Inloggningssida"
+      },
+      "section": {
+        "presets": "Förinställningar",
+        "presetsDescription": "Utgå från ett färdigt utseende, spara dina egna och välj vilka användarna kan välja mellan.",
+        "colours": "Färger",
+        "coloursDescription": "Allt annat blandas fram från dessa fem.",
+        "style": "Stil",
+        "styleDescription": "Typsnitt och hörnrundning.",
+        "background": "Bakgrund",
+        "backgroundDescription": "En bild bakom hela panelen, nedtonad med sidans färg, samt ikonen för webbläsarfliken.",
+        "home": "Startsida",
+        "homeDescription": "Banner och spelbilder för startsidan.",
+        "articles": "Kom igång",
+        "articlesDescription": "Länkar som visas på varje servers startsida.",
+        "layout": "Layout",
+        "layoutDescription": "Vilka kort startsidan visar och var.",
+        "login": "Inloggningssida",
+        "loginDescription": "Layout, bakgrund, logotyp och supportlänkar för inloggnings-, registrerings- och lösenordssidor.",
+        "interface": "Gränssnitt",
+        "interfaceDescription": "Notiser, sidövergångar och sidrubriker.",
+        "navigation": "Navigering",
+        "navigationDescription": "Sidopanelens layout, menyns hovringseffekt och sökning.",
+        "components": "Komponenter",
+        "componentsDescription": "Serverkort, tabeller, rutor och statistikkort.",
+        "console": "Konsol",
+        "consoleDescription": "Vad konsolsidan visar runt terminalen, och var."
+      },
+      "accent": "Accent",
+      "accentDescription": "Knappar, länkar och det aktiva menyalternativet",
+      "highlight": "Markering",
+      "highlightDescription": "Statistikikoner på konsolens banner",
+      "background": "Bakgrund",
+      "backgroundDescription": "Sidan bakom allt",
+      "surface": "Yta",
+      "surfaceDescription": "Kort, sidopanel och konsol",
+      "text": "Text",
+      "textDescription": "Nedtonad text och kanter blandas fram från denna",
+      "derived": "Härledd från färgerna ovan",
+      "clearColor": "Tillbaka till den härledda färgen",
+      "group": {
+        "accents": "Accenter",
+        "surfaces": "Ytor",
+        "surfacesExtra": "Lager ovanpå",
+        "text": "Text",
+        "textExtra": "Mer text",
+        "lines": "Linjer",
+        "buttons": "Knappar",
+        "status": "Status",
+        "charts": "Diagram",
+        "light": "Ljust läge"
+      },
+      "surfaceRaised": "Upphöjd",
+      "surfaceOverlay": "Överlägg",
+      "textMuted": "Dämpad text",
+      "textFaint": "Svag text",
+      "textOnAccent": "Text på accent",
+      "line": "Tunn linje",
+      "buttonText": "Knapptext",
+      "success": "Lyckad",
+      "warning": "Varning",
+      "danger": "Fara",
+      "offline": "Offline",
+      "chartOne": "Serie ett",
+      "chartTwo": "Serie två",
+      "lightBackground": "Ljus bakgrund",
+      "lightSurface": "Ljus yta",
+      "lightText": "Ljus text",
+      "font": "Typsnitt",
+      "fontExo": "Exo 2",
+      "fontMontserrat": "Montserrat",
+      "fontPanel": "Panelens standard",
+      "fontOutfit": "Outfit",
+      "fontJakarta": "Plus Jakarta Sans",
+      "fontSpace": "Space Grotesk",
+      "monoFont": "Teckensnitt med fast bredd",
+      "monoFontDescription": "Kod, ID:n och serverkonsolen.",
+      "monoFontJetbrains": "JetBrains Mono",
+      "monoFontFira": "Fira Code",
+      "sidebarGroups": "Gruppera servermenyn",
+      "sidebarGroupsDescription": "Hopfällbara sektioner för Hantering, Konfiguration och Åtkomst.",
+      "buttonStyle": "Knappstil",
+      "buttonAccent": "Knappar använder accentfärgen",
+      "buttonColor": "Knappfärg",
+      "buttons": {
+        "filled": "Fylld",
+        "tinted": "Tonad",
+        "outline": "Kontur",
+        "glass": "Glas"
+      },
+      "radius": "Korthörn",
+      "elementRadius": "Hörn på knappar och fält",
+      "blocks": {
+        "title": "Block",
+        "opacity": "Blockopacitet",
+        "opacityDescription": "Under 100 % syns sidans bakgrund, eller dess bild, genom kort och sidopanelen.",
+        "glass": "Glaseffekt",
+        "glassHint": "För ett glasigt utseende, sätt blockopaciteten till cirka 80 % och aktivera Glaseffekt och Blockkant.",
+        "glassOff": "Standard",
+        "glassOn": "Glasig",
+        "border": "Blockkant",
+        "withBorder": "Med kant",
+        "withoutBorder": "Utan kant"
+      },
+      "elements": {
+        "title": "Element",
+        "inputBorder": "Fältkant",
+        "withBorder": "Med kant",
+        "withoutBorder": "Utan kant",
+        "clickEffect": "Klickeffekt",
+        "clickEffectDescription": "Hur knappar reagerar när de trycks.",
+        "click": {
+          "none": "Ingen",
+          "drop": "Sänk",
+          "shrink": "Krymp",
+          "outline": "Kontur"
+        },
+        "create": "Skapa"
+      },
+      "backgroundImage": "Bild-URL",
+      "backgroundImageDescription": "Lämna tomt för en enfärgad bakgrund.",
+      "backgroundDim": "Nedtoning",
+      "homeBanner": "URL till standardbannerbild",
+      "homeBannerDescription": "Används för ägg utan egen banner. Lämna tomt för en accentgradient.",
+      "articles": "Kom igång-länkar",
+      "articlesDescription": "Upp till {max} länkar till dina guider eller din kunskapsbas.",
+      "articleTitle": "Titel",
+      "articleDescription": "Beskrivning",
+      "articleUrl": "URL",
+      "addArticle": "Lägg till länk",
+      "removeArticle": "Ta bort länk",
+      "eggImages": "Spelbilder",
+      "eggImagesDescription": "En banner och en ikon för varje ägg. Ägg utan banner använder den ovan.",
+      "egg": "Ägg",
+      "eggBanner": "URL till bannerbild",
+      "eggIcon": "URL till ikonbild",
+      "layoutDescription": "Dra för att ändra ordning, flytta ett kort till den andra kolumnen eller dölj det.",
+      "columnEmpty": "Inga kort här än.",
+      "moveColumn": "Flytta till den andra kolumnen",
+      "hideCard": "Dölj kort",
+      "showCard": "Visa kort",
+      "column": {
+        "left": "Vänster kolumn",
+        "right": "Höger kolumn"
+      },
+      "card": {
+        "information": "Serverinformation",
+        "installed": "Installerad",
+        "articles": "Kom igång-länkar",
+        "console": "Konsol",
+        "usage": "Användning",
+        "network": "Nätverk"
+      },
+      "login": {
+        "background": "URL till bakgrundsbild",
+        "backgroundDescription": "Lämna tomt för att använda den vanliga bakgrunden.",
+        "dim": "Nedtoning",
+        "logo": "Logotyp-URL",
+        "logoDescription": "Ersätter panelens logotyp på dessa sidor. Lämna tomt för att behålla den.",
+        "preview": "Förhandsvisningen visar inloggningssidan så som utloggade besökare ser den."
+      },
+      "authLayout": {
+        "layoutTitle": "Layout",
+        "layout": "Inloggningslayout",
+        "layoutDescription": "Bannern visar inloggningsbakgrunden, annars panelens bakgrund, annars en accentgradient. Mobiler visar bara formuläret.",
+        "layouts": {
+          "default": "Standard",
+          "flat": "Platt",
+          "sideBanner": "Sidobanner",
+          "floatingBanner": "Flytande banner",
+          "panels": "Paneler"
+        },
+        "logoPosition": "Logotypens placering",
+        "positions": {
+          "header": "Toppfält",
+          "aboveForm": "Ovanför formuläret"
+        },
+        "appearanceTitle": "Bakgrund och logotyp",
+        "linksTitle": "Supportlänkar",
+        "linksDescription": "Upp till {max} länkar, t.ex. till din Discord, dokumentation eller statussida. Länkar utan etikett eller URL visas inte.",
+        "linkLabel": "Etikett",
+        "linkUrl": "URL",
+        "linkIcon": "Ikon",
+        "noIcon": "Ingen ikon",
+        "icons": {
+          "discord": "Discord",
+          "github": "GitHub",
+          "docs": "Dokumentation",
+          "status": "Status",
+          "mail": "E-post",
+          "link": "Länk"
+        },
+        "addLink": "Lägg till länk",
+        "removeLink": "Ta bort länk",
+        "linksPosition": "Länkarnas placering",
+        "mockTitle": "Logga in"
+      },
+      "interface": {
+        "toastStyle": "Notisstil",
+        "toastStyleDescription": "Meddelandena som dyker upp efter att du sparat, kopierat och gjort andra åtgärder.",
+        "toasts": {
+          "default": "Standard",
+          "glassy": "Glasig"
+        },
+        "pageTransition": "Sidövergång",
+        "pageTransitionDescription": "Spelas upp på sidans innehåll när en annan sida öppnas. Hovra över en ruta för att se den.",
+        "transitions": {
+          "none": "Ingen",
+          "fade": "Tona in",
+          "fadeUp": "Tona uppåt",
+          "fadeScale": "Tona och skala"
+        },
+        "pageTitles": "Visa sidrubriker",
+        "pageTitlesDescription": "Rubriken på serversidor som Filer och Databaser. Deras sökning och knappar finns kvar."
+      },
+      "boxes": {
+        "title": "Rutor",
+        "boxStyle": "Rutstil",
+        "boxStyleDescription": "Rubrikraden på kort som korten på startsidan, kontoinställningar, adminformulär och diagram.",
+        "styles": {
+          "default": "Standard",
+          "line": "Linje",
+          "fill": "Fyllning",
+          "pill": "Piller"
+        },
+        "statsTitle": "Grafer och statistik",
+        "statStyle": "Stil för statistikkort",
+        "statStyleDescription": "De små rutorna med en ikon, som i adminöversikten och konsolens detaljer.",
+        "stats": {
+          "default": "Standard",
+          "reversed": "Omvänd",
+          "minimal": "Minimal",
+          "minimalReversed": "Minimal omvänd"
+        },
+        "mockTitle": "Rutrubrik",
+        "mockLabel": "Fältetikett",
+        "mockButton": "Spara",
+        "mockStat": "CPU-belastning"
+      },
+      "consoleLayout": {
+        "title": "Konsolsida",
+        "description": "Dra komponenter för att ändra ordning eller flytta dem till en annan plats. Terminalen stannar i mitten; sidokolumnerna ligger bredvid den på breda skärmar och under den på smala.",
+        "terminal": "Terminal",
+        "add": "Lägg till komponent",
+        "addTo": "Lägg till en komponent i: {slot}",
+        "remove": "Ta bort {name}",
+        "allPlaced": "Alla komponenter finns redan på sidan.",
+        "reset": "Återställ standardlayouten",
+        "slot": {
+          "top": "Ovanför terminalen",
+          "left": "Till vänster om terminalen",
+          "right": "Till höger om terminalen",
+          "bottom": "Under terminalen"
+        },
+        "widget": {
+          "banner": "Banner och strömknappar",
+          "stats": "Statistikrutor i realtid",
+          "info": "Serverinformation",
+          "cpuChart": "CPU-diagram",
+          "memoryChart": "Minnesdiagram",
+          "networkChart": "Nätverksdiagram",
+          "extensionCards": "Tilläggskort"
+        },
+        "widgetDescription": {
+          "banner": "Servernamn, adress, statistik i realtid och strömknapparna.",
+          "stats": "Kompakta rutor för drifttid, CPU, minne, disk och nätverk.",
+          "info": "Namn, adress, status, plats, nod och SFTP.",
+          "cpuChart": "Graf över CPU-belastning i realtid.",
+          "memoryChart": "Minnesgraf i realtid.",
+          "networkChart": "Graf över inkommande och utgående trafik i realtid.",
+          "extensionCards": "Statistikkort som andra tillägg lägger till i konsolen."
+        }
+      },
+      "navStyle": {
+        "title": "Meny",
+        "hover": "Hovringseffekt",
+        "hoverDescription": "Hur menylänkar ser ut under pekaren och medan deras sida är öppen. Hovra över en ruta för att se båda.",
+        "hovers": {
+          "default": "Standard",
+          "filled": "Fylld",
+          "filledSecondary": "Fylld sekundär",
+          "iconPill": "Ikonpiller",
+          "pill": "Piller",
+          "pillSecondary": "Piller sekundär"
+        },
+        "mockLink": "Konsol",
+        "search": "Sökkomponent",
+        "searchDescription": "Det som ligger under logotypen i menyn. Kortkommandot för Snabbåtgärder fungerar med alla.",
+        "searches": {
+          "palette": "Snabbåtgärder (standard)",
+          "serverSelector": "Serverväljare",
+          "searchBar": "Sökfält"
+        },
+        "searchHints": {
+          "palette": "Panelens knapp för Snabbåtgärder. Dess serverväxlare stannar längst ned i menyn.",
+          "serverSelector": "En rullgardinsmeny för att hoppa till en annan server, högst upp i menyn i stället för Snabbåtgärder.",
+          "searchBar": "Ett sökfält som listar servrar medan du skriver; i adminområdet även alla servrar och användare. Dess sista rad öppnar Snabbåtgärder."
+        }
+      },
+      "serverCards": {
+        "title": "Serverlista",
+        "cardStyle": "Stil för serverkort",
+        "cardStyleDescription": "Korten i rutnätsvyn av serverlistan. Alla stilar behåller kryssrutan, statusen och strömmenyn.",
+        "styles": {
+          "default": "Standard",
+          "banner": "Banner",
+          "flat": "Platt",
+          "linear": "Linjär",
+          "minimal": "Minimal",
+          "compact": "Kompakt"
+        },
+        "tablesTitle": "Tabeller",
+        "tableStyle": "Tabellstil",
+        "tableStyleDescription": "Listor i hela panelen, som filer, säkerhetskopieringar, databaser och adminsidorna, samt listvyn av serverlistan.",
+        "tables": {
+          "table": "Tabell",
+          "cards": "Kort"
+        }
+      },
+      "navLayout": {
+        "title": "Layout",
+        "layout": "Layout för instrumentpanelen",
+        "layoutDescription": "Hur menyn placeras bredvid sidorna på datorn. Smal är en fast ikonlist som visar länkarnas namn vid hovring. Mobiler använder mobilnavigeringen nedan.",
+        "layouts": {
+          "default": "Standard",
+          "floating": "Flytande",
+          "pill": "Piller",
+          "slim": "Smal",
+          "horizontal": "Horisontell"
+        },
+        "dock": "Dockningsplats",
+        "dockDescription": "Var logotypen, sökningen och, på serversidor, servernamnet, statusen och strömknapparna placeras.",
+        "dockHorizontal": "Den horisontella layouten har alltid dessa i sitt toppfält.",
+        "docks": {
+          "sidebar": "Sidopanel",
+          "header": "Sidhuvud",
+          "top": "Topp"
+        },
+        "mockConsole": "Konsol"
+      },
+      "mobileNav": {
+        "label": "Mobilnavigering",
+        "description": "Under datorbredd: panelens flytande menyknapp, eller ett fält längst ned på skärmen med huvudsidorna och en Meny-knapp för hela menyn.",
+        "options": {
+          "drawer": "Utfällbar meny",
+          "bottomBar": "Bottenfält"
+        }
+      }
+    },
+    "library": {
+      "saveAsPreset": "Spara som förinställning",
+      "saveAsPresetDescription": "Sparar utkastets utseende (färger, typsnitt, block, navigering) som en egen förinställning. Innehåll som artiklar och inloggningssidan ingår inte i en förinställning.",
+      "name": "Namn",
+      "save": "Spara",
+      "cancel": "Avbryt",
+      "created": "Förinställningen har sparats.",
+      "custom": "Dina förinställningar",
+      "builtin": "Inbyggda",
+      "empty": "Inga egna förinställningar än.",
+      "limit": "Högst {max} förinställningar; ta bort en för att spara en till.",
+      "rename": "Döp om",
+      "renameTitle": "Döp om förinställning",
+      "delete": "Ta bort",
+      "deleteTitle": "Ta bort förinställning",
+      "deleteConfirm": "Ta bort {name}? Användare som valt den återgår till panelens standard.",
+      "users": "Användare kan välja denna",
+      "nameProblem": {
+        "empty": "Ange ett namn.",
+        "long": "Högst {max} tecken.",
+        "control": "Inga radbrytningar eller kontrolltecken."
+      },
+      "history": "Historik",
+      "historyTitle": "Historik över sparade teman",
+      "historyDescription": "Temana som de senaste {max} sparningarna ersatte. Om du läser in ett hamnar det i redigeraren; tryck på Spara för att använda det.",
+      "historyEmpty": "Inga tidigare sparningar än.",
+      "historyUnknown": "Sparat innan historik fördes",
+      "historyBy": "{time} av {user}",
+      "historyCurrent": "Används: sparat {time} av {user}",
+      "load": "Läs in i redigeraren",
+      "loaded": "Inläst i redigeraren. Tryck på Spara för att använda det.",
+      "choice": {
+        "title": "Tema",
+        "label": "Ditt tema",
+        "description": "Hur panelen ser ut för dig. Bara du ser det, på alla enheter du loggar in på.",
+        "default": "Panelens standard"
+      }
+    }
+  }
+}

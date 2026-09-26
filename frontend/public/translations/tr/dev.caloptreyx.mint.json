@@ -1,0 +1,569 @@
+{
+  "items": {},
+  "translations": {
+    "nav": {
+      "editor": "Tema Düzenleyici"
+    },
+    "home": {
+      "title": "Ana Sayfa",
+      "address": "Sunucu adresi",
+      "location": "Lokasyon",
+      "gettingStarted": "Başlarken",
+      "information": "Sunucu bilgileri",
+      "installed": "Kurulu",
+      "serverName": "Sunucu adı",
+      "status": "Durum",
+      "uptime": "Çalışma süresi",
+      "node": "Node",
+      "memory": "Bellek",
+      "image": "İmaj",
+      "console": "Konsol",
+      "fullLog": "Tam sunucu günlüğü",
+      "usage": "Kullanım",
+      "cpu": "CPU",
+      "ram": "RAM",
+      "storage": "Depolama",
+      "network": "Ağ",
+      "inbound": "Gelen",
+      "outbound": "Giden",
+      "sftp": "SFTP"
+    },
+    "servers": {
+      "title": "Sunucularım",
+      "subtitle": "Sunucularınız ve sizinle paylaşılanlar.",
+      "actions": "Sunucu işlemleri",
+      "cpu": "CPU",
+      "disk": "Depolama",
+      "showing": "{count} gösteriliyor",
+      "select": "{name} öğesini seç",
+      "selectAll": "Görünen tüm sunucuları seç",
+      "column": {
+        "id": "ID",
+        "name": "İsim",
+        "game": "Oyun",
+        "status": "Durum",
+        "location": "Lokasyon",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "uptime": "Çalışma süresi",
+        "memory": "Bellek"
+      },
+      "filter": {
+        "all": "Tüm sunucular",
+        "running": "Çevrimiçi",
+        "offline": "Çevrimdışı",
+        "suspended": "Askıya Alındı",
+        "other": "Diğer"
+      },
+      "view": {
+        "list": "Liste görünümü",
+        "grid": "Izgara görünümü"
+      }
+    },
+    "serverSort": {
+      "sortBy": "Sırala",
+      "sort": {
+        "none": "Varsayılan sıralama",
+        "name": "İsme göre sırala",
+        "status": "Duruma göre sırala",
+        "game": "Oyuna göre sırala",
+        "location": "Lokasyona göre sırala",
+        "cpu": "CPU'ya göre sırala",
+        "ram": "RAM'e göre sırala",
+        "uptime": "Çalışma süresine göre sırala",
+        "id": "ID'ye göre sırala"
+      },
+      "ascending": "Artan, tersine çevirmek için tıklayın",
+      "descending": "Azalan, tersine çevirmek için tıklayın",
+      "groupBy": "Grupla",
+      "group": {
+        "none": "Gruplama yok",
+        "location": "Lokasyona göre grupla",
+        "game": "Oyuna göre grupla",
+        "status": "Duruma göre grupla"
+      },
+      "selectGroup": "{name} içindekilerin tümünü seç"
+    },
+    "account": {
+      "changeBanner": "Banner'ı değiştir",
+      "removeBanner": "Banner'ı kaldır",
+      "changeAvatar": "Avatarı değiştir",
+      "bannerFile": "Görsel",
+      "bannerHint": "PNG, JPEG, WebP veya GIF. Görünecek kısmı seçmek için sürükleyin. Yalnızca siz görürsünüz.",
+      "admin": "Yönetici",
+      "twoFactorOn": "2FA etkin",
+      "twoFactorOff": "2FA devre dışı"
+    },
+    "announcementCta": {
+      "tab": "Eylem Çağrısı",
+      "title": "Eylem Çağrısı",
+      "description": "Duyuruda bir buton gösterin.",
+      "enable": "Eylem Çağrısını etkinleştir",
+      "enableDescription": "Duyuru metninin altına, duyurunun renginde bir buton ekler.",
+      "buttonTitle": "Buton Başlığı",
+      "buttonTitleDescription": "Buton üzerindeki metin, en fazla {max} karakter.",
+      "buttonTitlePlaceholder": "Mağazayı ziyaret et",
+      "buttonLink": "Buton Bağlantısı",
+      "buttonLinkDescription": "Gideceği yer: /account gibi bir panel sayfası aynı sekmede açılır, tam bir https:// adresi yeni sekmede açılır.",
+      "buttonLinkPlaceholder": "/account veya https://example.com",
+      "titleRequired": "Butona bir başlık verin.",
+      "titleTooLong": "Başlık en fazla {max} karakter olmalıdır.",
+      "titleInvalid": "Başlıktaki sekmeleri ve satır sonlarını kaldırın.",
+      "linkInvalid": "Tek bir / ile başlayan bir panel yolu veya boşluk, tırnak, açılı ayraç, parantez, süslü parantez, noktalı virgül ya da ters eğik çizgi içermeyen tam bir http:// veya https:// adresi kullanın.",
+      "linkTooLong": "Bağlantı en fazla {max} karakter olmalıdır.",
+      "saved": "Eylem çağrısı kaydedildi.",
+      "removed": "Eylem çağrısı kaldırıldı."
+    },
+    "auth": {
+      "supportLinks": "Destek bağlantıları"
+    },
+    "navSearch": {
+      "placeholder": "Ara...",
+      "servers": "Sunucular",
+      "allServers": "Tüm sunucular",
+      "users": "Kullanıcılar",
+      "empty": "Hiçbir şey bulunamadı",
+      "everything": "Her yerde “{query}” ara",
+      "quickActions": "Hızlı işlemleri aç",
+      "switchServer": "Sunucu değiştir"
+    },
+    "topBar": {
+      "navigation": "Ana menü"
+    },
+    "bottomNav": {
+      "label": "Telefon gezinmesi",
+      "menu": "Menü"
+    },
+    "editor": {
+      "contrast": {
+        "title": "Bazı renklerin okunması zor",
+        "description": "WCAG minimumunun altında; kaydetme yine de çalışır.",
+        "pair": "{bg} üzerinde {fg}: {ratio}:1 (hedef {min}:1)",
+        "low": "{other} ile düşük kontrast: {ratio}:1 (hedef {min}:1)",
+        "lowAs": "{other} üzerinde {role} olarak düşük kontrast: {ratio}:1 (hedef {min}:1)",
+        "named": "{name} ({role})",
+        "roles": {
+          "links": "bağlantılar",
+          "dimmed": "soluk metin"
+        }
+      },
+      "favicon": {
+        "label": "Tarayıcı sekmesi simgesi",
+        "description": "Giriş sayfaları dahil, tarayıcı sekmelerindeki ve ana ekranlardaki panel simgesinin yerini alır. Panel simgesini korumak için boş bırakın. En iyi sonucu kare bir PNG, ICO veya SVG verir.",
+        "preview": "Sekme önizlemesi"
+      },
+      "close": "Düzenleyiciyi kapat",
+      "undo": "Geri al",
+      "redo": "Yinele",
+      "reset": "Varsayılana sıfırla",
+      "import": "Temayı içe aktar",
+      "export": "Temayı dışa aktar",
+      "importFailed": "Bu dosya bir Mint teması değil.",
+      "save": "Kaydet",
+      "saved": "Tema kaydedildi.",
+      "refresh": "Önizlemeyi yenile",
+      "openTab": "Yeni sekmede aç",
+      "device": {
+        "desktop": "Masaüstü",
+        "tablet": "Tablet",
+        "mobile": "Mobil"
+      },
+      "scheme": {
+        "dark": "Koyu",
+        "light": "Açık"
+      },
+      "pages": {
+        "home": "Sunucu ana sayfası",
+        "console": "Sunucu konsolu",
+        "servers": "Sunucular",
+        "account": "Hesap",
+        "admin": "Yönetici",
+        "login": "Giriş sayfası"
+      },
+      "section": {
+        "presets": "Hazır Ayarlar",
+        "presetsDescription": "Hazır bir görünümle başlayın, kendinizinkini kaydedin ve kullanıcıların hangilerini seçebileceğini belirleyin.",
+        "colours": "Renkler",
+        "coloursDescription": "Diğer her şey bu beş renkten türetilir.",
+        "style": "Stil",
+        "styleDescription": "Yazı tipi ve köşe yuvarlaklığı.",
+        "background": "Arka plan",
+        "backgroundDescription": "Tüm panelin arkasında, sayfa rengiyle karartılan bir görsel ve tarayıcı sekmesi simgesi.",
+        "home": "Ana sayfa",
+        "homeDescription": "Açılış sayfası için banner ve oyun görselleri.",
+        "articles": "Başlarken",
+        "articlesDescription": "Her sunucu ana sayfasında gösterilen bağlantılar.",
+        "layout": "Düzen",
+        "layoutDescription": "Ana sayfanın hangi kartları nerede gösterdiği.",
+        "login": "Giriş sayfası",
+        "loginDescription": "Giriş, kayıt ve şifre sayfaları için düzen, arka plan, logo ve destek bağlantıları.",
+        "interface": "Arayüz",
+        "interfaceDescription": "Bildirimler, sayfa geçişleri ve sayfa başlıkları.",
+        "navigation": "Gezinme",
+        "navigationDescription": "Kenar çubuğu düzeni, menü üzerine gelme efekti ve arama.",
+        "components": "Bileşenler",
+        "componentsDescription": "Sunucu kartları, tablolar, kutular ve istatistik kartları.",
+        "console": "Konsol",
+        "consoleDescription": "Konsol sayfasının terminalin çevresinde neyi, nerede gösterdiği."
+      },
+      "accent": "Vurgu",
+      "accentDescription": "Butonlar, bağlantılar ve etkin menü öğesi",
+      "highlight": "Öne çıkarma",
+      "highlightDescription": "Konsol banner'ındaki istatistik simgeleri",
+      "background": "Arka plan",
+      "backgroundDescription": "Her şeyin arkasındaki sayfa",
+      "surface": "Yüzey",
+      "surfaceDescription": "Kartlar, kenar çubuğu ve konsol",
+      "text": "Metin",
+      "textDescription": "Soluk metin ve kenarlıklar bundan türetilir",
+      "derived": "Yukarıdaki renklerden türetilir",
+      "clearColor": "Türetilmiş renge dön",
+      "group": {
+        "accents": "Vurgular",
+        "surfaces": "Yüzeyler",
+        "surfacesExtra": "Üst katmanlar",
+        "text": "Metin",
+        "textExtra": "Diğer metinler",
+        "lines": "Çizgiler",
+        "buttons": "Butonlar",
+        "status": "Durum",
+        "charts": "Grafikler",
+        "light": "Açık mod"
+      },
+      "surfaceRaised": "Yükseltilmiş",
+      "surfaceOverlay": "Katman",
+      "textMuted": "Sönük metin",
+      "textFaint": "Silik metin",
+      "textOnAccent": "Vurgu üzerindeki metin",
+      "line": "İnce çizgi",
+      "buttonText": "Buton metni",
+      "success": "Başarılı",
+      "warning": "Uyarı",
+      "danger": "Tehlike",
+      "offline": "Çevrimdışı",
+      "chartOne": "Birinci seri",
+      "chartTwo": "İkinci seri",
+      "lightBackground": "Açık arka plan",
+      "lightSurface": "Açık yüzey",
+      "lightText": "Açık metin",
+      "font": "Yazı tipi",
+      "fontExo": "Exo 2",
+      "fontMontserrat": "Montserrat",
+      "fontPanel": "Panel varsayılanı",
+      "fontOutfit": "Outfit",
+      "fontJakarta": "Plus Jakarta Sans",
+      "fontSpace": "Space Grotesk",
+      "monoFont": "Eş aralıklı yazı tipi",
+      "monoFontDescription": "Kod, ID'ler ve sunucu konsolu.",
+      "monoFontJetbrains": "JetBrains Mono",
+      "monoFontFira": "Fira Code",
+      "sidebarGroups": "Sunucu menüsünü grupla",
+      "sidebarGroupsDescription": "Daraltılabilir Yönetim, Yapılandırma ve Erişim bölümleri.",
+      "buttonStyle": "Buton stili",
+      "buttonAccent": "Butonlar vurgu rengini kullanır",
+      "buttonColor": "Buton rengi",
+      "buttons": {
+        "filled": "Dolgulu",
+        "tinted": "Renkli",
+        "outline": "Çerçeveli",
+        "glass": "Cam"
+      },
+      "radius": "Kart köşeleri",
+      "elementRadius": "Buton ve giriş alanı köşeleri",
+      "blocks": {
+        "title": "Bloklar",
+        "opacity": "Blok opaklığı",
+        "opacityDescription": "%100'ün altında, sayfa arka planı veya görseli kartların ve kenar çubuğunun arkasından görünür.",
+        "glass": "Cam efekti",
+        "glassHint": "Cam görünümü için blok opaklığını yaklaşık %80'e ayarlayın, Cam efekti ve Blok kenarlığı seçeneklerini etkinleştirin.",
+        "glassOff": "Varsayılan",
+        "glassOn": "Cam",
+        "border": "Blok kenarlığı",
+        "withBorder": "Kenarlıklı",
+        "withoutBorder": "Kenarlıksız"
+      },
+      "elements": {
+        "title": "Öğeler",
+        "inputBorder": "Giriş alanı kenarlığı",
+        "withBorder": "Kenarlıklı",
+        "withoutBorder": "Kenarlıksız",
+        "clickEffect": "Tıklama efekti",
+        "clickEffectDescription": "Butonların basıldığında nasıl tepki verdiği.",
+        "click": {
+          "none": "Yok",
+          "drop": "Batma",
+          "shrink": "Küçülme",
+          "outline": "Çerçeve"
+        },
+        "create": "Oluştur"
+      },
+      "backgroundImage": "Görsel URL'si",
+      "backgroundImageDescription": "Düz bir arka plan için boş bırakın.",
+      "backgroundDim": "Karartma",
+      "homeBanner": "Varsayılan banner görseli URL'si",
+      "homeBannerDescription": "Kendi banner'ı olmayan Egg'ler için kullanılır. Vurgu rengi geçişi için boş bırakın.",
+      "articles": "Başlarken bağlantıları",
+      "articlesDescription": "Rehberlerinize veya bilgi bankanıza en fazla {max} bağlantı.",
+      "articleTitle": "Başlık",
+      "articleDescription": "Açıklama",
+      "articleUrl": "URL",
+      "addArticle": "Bağlantı ekle",
+      "removeArticle": "Bağlantıyı kaldır",
+      "eggImages": "Oyun görselleri",
+      "eggImagesDescription": "Her Egg için bir banner ve simge. Banner'ı olmayan Egg'ler yukarıdakini kullanır.",
+      "egg": "Egg",
+      "eggBanner": "Banner görseli URL'si",
+      "eggIcon": "Simge görseli URL'si",
+      "layoutDescription": "Yeniden sıralamak için sürükleyin, bir kartı diğer sütuna taşıyın veya gizleyin.",
+      "columnEmpty": "Burada henüz kart yok.",
+      "moveColumn": "Diğer sütuna taşı",
+      "hideCard": "Kartı gizle",
+      "showCard": "Kartı göster",
+      "column": {
+        "left": "Sol sütun",
+        "right": "Sağ sütun"
+      },
+      "card": {
+        "information": "Sunucu bilgileri",
+        "installed": "Kurulu",
+        "articles": "Başlarken bağlantıları",
+        "console": "Konsol",
+        "usage": "Kullanım",
+        "network": "Ağ"
+      },
+      "login": {
+        "background": "Arka plan görseli URL'si",
+        "backgroundDescription": "Normal arka planı kullanmak için boş bırakın.",
+        "dim": "Karartma",
+        "logo": "Logo URL'si",
+        "logoDescription": "Bu sayfalarda panelin logosunun yerini alır. Korumak için boş bırakın.",
+        "preview": "Önizleme, giriş sayfasını oturum açmamış ziyaretçilerin gördüğü şekilde gösterir."
+      },
+      "authLayout": {
+        "layoutTitle": "Düzen",
+        "layout": "Giriş düzeni",
+        "layoutDescription": "Banner, giriş arka planını; yoksa panel arka planını; o da yoksa vurgu rengi geçişini gösterir. Telefonlarda yalnızca form gösterilir.",
+        "layouts": {
+          "default": "Varsayılan",
+          "flat": "Düz",
+          "sideBanner": "Yan banner",
+          "floatingBanner": "Yüzen banner",
+          "panels": "Paneller"
+        },
+        "logoPosition": "Logo konumu",
+        "positions": {
+          "header": "Üst çubuk",
+          "aboveForm": "Formun üstünde"
+        },
+        "appearanceTitle": "Arka plan ve logo",
+        "linksTitle": "Destek bağlantıları",
+        "linksDescription": "Discord, dokümantasyon veya durum sayfanız gibi en fazla {max} bağlantı. Etiketi veya URL'si olmayan bağlantılar gösterilmez.",
+        "linkLabel": "Etiket",
+        "linkUrl": "URL",
+        "linkIcon": "Simge",
+        "noIcon": "Simge yok",
+        "icons": {
+          "discord": "Discord",
+          "github": "GitHub",
+          "docs": "Dokümanlar",
+          "status": "Durum",
+          "mail": "E-posta",
+          "link": "Bağlantı"
+        },
+        "addLink": "Bağlantı ekle",
+        "removeLink": "Bağlantıyı kaldır",
+        "linksPosition": "Bağlantı konumu",
+        "mockTitle": "Giriş Yap"
+      },
+      "interface": {
+        "toastStyle": "Bildirim stili",
+        "toastStyleDescription": "Kaydetme, kopyalama ve diğer işlemlerden sonra açılan mesajlar.",
+        "toasts": {
+          "default": "Varsayılan",
+          "glassy": "Cam"
+        },
+        "pageTransition": "Sayfa geçişi",
+        "pageTransitionDescription": "Başka bir sayfa açıldığında sayfa içeriğinde oynatılır. Görmek için bir kutucuğun üzerine gelin.",
+        "transitions": {
+          "none": "Yok",
+          "fade": "Belirme",
+          "fadeUp": "Yukarı belirme",
+          "fadeScale": "Ölçekli belirme"
+        },
+        "pageTitles": "Sayfa başlıklarını göster",
+        "pageTitlesDescription": "Dosyalar ve Veritabanları gibi sunucu sayfalarındaki başlık. Arama ve butonları yerinde kalır."
+      },
+      "boxes": {
+        "title": "Kutular",
+        "boxStyle": "Kutu stili",
+        "boxStyleDescription": "Ana Sayfa kartları, hesap ayarları, yönetici formları ve grafikler gibi kartların başlık satırı.",
+        "styles": {
+          "default": "Varsayılan",
+          "line": "Çizgi",
+          "fill": "Dolgu",
+          "pill": "Hap"
+        },
+        "statsTitle": "Grafikler ve istatistikler",
+        "statStyle": "İstatistik kartı stili",
+        "statStyleDescription": "Yönetici genel bakışı ve konsol ayrıntıları gibi simgeli küçük kutucuklar.",
+        "stats": {
+          "default": "Varsayılan",
+          "reversed": "Ters",
+          "minimal": "Minimal",
+          "minimalReversed": "Minimal ters"
+        },
+        "mockTitle": "Kutu Başlığı",
+        "mockLabel": "Alan Etiketi",
+        "mockButton": "Kaydet",
+        "mockStat": "CPU yükü"
+      },
+      "consoleLayout": {
+        "title": "Konsol sayfası",
+        "description": "Bileşenleri yeniden sıralamak veya başka bir yuvaya taşımak için sürükleyin. Terminal ortada kalır; yan sütunlar geniş ekranlarda yanında, dar ekranlarda altında yer alır.",
+        "terminal": "Terminal",
+        "add": "Bileşen ekle",
+        "addTo": "Şuraya bileşen ekle: {slot}",
+        "remove": "{name} öğesini kaldır",
+        "allPlaced": "Tüm bileşenler zaten sayfada.",
+        "reset": "Varsayılan düzeni geri yükle",
+        "slot": {
+          "top": "Terminalin üstünde",
+          "left": "Terminalin solunda",
+          "right": "Terminalin sağında",
+          "bottom": "Terminalin altında"
+        },
+        "widget": {
+          "banner": "Banner ve güç butonları",
+          "stats": "Canlı istatistik kutucukları",
+          "info": "Sunucu bilgileri",
+          "cpuChart": "CPU grafiği",
+          "memoryChart": "Bellek grafiği",
+          "networkChart": "Ağ grafiği",
+          "extensionCards": "Eklenti kartları"
+        },
+        "widgetDescription": {
+          "banner": "Sunucu adı, adres, canlı istatistikler ve güç butonları.",
+          "stats": "Çalışma süresi, CPU, bellek, depolama ve ağ için kompakt kutucuklar.",
+          "info": "İsim, adres, durum, lokasyon, node ve SFTP.",
+          "cpuChart": "Canlı CPU yükü grafiği.",
+          "memoryChart": "Canlı bellek grafiği.",
+          "networkChart": "Canlı gelen ve giden trafik grafiği.",
+          "extensionCards": "Diğer eklentilerin konsola eklediği istatistik kartları."
+        }
+      },
+      "navStyle": {
+        "title": "Menü",
+        "hover": "Üzerine gelme efekti",
+        "hoverDescription": "Menü bağlantılarının imleç altındayken ve sayfaları açıkken nasıl göründüğü. İkisini de görmek için bir kutucuğun üzerine gelin.",
+        "hovers": {
+          "default": "Varsayılan",
+          "filled": "Dolgulu",
+          "filledSecondary": "İkincil dolgulu",
+          "iconPill": "Simge hapı",
+          "pill": "Hap",
+          "pillSecondary": "İkincil hap"
+        },
+        "mockLink": "Konsol",
+        "search": "Arama bileşeni",
+        "searchDescription": "Menüde logonun altında ne yer alacağı. Hızlı işlemler kısayolu hepsiyle çalışır.",
+        "searches": {
+          "palette": "Hızlı işlemler (varsayılan)",
+          "serverSelector": "Sunucu seçici",
+          "searchBar": "Arama çubuğu"
+        },
+        "searchHints": {
+          "palette": "Panelin Hızlı işlemler butonu. Sunucu değiştiricisi menünün altında kalır.",
+          "serverSelector": "Hızlı işlemler yerine menünün en üstünde, başka bir sunucuya geçmek için bir açılır liste.",
+          "searchBar": "Yazdıkça sunucuları listeleyen bir arama alanı; yönetici alanında ayrıca tüm sunucuları ve kullanıcıları da listeler. Son satırı Hızlı işlemler'i açar."
+        }
+      },
+      "serverCards": {
+        "title": "Sunucu listesi",
+        "cardStyle": "Sunucu kartı stili",
+        "cardStyleDescription": "Sunucu listesinin ızgara görünümündeki kartlar. Her stil onay kutusunu, durumu ve güç menüsünü korur.",
+        "styles": {
+          "default": "Varsayılan",
+          "banner": "Banner",
+          "flat": "Düz",
+          "linear": "Doğrusal",
+          "minimal": "Minimal",
+          "compact": "Kompakt"
+        },
+        "tablesTitle": "Tablolar",
+        "tableStyle": "Tablo stili",
+        "tableStyleDescription": "Dosyalar, yedekler, veritabanları ve yönetici sayfaları gibi panel genelindeki listeler ile sunucu listesinin liste görünümü.",
+        "tables": {
+          "table": "Tablo",
+          "cards": "Kartlar"
+        }
+      },
+      "navLayout": {
+        "title": "Düzen",
+        "layout": "Panel düzeni",
+        "layoutDescription": "Menünün masaüstünde sayfaların yanında nasıl durduğu. İnce, bağlantılarının adını üzerine gelindiğinde gösteren sabit bir simge şerididir. Telefonlar aşağıdaki telefon gezinmesini kullanır.",
+        "layouts": {
+          "default": "Varsayılan",
+          "floating": "Yüzen",
+          "pill": "Hap",
+          "slim": "İnce",
+          "horizontal": "Yatay"
+        },
+        "dock": "Yerleşim konumu",
+        "dockDescription": "Logonun, aramanın ve sunucu sayfalarında sunucu adı, durum ve güç butonlarının nerede yer aldığı.",
+        "dockHorizontal": "Yatay düzen bunları her zaman üst çubuğunda tutar.",
+        "docks": {
+          "sidebar": "Kenar çubuğu",
+          "header": "Başlık",
+          "top": "Üst"
+        },
+        "mockConsole": "Konsol"
+      },
+      "mobileNav": {
+        "label": "Telefon gezinmesi",
+        "description": "Masaüstü genişliğinin altında: çekirdeğin yüzen menü butonu veya ekranın altında ana sayfaları ve tam menü için bir Menü butonunu içeren bir çubuk.",
+        "options": {
+          "drawer": "Çekmece",
+          "bottomBar": "Alt çubuk"
+        }
+      }
+    },
+    "library": {
+      "saveAsPreset": "Hazır ayar olarak kaydet",
+      "saveAsPresetDescription": "Taslağın görünümünü (renkler, yazı tipleri, bloklar, gezinme) kendi hazır ayarınız olarak saklar. Makaleler ve giriş sayfası gibi içerikler hazır ayara dahil değildir.",
+      "name": "İsim",
+      "save": "Kaydet",
+      "cancel": "İptal Et",
+      "created": "Hazır ayar kaydedildi.",
+      "custom": "Hazır ayarlarınız",
+      "builtin": "Yerleşik",
+      "empty": "Henüz kendi hazır ayarınız yok.",
+      "limit": "En fazla {max} hazır ayar; yenisini kaydetmek için birini silin.",
+      "rename": "Yeniden Adlandır",
+      "renameTitle": "Hazır ayarı yeniden adlandır",
+      "delete": "Sil",
+      "deleteTitle": "Hazır ayarı sil",
+      "deleteConfirm": "{name} silinsin mi? Bunu seçen kullanıcılar panel varsayılanına döner.",
+      "users": "Kullanıcılar bunu seçebilir",
+      "nameProblem": {
+        "empty": "Bir isim girin.",
+        "long": "En fazla {max} karakter.",
+        "control": "Satır sonu veya kontrol karakteri olamaz."
+      },
+      "history": "Geçmiş",
+      "historyTitle": "Kaydedilen tema geçmişi",
+      "historyDescription": "Son {max} kaydetmenin yerini aldığı temalar. Birini yüklemek onu düzenleyiciye koyar; kullanmak için Kaydet'e basın.",
+      "historyEmpty": "Henüz önceki bir kayıt yok.",
+      "historyUnknown": "Geçmiş tutulmaya başlamadan önce kaydedildi",
+      "historyBy": "{time}, {user} tarafından",
+      "historyCurrent": "Kullanımda: {time} tarihinde {user} tarafından kaydedildi",
+      "load": "Düzenleyiciye yükle",
+      "loaded": "Düzenleyiciye yüklendi. Kullanmak için Kaydet'e basın.",
+      "choice": {
+        "title": "Tema",
+        "label": "Temanız",
+        "description": "Panelin size nasıl göründüğü. Yalnızca siz görürsünüz, oturum açtığınız her cihazda.",
+        "default": "Panel varsayılanı"
+      }
+    }
+  }
+}

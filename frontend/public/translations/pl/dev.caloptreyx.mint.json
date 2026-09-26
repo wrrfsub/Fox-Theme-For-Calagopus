@@ -1,0 +1,569 @@
+{
+  "items": {},
+  "translations": {
+    "nav": {
+      "editor": "Edytor motywu"
+    },
+    "home": {
+      "title": "Strona główna",
+      "address": "Adres serwera",
+      "location": "Lokalizacja",
+      "gettingStarted": "Pierwsze kroki",
+      "information": "Informacje o serwerze",
+      "installed": "Zainstalowano",
+      "serverName": "Nazwa serwera",
+      "status": "Status",
+      "uptime": "Czas pracy",
+      "node": "Węzeł",
+      "memory": "Pamięć",
+      "image": "Obraz",
+      "console": "Konsola",
+      "fullLog": "Pełny log serwera",
+      "usage": "Użycie",
+      "cpu": "CPU",
+      "ram": "RAM",
+      "storage": "Miejsce na dysku",
+      "network": "Sieć",
+      "inbound": "Przychodzące",
+      "outbound": "Wychodzące",
+      "sftp": "SFTP"
+    },
+    "servers": {
+      "title": "Moje serwery",
+      "subtitle": "Twoje serwery oraz te, które ktoś Ci udostępnił.",
+      "actions": "Akcje serwera",
+      "cpu": "CPU",
+      "disk": "Dysk",
+      "showing": "Wyświetlono: {count}",
+      "select": "Zaznacz {name}",
+      "selectAll": "Zaznacz wszystkie widoczne serwery",
+      "column": {
+        "id": "ID",
+        "name": "Nazwa",
+        "game": "Gra",
+        "status": "Status",
+        "location": "Lokalizacja",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "uptime": "Czas pracy",
+        "memory": "Pamięć"
+      },
+      "filter": {
+        "all": "Wszystkie serwery",
+        "running": "Włączone",
+        "offline": "Wyłączone",
+        "suspended": "Zawieszone",
+        "other": "Inne"
+      },
+      "view": {
+        "list": "Widok listy",
+        "grid": "Widok siatki"
+      }
+    },
+    "serverSort": {
+      "sortBy": "Sortuj według",
+      "sort": {
+        "none": "Domyślna kolejność",
+        "name": "Sortuj według nazwy",
+        "status": "Sortuj według statusu",
+        "game": "Sortuj według gry",
+        "location": "Sortuj według lokalizacji",
+        "cpu": "Sortuj według CPU",
+        "ram": "Sortuj według RAM",
+        "uptime": "Sortuj według czasu pracy",
+        "id": "Sortuj według ID"
+      },
+      "ascending": "Rosnąco, kliknij, aby odwrócić",
+      "descending": "Malejąco, kliknij, aby odwrócić",
+      "groupBy": "Grupuj według",
+      "group": {
+        "none": "Bez grupowania",
+        "location": "Grupuj według lokalizacji",
+        "game": "Grupuj według gry",
+        "status": "Grupuj według statusu"
+      },
+      "selectGroup": "Zaznacz wszystkie w {name}"
+    },
+    "account": {
+      "changeBanner": "Zmień baner",
+      "removeBanner": "Usuń baner",
+      "changeAvatar": "Zmień awatar",
+      "bannerFile": "Obraz",
+      "bannerHint": "PNG, JPEG, WebP lub GIF. Przeciągnij, aby wybrać widoczny fragment. Widzisz go tylko Ty.",
+      "admin": "Administrator",
+      "twoFactorOn": "2FA włączone",
+      "twoFactorOff": "2FA wyłączone"
+    },
+    "announcementCta": {
+      "tab": "Wezwanie do działania",
+      "title": "Wezwanie do działania",
+      "description": "Wyświetl przycisk w ogłoszeniu.",
+      "enable": "Włącz wezwanie do działania",
+      "enableDescription": "Dodaje przycisk pod treścią ogłoszenia, w kolorze ogłoszenia.",
+      "buttonTitle": "Tekst przycisku",
+      "buttonTitleDescription": "Tekst na przycisku, maksymalnie {max} znaków.",
+      "buttonTitlePlaceholder": "Odwiedź sklep",
+      "buttonLink": "Link przycisku",
+      "buttonLinkDescription": "Dokąd prowadzi: strona panelu, np. /account, otwiera się w tym samym miejscu, a pełny adres https:// otwiera się w nowej karcie.",
+      "buttonLinkPlaceholder": "/account lub https://example.com",
+      "titleRequired": "Podaj tekst przycisku.",
+      "titleTooLong": "Tekst może mieć maksymalnie {max} znaków.",
+      "titleInvalid": "Usuń tabulatory i podziały wierszy z tekstu.",
+      "linkInvalid": "Użyj ścieżki panelu zaczynającej się od pojedynczego / albo pełnego adresu http:// lub https://, bez spacji, cudzysłowów, nawiasów ostrych, okrągłych i klamrowych, średników ani ukośników wstecznych.",
+      "linkTooLong": "Link może mieć maksymalnie {max} znaków.",
+      "saved": "Zapisano wezwanie do działania.",
+      "removed": "Usunięto wezwanie do działania."
+    },
+    "auth": {
+      "supportLinks": "Linki pomocy"
+    },
+    "navSearch": {
+      "placeholder": "Wyszukaj...",
+      "servers": "Serwery",
+      "allServers": "Wszystkie serwery",
+      "users": "Użytkownicy",
+      "empty": "Nic nie znaleziono",
+      "everything": "Szukaj wszędzie „{query}”",
+      "quickActions": "Otwórz szybkie akcje",
+      "switchServer": "Przełącz serwer"
+    },
+    "topBar": {
+      "navigation": "Menu główne"
+    },
+    "bottomNav": {
+      "label": "Nawigacja na telefonie",
+      "menu": "Menu"
+    },
+    "editor": {
+      "contrast": {
+        "title": "Niektóre kolory są słabo czytelne",
+        "description": "Poniżej minimum WCAG; zapisywanie nadal działa.",
+        "pair": "{fg} na {bg}: {ratio}:1 (zalecane {min}:1)",
+        "low": "Niski kontrast z {other}: {ratio}:1 (zalecane {min}:1)",
+        "lowAs": "Niski kontrast jako {role} na {other}: {ratio}:1 (zalecane {min}:1)",
+        "named": "{name} ({role})",
+        "roles": {
+          "links": "linki",
+          "dimmed": "przygaszony tekst"
+        }
+      },
+      "favicon": {
+        "label": "Ikona karty przeglądarki",
+        "description": "Zastępuje ikonę panelu na kartach przeglądarki i ekranach głównych, również na stronach logowania. Pozostaw puste, aby zachować ikonę panelu. Najlepiej sprawdzi się kwadratowy plik PNG, ICO lub SVG.",
+        "preview": "Podgląd karty"
+      },
+      "close": "Zamknij edytor",
+      "undo": "Cofnij",
+      "redo": "Ponów",
+      "reset": "Przywróć domyślne",
+      "import": "Importuj motyw",
+      "export": "Eksportuj motyw",
+      "importFailed": "Ten plik nie jest motywem Mint.",
+      "save": "Zapisz",
+      "saved": "Zapisano motyw.",
+      "refresh": "Odśwież podgląd",
+      "openTab": "Otwórz w nowej karcie",
+      "device": {
+        "desktop": "Komputer",
+        "tablet": "Tablet",
+        "mobile": "Telefon"
+      },
+      "scheme": {
+        "dark": "Ciemny",
+        "light": "Jasny"
+      },
+      "pages": {
+        "home": "Strona główna serwera",
+        "console": "Konsola serwera",
+        "servers": "Serwery",
+        "account": "Konto",
+        "admin": "Administracja",
+        "login": "Strona logowania"
+      },
+      "section": {
+        "presets": "Presety",
+        "presetsDescription": "Zacznij od gotowego wyglądu, zapisz własne i wybierz, które z nich mogą wybierać użytkownicy.",
+        "colours": "Kolory",
+        "coloursDescription": "Wszystkie pozostałe kolory powstają z tych pięciu.",
+        "style": "Styl",
+        "styleDescription": "Czcionka i zaokrąglenie rogów.",
+        "background": "Tło",
+        "backgroundDescription": "Obraz za całym panelem, przyciemniony kolorem strony, oraz ikona karty przeglądarki.",
+        "home": "Strona główna",
+        "homeDescription": "Baner i obrazy gier na stronie startowej.",
+        "articles": "Pierwsze kroki",
+        "articlesDescription": "Linki wyświetlane na stronie głównej każdego serwera.",
+        "layout": "Układ",
+        "layoutDescription": "Które karty pokazuje strona główna i gdzie.",
+        "login": "Strona logowania",
+        "loginDescription": "Układ, tło, logo i linki pomocy na stronach logowania, rejestracji i hasła.",
+        "interface": "Interfejs",
+        "interfaceDescription": "Powiadomienia, przejścia stron i tytuły stron.",
+        "navigation": "Nawigacja",
+        "navigationDescription": "Układ panelu bocznego, efekt najechania w menu i wyszukiwanie.",
+        "components": "Komponenty",
+        "componentsDescription": "Karty serwerów, tabele, pola i karty statystyk.",
+        "console": "Konsola",
+        "consoleDescription": "Co strona konsoli pokazuje wokół terminala i gdzie."
+      },
+      "accent": "Akcent",
+      "accentDescription": "Przyciski, linki i aktywna pozycja menu",
+      "highlight": "Wyróżnienie",
+      "highlightDescription": "Ikony statystyk na banerze konsoli",
+      "background": "Tło",
+      "backgroundDescription": "Strona pod wszystkimi elementami",
+      "surface": "Powierzchnia",
+      "surfaceDescription": "Karty, panel boczny i konsola",
+      "text": "Tekst",
+      "textDescription": "Z niego powstają przygaszony tekst i obramowania",
+      "derived": "Wyliczony z powyższych kolorów",
+      "clearColor": "Wróć do wyliczonego koloru",
+      "group": {
+        "accents": "Akcenty",
+        "surfaces": "Powierzchnie",
+        "surfacesExtra": "Warstwy na wierzchu",
+        "text": "Tekst",
+        "textExtra": "Więcej tekstu",
+        "lines": "Linie",
+        "buttons": "Przyciski",
+        "status": "Status",
+        "charts": "Wykresy",
+        "light": "Tryb jasny"
+      },
+      "surfaceRaised": "Uniesiona",
+      "surfaceOverlay": "Nakładka",
+      "textMuted": "Przygaszony tekst",
+      "textFaint": "Blady tekst",
+      "textOnAccent": "Tekst na akcencie",
+      "line": "Cienka linia",
+      "buttonText": "Tekst przycisku",
+      "success": "Sukces",
+      "warning": "Ostrzeżenie",
+      "danger": "Zagrożenie",
+      "offline": "Wyłączony",
+      "chartOne": "Seria pierwsza",
+      "chartTwo": "Seria druga",
+      "lightBackground": "Jasne tło",
+      "lightSurface": "Jasna powierzchnia",
+      "lightText": "Jasny tekst",
+      "font": "Czcionka",
+      "fontExo": "Exo 2",
+      "fontMontserrat": "Montserrat",
+      "fontPanel": "Domyślna panelu",
+      "fontOutfit": "Outfit",
+      "fontJakarta": "Plus Jakarta Sans",
+      "fontSpace": "Space Grotesk",
+      "monoFont": "Czcionka o stałej szerokości",
+      "monoFontDescription": "Kod, identyfikatory i konsola serwera.",
+      "monoFontJetbrains": "JetBrains Mono",
+      "monoFontFira": "Fira Code",
+      "sidebarGroups": "Grupuj menu serwera",
+      "sidebarGroupsDescription": "Zwijane sekcje Zarządzanie, Konfiguracja i Dostęp.",
+      "buttonStyle": "Styl przycisków",
+      "buttonAccent": "Przyciski w kolorze akcentu",
+      "buttonColor": "Kolor przycisków",
+      "buttons": {
+        "filled": "Pełny",
+        "tinted": "Zabarwiony",
+        "outline": "Kontur",
+        "glass": "Szkło"
+      },
+      "radius": "Rogi kart",
+      "elementRadius": "Rogi przycisków i pól",
+      "blocks": {
+        "title": "Bloki",
+        "opacity": "Krycie bloków",
+        "opacityDescription": "Poniżej 100% tło strony lub jego obraz prześwituje przez karty i panel boczny.",
+        "glass": "Efekt szkła",
+        "glassHint": "Aby uzyskać wygląd szkła, ustaw krycie bloków na około 80% i włącz Efekt szkła oraz Obramowanie bloków.",
+        "glassOff": "Domyślny",
+        "glassOn": "Szklany",
+        "border": "Obramowanie bloków",
+        "withBorder": "Z obramowaniem",
+        "withoutBorder": "Bez obramowania"
+      },
+      "elements": {
+        "title": "Elementy",
+        "inputBorder": "Obramowanie pól",
+        "withBorder": "Z obramowaniem",
+        "withoutBorder": "Bez obramowania",
+        "clickEffect": "Efekt kliknięcia",
+        "clickEffectDescription": "Jak przyciski reagują na naciśnięcie.",
+        "click": {
+          "none": "Brak",
+          "drop": "Wciśnięcie",
+          "shrink": "Zmniejszenie",
+          "outline": "Kontur"
+        },
+        "create": "Utwórz"
+      },
+      "backgroundImage": "URL obrazu",
+      "backgroundImageDescription": "Pozostaw puste, aby użyć jednolitego tła.",
+      "backgroundDim": "Przyciemnienie",
+      "homeBanner": "URL domyślnego obrazu banera",
+      "homeBannerDescription": "Używany dla jajek bez własnego banera. Pozostaw puste, aby użyć gradientu w kolorze akcentu.",
+      "articles": "Linki „Pierwsze kroki”",
+      "articlesDescription": "Maksymalnie {max} linków do Twoich poradników lub bazy wiedzy.",
+      "articleTitle": "Tytuł",
+      "articleDescription": "Opis",
+      "articleUrl": "URL",
+      "addArticle": "Dodaj link",
+      "removeArticle": "Usuń link",
+      "eggImages": "Obrazy gier",
+      "eggImagesDescription": "Baner i ikona dla każdego jajka. Jajka bez banera używają powyższego.",
+      "egg": "Jajko",
+      "eggBanner": "URL obrazu banera",
+      "eggIcon": "URL obrazu ikony",
+      "layoutDescription": "Przeciągnij, aby zmienić kolejność, przenieś kartę do drugiej kolumny lub ją ukryj.",
+      "columnEmpty": "Brak kart.",
+      "moveColumn": "Przenieś do drugiej kolumny",
+      "hideCard": "Ukryj kartę",
+      "showCard": "Pokaż kartę",
+      "column": {
+        "left": "Lewa kolumna",
+        "right": "Prawa kolumna"
+      },
+      "card": {
+        "information": "Informacje o serwerze",
+        "installed": "Zainstalowano",
+        "articles": "Linki „Pierwsze kroki”",
+        "console": "Konsola",
+        "usage": "Użycie",
+        "network": "Sieć"
+      },
+      "login": {
+        "background": "URL obrazu tła",
+        "backgroundDescription": "Pozostaw puste, aby użyć zwykłego tła.",
+        "dim": "Przyciemnienie",
+        "logo": "URL logo",
+        "logoDescription": "Zastępuje logo panelu na tych stronach. Pozostaw puste, aby je zachować.",
+        "preview": "Podgląd pokazuje stronę logowania tak, jak widzą ją niezalogowani odwiedzający."
+      },
+      "authLayout": {
+        "layoutTitle": "Układ",
+        "layout": "Układ logowania",
+        "layoutDescription": "Baner pokazuje tło logowania, a jeśli go brak — tło panelu, a w ostateczności gradient w kolorze akcentu. Na telefonach widoczny jest tylko formularz.",
+        "layouts": {
+          "default": "Domyślny",
+          "flat": "Płaski",
+          "sideBanner": "Baner z boku",
+          "floatingBanner": "Pływający baner",
+          "panels": "Panele"
+        },
+        "logoPosition": "Położenie logo",
+        "positions": {
+          "header": "Górny pasek",
+          "aboveForm": "Nad formularzem"
+        },
+        "appearanceTitle": "Tło i logo",
+        "linksTitle": "Linki pomocy",
+        "linksDescription": "Maksymalnie {max} linków, np. do Twojego Discorda, dokumentacji lub strony statusu. Linki bez etykiety lub URL nie są wyświetlane.",
+        "linkLabel": "Etykieta",
+        "linkUrl": "URL",
+        "linkIcon": "Ikona",
+        "noIcon": "Bez ikony",
+        "icons": {
+          "discord": "Discord",
+          "github": "GitHub",
+          "docs": "Dokumentacja",
+          "status": "Status",
+          "mail": "E-mail",
+          "link": "Link"
+        },
+        "addLink": "Dodaj link",
+        "removeLink": "Usuń link",
+        "linksPosition": "Położenie linków",
+        "mockTitle": "Zaloguj się"
+      },
+      "interface": {
+        "toastStyle": "Styl powiadomień",
+        "toastStyleDescription": "Komunikaty wyskakujące po zapisaniu, skopiowaniu i innych akcjach.",
+        "toasts": {
+          "default": "Domyślny",
+          "glassy": "Szklany"
+        },
+        "pageTransition": "Przejście stron",
+        "pageTransitionDescription": "Odtwarzane na treści strony, gdy otwiera się inna strona. Najedź na kafelek, aby je zobaczyć.",
+        "transitions": {
+          "none": "Brak",
+          "fade": "Pojawienie",
+          "fadeUp": "Pojawienie w górę",
+          "fadeScale": "Pojawienie ze skalowaniem"
+        },
+        "pageTitles": "Pokazuj tytuły stron",
+        "pageTitlesDescription": "Nagłówek na stronach serwera, takich jak Pliki i Bazy danych. Wyszukiwarka i przyciski pozostają."
+      },
+      "boxes": {
+        "title": "Pola",
+        "boxStyle": "Styl pól",
+        "boxStyleDescription": "Wiersz tytułu kart, np. kart na stronie głównej, ustawień konta, formularzy administracyjnych i wykresów.",
+        "styles": {
+          "default": "Domyślny",
+          "line": "Linia",
+          "fill": "Wypełnienie",
+          "pill": "Pigułka"
+        },
+        "statsTitle": "Wykresy i statystyki",
+        "statStyle": "Styl kart statystyk",
+        "statStyleDescription": "Małe kafelki z ikoną, np. w podsumowaniu administracji i szczegółach konsoli.",
+        "stats": {
+          "default": "Domyślny",
+          "reversed": "Odwrócony",
+          "minimal": "Minimalny",
+          "minimalReversed": "Minimalny odwrócony"
+        },
+        "mockTitle": "Tytuł pola",
+        "mockLabel": "Etykieta pola",
+        "mockButton": "Zapisz",
+        "mockStat": "Obciążenie CPU"
+      },
+      "consoleLayout": {
+        "title": "Strona konsoli",
+        "description": "Przeciągaj komponenty, aby zmienić ich kolejność lub przenieść je do innego miejsca. Terminal pozostaje pośrodku; boczne kolumny są obok niego na szerokich ekranach, a pod nim na wąskich.",
+        "terminal": "Terminal",
+        "add": "Dodaj komponent",
+        "addTo": "Dodaj komponent do: {slot}",
+        "remove": "Usuń {name}",
+        "allPlaced": "Wszystkie komponenty są już na stronie.",
+        "reset": "Przywróć domyślny układ",
+        "slot": {
+          "top": "Nad terminalem",
+          "left": "Na lewo od terminala",
+          "right": "Na prawo od terminala",
+          "bottom": "Pod terminalem"
+        },
+        "widget": {
+          "banner": "Baner i przyciski zasilania",
+          "stats": "Kafelki statystyk na żywo",
+          "info": "Informacje o serwerze",
+          "cpuChart": "Wykres CPU",
+          "memoryChart": "Wykres pamięci",
+          "networkChart": "Wykres sieci",
+          "extensionCards": "Karty rozszerzeń"
+        },
+        "widgetDescription": {
+          "banner": "Nazwa serwera, adres, statystyki na żywo i przyciski zasilania.",
+          "stats": "Kompaktowe kafelki z czasem pracy, CPU, pamięcią, dyskiem i siecią.",
+          "info": "Nazwa, adres, status, lokalizacja, węzeł i SFTP.",
+          "cpuChart": "Wykres obciążenia CPU na żywo.",
+          "memoryChart": "Wykres pamięci na żywo.",
+          "networkChart": "Wykres ruchu przychodzącego i wychodzącego na żywo.",
+          "extensionCards": "Karty statystyk dodawane do konsoli przez inne rozszerzenia."
+        }
+      },
+      "navStyle": {
+        "title": "Menu",
+        "hover": "Efekt najechania",
+        "hoverDescription": "Jak wyglądają linki menu pod kursorem i gdy ich strona jest otwarta. Najedź na kafelek, aby zobaczyć oba stany.",
+        "hovers": {
+          "default": "Domyślny",
+          "filled": "Wypełniony",
+          "filledSecondary": "Wypełniony drugorzędny",
+          "iconPill": "Pigułka ikony",
+          "pill": "Pigułka",
+          "pillSecondary": "Pigułka drugorzędna"
+        },
+        "mockLink": "Konsola",
+        "search": "Komponent wyszukiwania",
+        "searchDescription": "Co znajduje się pod logo w menu. Skrót do szybkich akcji działa ze wszystkimi opcjami.",
+        "searches": {
+          "palette": "Szybkie akcje (domyślnie)",
+          "serverSelector": "Wybór serwera",
+          "searchBar": "Pasek wyszukiwania"
+        },
+        "searchHints": {
+          "palette": "Przycisk szybkich akcji panelu. Przełącznik serwerów pozostaje na dole menu.",
+          "serverSelector": "Lista rozwijana do przechodzenia na inny serwer, na górze menu zamiast szybkich akcji.",
+          "searchBar": "Pole wyszukiwania, które wyświetla serwery podczas pisania; w panelu administracyjnym także wszystkie serwery i użytkowników. Jego ostatni wiersz otwiera szybkie akcje."
+        }
+      },
+      "serverCards": {
+        "title": "Lista serwerów",
+        "cardStyle": "Styl kart serwerów",
+        "cardStyleDescription": "Karty w widoku siatki listy serwerów. Każdy styl zachowuje pole wyboru, status i menu zasilania.",
+        "styles": {
+          "default": "Domyślny",
+          "banner": "Baner",
+          "flat": "Płaski",
+          "linear": "Liniowy",
+          "minimal": "Minimalny",
+          "compact": "Kompaktowy"
+        },
+        "tablesTitle": "Tabele",
+        "tableStyle": "Styl tabel",
+        "tableStyleDescription": "Listy w całym panelu, takie jak pliki, kopie zapasowe, bazy danych i strony administracyjne, oraz widok listy serwerów.",
+        "tables": {
+          "table": "Tabela",
+          "cards": "Karty"
+        }
+      },
+      "navLayout": {
+        "title": "Układ",
+        "layout": "Układ pulpitu",
+        "layoutDescription": "Jak menu jest ułożone obok stron na komputerze. Wąski to stały pasek ikon, który pokazuje nazwy linków po najechaniu. Telefony używają nawigacji na telefonie opisanej poniżej.",
+        "layouts": {
+          "default": "Domyślny",
+          "floating": "Pływający",
+          "pill": "Pigułka",
+          "slim": "Wąski",
+          "horizontal": "Poziomy"
+        },
+        "dock": "Położenie doku",
+        "dockDescription": "Gdzie znajdują się logo, wyszukiwanie oraz, na stronach serwera, nazwa serwera, status i przyciski zasilania.",
+        "dockHorizontal": "Układ poziomy zawsze trzyma je na górnym pasku.",
+        "docks": {
+          "sidebar": "Panel boczny",
+          "header": "Nagłówek",
+          "top": "Góra"
+        },
+        "mockConsole": "Konsola"
+      },
+      "mobileNav": {
+        "label": "Nawigacja na telefonie",
+        "description": "Poniżej szerokości komputera: pływający przycisk menu z panelu lub pasek na dole ekranu z głównymi stronami i przyciskiem Menu otwierającym pełne menu.",
+        "options": {
+          "drawer": "Szuflada",
+          "bottomBar": "Dolny pasek"
+        }
+      }
+    },
+    "library": {
+      "saveAsPreset": "Zapisz jako preset",
+      "saveAsPresetDescription": "Zachowuje wygląd wersji roboczej (kolory, czcionki, bloki, nawigację) jako Twój własny preset. Treści, takie jak artykuły i strona logowania, nie są częścią presetu.",
+      "name": "Nazwa",
+      "save": "Zapisz",
+      "cancel": "Anuluj",
+      "created": "Zapisano preset.",
+      "custom": "Twoje presety",
+      "builtin": "Wbudowane",
+      "empty": "Nie masz jeszcze własnych presetów.",
+      "limit": "Maksymalnie {max} presetów; usuń jeden, aby zapisać kolejny.",
+      "rename": "Zmień nazwę",
+      "renameTitle": "Zmień nazwę presetu",
+      "delete": "Usuń",
+      "deleteTitle": "Usuń preset",
+      "deleteConfirm": "Usunąć {name}? Użytkownicy, którzy go wybrali, wrócą do domyślnego wyglądu panelu.",
+      "users": "Użytkownicy mogą go wybrać",
+      "nameProblem": {
+        "empty": "Wpisz nazwę.",
+        "long": "Maksymalnie {max} znaków.",
+        "control": "Bez podziałów wierszy i znaków sterujących."
+      },
+      "history": "Historia",
+      "historyTitle": "Historia zapisanych motywów",
+      "historyDescription": "Motywy zastąpione przez ostatnie {max} zapisów. Wczytanie motywu otwiera go w edytorze; naciśnij Zapisz, aby go użyć.",
+      "historyEmpty": "Brak wcześniejszych zapisów.",
+      "historyUnknown": "Zapisano przed włączeniem historii",
+      "historyBy": "{time}, autor: {user}",
+      "historyCurrent": "W użyciu: zapisano {time}, autor: {user}",
+      "load": "Wczytaj do edytora",
+      "loaded": "Wczytano do edytora. Naciśnij Zapisz, aby go użyć.",
+      "choice": {
+        "title": "Motyw",
+        "label": "Twój motyw",
+        "description": "Jak wygląda panel dla Ciebie. Widzisz go tylko Ty, na każdym urządzeniu, na którym się logujesz.",
+        "default": "Domyślny panelu"
+      }
+    }
+  }
+}

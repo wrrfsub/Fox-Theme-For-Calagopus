@@ -1,0 +1,569 @@
+{
+  "items": {},
+  "translations": {
+    "nav": {
+      "editor": "Editor del tema"
+    },
+    "home": {
+      "title": "Home",
+      "address": "Indirizzo del server",
+      "location": "Posizione",
+      "gettingStarted": "Per iniziare",
+      "information": "Informazioni sul server",
+      "installed": "Installato",
+      "serverName": "Nome del server",
+      "status": "Stato",
+      "uptime": "Tempo di attività",
+      "node": "Nodo",
+      "memory": "Memoria",
+      "image": "Immagine",
+      "console": "Console",
+      "fullLog": "Log completo del server",
+      "usage": "Utilizzo",
+      "cpu": "CPU",
+      "ram": "RAM",
+      "storage": "Spazio",
+      "network": "Rete",
+      "inbound": "In entrata",
+      "outbound": "In uscita",
+      "sftp": "SFTP"
+    },
+    "servers": {
+      "title": "I miei server",
+      "subtitle": "I tuoi server e quelli condivisi con te.",
+      "actions": "Azioni server",
+      "cpu": "CPU",
+      "disk": "Disco",
+      "showing": "{count} visualizzati",
+      "select": "Seleziona {name}",
+      "selectAll": "Seleziona tutti i server visibili",
+      "column": {
+        "id": "ID",
+        "name": "Nome",
+        "game": "Gioco",
+        "status": "Stato",
+        "location": "Posizione",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "uptime": "Tempo di attività",
+        "memory": "Memoria"
+      },
+      "filter": {
+        "all": "Tutti i server",
+        "running": "Online",
+        "offline": "Offline",
+        "suspended": "Sospesi",
+        "other": "Altro"
+      },
+      "view": {
+        "list": "Vista elenco",
+        "grid": "Vista griglia"
+      }
+    },
+    "serverSort": {
+      "sortBy": "Ordina per",
+      "sort": {
+        "none": "Ordine predefinito",
+        "name": "Ordina per nome",
+        "status": "Ordina per stato",
+        "game": "Ordina per gioco",
+        "location": "Ordina per posizione",
+        "cpu": "Ordina per CPU",
+        "ram": "Ordina per RAM",
+        "uptime": "Ordina per tempo di attività",
+        "id": "Ordina per ID"
+      },
+      "ascending": "Crescente, clicca per invertire",
+      "descending": "Decrescente, clicca per invertire",
+      "groupBy": "Raggruppa per",
+      "group": {
+        "none": "Nessun raggruppamento",
+        "location": "Raggruppa per posizione",
+        "game": "Raggruppa per gioco",
+        "status": "Raggruppa per stato"
+      },
+      "selectGroup": "Seleziona tutti in {name}"
+    },
+    "account": {
+      "changeBanner": "Cambia banner",
+      "removeBanner": "Rimuovi banner",
+      "changeAvatar": "Cambia avatar",
+      "bannerFile": "Immagine",
+      "bannerHint": "PNG, JPEG, WebP o GIF. Trascinala per scegliere la parte visibile. Solo tu la vedi.",
+      "admin": "Amministratore",
+      "twoFactorOn": "2FA attiva",
+      "twoFactorOff": "2FA disattivata"
+    },
+    "announcementCta": {
+      "tab": "Invito all'azione",
+      "title": "Invito all'azione",
+      "description": "Mostra un pulsante nell'annuncio.",
+      "enable": "Attiva invito all'azione",
+      "enableDescription": "Aggiunge un pulsante sotto il testo dell'annuncio, nel colore dell'annuncio.",
+      "buttonTitle": "Titolo del pulsante",
+      "buttonTitleDescription": "Il testo del pulsante, fino a {max} caratteri.",
+      "buttonTitlePlaceholder": "Visita lo store",
+      "buttonLink": "Link del pulsante",
+      "buttonLinkDescription": "Dove porta: una pagina del pannello come /account si apre sul posto, un indirizzo https:// completo si apre in una nuova scheda.",
+      "buttonLinkPlaceholder": "/account o https://example.com",
+      "titleRequired": "Dai un titolo al pulsante.",
+      "titleTooLong": "Limita il titolo a {max} caratteri.",
+      "titleInvalid": "Rimuovi tabulazioni e a capo dal titolo.",
+      "linkInvalid": "Usa un percorso del pannello che inizia con una sola / oppure un indirizzo http:// o https:// completo, senza spazi, virgolette, parentesi angolari, tonde o graffe, punti e virgola o barre rovesciate.",
+      "linkTooLong": "Limita il link a {max} caratteri.",
+      "saved": "Invito all'azione salvato.",
+      "removed": "Invito all'azione rimosso."
+    },
+    "auth": {
+      "supportLinks": "Link di supporto"
+    },
+    "navSearch": {
+      "placeholder": "Cerca...",
+      "servers": "Server",
+      "allServers": "Tutti i server",
+      "users": "Utenti",
+      "empty": "Nessun risultato",
+      "everything": "Cerca ovunque «{query}»",
+      "quickActions": "Apri azioni rapide",
+      "switchServer": "Cambia server"
+    },
+    "topBar": {
+      "navigation": "Menu principale"
+    },
+    "bottomNav": {
+      "label": "Navigazione su telefono",
+      "menu": "Menu"
+    },
+    "editor": {
+      "contrast": {
+        "title": "Alcuni colori sono difficili da leggere",
+        "description": "Sotto il minimo WCAG; il salvataggio funziona comunque.",
+        "pair": "{fg} su {bg}: {ratio}:1 (obiettivo {min}:1)",
+        "low": "Contrasto basso con {other}: {ratio}:1 (obiettivo {min}:1)",
+        "lowAs": "Contrasto basso come {role} su {other}: {ratio}:1 (obiettivo {min}:1)",
+        "named": "{name} ({role})",
+        "roles": {
+          "links": "link",
+          "dimmed": "testo attenuato"
+        }
+      },
+      "favicon": {
+        "label": "Icona della scheda del browser",
+        "description": "Sostituisce l'icona del pannello nelle schede del browser e nelle schermate home, pagine di accesso incluse. Lascia vuoto per mantenere l'icona del pannello. Un PNG, ICO o SVG quadrato è la scelta migliore.",
+        "preview": "Anteprima scheda"
+      },
+      "close": "Chiudi editor",
+      "undo": "Annulla",
+      "redo": "Ripeti",
+      "reset": "Ripristina predefinito",
+      "import": "Importa tema",
+      "export": "Esporta tema",
+      "importFailed": "Questo file non è un tema Mint.",
+      "save": "Salva",
+      "saved": "Tema salvato.",
+      "refresh": "Ricarica anteprima",
+      "openTab": "Apri in una nuova scheda",
+      "device": {
+        "desktop": "Desktop",
+        "tablet": "Tablet",
+        "mobile": "Mobile"
+      },
+      "scheme": {
+        "dark": "Scuro",
+        "light": "Chiaro"
+      },
+      "pages": {
+        "home": "Home del server",
+        "console": "Console del server",
+        "servers": "Server",
+        "account": "Account",
+        "admin": "Admin",
+        "login": "Pagina di accesso"
+      },
+      "section": {
+        "presets": "Preset",
+        "presetsDescription": "Parti da uno stile pronto, salva i tuoi e scegli quali possono usare gli utenti.",
+        "colours": "Colori",
+        "coloursDescription": "Tutto il resto deriva da questi cinque.",
+        "style": "Stile",
+        "styleDescription": "Font e arrotondamento degli angoli.",
+        "background": "Sfondo",
+        "backgroundDescription": "Un'immagine dietro tutto il pannello, attenuata con il colore della pagina, e l'icona della scheda del browser.",
+        "home": "Pagina home",
+        "homeDescription": "Banner e immagini dei giochi per la pagina iniziale.",
+        "articles": "Per iniziare",
+        "articlesDescription": "Link mostrati nella home di ogni server.",
+        "layout": "Layout",
+        "layoutDescription": "Quali schede mostra la home e dove.",
+        "login": "Pagina di accesso",
+        "loginDescription": "Layout, sfondo, logo e link di supporto per le pagine di accesso, registrazione e password.",
+        "interface": "Interfaccia",
+        "interfaceDescription": "Notifiche, transizioni di pagina e titoli delle pagine.",
+        "navigation": "Navigazione",
+        "navigationDescription": "Layout della barra laterale, effetto hover del menu e ricerca.",
+        "components": "Componenti",
+        "componentsDescription": "Schede server, tabelle, riquadri e schede statistiche.",
+        "console": "Console",
+        "consoleDescription": "Cosa mostra la pagina della console intorno al terminale, e dove."
+      },
+      "accent": "Accento",
+      "accentDescription": "Pulsanti, link e voce di menu attiva",
+      "highlight": "Evidenziazione",
+      "highlightDescription": "Icone statistiche nel banner della console",
+      "background": "Sfondo",
+      "backgroundDescription": "La pagina dietro a tutto",
+      "surface": "Superficie",
+      "surfaceDescription": "Schede, barra laterale e console",
+      "text": "Testo",
+      "textDescription": "Testo attenuato e bordi derivano da questo",
+      "derived": "Derivato dai colori sopra",
+      "clearColor": "Torna al colore derivato",
+      "group": {
+        "accents": "Accenti",
+        "surfaces": "Superfici",
+        "surfacesExtra": "Livelli superiori",
+        "text": "Testo",
+        "textExtra": "Altro testo",
+        "lines": "Linee",
+        "buttons": "Pulsanti",
+        "status": "Stato",
+        "charts": "Grafici",
+        "light": "Modalità chiara"
+      },
+      "surfaceRaised": "Rialzata",
+      "surfaceOverlay": "Sovrapposizione",
+      "textMuted": "Testo attenuato",
+      "textFaint": "Testo tenue",
+      "textOnAccent": "Testo su accento",
+      "line": "Linea sottile",
+      "buttonText": "Testo pulsante",
+      "success": "Successo",
+      "warning": "Avviso",
+      "danger": "Pericolo",
+      "offline": "Offline",
+      "chartOne": "Serie uno",
+      "chartTwo": "Serie due",
+      "lightBackground": "Sfondo chiaro",
+      "lightSurface": "Superficie chiara",
+      "lightText": "Testo chiaro",
+      "font": "Font",
+      "fontExo": "Exo 2",
+      "fontMontserrat": "Montserrat",
+      "fontPanel": "Predefinito del pannello",
+      "fontOutfit": "Outfit",
+      "fontJakarta": "Plus Jakarta Sans",
+      "fontSpace": "Space Grotesk",
+      "monoFont": "Font monospazio",
+      "monoFontDescription": "Codice, ID e console del server.",
+      "monoFontJetbrains": "JetBrains Mono",
+      "monoFontFira": "Fira Code",
+      "sidebarGroups": "Raggruppa il menu del server",
+      "sidebarGroupsDescription": "Sezioni Gestione, Configurazione e Accesso comprimibili.",
+      "buttonStyle": "Stile dei pulsanti",
+      "buttonAccent": "I pulsanti usano il colore d'accento",
+      "buttonColor": "Colore dei pulsanti",
+      "buttons": {
+        "filled": "Pieno",
+        "tinted": "Tinto",
+        "outline": "Contorno",
+        "glass": "Vetro"
+      },
+      "radius": "Angoli delle schede",
+      "elementRadius": "Angoli di pulsanti e campi",
+      "blocks": {
+        "title": "Blocchi",
+        "opacity": "Opacità dei blocchi",
+        "opacityDescription": "Sotto il 100% lo sfondo della pagina, o la sua immagine, traspare attraverso schede e barra laterale.",
+        "glass": "Effetto vetro",
+        "glassHint": "Per un aspetto a vetro imposta l'opacità dei blocchi a circa 80% e attiva Effetto vetro e Bordo dei blocchi.",
+        "glassOff": "Predefinito",
+        "glassOn": "Vetro",
+        "border": "Bordo dei blocchi",
+        "withBorder": "Con bordo",
+        "withoutBorder": "Senza bordo"
+      },
+      "elements": {
+        "title": "Elementi",
+        "inputBorder": "Bordo dei campi",
+        "withBorder": "Con bordo",
+        "withoutBorder": "Senza bordo",
+        "clickEffect": "Effetto clic",
+        "clickEffectDescription": "Come reagiscono i pulsanti quando premuti.",
+        "click": {
+          "none": "Nessuno",
+          "drop": "Abbassa",
+          "shrink": "Rimpicciolisci",
+          "outline": "Contorno"
+        },
+        "create": "Crea"
+      },
+      "backgroundImage": "URL dell'immagine",
+      "backgroundImageDescription": "Lascia vuoto per uno sfondo semplice.",
+      "backgroundDim": "Attenuazione",
+      "homeBanner": "URL del banner predefinito",
+      "homeBannerDescription": "Usato per le uova senza un banner proprio. Lascia vuoto per un gradiente d'accento.",
+      "articles": "Link Per iniziare",
+      "articlesDescription": "Fino a {max} link alle tue guide o knowledge base.",
+      "articleTitle": "Titolo",
+      "articleDescription": "Descrizione",
+      "articleUrl": "URL",
+      "addArticle": "Aggiungi link",
+      "removeArticle": "Rimuovi link",
+      "eggImages": "Immagini dei giochi",
+      "eggImagesDescription": "Un banner e un'icona per ogni uovo. Le uova senza banner usano quello sopra.",
+      "egg": "Uovo",
+      "eggBanner": "URL immagine banner",
+      "eggIcon": "URL immagine icona",
+      "layoutDescription": "Trascina per riordinare, sposta una scheda nell'altra colonna o nascondila.",
+      "columnEmpty": "Ancora nessuna scheda qui.",
+      "moveColumn": "Sposta nell'altra colonna",
+      "hideCard": "Nascondi scheda",
+      "showCard": "Mostra scheda",
+      "column": {
+        "left": "Colonna sinistra",
+        "right": "Colonna destra"
+      },
+      "card": {
+        "information": "Informazioni sul server",
+        "installed": "Installato",
+        "articles": "Link Per iniziare",
+        "console": "Console",
+        "usage": "Utilizzo",
+        "network": "Rete"
+      },
+      "login": {
+        "background": "URL immagine di sfondo",
+        "backgroundDescription": "Lascia vuoto per usare lo sfondo normale.",
+        "dim": "Attenuazione",
+        "logo": "URL del logo",
+        "logoDescription": "Sostituisce il logo del pannello in queste pagine. Lascia vuoto per mantenerlo.",
+        "preview": "L'anteprima mostra la pagina di accesso come la vedono i visitatori non autenticati."
+      },
+      "authLayout": {
+        "layoutTitle": "Layout",
+        "layout": "Layout di accesso",
+        "layoutDescription": "Il banner mostra lo sfondo di accesso, altrimenti lo sfondo del pannello, altrimenti un gradiente d'accento. Sui telefoni si vede solo il modulo.",
+        "layouts": {
+          "default": "Predefinito",
+          "flat": "Piatto",
+          "sideBanner": "Banner laterale",
+          "floatingBanner": "Banner fluttuante",
+          "panels": "Pannelli"
+        },
+        "logoPosition": "Posizione del logo",
+        "positions": {
+          "header": "Barra superiore",
+          "aboveForm": "Sopra il modulo"
+        },
+        "appearanceTitle": "Sfondo e logo",
+        "linksTitle": "Link di supporto",
+        "linksDescription": "Fino a {max} link, come il tuo Discord, la documentazione o la pagina di stato. I link senza etichetta o URL non vengono mostrati.",
+        "linkLabel": "Etichetta",
+        "linkUrl": "URL",
+        "linkIcon": "Icona",
+        "noIcon": "Nessuna icona",
+        "icons": {
+          "discord": "Discord",
+          "github": "GitHub",
+          "docs": "Documentazione",
+          "status": "Stato",
+          "mail": "Email",
+          "link": "Link"
+        },
+        "addLink": "Aggiungi link",
+        "removeLink": "Rimuovi link",
+        "linksPosition": "Posizione dei link",
+        "mockTitle": "Accedi"
+      },
+      "interface": {
+        "toastStyle": "Stile delle notifiche",
+        "toastStyleDescription": "I messaggi che compaiono dopo salvataggi, copie e altre azioni.",
+        "toasts": {
+          "default": "Predefinito",
+          "glassy": "Vetro"
+        },
+        "pageTransition": "Transizione di pagina",
+        "pageTransitionDescription": "Viene riprodotta sul contenuto quando si apre un'altra pagina. Passa sopra un riquadro per vederla.",
+        "transitions": {
+          "none": "Nessuna",
+          "fade": "Dissolvenza",
+          "fadeUp": "Dissolvenza dal basso",
+          "fadeScale": "Dissolvenza con zoom"
+        },
+        "pageTitles": "Mostra i titoli delle pagine",
+        "pageTitlesDescription": "L'intestazione nelle pagine del server come File e Database. La ricerca e i pulsanti restano."
+      },
+      "boxes": {
+        "title": "Riquadri",
+        "boxStyle": "Stile dei riquadri",
+        "boxStyleDescription": "La riga del titolo di schede come quelle della Home, impostazioni account, moduli admin e grafici.",
+        "styles": {
+          "default": "Predefinito",
+          "line": "Linea",
+          "fill": "Pieno",
+          "pill": "Pillola"
+        },
+        "statsTitle": "Grafici e statistiche",
+        "statStyle": "Stile schede statistiche",
+        "statStyleDescription": "I piccoli riquadri con un'icona, come la panoramica admin e i dettagli della console.",
+        "stats": {
+          "default": "Predefinito",
+          "reversed": "Invertito",
+          "minimal": "Minimale",
+          "minimalReversed": "Minimale invertito"
+        },
+        "mockTitle": "Titolo riquadro",
+        "mockLabel": "Etichetta campo",
+        "mockButton": "Salva",
+        "mockStat": "Carico CPU"
+      },
+      "consoleLayout": {
+        "title": "Pagina console",
+        "description": "Trascina i componenti per riordinarli o spostarli in un altro slot. Il terminale resta al centro; le colonne laterali stanno accanto sugli schermi larghi e sotto su quelli stretti.",
+        "terminal": "Terminale",
+        "add": "Aggiungi componente",
+        "addTo": "Aggiungi un componente a: {slot}",
+        "remove": "Rimuovi {name}",
+        "allPlaced": "Tutti i componenti sono già nella pagina.",
+        "reset": "Ripristina il layout predefinito",
+        "slot": {
+          "top": "Sopra il terminale",
+          "left": "A sinistra del terminale",
+          "right": "A destra del terminale",
+          "bottom": "Sotto il terminale"
+        },
+        "widget": {
+          "banner": "Banner e pulsanti di alimentazione",
+          "stats": "Riquadri statistiche live",
+          "info": "Informazioni sul server",
+          "cpuChart": "Grafico CPU",
+          "memoryChart": "Grafico memoria",
+          "networkChart": "Grafico rete",
+          "extensionCards": "Schede delle estensioni"
+        },
+        "widgetDescription": {
+          "banner": "Nome del server, indirizzo, statistiche live e pulsanti di alimentazione.",
+          "stats": "Riquadri compatti per tempo di attività, CPU, memoria, disco e rete.",
+          "info": "Nome, indirizzo, stato, posizione, nodo e SFTP.",
+          "cpuChart": "Grafico live del carico CPU.",
+          "memoryChart": "Grafico live della memoria.",
+          "networkChart": "Grafico live del traffico in entrata e in uscita.",
+          "extensionCards": "Schede statistiche che altre estensioni aggiungono alla console."
+        }
+      },
+      "navStyle": {
+        "title": "Menu",
+        "hover": "Effetto hover",
+        "hoverDescription": "Come appaiono i link del menu sotto il puntatore e quando la loro pagina è aperta. Passa sopra un riquadro per vederli entrambi.",
+        "hovers": {
+          "default": "Predefinito",
+          "filled": "Pieno",
+          "filledSecondary": "Pieno secondario",
+          "iconPill": "Pillola icona",
+          "pill": "Pillola",
+          "pillSecondary": "Pillola secondaria"
+        },
+        "mockLink": "Console",
+        "search": "Componente di ricerca",
+        "searchDescription": "Cosa c'è sotto il logo nel menu. La scorciatoia Azioni rapide funziona con tutti.",
+        "searches": {
+          "palette": "Azioni rapide (predefinito)",
+          "serverSelector": "Selettore server",
+          "searchBar": "Barra di ricerca"
+        },
+        "searchHints": {
+          "palette": "Il pulsante Azioni rapide del pannello. Il suo selettore server resta in fondo al menu.",
+          "serverSelector": "Un menu a tendina per passare a un altro server, in cima al menu al posto di Azioni rapide.",
+          "searchBar": "Un campo di ricerca che elenca i server mentre scrivi; nell'area admin anche tutti i server e gli utenti. L'ultima riga apre Azioni rapide."
+        }
+      },
+      "serverCards": {
+        "title": "Elenco server",
+        "cardStyle": "Stile delle schede server",
+        "cardStyleDescription": "Le schede nella vista griglia dell'elenco server. Ogni stile mantiene la casella di selezione, lo stato e il menu di alimentazione.",
+        "styles": {
+          "default": "Predefinito",
+          "banner": "Banner",
+          "flat": "Piatto",
+          "linear": "Lineare",
+          "minimal": "Minimale",
+          "compact": "Compatto"
+        },
+        "tablesTitle": "Tabelle",
+        "tableStyle": "Stile delle tabelle",
+        "tableStyleDescription": "Gli elenchi del pannello, come file, backup, database e pagine admin, e la vista elenco dei server.",
+        "tables": {
+          "table": "Tabella",
+          "cards": "Schede"
+        }
+      },
+      "navLayout": {
+        "title": "Layout",
+        "layout": "Layout della dashboard",
+        "layoutDescription": "Come si dispone il menu accanto alle pagine su desktop. Sottile è una barra di icone fissa che mostra i nomi dei link al passaggio. I telefoni usano la navigazione su telefono qui sotto.",
+        "layouts": {
+          "default": "Predefinito",
+          "floating": "Fluttuante",
+          "pill": "Pillola",
+          "slim": "Sottile",
+          "horizontal": "Orizzontale"
+        },
+        "dock": "Posizione del dock",
+        "dockDescription": "Dove stanno il logo, la ricerca e, nelle pagine del server, il nome del server, lo stato e i pulsanti di alimentazione.",
+        "dockHorizontal": "Il layout orizzontale li tiene sempre nella barra superiore.",
+        "docks": {
+          "sidebar": "Barra laterale",
+          "header": "Intestazione",
+          "top": "In alto"
+        },
+        "mockConsole": "Console"
+      },
+      "mobileNav": {
+        "label": "Navigazione su telefono",
+        "description": "Sotto la larghezza desktop: il pulsante menu fluttuante del pannello, oppure una barra in fondo allo schermo con le pagine principali e un pulsante Menu per il menu completo.",
+        "options": {
+          "drawer": "Cassetto",
+          "bottomBar": "Barra inferiore"
+        }
+      }
+    },
+    "library": {
+      "saveAsPreset": "Salva come preset",
+      "saveAsPresetDescription": "Conserva l'aspetto della bozza (colori, font, blocchi, navigazione) come tuo preset. Contenuti come gli articoli e la pagina di accesso non fanno parte di un preset.",
+      "name": "Nome",
+      "save": "Salva",
+      "cancel": "Annulla",
+      "created": "Preset salvato.",
+      "custom": "I tuoi preset",
+      "builtin": "Integrati",
+      "empty": "Ancora nessun preset personale.",
+      "limit": "Al massimo {max} preset; eliminane uno per salvarne un altro.",
+      "rename": "Rinomina",
+      "renameTitle": "Rinomina preset",
+      "delete": "Elimina",
+      "deleteTitle": "Elimina preset",
+      "deleteConfirm": "Eliminare {name}? Gli utenti che l'hanno scelto torneranno al predefinito del pannello.",
+      "users": "Gli utenti possono sceglierlo",
+      "nameProblem": {
+        "empty": "Inserisci un nome.",
+        "long": "Al massimo {max} caratteri.",
+        "control": "Niente a capo o caratteri di controllo."
+      },
+      "history": "Cronologia",
+      "historyTitle": "Cronologia dei temi salvati",
+      "historyDescription": "I temi sostituiti dagli ultimi {max} salvataggi. Caricarne uno lo apre nell'editor; premi Salva per usarlo.",
+      "historyEmpty": "Ancora nessun salvataggio precedente.",
+      "historyUnknown": "Salvato prima che venisse tenuta la cronologia",
+      "historyBy": "{time} da {user}",
+      "historyCurrent": "In uso: salvato {time} da {user}",
+      "load": "Carica nell'editor",
+      "loaded": "Caricato nell'editor. Premi Salva per usarlo.",
+      "choice": {
+        "title": "Tema",
+        "label": "Il tuo tema",
+        "description": "L'aspetto del pannello per te. Solo tu lo vedi, su ogni dispositivo con cui accedi.",
+        "default": "Predefinito del pannello"
+      }
+    }
+  }
+}

@@ -1,0 +1,569 @@
+{
+  "items": {},
+  "translations": {
+    "nav": {
+      "editor": "Trình chỉnh sửa giao diện"
+    },
+    "home": {
+      "title": "Trang chủ",
+      "address": "Địa chỉ máy chủ",
+      "location": "Vị trí",
+      "gettingStarted": "Bắt đầu",
+      "information": "Thông tin máy chủ",
+      "installed": "Đã cài đặt",
+      "serverName": "Tên máy chủ",
+      "status": "Trạng thái",
+      "uptime": "Thời gian hoạt động",
+      "node": "Node",
+      "memory": "Bộ nhớ",
+      "image": "Image",
+      "console": "Console",
+      "fullLog": "Nhật ký máy chủ đầy đủ",
+      "usage": "Mức sử dụng",
+      "cpu": "CPU",
+      "ram": "RAM",
+      "storage": "Lưu trữ",
+      "network": "Mạng",
+      "inbound": "Băng thông vào",
+      "outbound": "Băng thông ra",
+      "sftp": "SFTP"
+    },
+    "servers": {
+      "title": "Máy chủ của tôi",
+      "subtitle": "Máy chủ của bạn và những máy chủ được chia sẻ với bạn.",
+      "actions": "Thao tác máy chủ",
+      "cpu": "CPU",
+      "disk": "Đĩa",
+      "showing": "Đang hiển thị {count}",
+      "select": "Chọn {name}",
+      "selectAll": "Chọn tất cả máy chủ đang hiển thị",
+      "column": {
+        "id": "ID",
+        "name": "Tên",
+        "game": "Trò chơi",
+        "status": "Trạng thái",
+        "location": "Vị trí",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "uptime": "Thời gian hoạt động",
+        "memory": "Bộ nhớ"
+      },
+      "filter": {
+        "all": "Tất cả máy chủ",
+        "running": "Trực tuyến",
+        "offline": "Ngoại tuyến",
+        "suspended": "Bị đình chỉ",
+        "other": "Khác"
+      },
+      "view": {
+        "list": "Dạng danh sách",
+        "grid": "Dạng lưới"
+      }
+    },
+    "serverSort": {
+      "sortBy": "Sắp xếp theo",
+      "sort": {
+        "none": "Thứ tự mặc định",
+        "name": "Sắp xếp theo tên",
+        "status": "Sắp xếp theo trạng thái",
+        "game": "Sắp xếp theo trò chơi",
+        "location": "Sắp xếp theo vị trí",
+        "cpu": "Sắp xếp theo CPU",
+        "ram": "Sắp xếp theo RAM",
+        "uptime": "Sắp xếp theo thời gian hoạt động",
+        "id": "Sắp xếp theo ID"
+      },
+      "ascending": "Tăng dần, nhấn để đảo ngược",
+      "descending": "Giảm dần, nhấn để đảo ngược",
+      "groupBy": "Nhóm theo",
+      "group": {
+        "none": "Không nhóm",
+        "location": "Nhóm theo vị trí",
+        "game": "Nhóm theo trò chơi",
+        "status": "Nhóm theo trạng thái"
+      },
+      "selectGroup": "Chọn tất cả trong {name}"
+    },
+    "account": {
+      "changeBanner": "Đổi biểu ngữ",
+      "removeBanner": "Xóa biểu ngữ",
+      "changeAvatar": "Đổi ảnh đại diện",
+      "bannerFile": "Hình ảnh",
+      "bannerHint": "PNG, JPEG, WebP hoặc GIF. Kéo để chọn phần được hiển thị. Chỉ bạn nhìn thấy.",
+      "admin": "Quản trị viên",
+      "twoFactorOn": "Đã bật 2FA",
+      "twoFactorOff": "Đã tắt 2FA"
+    },
+    "announcementCta": {
+      "tab": "Kêu gọi hành động",
+      "title": "Kêu gọi hành động",
+      "description": "Hiển thị một nút trên thông báo.",
+      "enable": "Bật kêu gọi hành động",
+      "enableDescription": "Thêm một nút bên dưới nội dung thông báo, theo màu của thông báo.",
+      "buttonTitle": "Tiêu đề nút",
+      "buttonTitleDescription": "Văn bản trên nút, tối đa {max} ký tự.",
+      "buttonTitlePlaceholder": "Ghé thăm cửa hàng",
+      "buttonLink": "Liên kết nút",
+      "buttonLinkDescription": "Nơi nút dẫn đến: một trang của bảng điều khiển như /account sẽ mở tại chỗ, một địa chỉ https:// đầy đủ sẽ mở trong tab mới.",
+      "buttonLinkPlaceholder": "/account hoặc https://example.com",
+      "titleRequired": "Hãy đặt tiêu đề cho nút.",
+      "titleTooLong": "Tiêu đề tối đa {max} ký tự.",
+      "titleInvalid": "Xóa ký tự tab và xuống dòng khỏi tiêu đề.",
+      "linkInvalid": "Dùng đường dẫn bảng điều khiển bắt đầu bằng một dấu / hoặc một địa chỉ http:// hay https:// đầy đủ, không có khoảng trắng, dấu nháy, dấu ngoặc nhọn, ngoặc đơn, ngoặc móc, dấu chấm phẩy hay dấu gạch chéo ngược.",
+      "linkTooLong": "Liên kết tối đa {max} ký tự.",
+      "saved": "Đã lưu kêu gọi hành động.",
+      "removed": "Đã xóa kêu gọi hành động."
+    },
+    "auth": {
+      "supportLinks": "Liên kết hỗ trợ"
+    },
+    "navSearch": {
+      "placeholder": "Tìm kiếm...",
+      "servers": "Máy chủ",
+      "allServers": "Tất cả máy chủ",
+      "users": "Người dùng",
+      "empty": "Không tìm thấy gì",
+      "everything": "Tìm mọi thứ cho “{query}”",
+      "quickActions": "Mở các thao tác nhanh",
+      "switchServer": "Chuyển máy chủ"
+    },
+    "topBar": {
+      "navigation": "Menu chính"
+    },
+    "bottomNav": {
+      "label": "Điều hướng trên điện thoại",
+      "menu": "Menu"
+    },
+    "editor": {
+      "contrast": {
+        "title": "Một số màu khó đọc",
+        "description": "Dưới mức tối thiểu của WCAG; vẫn có thể lưu.",
+        "pair": "{fg} trên {bg}: {ratio}:1 (nên đạt {min}:1)",
+        "low": "Độ tương phản thấp với {other}: {ratio}:1 (nên đạt {min}:1)",
+        "lowAs": "Độ tương phản thấp khi làm {role} trên {other}: {ratio}:1 (nên đạt {min}:1)",
+        "named": "{name} ({role})",
+        "roles": {
+          "links": "liên kết",
+          "dimmed": "văn bản mờ"
+        }
+      },
+      "favicon": {
+        "label": "Biểu tượng tab trình duyệt",
+        "description": "Thay biểu tượng bảng điều khiển trên tab trình duyệt và màn hình chính, kể cả các trang đăng nhập. Để trống để giữ biểu tượng bảng điều khiển. Tốt nhất là ảnh vuông PNG, ICO hoặc SVG.",
+        "preview": "Xem trước tab"
+      },
+      "close": "Đóng trình chỉnh sửa",
+      "undo": "Hoàn tác",
+      "redo": "Làm lại",
+      "reset": "Đặt lại mặc định",
+      "import": "Nhập giao diện",
+      "export": "Xuất giao diện",
+      "importFailed": "Tệp này không phải giao diện Mint.",
+      "save": "Lưu",
+      "saved": "Đã lưu giao diện.",
+      "refresh": "Tải lại bản xem trước",
+      "openTab": "Mở trong tab mới",
+      "device": {
+        "desktop": "Máy tính",
+        "tablet": "Máy tính bảng",
+        "mobile": "Di động"
+      },
+      "scheme": {
+        "dark": "Tối",
+        "light": "Sáng"
+      },
+      "pages": {
+        "home": "Trang chủ máy chủ",
+        "console": "Console máy chủ",
+        "servers": "Máy chủ",
+        "account": "Tài khoản",
+        "admin": "Quản trị",
+        "login": "Trang đăng nhập"
+      },
+      "section": {
+        "presets": "Mẫu có sẵn",
+        "presetsDescription": "Bắt đầu từ một giao diện có sẵn, lưu mẫu của riêng bạn và chọn những mẫu người dùng được phép chọn.",
+        "colours": "Màu sắc",
+        "coloursDescription": "Mọi màu khác đều được pha từ năm màu này.",
+        "style": "Kiểu dáng",
+        "styleDescription": "Phông chữ và độ bo góc.",
+        "background": "Nền",
+        "backgroundDescription": "Hình ảnh phía sau toàn bộ bảng điều khiển, được làm mờ theo màu trang, cùng biểu tượng tab trình duyệt.",
+        "home": "Trang chủ",
+        "homeDescription": "Biểu ngữ và hình ảnh trò chơi cho trang chính.",
+        "articles": "Bắt đầu",
+        "articlesDescription": "Các liên kết hiển thị trên mọi trang chủ máy chủ.",
+        "layout": "Bố cục",
+        "layoutDescription": "Trang chủ hiển thị những thẻ nào và ở đâu.",
+        "login": "Trang đăng nhập",
+        "loginDescription": "Bố cục, nền, logo và liên kết hỗ trợ cho các trang đăng nhập, đăng ký và mật khẩu.",
+        "interface": "Giao diện",
+        "interfaceDescription": "Thông báo nổi, hiệu ứng chuyển trang và tiêu đề trang.",
+        "navigation": "Điều hướng",
+        "navigationDescription": "Bố cục thanh bên, hiệu ứng khi di chuột trên menu và tìm kiếm.",
+        "components": "Thành phần",
+        "componentsDescription": "Thẻ máy chủ, bảng, hộp và thẻ thống kê.",
+        "console": "Console",
+        "consoleDescription": "Những gì trang console hiển thị quanh terminal, và ở đâu."
+      },
+      "accent": "Màu nhấn",
+      "accentDescription": "Nút, liên kết và mục menu đang chọn",
+      "highlight": "Màu nổi bật",
+      "highlightDescription": "Biểu tượng thống kê trên biểu ngữ console",
+      "background": "Nền",
+      "backgroundDescription": "Trang nằm phía sau mọi thứ",
+      "surface": "Bề mặt",
+      "surfaceDescription": "Thẻ, thanh bên và console",
+      "text": "Văn bản",
+      "textDescription": "Văn bản mờ và viền được pha từ màu này",
+      "derived": "Được suy ra từ các màu ở trên",
+      "clearColor": "Trở về màu suy ra",
+      "group": {
+        "accents": "Màu nhấn",
+        "surfaces": "Bề mặt",
+        "surfacesExtra": "Lớp phía trên",
+        "text": "Văn bản",
+        "textExtra": "Văn bản khác",
+        "lines": "Đường kẻ",
+        "buttons": "Nút",
+        "status": "Trạng thái",
+        "charts": "Biểu đồ",
+        "light": "Chế độ sáng"
+      },
+      "surfaceRaised": "Nổi",
+      "surfaceOverlay": "Lớp phủ",
+      "textMuted": "Văn bản nhạt",
+      "textFaint": "Văn bản mờ",
+      "textOnAccent": "Văn bản trên màu nhấn",
+      "line": "Đường mảnh",
+      "buttonText": "Văn bản nút",
+      "success": "Thành công",
+      "warning": "Cảnh báo",
+      "danger": "Nguy hiểm",
+      "offline": "Ngoại tuyến",
+      "chartOne": "Chuỗi một",
+      "chartTwo": "Chuỗi hai",
+      "lightBackground": "Nền sáng",
+      "lightSurface": "Bề mặt sáng",
+      "lightText": "Văn bản sáng",
+      "font": "Phông chữ",
+      "fontExo": "Exo 2",
+      "fontMontserrat": "Montserrat",
+      "fontPanel": "Mặc định của bảng điều khiển",
+      "fontOutfit": "Outfit",
+      "fontJakarta": "Plus Jakarta Sans",
+      "fontSpace": "Space Grotesk",
+      "monoFont": "Phông chữ đơn cách",
+      "monoFontDescription": "Mã, ID và console máy chủ.",
+      "monoFontJetbrains": "JetBrains Mono",
+      "monoFontFira": "Fira Code",
+      "sidebarGroups": "Nhóm menu máy chủ",
+      "sidebarGroupsDescription": "Các mục Quản lý, Cấu hình và Truy cập có thể thu gọn.",
+      "buttonStyle": "Kiểu nút",
+      "buttonAccent": "Nút dùng màu nhấn",
+      "buttonColor": "Màu nút",
+      "buttons": {
+        "filled": "Đặc",
+        "tinted": "Pha màu",
+        "outline": "Viền",
+        "glass": "Kính"
+      },
+      "radius": "Góc thẻ",
+      "elementRadius": "Góc nút và ô nhập",
+      "blocks": {
+        "title": "Khối",
+        "opacity": "Độ mờ đục của khối",
+        "opacityDescription": "Dưới 100%, nền trang hoặc hình ảnh nền sẽ hiện xuyên qua thẻ và thanh bên.",
+        "glass": "Hiệu ứng kính",
+        "glassHint": "Để có vẻ ngoài như kính, đặt độ mờ đục của khối khoảng 80%, bật Hiệu ứng kính và Viền khối.",
+        "glassOff": "Mặc định",
+        "glassOn": "Kính",
+        "border": "Viền khối",
+        "withBorder": "Có viền",
+        "withoutBorder": "Không viền"
+      },
+      "elements": {
+        "title": "Phần tử",
+        "inputBorder": "Viền ô nhập",
+        "withBorder": "Có viền",
+        "withoutBorder": "Không viền",
+        "clickEffect": "Hiệu ứng nhấn",
+        "clickEffectDescription": "Cách nút phản hồi khi được nhấn.",
+        "click": {
+          "none": "Không có",
+          "drop": "Lún xuống",
+          "shrink": "Thu nhỏ",
+          "outline": "Viền"
+        },
+        "create": "Tạo"
+      },
+      "backgroundImage": "URL hình ảnh",
+      "backgroundImageDescription": "Để trống để dùng nền trơn.",
+      "backgroundDim": "Làm tối",
+      "homeBanner": "URL ảnh biểu ngữ mặc định",
+      "homeBannerDescription": "Dùng cho các egg không có biểu ngữ riêng. Để trống để dùng dải màu nhấn.",
+      "articles": "Liên kết bắt đầu",
+      "articlesDescription": "Tối đa {max} liên kết đến hướng dẫn hoặc cơ sở kiến thức của bạn.",
+      "articleTitle": "Tiêu đề",
+      "articleDescription": "Mô tả",
+      "articleUrl": "URL",
+      "addArticle": "Thêm liên kết",
+      "removeArticle": "Xóa liên kết",
+      "eggImages": "Hình ảnh trò chơi",
+      "eggImagesDescription": "Biểu ngữ và biểu tượng cho từng egg. Egg không có biểu ngữ sẽ dùng biểu ngữ ở trên.",
+      "egg": "Egg",
+      "eggBanner": "URL ảnh biểu ngữ",
+      "eggIcon": "URL ảnh biểu tượng",
+      "layoutDescription": "Kéo để sắp xếp lại, chuyển thẻ sang cột kia hoặc ẩn thẻ.",
+      "columnEmpty": "Chưa có thẻ nào ở đây.",
+      "moveColumn": "Chuyển sang cột kia",
+      "hideCard": "Ẩn thẻ",
+      "showCard": "Hiện thẻ",
+      "column": {
+        "left": "Cột trái",
+        "right": "Cột phải"
+      },
+      "card": {
+        "information": "Thông tin máy chủ",
+        "installed": "Đã cài đặt",
+        "articles": "Liên kết bắt đầu",
+        "console": "Console",
+        "usage": "Mức sử dụng",
+        "network": "Mạng"
+      },
+      "login": {
+        "background": "URL ảnh nền",
+        "backgroundDescription": "Để trống để dùng nền thông thường.",
+        "dim": "Làm tối",
+        "logo": "URL logo",
+        "logoDescription": "Thay logo của bảng điều khiển trên các trang này. Để trống để giữ nguyên.",
+        "preview": "Bản xem trước hiển thị trang đăng nhập như khách chưa đăng nhập nhìn thấy."
+      },
+      "authLayout": {
+        "layoutTitle": "Bố cục",
+        "layout": "Bố cục đăng nhập",
+        "layoutDescription": "Biểu ngữ hiển thị nền đăng nhập, nếu không có thì nền bảng điều khiển, nếu không nữa thì dải màu nhấn. Điện thoại chỉ hiển thị biểu mẫu.",
+        "layouts": {
+          "default": "Mặc định",
+          "flat": "Phẳng",
+          "sideBanner": "Biểu ngữ bên cạnh",
+          "floatingBanner": "Biểu ngữ nổi",
+          "panels": "Ô chia"
+        },
+        "logoPosition": "Vị trí logo",
+        "positions": {
+          "header": "Thanh trên cùng",
+          "aboveForm": "Phía trên biểu mẫu"
+        },
+        "appearanceTitle": "Nền & logo",
+        "linksTitle": "Liên kết hỗ trợ",
+        "linksDescription": "Tối đa {max} liên kết, như Discord, tài liệu hoặc trang trạng thái của bạn. Liên kết không có nhãn hoặc URL sẽ không được hiển thị.",
+        "linkLabel": "Nhãn",
+        "linkUrl": "URL",
+        "linkIcon": "Biểu tượng",
+        "noIcon": "Không có biểu tượng",
+        "icons": {
+          "discord": "Discord",
+          "github": "GitHub",
+          "docs": "Tài liệu",
+          "status": "Trạng thái",
+          "mail": "Thư",
+          "link": "Liên kết"
+        },
+        "addLink": "Thêm liên kết",
+        "removeLink": "Xóa liên kết",
+        "linksPosition": "Vị trí liên kết",
+        "mockTitle": "Đăng nhập"
+      },
+      "interface": {
+        "toastStyle": "Kiểu thông báo nổi",
+        "toastStyleDescription": "Các thông báo bật lên sau khi lưu, sao chép và các thao tác khác.",
+        "toasts": {
+          "default": "Mặc định",
+          "glassy": "Kính"
+        },
+        "pageTransition": "Hiệu ứng chuyển trang",
+        "pageTransitionDescription": "Chạy trên nội dung trang khi mở trang khác. Di chuột lên một ô để xem.",
+        "transitions": {
+          "none": "Không có",
+          "fade": "Hiện dần",
+          "fadeUp": "Hiện dần lên",
+          "fadeScale": "Hiện dần phóng to"
+        },
+        "pageTitles": "Hiện tiêu đề trang",
+        "pageTitlesDescription": "Tiêu đề trên các trang máy chủ như Tệp và Cơ sở dữ liệu. Ô tìm kiếm và các nút vẫn được giữ."
+      },
+      "boxes": {
+        "title": "Hộp",
+        "boxStyle": "Kiểu hộp",
+        "boxStyleDescription": "Hàng tiêu đề của các thẻ như thẻ Trang chủ, cài đặt tài khoản, biểu mẫu quản trị và biểu đồ.",
+        "styles": {
+          "default": "Mặc định",
+          "line": "Đường kẻ",
+          "fill": "Tô nền",
+          "pill": "Viên thuốc"
+        },
+        "statsTitle": "Biểu đồ & thống kê",
+        "statStyle": "Kiểu thẻ thống kê",
+        "statStyleDescription": "Các ô nhỏ có biểu tượng, như trong tổng quan quản trị và chi tiết console.",
+        "stats": {
+          "default": "Mặc định",
+          "reversed": "Đảo ngược",
+          "minimal": "Tối giản",
+          "minimalReversed": "Tối giản đảo ngược"
+        },
+        "mockTitle": "Tiêu đề hộp",
+        "mockLabel": "Nhãn ô nhập",
+        "mockButton": "Lưu",
+        "mockStat": "Tải CPU"
+      },
+      "consoleLayout": {
+        "title": "Trang console",
+        "description": "Kéo các thành phần để sắp xếp lại hoặc chuyển sang vị trí khác. Terminal luôn ở giữa; các cột bên nằm cạnh terminal trên màn hình rộng và bên dưới trên màn hình hẹp.",
+        "terminal": "Terminal",
+        "add": "Thêm thành phần",
+        "addTo": "Thêm thành phần vào: {slot}",
+        "remove": "Xóa {name}",
+        "allPlaced": "Mọi thành phần đều đã có trên trang.",
+        "reset": "Khôi phục bố cục mặc định",
+        "slot": {
+          "top": "Phía trên terminal",
+          "left": "Bên trái terminal",
+          "right": "Bên phải terminal",
+          "bottom": "Phía dưới terminal"
+        },
+        "widget": {
+          "banner": "Biểu ngữ và nút nguồn",
+          "stats": "Ô thống kê trực tiếp",
+          "info": "Thông tin máy chủ",
+          "cpuChart": "Biểu đồ CPU",
+          "memoryChart": "Biểu đồ bộ nhớ",
+          "networkChart": "Biểu đồ mạng",
+          "extensionCards": "Thẻ tiện ích mở rộng"
+        },
+        "widgetDescription": {
+          "banner": "Tên máy chủ, địa chỉ, thống kê trực tiếp và các nút nguồn.",
+          "stats": "Các ô gọn cho thời gian hoạt động, CPU, bộ nhớ, đĩa và mạng.",
+          "info": "Tên, địa chỉ, trạng thái, vị trí, node và SFTP.",
+          "cpuChart": "Biểu đồ tải CPU trực tiếp.",
+          "memoryChart": "Biểu đồ bộ nhớ trực tiếp.",
+          "networkChart": "Biểu đồ lưu lượng vào và ra trực tiếp.",
+          "extensionCards": "Thẻ thống kê mà các tiện ích mở rộng khác thêm vào console."
+        }
+      },
+      "navStyle": {
+        "title": "Menu",
+        "hover": "Hiệu ứng di chuột",
+        "hoverDescription": "Giao diện liên kết menu khi con trỏ đặt lên và khi trang của chúng đang mở. Di chuột lên một ô để xem cả hai.",
+        "hovers": {
+          "default": "Mặc định",
+          "filled": "Tô nền",
+          "filledSecondary": "Tô nền phụ",
+          "iconPill": "Viên thuốc biểu tượng",
+          "pill": "Viên thuốc",
+          "pillSecondary": "Viên thuốc phụ"
+        },
+        "mockLink": "Console",
+        "search": "Thành phần tìm kiếm",
+        "searchDescription": "Thứ nằm dưới logo trong menu. Phím tắt Thao tác nhanh hoạt động với tất cả.",
+        "searches": {
+          "palette": "Thao tác nhanh (mặc định)",
+          "serverSelector": "Bộ chọn máy chủ",
+          "searchBar": "Thanh tìm kiếm"
+        },
+        "searchHints": {
+          "palette": "Nút Thao tác nhanh của bảng điều khiển. Bộ chuyển máy chủ vẫn nằm ở cuối menu.",
+          "serverSelector": "Danh sách thả xuống để chuyển sang máy chủ khác, ở đầu menu thay cho Thao tác nhanh.",
+          "searchBar": "Ô tìm kiếm liệt kê máy chủ khi bạn gõ; trong khu vực quản trị còn có mọi máy chủ và người dùng. Hàng cuối cùng mở Thao tác nhanh."
+        }
+      },
+      "serverCards": {
+        "title": "Danh sách máy chủ",
+        "cardStyle": "Kiểu thẻ máy chủ",
+        "cardStyleDescription": "Các thẻ trong dạng lưới của danh sách máy chủ. Mọi kiểu đều giữ ô chọn, trạng thái và menu nguồn.",
+        "styles": {
+          "default": "Mặc định",
+          "banner": "Biểu ngữ",
+          "flat": "Phẳng",
+          "linear": "Tuyến tính",
+          "minimal": "Tối giản",
+          "compact": "Gọn"
+        },
+        "tablesTitle": "Bảng",
+        "tableStyle": "Kiểu bảng",
+        "tableStyleDescription": "Các danh sách trong bảng điều khiển, như tệp, sao lưu, cơ sở dữ liệu và các trang quản trị, cùng dạng danh sách của danh sách máy chủ.",
+        "tables": {
+          "table": "Bảng",
+          "cards": "Thẻ"
+        }
+      },
+      "navLayout": {
+        "title": "Bố cục",
+        "layout": "Bố cục bảng điều khiển",
+        "layoutDescription": "Cách menu nằm cạnh các trang trên máy tính. Thu gọn là một dải biểu tượng cố định, hiện tên liên kết khi di chuột. Điện thoại dùng điều hướng trên điện thoại bên dưới.",
+        "layouts": {
+          "default": "Mặc định",
+          "floating": "Nổi",
+          "pill": "Viên thuốc",
+          "slim": "Thu gọn",
+          "horizontal": "Ngang"
+        },
+        "dock": "Vị trí thanh neo",
+        "dockDescription": "Nơi đặt logo, ô tìm kiếm và, trên các trang máy chủ, tên máy chủ, trạng thái và nút nguồn.",
+        "dockHorizontal": "Bố cục ngang luôn giữ các mục này trên thanh trên cùng.",
+        "docks": {
+          "sidebar": "Thanh bên",
+          "header": "Đầu trang",
+          "top": "Trên cùng"
+        },
+        "mockConsole": "Console"
+      },
+      "mobileNav": {
+        "label": "Điều hướng trên điện thoại",
+        "description": "Dưới độ rộng máy tính: nút menu nổi của bảng điều khiển, hoặc một thanh ở cuối màn hình với các trang chính và nút Menu để mở menu đầy đủ.",
+        "options": {
+          "drawer": "Ngăn kéo",
+          "bottomBar": "Thanh dưới cùng"
+        }
+      }
+    },
+    "library": {
+      "saveAsPreset": "Lưu thành mẫu",
+      "saveAsPresetDescription": "Giữ vẻ ngoài của bản nháp (màu sắc, phông chữ, khối, điều hướng) thành mẫu của riêng bạn. Nội dung như bài viết và trang đăng nhập không thuộc về mẫu.",
+      "name": "Tên",
+      "save": "Lưu",
+      "cancel": "Hủy",
+      "created": "Đã lưu mẫu.",
+      "custom": "Mẫu của bạn",
+      "builtin": "Có sẵn",
+      "empty": "Bạn chưa có mẫu riêng nào.",
+      "limit": "Tối đa {max} mẫu; hãy xóa một mẫu để lưu mẫu khác.",
+      "rename": "Đổi tên",
+      "renameTitle": "Đổi tên mẫu",
+      "delete": "Xóa",
+      "deleteTitle": "Xóa mẫu",
+      "deleteConfirm": "Xóa {name}? Người dùng đã chọn mẫu này sẽ quay về mặc định của bảng điều khiển.",
+      "users": "Người dùng có thể chọn mẫu này",
+      "nameProblem": {
+        "empty": "Nhập tên.",
+        "long": "Tối đa {max} ký tự.",
+        "control": "Không được có ký tự xuống dòng hoặc ký tự điều khiển."
+      },
+      "history": "Lịch sử",
+      "historyTitle": "Lịch sử giao diện đã lưu",
+      "historyDescription": "Các giao diện đã bị thay thế bởi {max} lần lưu gần nhất. Tải một giao diện sẽ đưa nó vào trình chỉnh sửa; nhấn Lưu để sử dụng.",
+      "historyEmpty": "Chưa có lần lưu nào trước đó.",
+      "historyUnknown": "Được lưu trước khi có lịch sử",
+      "historyBy": "{time} bởi {user}",
+      "historyCurrent": "Đang dùng: lưu lúc {time} bởi {user}",
+      "load": "Tải vào trình chỉnh sửa",
+      "loaded": "Đã tải vào trình chỉnh sửa. Nhấn Lưu để sử dụng.",
+      "choice": {
+        "title": "Giao diện",
+        "label": "Giao diện của bạn",
+        "description": "Bảng điều khiển trông như thế nào đối với bạn. Chỉ bạn nhìn thấy, trên mọi thiết bị bạn đăng nhập.",
+        "default": "Mặc định của bảng điều khiển"
+      }
+    }
+  }
+}

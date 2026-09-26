@@ -1,0 +1,569 @@
+{
+  "items": {},
+  "translations": {
+    "nav": {
+      "editor": "Editor témy"
+    },
+    "home": {
+      "title": "Domov",
+      "address": "Adresa servera",
+      "location": "Lokalita",
+      "gettingStarted": "Začíname",
+      "information": "Informácie o serveri",
+      "installed": "Nainštalované",
+      "serverName": "Názov servera",
+      "status": "Stav",
+      "uptime": "Doba prevádzky",
+      "node": "Uzol",
+      "memory": "Pamäť",
+      "image": "Obraz",
+      "console": "Konzola",
+      "fullLog": "Celý denník servera",
+      "usage": "Využitie",
+      "cpu": "CPU",
+      "ram": "RAM",
+      "storage": "Úložisko",
+      "network": "Sieť",
+      "inbound": "Príjem",
+      "outbound": "Odosielanie",
+      "sftp": "SFTP"
+    },
+    "servers": {
+      "title": "Moje servery",
+      "subtitle": "Vaše servery a servery, ktoré s vami niekto zdieľa.",
+      "actions": "Akcie servera",
+      "cpu": "CPU",
+      "disk": "Disk",
+      "showing": "Zobrazené: {count}",
+      "select": "Vybrať {name}",
+      "selectAll": "Vybrať všetky zobrazené servery",
+      "column": {
+        "id": "ID",
+        "name": "Názov",
+        "game": "Hra",
+        "status": "Stav",
+        "location": "Lokalita",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "uptime": "Doba prevádzky",
+        "memory": "Pamäť"
+      },
+      "filter": {
+        "all": "Všetky servery",
+        "running": "Online",
+        "offline": "Offline",
+        "suspended": "Pozastavené",
+        "other": "Ostatné"
+      },
+      "view": {
+        "list": "Zobrazenie zoznamu",
+        "grid": "Zobrazenie mriežky"
+      }
+    },
+    "serverSort": {
+      "sortBy": "Zoradiť podľa",
+      "sort": {
+        "none": "Predvolené poradie",
+        "name": "Zoradiť podľa názvu",
+        "status": "Zoradiť podľa stavu",
+        "game": "Zoradiť podľa hry",
+        "location": "Zoradiť podľa lokality",
+        "cpu": "Zoradiť podľa CPU",
+        "ram": "Zoradiť podľa RAM",
+        "uptime": "Zoradiť podľa doby prevádzky",
+        "id": "Zoradiť podľa ID"
+      },
+      "ascending": "Vzostupne, kliknutím obrátite",
+      "descending": "Zostupne, kliknutím obrátite",
+      "groupBy": "Zoskupiť podľa",
+      "group": {
+        "none": "Bez zoskupenia",
+        "location": "Zoskupiť podľa lokality",
+        "game": "Zoskupiť podľa hry",
+        "status": "Zoskupiť podľa stavu"
+      },
+      "selectGroup": "Vybrať všetko v {name}"
+    },
+    "account": {
+      "changeBanner": "Zmeniť banner",
+      "removeBanner": "Odstrániť banner",
+      "changeAvatar": "Zmeniť avatar",
+      "bannerFile": "Obrázok",
+      "bannerHint": "PNG, JPEG, WebP alebo GIF. Potiahnutím vyberte časť, ktorá sa zobrazí. Vidíte ho iba vy.",
+      "admin": "Správca",
+      "twoFactorOn": "2FA povolené",
+      "twoFactorOff": "2FA zakázané"
+    },
+    "announcementCta": {
+      "tab": "Výzva na akciu",
+      "title": "Výzva na akciu",
+      "description": "Zobrazí v oznámení tlačidlo.",
+      "enable": "Povoliť výzvu na akciu",
+      "enableDescription": "Pridá pod text oznámenia tlačidlo vo farbe oznámenia.",
+      "buttonTitle": "Text tlačidla",
+      "buttonTitleDescription": "Text na tlačidle, najviac {max} znakov.",
+      "buttonTitlePlaceholder": "Navštíviť obchod",
+      "buttonLink": "Odkaz tlačidla",
+      "buttonLinkDescription": "Kam vedie: stránka panela, napríklad /account, sa otvorí na mieste, úplná adresa https:// sa otvorí na novej karte.",
+      "buttonLinkPlaceholder": "/account alebo https://example.com",
+      "titleRequired": "Zadajte text tlačidla.",
+      "titleTooLong": "Text môže mať najviac {max} znakov.",
+      "titleInvalid": "Odstráňte z textu tabulátory a zalomenia riadkov.",
+      "linkInvalid": "Použite cestu v paneli začínajúcu jedným znakom / alebo úplnú adresu http:// či https:// bez medzier, úvodzoviek, lomených, okrúhlych a zložených zátvoriek, bodkočiarok a spätných lomiek.",
+      "linkTooLong": "Odkaz môže mať najviac {max} znakov.",
+      "saved": "Výzva na akciu bola uložená.",
+      "removed": "Výzva na akciu bola odstránená."
+    },
+    "auth": {
+      "supportLinks": "Odkazy na podporu"
+    },
+    "navSearch": {
+      "placeholder": "Hľadať...",
+      "servers": "Servery",
+      "allServers": "Všetky servery",
+      "users": "Používatelia",
+      "empty": "Nič sa nenašlo",
+      "everything": "Hľadať všade „{query}“",
+      "quickActions": "Otvoriť rýchle akcie",
+      "switchServer": "Prepnúť server"
+    },
+    "topBar": {
+      "navigation": "Hlavná ponuka"
+    },
+    "bottomNav": {
+      "label": "Navigácia na telefóne",
+      "menu": "Ponuka"
+    },
+    "editor": {
+      "contrast": {
+        "title": "Niektoré farby sú zle čitateľné",
+        "description": "Pod minimom WCAG; uložiť sa to dá aj tak.",
+        "pair": "{fg} na {bg}: {ratio}:1 (cieľ je {min}:1)",
+        "low": "Nízky kontrast s {other}: {ratio}:1 (cieľ je {min}:1)",
+        "lowAs": "Nízky kontrast ako {role} na {other}: {ratio}:1 (cieľ je {min}:1)",
+        "named": "{name} ({role})",
+        "roles": {
+          "links": "odkazy",
+          "dimmed": "stlmený text"
+        }
+      },
+      "favicon": {
+        "label": "Ikona karty prehliadača",
+        "description": "Nahradí ikonu panela na kartách prehliadača a na domovských obrazovkách vrátane prihlasovacích stránok. Ak chcete ponechať ikonu panela, nechajte prázdne. Najlepšie funguje štvorcový PNG, ICO alebo SVG.",
+        "preview": "Ukážka karty"
+      },
+      "close": "Zavrieť editor",
+      "undo": "Späť",
+      "redo": "Znova",
+      "reset": "Obnoviť predvolené",
+      "import": "Importovať tému",
+      "export": "Exportovať tému",
+      "importFailed": "Tento súbor nie je téma Mint.",
+      "save": "Uložiť",
+      "saved": "Téma bola uložená.",
+      "refresh": "Znova načítať ukážku",
+      "openTab": "Otvoriť na novej karte",
+      "device": {
+        "desktop": "Počítač",
+        "tablet": "Tablet",
+        "mobile": "Mobil"
+      },
+      "scheme": {
+        "dark": "Tmavá",
+        "light": "Svetlá"
+      },
+      "pages": {
+        "home": "Domov servera",
+        "console": "Konzola servera",
+        "servers": "Servery",
+        "account": "Účet",
+        "admin": "Administrácia",
+        "login": "Prihlasovacia stránka"
+      },
+      "section": {
+        "presets": "Predvoľby",
+        "presetsDescription": "Začnite od hotového vzhľadu, uložte si vlastný a vyberte, z ktorých si môžu vyberať používatelia.",
+        "colours": "Farby",
+        "coloursDescription": "Všetko ostatné sa mieša z týchto piatich.",
+        "style": "Štýl",
+        "styleDescription": "Písmo a zaoblenie rohov.",
+        "background": "Pozadie",
+        "backgroundDescription": "Obrázok za celým panelom stmavený farbou stránky a ikona karty prehliadača.",
+        "home": "Domovská stránka",
+        "homeDescription": "Banner a obrázky hier pre úvodnú stránku.",
+        "articles": "Začíname",
+        "articlesDescription": "Odkazy zobrazené na domovskej stránke každého servera.",
+        "layout": "Rozloženie",
+        "layoutDescription": "Ktoré karty sa zobrazia na domovskej stránke a kde.",
+        "login": "Prihlasovacia stránka",
+        "loginDescription": "Rozloženie, pozadie, logo a odkazy na podporu pre stránky prihlásenia, registrácie a hesla.",
+        "interface": "Rozhranie",
+        "interfaceDescription": "Oznámenia, prechody stránok a nadpisy stránok.",
+        "navigation": "Navigácia",
+        "navigationDescription": "Rozloženie bočného panela, efekt pri prejdení myšou v ponuke a vyhľadávanie.",
+        "components": "Komponenty",
+        "componentsDescription": "Karty serverov, tabuľky, boxy a štatistické karty.",
+        "console": "Konzola",
+        "consoleDescription": "Čo sa na stránke konzoly zobrazuje okolo terminálu a kde."
+      },
+      "accent": "Akcent",
+      "accentDescription": "Tlačidlá, odkazy a aktívna položka ponuky",
+      "highlight": "Zvýraznenie",
+      "highlightDescription": "Ikony štatistík na banneri konzoly",
+      "background": "Pozadie",
+      "backgroundDescription": "Stránka za všetkým ostatným",
+      "surface": "Plocha",
+      "surfaceDescription": "Karty, bočný panel a konzola",
+      "text": "Text",
+      "textDescription": "Z tejto farby sa mieša stlmený text a okraje",
+      "derived": "Odvodené z farieb vyššie",
+      "clearColor": "Späť na odvodenú farbu",
+      "group": {
+        "accents": "Akcenty",
+        "surfaces": "Plochy",
+        "surfacesExtra": "Vrstvy navrchu",
+        "text": "Text",
+        "textExtra": "Ďalší text",
+        "lines": "Čiary",
+        "buttons": "Tlačidlá",
+        "status": "Stav",
+        "charts": "Grafy",
+        "light": "Svetlý režim"
+      },
+      "surfaceRaised": "Vyvýšená",
+      "surfaceOverlay": "Prekrytie",
+      "textMuted": "Tlmený text",
+      "textFaint": "Slabý text",
+      "textOnAccent": "Text na akcente",
+      "line": "Tenká čiara",
+      "buttonText": "Text tlačidla",
+      "success": "Úspech",
+      "warning": "Upozornenie",
+      "danger": "Nebezpečenstvo",
+      "offline": "Offline",
+      "chartOne": "Prvý rad",
+      "chartTwo": "Druhý rad",
+      "lightBackground": "Svetlé pozadie",
+      "lightSurface": "Svetlá plocha",
+      "lightText": "Svetlý text",
+      "font": "Písmo",
+      "fontExo": "Exo 2",
+      "fontMontserrat": "Montserrat",
+      "fontPanel": "Predvolené písmo panela",
+      "fontOutfit": "Outfit",
+      "fontJakarta": "Plus Jakarta Sans",
+      "fontSpace": "Space Grotesk",
+      "monoFont": "Neproporcionálne písmo",
+      "monoFontDescription": "Kód, ID a konzola servera.",
+      "monoFontJetbrains": "JetBrains Mono",
+      "monoFontFira": "Fira Code",
+      "sidebarGroups": "Zoskupiť ponuku servera",
+      "sidebarGroupsDescription": "Zbaliteľné sekcie Správa, Konfigurácia a Prístup.",
+      "buttonStyle": "Štýl tlačidiel",
+      "buttonAccent": "Tlačidlá používajú farbu akcentu",
+      "buttonColor": "Farba tlačidiel",
+      "buttons": {
+        "filled": "Plné",
+        "tinted": "Tónované",
+        "outline": "Obrys",
+        "glass": "Sklo"
+      },
+      "radius": "Rohy kariet",
+      "elementRadius": "Rohy tlačidiel a polí",
+      "blocks": {
+        "title": "Bloky",
+        "opacity": "Nepriehľadnosť blokov",
+        "opacityDescription": "Pod 100 % presvitá cez karty a bočný panel pozadie stránky alebo jeho obrázok.",
+        "glass": "Sklený efekt",
+        "glassHint": "Pre sklený vzhľad nastavte nepriehľadnosť blokov približne na 80 % a zapnite Sklený efekt a Okraj blokov.",
+        "glassOff": "Predvolený",
+        "glassOn": "Sklený",
+        "border": "Okraj blokov",
+        "withBorder": "S okrajom",
+        "withoutBorder": "Bez okraja"
+      },
+      "elements": {
+        "title": "Prvky",
+        "inputBorder": "Okraj polí",
+        "withBorder": "S okrajom",
+        "withoutBorder": "Bez okraja",
+        "clickEffect": "Efekt kliknutia",
+        "clickEffectDescription": "Ako tlačidlá reagujú po stlačení.",
+        "click": {
+          "none": "Žiadny",
+          "drop": "Pokles",
+          "shrink": "Zmenšenie",
+          "outline": "Obrys"
+        },
+        "create": "Vytvoriť"
+      },
+      "backgroundImage": "URL obrázka",
+      "backgroundImageDescription": "Pre jednofarebné pozadie nechajte prázdne.",
+      "backgroundDim": "Stmavenie",
+      "homeBanner": "URL predvoleného obrázka banneru",
+      "homeBannerDescription": "Použije sa pre eggy bez vlastného banneru. Pre prechod vo farbe akcentu nechajte prázdne.",
+      "articles": "Odkazy Začíname",
+      "articlesDescription": "Najviac {max} odkazov na vaše návody alebo znalostnú bázu.",
+      "articleTitle": "Názov",
+      "articleDescription": "Popis",
+      "articleUrl": "URL",
+      "addArticle": "Pridať odkaz",
+      "removeArticle": "Odstrániť odkaz",
+      "eggImages": "Obrázky hier",
+      "eggImagesDescription": "Banner a ikona pre každý egg. Eggy bez banneru použijú ten vyššie.",
+      "egg": "Egg",
+      "eggBanner": "URL obrázka banneru",
+      "eggIcon": "URL obrázka ikony",
+      "layoutDescription": "Potiahnutím zmeníte poradie, kartu môžete presunúť do druhého stĺpca alebo ju skryť.",
+      "columnEmpty": "Zatiaľ tu nie sú žiadne karty.",
+      "moveColumn": "Presunúť do druhého stĺpca",
+      "hideCard": "Skryť kartu",
+      "showCard": "Zobraziť kartu",
+      "column": {
+        "left": "Ľavý stĺpec",
+        "right": "Pravý stĺpec"
+      },
+      "card": {
+        "information": "Informácie o serveri",
+        "installed": "Nainštalované",
+        "articles": "Odkazy Začíname",
+        "console": "Konzola",
+        "usage": "Využitie",
+        "network": "Sieť"
+      },
+      "login": {
+        "background": "URL obrázka pozadia",
+        "backgroundDescription": "Ak chcete použiť bežné pozadie, nechajte prázdne.",
+        "dim": "Stmavenie",
+        "logo": "URL loga",
+        "logoDescription": "Nahradí logo panela na týchto stránkach. Ak ho chcete ponechať, nechajte prázdne.",
+        "preview": "Ukážka zobrazuje prihlasovaciu stránku tak, ako ju vidia neprihlásení návštevníci."
+      },
+      "authLayout": {
+        "layoutTitle": "Rozloženie",
+        "layout": "Rozloženie prihlásenia",
+        "layoutDescription": "Banner zobrazuje pozadie prihlásenia, inak pozadie panela, inak prechod vo farbe akcentu. Telefóny zobrazujú iba formulár.",
+        "layouts": {
+          "default": "Predvolené",
+          "flat": "Ploché",
+          "sideBanner": "Bočný banner",
+          "floatingBanner": "Plávajúci banner",
+          "panels": "Panely"
+        },
+        "logoPosition": "Umiestnenie loga",
+        "positions": {
+          "header": "Horná lišta",
+          "aboveForm": "Nad formulárom"
+        },
+        "appearanceTitle": "Pozadie a logo",
+        "linksTitle": "Odkazy na podporu",
+        "linksDescription": "Najviac {max} odkazov, napríklad na váš Discord, dokumentáciu alebo stavovú stránku. Odkazy bez popisu alebo URL sa nezobrazia.",
+        "linkLabel": "Popis",
+        "linkUrl": "URL",
+        "linkIcon": "Ikona",
+        "noIcon": "Bez ikony",
+        "icons": {
+          "discord": "Discord",
+          "github": "GitHub",
+          "docs": "Dokumentácia",
+          "status": "Stav",
+          "mail": "E-mail",
+          "link": "Odkaz"
+        },
+        "addLink": "Pridať odkaz",
+        "removeLink": "Odstrániť odkaz",
+        "linksPosition": "Umiestnenie odkazov",
+        "mockTitle": "Prihlásenie"
+      },
+      "interface": {
+        "toastStyle": "Štýl oznámení",
+        "toastStyleDescription": "Správy, ktoré vyskočia po uložení, kopírovaní a ďalších akciách.",
+        "toasts": {
+          "default": "Predvolený",
+          "glassy": "Sklený"
+        },
+        "pageTransition": "Prechod stránok",
+        "pageTransitionDescription": "Prehrá sa na obsahu stránky pri otvorení inej stránky. Ukážku uvidíte po prejdení myšou nad dlaždicou.",
+        "transitions": {
+          "none": "Žiadny",
+          "fade": "Prelínanie",
+          "fadeUp": "Prelínanie nahor",
+          "fadeScale": "Prelínanie so zväčšením"
+        },
+        "pageTitles": "Zobraziť nadpisy stránok",
+        "pageTitlesDescription": "Nadpis na stránkach servera, ako sú Súbory a Databázy. Ich vyhľadávanie a tlačidlá zostanú."
+      },
+      "boxes": {
+        "title": "Boxy",
+        "boxStyle": "Štýl boxov",
+        "boxStyleDescription": "Riadok s názvom na kartách, ako sú karty na stránke Domov, nastavenia účtu, formuláre administrácie a grafy.",
+        "styles": {
+          "default": "Predvolený",
+          "line": "Čiara",
+          "fill": "Výplň",
+          "pill": "Kapsula"
+        },
+        "statsTitle": "Grafy a štatistiky",
+        "statStyle": "Štýl štatistických kariet",
+        "statStyleDescription": "Malé dlaždice s ikonou, napríklad v prehľade administrácie a v podrobnostiach konzoly.",
+        "stats": {
+          "default": "Predvolený",
+          "reversed": "Obrátený",
+          "minimal": "Minimalistický",
+          "minimalReversed": "Minimalistický obrátený"
+        },
+        "mockTitle": "Názov boxu",
+        "mockLabel": "Popis poľa",
+        "mockButton": "Uložiť",
+        "mockStat": "Zaťaženie CPU"
+      },
+      "consoleLayout": {
+        "title": "Stránka konzoly",
+        "description": "Potiahnutím komponentov zmeníte ich poradie alebo ich presuniete na iné miesto. Terminál zostáva v strede; bočné stĺpce sú na širokých obrazovkách vedľa neho a na úzkych pod ním.",
+        "terminal": "Terminál",
+        "add": "Pridať komponent",
+        "addTo": "Pridať komponent do: {slot}",
+        "remove": "Odstrániť {name}",
+        "allPlaced": "Všetky komponenty už sú na stránke.",
+        "reset": "Obnoviť predvolené rozloženie",
+        "slot": {
+          "top": "Nad terminálom",
+          "left": "Vľavo od terminálu",
+          "right": "Vpravo od terminálu",
+          "bottom": "Pod terminálom"
+        },
+        "widget": {
+          "banner": "Banner a tlačidlá napájania",
+          "stats": "Dlaždice živých štatistík",
+          "info": "Informácie o serveri",
+          "cpuChart": "Graf CPU",
+          "memoryChart": "Graf pamäte",
+          "networkChart": "Graf siete",
+          "extensionCards": "Karty rozšírení"
+        },
+        "widgetDescription": {
+          "banner": "Názov servera, adresa, živé štatistiky a tlačidlá napájania.",
+          "stats": "Kompaktné dlaždice pre dobu prevádzky, CPU, pamäť, disk a sieť.",
+          "info": "Názov, adresa, stav, lokalita, uzol a SFTP.",
+          "cpuChart": "Živý graf zaťaženia CPU.",
+          "memoryChart": "Živý graf pamäte.",
+          "networkChart": "Živý graf prichádzajúcej a odchádzajúcej prevádzky.",
+          "extensionCards": "Štatistické karty, ktoré do konzoly pridávajú iné rozšírenia."
+        }
+      },
+      "navStyle": {
+        "title": "Ponuka",
+        "hover": "Efekt pri prejdení myšou",
+        "hoverDescription": "Ako vyzerajú odkazy ponuky pod kurzorom a keď je ich stránka otvorená. Obe podoby uvidíte po prejdení myšou nad dlaždicou.",
+        "hovers": {
+          "default": "Predvolený",
+          "filled": "Vyplnený",
+          "filledSecondary": "Vyplnený sekundárny",
+          "iconPill": "Kapsula ikony",
+          "pill": "Kapsula",
+          "pillSecondary": "Kapsula sekundárna"
+        },
+        "mockLink": "Konzola",
+        "search": "Komponent vyhľadávania",
+        "searchDescription": "Čo sa nachádza pod logom v ponuke. Skratka Rýchle akcie funguje so všetkými možnosťami.",
+        "searches": {
+          "palette": "Rýchle akcie (predvolené)",
+          "serverSelector": "Výber servera",
+          "searchBar": "Vyhľadávací panel"
+        },
+        "searchHints": {
+          "palette": "Tlačidlo Rýchle akcie panela. Jeho prepínač serverov zostáva v dolnej časti ponuky.",
+          "serverSelector": "Rozbaľovací zoznam na prechod na iný server v hornej časti ponuky namiesto Rýchlych akcií.",
+          "searchBar": "Vyhľadávacie pole, ktoré počas písania zobrazuje servery; v administrácii aj všetky servery a používateľov. Jeho posledný riadok otvorí Rýchle akcie."
+        }
+      },
+      "serverCards": {
+        "title": "Zoznam serverov",
+        "cardStyle": "Štýl kariet serverov",
+        "cardStyleDescription": "Karty v zobrazení mriežky zoznamu serverov. Každý štýl zachováva zaškrtávacie políčko, stav a ponuku napájania.",
+        "styles": {
+          "default": "Predvolený",
+          "banner": "Banner",
+          "flat": "Plochý",
+          "linear": "Lineárny",
+          "minimal": "Minimalistický",
+          "compact": "Kompaktný"
+        },
+        "tablesTitle": "Tabuľky",
+        "tableStyle": "Štýl tabuliek",
+        "tableStyleDescription": "Zoznamy v celom paneli, napríklad súbory, zálohy, databázy a stránky administrácie, a zobrazenie zoznamu v zozname serverov.",
+        "tables": {
+          "table": "Tabuľka",
+          "cards": "Karty"
+        }
+      },
+      "navLayout": {
+        "title": "Rozloženie",
+        "layout": "Rozloženie ovládacieho panela",
+        "layoutDescription": "Ako je ponuka umiestnená vedľa stránok na počítači. Úzke je pevný pás ikon, ktorý po prejdení myšou zobrazí názvy odkazov. Telefóny používajú navigáciu na telefóne nižšie.",
+        "layouts": {
+          "default": "Predvolené",
+          "floating": "Plávajúce",
+          "pill": "Kapsula",
+          "slim": "Úzke",
+          "horizontal": "Vodorovné"
+        },
+        "dock": "Umiestnenie doku",
+        "dockDescription": "Kde sa nachádza logo, vyhľadávanie a na stránkach servera aj názov servera, stav a tlačidlá napájania.",
+        "dockHorizontal": "Vodorovné rozloženie ich má vždy v hornej lište.",
+        "docks": {
+          "sidebar": "Bočný panel",
+          "header": "Hlavička",
+          "top": "Hore"
+        },
+        "mockConsole": "Konzola"
+      },
+      "mobileNav": {
+        "label": "Navigácia na telefóne",
+        "description": "Pod šírkou počítača: plávajúce tlačidlo ponuky jadra alebo lišta v dolnej časti obrazovky s hlavnými stránkami a tlačidlom Ponuka pre celú ponuku.",
+        "options": {
+          "drawer": "Vysúvací panel",
+          "bottomBar": "Dolná lišta"
+        }
+      }
+    },
+    "library": {
+      "saveAsPreset": "Uložiť ako predvoľbu",
+      "saveAsPresetDescription": "Uloží vzhľad konceptu (farby, písma, bloky, navigáciu) ako vašu vlastnú predvoľbu. Obsah, ako sú články a prihlasovacia stránka, nie je súčasťou predvoľby.",
+      "name": "Názov",
+      "save": "Uložiť",
+      "cancel": "Zrušiť",
+      "created": "Predvoľba bola uložená.",
+      "custom": "Vaše predvoľby",
+      "builtin": "Vstavané",
+      "empty": "Zatiaľ nemáte žiadne vlastné predvoľby.",
+      "limit": "Najviac {max} predvolieb; ak chcete uložiť ďalšiu, jednu odstráňte.",
+      "rename": "Premenovať",
+      "renameTitle": "Premenovať predvoľbu",
+      "delete": "Odstrániť",
+      "deleteTitle": "Odstrániť predvoľbu",
+      "deleteConfirm": "Odstrániť {name}? Používatelia, ktorí si ju vybrali, sa vrátia k predvolenej téme panela.",
+      "users": "Používatelia si ju môžu vybrať",
+      "nameProblem": {
+        "empty": "Zadajte názov.",
+        "long": "Najviac {max} znakov.",
+        "control": "Bez zalomení riadkov a riadiacich znakov."
+      },
+      "history": "História",
+      "historyTitle": "História uložených tém",
+      "historyDescription": "Témy nahradené posledným {max} uložením. Načítaním sa téma vloží do editora; ak ju chcete použiť, stlačte Uložiť.",
+      "historyEmpty": "Zatiaľ žiadne staršie uloženia.",
+      "historyUnknown": "Uložené pred zavedením histórie",
+      "historyBy": "{time}, používateľ {user}",
+      "historyCurrent": "Používa sa: uložené {time}, používateľ {user}",
+      "load": "Načítať do editora",
+      "loaded": "Načítané do editora. Ak ju chcete použiť, stlačte Uložiť.",
+      "choice": {
+        "title": "Téma",
+        "label": "Vaša téma",
+        "description": "Ako panel vyzerá pre vás. Vidíte ju iba vy, na každom zariadení, na ktorom sa prihlásite.",
+        "default": "Predvolená téma panela"
+      }
+    }
+  }
+}

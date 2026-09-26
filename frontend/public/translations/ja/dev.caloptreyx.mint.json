@@ -1,0 +1,569 @@
+{
+  "items": {},
+  "translations": {
+    "nav": {
+      "editor": "テーマエディター"
+    },
+    "home": {
+      "title": "ホーム",
+      "address": "サーバーアドレス",
+      "location": "場所",
+      "gettingStarted": "はじめに",
+      "information": "サーバー情報",
+      "installed": "インストール日",
+      "serverName": "サーバー名",
+      "status": "ステータス",
+      "uptime": "稼働時間",
+      "node": "ノード",
+      "memory": "メモリ",
+      "image": "イメージ",
+      "console": "コンソール",
+      "fullLog": "サーバーログ全体",
+      "usage": "使用状況",
+      "cpu": "CPU",
+      "ram": "RAM",
+      "storage": "ストレージ",
+      "network": "ネットワーク",
+      "inbound": "受信",
+      "outbound": "送信",
+      "sftp": "SFTP"
+    },
+    "servers": {
+      "title": "マイサーバー",
+      "subtitle": "あなたのサーバーと、共有されているサーバーです。",
+      "actions": "サーバー操作",
+      "cpu": "CPU",
+      "disk": "ディスク",
+      "showing": "{count} 件を表示中",
+      "select": "{name} を選択",
+      "selectAll": "表示中のサーバーをすべて選択",
+      "column": {
+        "id": "ID",
+        "name": "名前",
+        "game": "ゲーム",
+        "status": "ステータス",
+        "location": "場所",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "uptime": "稼働時間",
+        "memory": "メモリ"
+      },
+      "filter": {
+        "all": "すべてのサーバー",
+        "running": "オンライン",
+        "offline": "オフライン",
+        "suspended": "停止中",
+        "other": "その他"
+      },
+      "view": {
+        "list": "リスト表示",
+        "grid": "グリッド表示"
+      }
+    },
+    "serverSort": {
+      "sortBy": "並べ替え",
+      "sort": {
+        "none": "デフォルト順",
+        "name": "名前で並べ替え",
+        "status": "ステータスで並べ替え",
+        "game": "ゲームで並べ替え",
+        "location": "場所で並べ替え",
+        "cpu": "CPU で並べ替え",
+        "ram": "RAM で並べ替え",
+        "uptime": "稼働時間で並べ替え",
+        "id": "ID で並べ替え"
+      },
+      "ascending": "昇順（クリックで反転）",
+      "descending": "降順（クリックで反転）",
+      "groupBy": "グループ化",
+      "group": {
+        "none": "グループ化しない",
+        "location": "場所でグループ化",
+        "game": "ゲームでグループ化",
+        "status": "ステータスでグループ化"
+      },
+      "selectGroup": "{name} 内をすべて選択"
+    },
+    "account": {
+      "changeBanner": "バナーを変更",
+      "removeBanner": "バナーを削除",
+      "changeAvatar": "アバターを変更",
+      "bannerFile": "画像",
+      "bannerHint": "PNG、JPEG、WebP、GIF に対応。ドラッグして表示する部分を選べます。あなたにだけ表示されます。",
+      "admin": "管理者",
+      "twoFactorOn": "二要素認証: 有効",
+      "twoFactorOff": "二要素認証: 無効"
+    },
+    "announcementCta": {
+      "tab": "アクションボタン",
+      "title": "アクションボタン",
+      "description": "お知らせにボタンを表示します。",
+      "enable": "アクションボタンを有効化",
+      "enableDescription": "お知らせの本文の下に、お知らせと同じ色のボタンを追加します。",
+      "buttonTitle": "ボタンのテキスト",
+      "buttonTitleDescription": "ボタンに表示するテキスト（最大 {max} 文字）。",
+      "buttonTitlePlaceholder": "ストアへ移動",
+      "buttonLink": "ボタンのリンク",
+      "buttonLinkDescription": "リンク先です。/account のようなパネル内のページはその場で開き、https:// から始まる完全なアドレスは新しいタブで開きます。",
+      "buttonLinkPlaceholder": "/account または https://example.com",
+      "titleRequired": "ボタンのテキストを入力してください。",
+      "titleTooLong": "テキストは {max} 文字以内にしてください。",
+      "titleInvalid": "テキストからタブと改行を削除してください。",
+      "linkInvalid": "1 つの / で始まるパネル内のパス、または http:// か https:// で始まる完全なアドレスを使用してください。スペース、引用符、山括弧、丸括弧、波括弧、セミコロン、バックスラッシュは使用できません。",
+      "linkTooLong": "リンクは {max} 文字以内にしてください。",
+      "saved": "アクションボタンを保存しました。",
+      "removed": "アクションボタンを削除しました。"
+    },
+    "auth": {
+      "supportLinks": "サポートリンク"
+    },
+    "navSearch": {
+      "placeholder": "検索…",
+      "servers": "サーバー",
+      "allServers": "すべてのサーバー",
+      "users": "ユーザー",
+      "empty": "見つかりませんでした",
+      "everything": "「{query}」をすべてから検索",
+      "quickActions": "クイックアクションを開く",
+      "switchServer": "サーバーを切り替え"
+    },
+    "topBar": {
+      "navigation": "メインメニュー"
+    },
+    "bottomNav": {
+      "label": "スマートフォン用ナビゲーション",
+      "menu": "メニュー"
+    },
+    "editor": {
+      "contrast": {
+        "title": "読みにくい色があります",
+        "description": "WCAG の最低基準を下回っていますが、保存は可能です。",
+        "pair": "{bg} 上の {fg}: {ratio}:1（目標 {min}:1）",
+        "low": "{other} とのコントラストが低い: {ratio}:1（目標 {min}:1）",
+        "lowAs": "{other} 上の{role}としてコントラストが低い: {ratio}:1（目標 {min}:1）",
+        "named": "{name}（{role}）",
+        "roles": {
+          "links": "リンク",
+          "dimmed": "薄いテキスト"
+        }
+      },
+      "favicon": {
+        "label": "ブラウザタブのアイコン",
+        "description": "ブラウザのタブやホーム画面に表示されるパネルのアイコンを置き換えます（ログインページを含む）。空欄のままにするとパネルのアイコンを使用します。正方形の PNG、ICO、SVG が最適です。",
+        "preview": "タブのプレビュー"
+      },
+      "close": "エディターを閉じる",
+      "undo": "元に戻す",
+      "redo": "やり直す",
+      "reset": "デフォルトにリセット",
+      "import": "テーマをインポート",
+      "export": "テーマをエクスポート",
+      "importFailed": "このファイルは Mint のテーマではありません。",
+      "save": "保存",
+      "saved": "テーマを保存しました。",
+      "refresh": "プレビューを再読み込み",
+      "openTab": "新しいタブで開く",
+      "device": {
+        "desktop": "デスクトップ",
+        "tablet": "タブレット",
+        "mobile": "モバイル"
+      },
+      "scheme": {
+        "dark": "ダーク",
+        "light": "ライト"
+      },
+      "pages": {
+        "home": "サーバーホーム",
+        "console": "サーバーコンソール",
+        "servers": "サーバー",
+        "account": "アカウント",
+        "admin": "管理",
+        "login": "ログインページ"
+      },
+      "section": {
+        "presets": "プリセット",
+        "presetsDescription": "既成のデザインから始めたり、独自のものを保存したり、ユーザーが選べるプリセットを決めたりできます。",
+        "colours": "カラー",
+        "coloursDescription": "その他の色はすべて、この 5 色から作られます。",
+        "style": "スタイル",
+        "styleDescription": "フォントと角の丸み。",
+        "background": "背景",
+        "backgroundDescription": "パネル全体の背後に表示する画像（ページの色で暗くなります）と、ブラウザタブのアイコン。",
+        "home": "ホームページ",
+        "homeDescription": "ランディングページのバナーとゲーム画像。",
+        "articles": "はじめに",
+        "articlesDescription": "すべてのサーバーホームページに表示されるリンク。",
+        "layout": "レイアウト",
+        "layoutDescription": "ホームページに表示するカードとその配置。",
+        "login": "ログインページ",
+        "loginDescription": "ログイン、登録、パスワードページのレイアウト、背景、ロゴ、サポートリンク。",
+        "interface": "インターフェース",
+        "interfaceDescription": "トースト、ページ遷移、ページタイトル。",
+        "navigation": "ナビゲーション",
+        "navigationDescription": "サイドバーのレイアウト、メニューのホバー効果、検索。",
+        "components": "コンポーネント",
+        "componentsDescription": "サーバーカード、テーブル、ボックス、統計カード。",
+        "console": "コンソール",
+        "consoleDescription": "コンソールページでターミナルの周りに表示するものとその配置。"
+      },
+      "accent": "アクセント",
+      "accentDescription": "ボタン、リンク、選択中のメニュー項目",
+      "highlight": "ハイライト",
+      "highlightDescription": "コンソールバナーの統計アイコン",
+      "background": "背景",
+      "backgroundDescription": "すべての背後にあるページ",
+      "surface": "サーフェス",
+      "surfaceDescription": "カード、サイドバー、コンソール",
+      "text": "テキスト",
+      "textDescription": "薄いテキストと枠線はこの色から作られます",
+      "derived": "上の色から自動生成",
+      "clearColor": "自動生成の色に戻す",
+      "group": {
+        "accents": "アクセント",
+        "surfaces": "サーフェス",
+        "surfacesExtra": "上位レイヤー",
+        "text": "テキスト",
+        "textExtra": "その他のテキスト",
+        "lines": "線",
+        "buttons": "ボタン",
+        "status": "ステータス",
+        "charts": "グラフ",
+        "light": "ライトモード"
+      },
+      "surfaceRaised": "浮き上がり",
+      "surfaceOverlay": "オーバーレイ",
+      "textMuted": "控えめなテキスト",
+      "textFaint": "薄いテキスト",
+      "textOnAccent": "アクセント上のテキスト",
+      "line": "細線",
+      "buttonText": "ボタンのテキスト",
+      "success": "成功",
+      "warning": "警告",
+      "danger": "危険",
+      "offline": "オフライン",
+      "chartOne": "系列 1",
+      "chartTwo": "系列 2",
+      "lightBackground": "ライト背景",
+      "lightSurface": "ライトサーフェス",
+      "lightText": "ライトテキスト",
+      "font": "フォント",
+      "fontExo": "Exo 2",
+      "fontMontserrat": "Montserrat",
+      "fontPanel": "パネルのデフォルト",
+      "fontOutfit": "Outfit",
+      "fontJakarta": "Plus Jakarta Sans",
+      "fontSpace": "Space Grotesk",
+      "monoFont": "等幅フォント",
+      "monoFontDescription": "コード、ID、サーバーコンソール。",
+      "monoFontJetbrains": "JetBrains Mono",
+      "monoFontFira": "Fira Code",
+      "sidebarGroups": "サーバーメニューをグループ化",
+      "sidebarGroupsDescription": "管理、設定、アクセスの各セクションを折りたたみ可能にします。",
+      "buttonStyle": "ボタンのスタイル",
+      "buttonAccent": "ボタンにアクセントカラーを使用",
+      "buttonColor": "ボタンの色",
+      "buttons": {
+        "filled": "塗りつぶし",
+        "tinted": "淡色",
+        "outline": "アウトライン",
+        "glass": "ガラス"
+      },
+      "radius": "カードの角",
+      "elementRadius": "ボタンと入力欄の角",
+      "blocks": {
+        "title": "ブロック",
+        "opacity": "ブロックの不透明度",
+        "opacityDescription": "100% 未満にすると、ページの背景（または背景画像）がカードやサイドバー越しに透けて見えます。",
+        "glass": "ガラス効果",
+        "glassHint": "ガラス風の見た目にするには、ブロックの不透明度を約 80% にし、「ガラス効果」と「ブロックの枠線」を有効にします。",
+        "glassOff": "デフォルト",
+        "glassOn": "ガラス",
+        "border": "ブロックの枠線",
+        "withBorder": "枠線あり",
+        "withoutBorder": "枠線なし"
+      },
+      "elements": {
+        "title": "要素",
+        "inputBorder": "入力欄の枠線",
+        "withBorder": "枠線あり",
+        "withoutBorder": "枠線なし",
+        "clickEffect": "クリック効果",
+        "clickEffectDescription": "押したときのボタンの反応。",
+        "click": {
+          "none": "なし",
+          "drop": "沈み込み",
+          "shrink": "縮小",
+          "outline": "アウトライン"
+        },
+        "create": "作成"
+      },
+      "backgroundImage": "画像 URL",
+      "backgroundImageDescription": "空欄のままにすると無地の背景になります。",
+      "backgroundDim": "暗さ",
+      "homeBanner": "デフォルトのバナー画像 URL",
+      "homeBannerDescription": "独自のバナーがない Egg に使用されます。空欄のままにするとアクセントカラーのグラデーションになります。",
+      "articles": "「はじめに」のリンク",
+      "articlesDescription": "ガイドやナレッジベースへのリンクを最大 {max} 件。",
+      "articleTitle": "タイトル",
+      "articleDescription": "説明",
+      "articleUrl": "URL",
+      "addArticle": "リンクを追加",
+      "removeArticle": "リンクを削除",
+      "eggImages": "ゲーム画像",
+      "eggImagesDescription": "各 Egg のバナーとアイコン。バナーのない Egg には上記のバナーが使われます。",
+      "egg": "Egg",
+      "eggBanner": "バナー画像 URL",
+      "eggIcon": "アイコン画像 URL",
+      "layoutDescription": "ドラッグで並べ替えたり、カードをもう一方の列に移動したり、非表示にしたりできます。",
+      "columnEmpty": "まだカードがありません。",
+      "moveColumn": "もう一方の列に移動",
+      "hideCard": "カードを非表示",
+      "showCard": "カードを表示",
+      "column": {
+        "left": "左の列",
+        "right": "右の列"
+      },
+      "card": {
+        "information": "サーバー情報",
+        "installed": "インストール日",
+        "articles": "「はじめに」のリンク",
+        "console": "コンソール",
+        "usage": "使用状況",
+        "network": "ネットワーク"
+      },
+      "login": {
+        "background": "背景画像 URL",
+        "backgroundDescription": "空欄のままにすると通常の背景を使用します。",
+        "dim": "暗さ",
+        "logo": "ロゴ URL",
+        "logoDescription": "これらのページでパネルのロゴを置き換えます。空欄のままにするとそのまま使用します。",
+        "preview": "プレビューには、ログアウト状態の訪問者から見たログインページが表示されます。"
+      },
+      "authLayout": {
+        "layoutTitle": "レイアウト",
+        "layout": "ログインレイアウト",
+        "layoutDescription": "バナーにはログイン背景、なければパネルの背景、それもなければアクセントカラーのグラデーションが表示されます。スマートフォンではフォームのみ表示されます。",
+        "layouts": {
+          "default": "デフォルト",
+          "flat": "フラット",
+          "sideBanner": "サイドバナー",
+          "floatingBanner": "フローティングバナー",
+          "panels": "パネル"
+        },
+        "logoPosition": "ロゴの位置",
+        "positions": {
+          "header": "トップバー",
+          "aboveForm": "フォームの上"
+        },
+        "appearanceTitle": "背景とロゴ",
+        "linksTitle": "サポートリンク",
+        "linksDescription": "Discord、ドキュメント、ステータスページなどへのリンクを最大 {max} 件。ラベルまたは URL がないリンクは表示されません。",
+        "linkLabel": "ラベル",
+        "linkUrl": "URL",
+        "linkIcon": "アイコン",
+        "noIcon": "アイコンなし",
+        "icons": {
+          "discord": "Discord",
+          "github": "GitHub",
+          "docs": "ドキュメント",
+          "status": "ステータス",
+          "mail": "メール",
+          "link": "リンク"
+        },
+        "addLink": "リンクを追加",
+        "removeLink": "リンクを削除",
+        "linksPosition": "リンクの位置",
+        "mockTitle": "ログイン"
+      },
+      "interface": {
+        "toastStyle": "トーストのスタイル",
+        "toastStyleDescription": "保存やコピーなどの操作の後に表示されるメッセージ。",
+        "toasts": {
+          "default": "デフォルト",
+          "glassy": "ガラス"
+        },
+        "pageTransition": "ページ遷移",
+        "pageTransitionDescription": "別のページを開いたときにページの内容に再生されます。タイルにカーソルを合わせると確認できます。",
+        "transitions": {
+          "none": "なし",
+          "fade": "フェードイン",
+          "fadeUp": "フェードアップ",
+          "fadeScale": "フェードスケール"
+        },
+        "pageTitles": "ページタイトルを表示",
+        "pageTitlesDescription": "ファイルやデータベースなどのサーバーページの見出し。検索とボタンは残ります。"
+      },
+      "boxes": {
+        "title": "ボックス",
+        "boxStyle": "ボックスのスタイル",
+        "boxStyleDescription": "ホームのカード、アカウント設定、管理フォーム、グラフなどのカードのタイトル行。",
+        "styles": {
+          "default": "デフォルト",
+          "line": "ライン",
+          "fill": "塗りつぶし",
+          "pill": "ピル"
+        },
+        "statsTitle": "グラフと統計",
+        "statStyle": "統計カードのスタイル",
+        "statStyleDescription": "管理画面の概要やコンソールの詳細にある、アイコン付きの小さなタイル。",
+        "stats": {
+          "default": "デフォルト",
+          "reversed": "反転",
+          "minimal": "ミニマル",
+          "minimalReversed": "ミニマル（反転）"
+        },
+        "mockTitle": "ボックスのタイトル",
+        "mockLabel": "入力欄のラベル",
+        "mockButton": "保存",
+        "mockStat": "CPU 負荷"
+      },
+      "consoleLayout": {
+        "title": "コンソールページ",
+        "description": "コンポーネントをドラッグして並べ替えたり、別の枠に移動したりできます。ターミナルは常に中央に配置され、左右の列は広い画面ではその横に、狭い画面ではその下に表示されます。",
+        "terminal": "ターミナル",
+        "add": "コンポーネントを追加",
+        "addTo": "コンポーネントを追加: {slot}",
+        "remove": "{name} を削除",
+        "allPlaced": "すべてのコンポーネントがすでにページに配置されています。",
+        "reset": "デフォルトのレイアウトに戻す",
+        "slot": {
+          "top": "ターミナルの上",
+          "left": "ターミナルの左",
+          "right": "ターミナルの右",
+          "bottom": "ターミナルの下"
+        },
+        "widget": {
+          "banner": "バナーと電源ボタン",
+          "stats": "リアルタイム統計タイル",
+          "info": "サーバー情報",
+          "cpuChart": "CPU グラフ",
+          "memoryChart": "メモリグラフ",
+          "networkChart": "ネットワークグラフ",
+          "extensionCards": "拡張機能カード"
+        },
+        "widgetDescription": {
+          "banner": "サーバー名、アドレス、リアルタイム統計、電源ボタン。",
+          "stats": "稼働時間、CPU、メモリ、ディスク、ネットワークのコンパクトなタイル。",
+          "info": "名前、アドレス、ステータス、場所、ノード、SFTP。",
+          "cpuChart": "CPU 負荷のリアルタイムグラフ。",
+          "memoryChart": "メモリのリアルタイムグラフ。",
+          "networkChart": "受信・送信トラフィックのリアルタイムグラフ。",
+          "extensionCards": "他の拡張機能がコンソールに追加する統計カード。"
+        }
+      },
+      "navStyle": {
+        "title": "メニュー",
+        "hover": "ホバー効果",
+        "hoverDescription": "カーソルを合わせたときと、そのページを開いているときのメニューリンクの見た目。タイルにカーソルを合わせると両方を確認できます。",
+        "hovers": {
+          "default": "デフォルト",
+          "filled": "塗りつぶし",
+          "filledSecondary": "塗りつぶし（セカンダリ）",
+          "iconPill": "アイコンピル",
+          "pill": "ピル",
+          "pillSecondary": "ピル（セカンダリ）"
+        },
+        "mockLink": "コンソール",
+        "search": "検索コンポーネント",
+        "searchDescription": "メニュー内のロゴの下に表示するもの。クイックアクションのショートカットはどれでも使えます。",
+        "searches": {
+          "palette": "クイックアクション（デフォルト）",
+          "serverSelector": "サーバー選択",
+          "searchBar": "検索バー"
+        },
+        "searchHints": {
+          "palette": "パネルのクイックアクションボタン。サーバー切り替えはメニューの下部に残ります。",
+          "serverSelector": "クイックアクションの代わりにメニューの上部に表示される、別のサーバーへ移動するためのドロップダウン。",
+          "searchBar": "入力に応じてサーバーを一覧表示する検索フィールド。管理エリアではすべてのサーバーとユーザーも表示します。最後の行からクイックアクションを開けます。"
+        }
+      },
+      "serverCards": {
+        "title": "サーバー一覧",
+        "cardStyle": "サーバーカードのスタイル",
+        "cardStyleDescription": "サーバー一覧のグリッド表示でのカード。どのスタイルでもチェックボックス、ステータス、電源メニューは残ります。",
+        "styles": {
+          "default": "デフォルト",
+          "banner": "バナー",
+          "flat": "フラット",
+          "linear": "リニア",
+          "minimal": "ミニマル",
+          "compact": "コンパクト"
+        },
+        "tablesTitle": "テーブル",
+        "tableStyle": "テーブルのスタイル",
+        "tableStyleDescription": "ファイル、バックアップ、データベース、管理ページなどパネル全体の一覧と、サーバー一覧のリスト表示。",
+        "tables": {
+          "table": "テーブル",
+          "cards": "カード"
+        }
+      },
+      "navLayout": {
+        "title": "レイアウト",
+        "layout": "ダッシュボードのレイアウト",
+        "layoutDescription": "デスクトップでメニューをページの横にどう配置するか。「スリム」はホバーでリンク名を表示する固定のアイコンレールです。スマートフォンでは下のスマートフォン用ナビゲーションを使用します。",
+        "layouts": {
+          "default": "デフォルト",
+          "floating": "フローティング",
+          "pill": "ピル",
+          "slim": "スリム",
+          "horizontal": "水平"
+        },
+        "dock": "ドックの位置",
+        "dockDescription": "ロゴ、検索、およびサーバーページではサーバー名、ステータス、電源ボタンを配置する場所。",
+        "dockHorizontal": "水平レイアウトでは、これらは常にトップバーに表示されます。",
+        "docks": {
+          "sidebar": "サイドバー",
+          "header": "ヘッダー",
+          "top": "上部"
+        },
+        "mockConsole": "コンソール"
+      },
+      "mobileNav": {
+        "label": "スマートフォン用ナビゲーション",
+        "description": "デスクトップより狭い画面での表示: コアのフローティングメニューボタン、または主要ページと全メニューを開く「メニュー」ボタンを備えた画面下部のバー。",
+        "options": {
+          "drawer": "ドロワー",
+          "bottomBar": "ボトムバー"
+        }
+      }
+    },
+    "library": {
+      "saveAsPreset": "プリセットとして保存",
+      "saveAsPresetDescription": "下書きの見た目（カラー、フォント、ブロック、ナビゲーション）を独自のプリセットとして保存します。記事やログインページなどのコンテンツはプリセットに含まれません。",
+      "name": "名前",
+      "save": "保存",
+      "cancel": "キャンセル",
+      "created": "プリセットを保存しました。",
+      "custom": "あなたのプリセット",
+      "builtin": "組み込み",
+      "empty": "独自のプリセットはまだありません。",
+      "limit": "プリセットは最大 {max} 件です。新しく保存するには 1 つ削除してください。",
+      "rename": "名前を変更",
+      "renameTitle": "プリセットの名前を変更",
+      "delete": "削除",
+      "deleteTitle": "プリセットを削除",
+      "deleteConfirm": "{name} を削除しますか？ これを選んでいたユーザーはパネルのデフォルトに戻ります。",
+      "users": "ユーザーが選択可能",
+      "nameProblem": {
+        "empty": "名前を入力してください。",
+        "long": "最大 {max} 文字です。",
+        "control": "改行や制御文字は使用できません。"
+      },
+      "history": "履歴",
+      "historyTitle": "保存済みテーマの履歴",
+      "historyDescription": "直近 {max} 回の保存で置き換えられたテーマです。読み込むとエディターに反映されます。使用するには「保存」を押してください。",
+      "historyEmpty": "以前の保存はまだありません。",
+      "historyUnknown": "履歴の記録開始前に保存",
+      "historyBy": "{time}（{user}）",
+      "historyCurrent": "使用中: {time} に {user} が保存",
+      "load": "エディターに読み込む",
+      "loaded": "エディターに読み込みました。使用するには「保存」を押してください。",
+      "choice": {
+        "title": "テーマ",
+        "label": "あなたのテーマ",
+        "description": "あなたに表示されるパネルの見た目です。あなただけに適用され、サインインするすべてのデバイスで反映されます。",
+        "default": "パネルのデフォルト"
+      }
+    }
+  }
+}

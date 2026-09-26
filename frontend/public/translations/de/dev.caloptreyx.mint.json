@@ -1,0 +1,569 @@
+{
+  "items": {},
+  "translations": {
+    "nav": {
+      "editor": "Design-Editor"
+    },
+    "home": {
+      "title": "Startseite",
+      "address": "Serveradresse",
+      "location": "Standort",
+      "gettingStarted": "Erste Schritte",
+      "information": "Serverinformationen",
+      "installed": "Installiert",
+      "serverName": "Servername",
+      "status": "Status",
+      "uptime": "Laufzeit",
+      "node": "Node",
+      "memory": "Arbeitsspeicher",
+      "image": "Image",
+      "console": "Konsole",
+      "fullLog": "Vollständiges Serverprotokoll",
+      "usage": "Auslastung",
+      "cpu": "CPU",
+      "ram": "RAM",
+      "storage": "Speicher",
+      "network": "Netzwerk",
+      "inbound": "Eingehend",
+      "outbound": "Ausgehend",
+      "sftp": "SFTP"
+    },
+    "servers": {
+      "title": "Meine Server",
+      "subtitle": "Deine Server und die, die mit dir geteilt wurden.",
+      "actions": "Serveraktionen",
+      "cpu": "CPU",
+      "disk": "Speicherplatz",
+      "showing": "{count} angezeigt",
+      "select": "{name} auswählen",
+      "selectAll": "Alle sichtbaren Server auswählen",
+      "column": {
+        "id": "ID",
+        "name": "Name",
+        "game": "Spiel",
+        "status": "Status",
+        "location": "Standort",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "uptime": "Laufzeit",
+        "memory": "Arbeitsspeicher"
+      },
+      "filter": {
+        "all": "Alle Server",
+        "running": "Online",
+        "offline": "Offline",
+        "suspended": "Suspendiert",
+        "other": "Sonstige"
+      },
+      "view": {
+        "list": "Listenansicht",
+        "grid": "Rasteransicht"
+      }
+    },
+    "serverSort": {
+      "sortBy": "Sortieren nach",
+      "sort": {
+        "none": "Standardreihenfolge",
+        "name": "Nach Name sortieren",
+        "status": "Nach Status sortieren",
+        "game": "Nach Spiel sortieren",
+        "location": "Nach Standort sortieren",
+        "cpu": "Nach CPU sortieren",
+        "ram": "Nach RAM sortieren",
+        "uptime": "Nach Laufzeit sortieren",
+        "id": "Nach ID sortieren"
+      },
+      "ascending": "Aufsteigend, zum Umkehren klicken",
+      "descending": "Absteigend, zum Umkehren klicken",
+      "groupBy": "Gruppieren nach",
+      "group": {
+        "none": "Keine Gruppierung",
+        "location": "Nach Standort gruppieren",
+        "game": "Nach Spiel gruppieren",
+        "status": "Nach Status gruppieren"
+      },
+      "selectGroup": "Alle in {name} auswählen"
+    },
+    "account": {
+      "changeBanner": "Banner ändern",
+      "removeBanner": "Banner entfernen",
+      "changeAvatar": "Avatar ändern",
+      "bannerFile": "Bild",
+      "bannerHint": "PNG, JPEG, WebP oder GIF. Ziehe das Bild, um den sichtbaren Ausschnitt zu wählen. Nur du siehst es.",
+      "admin": "Administrator",
+      "twoFactorOn": "2FA aktiviert",
+      "twoFactorOff": "2FA deaktiviert"
+    },
+    "announcementCta": {
+      "tab": "Call-to-Action",
+      "title": "Call-to-Action",
+      "description": "Zeigt einen Button in der Ankündigung an.",
+      "enable": "Call-to-Action aktivieren",
+      "enableDescription": "Fügt unter dem Text der Ankündigung einen Button in der Farbe der Ankündigung hinzu.",
+      "buttonTitle": "Button-Titel",
+      "buttonTitleDescription": "Der Text auf dem Button, bis zu {max} Zeichen.",
+      "buttonTitlePlaceholder": "Zum Shop",
+      "buttonLink": "Button-Link",
+      "buttonLinkDescription": "Das Ziel: Eine Panel-Seite wie /account öffnet sich direkt, eine vollständige https://-Adresse in einem neuen Tab.",
+      "buttonLinkPlaceholder": "/account oder https://example.com",
+      "titleRequired": "Gib dem Button einen Titel.",
+      "titleTooLong": "Der Titel darf höchstens {max} Zeichen lang sein.",
+      "titleInvalid": "Entferne Tabulatoren und Zeilenumbrüche aus dem Titel.",
+      "linkInvalid": "Verwende einen Panel-Pfad, der mit einem einzelnen / beginnt, oder eine vollständige http://- oder https://-Adresse, ohne Leerzeichen, Anführungszeichen, spitze Klammern, runde Klammern, geschweifte Klammern, Semikolons oder Backslashes.",
+      "linkTooLong": "Der Link darf höchstens {max} Zeichen lang sein.",
+      "saved": "Call-to-Action gespeichert.",
+      "removed": "Call-to-Action entfernt."
+    },
+    "auth": {
+      "supportLinks": "Support-Links"
+    },
+    "navSearch": {
+      "placeholder": "Suchen...",
+      "servers": "Server",
+      "allServers": "Alle Server",
+      "users": "Benutzer",
+      "empty": "Nichts gefunden",
+      "everything": "Überall nach „{query}“ suchen",
+      "quickActions": "Schnellaktionen öffnen",
+      "switchServer": "Server wechseln"
+    },
+    "topBar": {
+      "navigation": "Hauptmenü"
+    },
+    "bottomNav": {
+      "label": "Smartphone-Navigation",
+      "menu": "Menü"
+    },
+    "editor": {
+      "contrast": {
+        "title": "Einige Farben sind schwer lesbar",
+        "description": "Unter dem WCAG-Minimum; Speichern ist trotzdem möglich.",
+        "pair": "{fg} auf {bg}: {ratio}:1 (Ziel: {min}:1)",
+        "low": "Geringer Kontrast zu {other}: {ratio}:1 (Ziel: {min}:1)",
+        "lowAs": "Geringer Kontrast als {role} auf {other}: {ratio}:1 (Ziel: {min}:1)",
+        "named": "{name} ({role})",
+        "roles": {
+          "links": "Links",
+          "dimmed": "gedimmter Text"
+        }
+      },
+      "favicon": {
+        "label": "Browser-Tab-Symbol",
+        "description": "Ersetzt das Panel-Symbol in Browser-Tabs und auf Startbildschirmen, auch auf den Anmeldeseiten. Leer lassen, um das Panel-Symbol zu behalten. Ein quadratisches PNG, ICO oder SVG eignet sich am besten.",
+        "preview": "Tab-Vorschau"
+      },
+      "close": "Editor schließen",
+      "undo": "Rückgängig",
+      "redo": "Wiederholen",
+      "reset": "Auf Standard zurücksetzen",
+      "import": "Design importieren",
+      "export": "Design exportieren",
+      "importFailed": "Diese Datei ist kein Mint-Design.",
+      "save": "Speichern",
+      "saved": "Design gespeichert.",
+      "refresh": "Vorschau neu laden",
+      "openTab": "In neuem Tab öffnen",
+      "device": {
+        "desktop": "Desktop",
+        "tablet": "Tablet",
+        "mobile": "Mobil"
+      },
+      "scheme": {
+        "dark": "Dunkel",
+        "light": "Hell"
+      },
+      "pages": {
+        "home": "Server-Startseite",
+        "console": "Server-Konsole",
+        "servers": "Server",
+        "account": "Account",
+        "admin": "Admin",
+        "login": "Anmeldeseite"
+      },
+      "section": {
+        "presets": "Vorlagen",
+        "presetsDescription": "Starte mit einem fertigen Look, speichere eigene Vorlagen und lege fest, welche Benutzer auswählen können.",
+        "colours": "Farben",
+        "coloursDescription": "Alles andere wird aus diesen fünf gemischt.",
+        "style": "Stil",
+        "styleDescription": "Schriftart und Eckenrundung.",
+        "background": "Hintergrund",
+        "backgroundDescription": "Ein Bild hinter dem gesamten Panel, mit der Seitenfarbe abgedunkelt, sowie das Browser-Tab-Symbol.",
+        "home": "Startseite",
+        "homeDescription": "Banner und Spielbilder für die Startseite.",
+        "articles": "Erste Schritte",
+        "articlesDescription": "Links, die auf jeder Server-Startseite angezeigt werden.",
+        "layout": "Layout",
+        "layoutDescription": "Welche Karten die Startseite zeigt und wo.",
+        "login": "Anmeldeseite",
+        "loginDescription": "Layout, Hintergrund, Logo und Support-Links für die Anmelde-, Registrierungs- und Passwortseiten.",
+        "interface": "Oberfläche",
+        "interfaceDescription": "Toasts, Seitenübergänge und Seitentitel.",
+        "navigation": "Navigation",
+        "navigationDescription": "Layout der Seitenleiste, Hover-Effekt im Menü und Suche.",
+        "components": "Komponenten",
+        "componentsDescription": "Serverkarten, Tabellen, Boxen und Statistikkarten.",
+        "console": "Konsole",
+        "consoleDescription": "Was die Konsolenseite rund um das Terminal anzeigt und wo."
+      },
+      "accent": "Akzent",
+      "accentDescription": "Buttons, Links und der aktive Menüpunkt",
+      "highlight": "Hervorhebung",
+      "highlightDescription": "Statistiksymbole im Konsolen-Banner",
+      "background": "Hintergrund",
+      "backgroundDescription": "Die Seite hinter allem",
+      "surface": "Oberfläche",
+      "surfaceDescription": "Karten, Seitenleiste und Konsole",
+      "text": "Text",
+      "textDescription": "Gedimmter Text und Rahmen werden daraus gemischt",
+      "derived": "Aus den Farben oben abgeleitet",
+      "clearColor": "Zurück zur abgeleiteten Farbe",
+      "group": {
+        "accents": "Akzente",
+        "surfaces": "Oberflächen",
+        "surfacesExtra": "Obere Ebenen",
+        "text": "Text",
+        "textExtra": "Weiterer Text",
+        "lines": "Linien",
+        "buttons": "Buttons",
+        "status": "Status",
+        "charts": "Diagramme",
+        "light": "Heller Modus"
+      },
+      "surfaceRaised": "Erhöht",
+      "surfaceOverlay": "Overlay",
+      "textMuted": "Gedämpfter Text",
+      "textFaint": "Blasser Text",
+      "textOnAccent": "Text auf Akzent",
+      "line": "Haarlinie",
+      "buttonText": "Button-Text",
+      "success": "Erfolg",
+      "warning": "Warnung",
+      "danger": "Gefahr",
+      "offline": "Offline",
+      "chartOne": "Reihe eins",
+      "chartTwo": "Reihe zwei",
+      "lightBackground": "Heller Hintergrund",
+      "lightSurface": "Helle Oberfläche",
+      "lightText": "Heller Text",
+      "font": "Schriftart",
+      "fontExo": "Exo 2",
+      "fontMontserrat": "Montserrat",
+      "fontPanel": "Panel-Standard",
+      "fontOutfit": "Outfit",
+      "fontJakarta": "Plus Jakarta Sans",
+      "fontSpace": "Space Grotesk",
+      "monoFont": "Monospace-Schriftart",
+      "monoFontDescription": "Code, IDs und die Serverkonsole.",
+      "monoFontJetbrains": "JetBrains Mono",
+      "monoFontFira": "Fira Code",
+      "sidebarGroups": "Servermenü gruppieren",
+      "sidebarGroupsDescription": "Einklappbare Bereiche für Verwaltung, Konfiguration und Zugriff.",
+      "buttonStyle": "Button-Stil",
+      "buttonAccent": "Buttons verwenden die Akzentfarbe",
+      "buttonColor": "Button-Farbe",
+      "buttons": {
+        "filled": "Gefüllt",
+        "tinted": "Getönt",
+        "outline": "Kontur",
+        "glass": "Glas"
+      },
+      "radius": "Kartenecken",
+      "elementRadius": "Ecken von Buttons und Eingabefeldern",
+      "blocks": {
+        "title": "Blöcke",
+        "opacity": "Block-Deckkraft",
+        "opacityDescription": "Unter 100 % scheint der Seitenhintergrund oder sein Bild durch Karten und die Seitenleiste hindurch.",
+        "glass": "Glaseffekt",
+        "glassHint": "Für einen gläsernen Look stelle die Block-Deckkraft auf etwa 80 % und aktiviere Glaseffekt und Block-Rahmen.",
+        "glassOff": "Standard",
+        "glassOn": "Gläsern",
+        "border": "Block-Rahmen",
+        "withBorder": "Mit Rahmen",
+        "withoutBorder": "Ohne Rahmen"
+      },
+      "elements": {
+        "title": "Elemente",
+        "inputBorder": "Rahmen für Eingabefelder",
+        "withBorder": "Mit Rahmen",
+        "withoutBorder": "Ohne Rahmen",
+        "clickEffect": "Klickeffekt",
+        "clickEffectDescription": "Wie Buttons beim Drücken reagieren.",
+        "click": {
+          "none": "Keiner",
+          "drop": "Absenken",
+          "shrink": "Schrumpfen",
+          "outline": "Kontur"
+        },
+        "create": "Erstellen"
+      },
+      "backgroundImage": "Bild-URL",
+      "backgroundImageDescription": "Leer lassen für einen einfarbigen Hintergrund.",
+      "backgroundDim": "Abdunkeln",
+      "homeBanner": "URL des Standard-Bannerbilds",
+      "homeBannerDescription": "Wird für Eggs ohne eigenes Banner verwendet. Leer lassen für einen Akzentverlauf.",
+      "articles": "Links für die ersten Schritte",
+      "articlesDescription": "Bis zu {max} Links zu deinen Anleitungen oder deiner Wissensdatenbank.",
+      "articleTitle": "Titel",
+      "articleDescription": "Beschreibung",
+      "articleUrl": "URL",
+      "addArticle": "Link hinzufügen",
+      "removeArticle": "Link entfernen",
+      "eggImages": "Spielbilder",
+      "eggImagesDescription": "Ein Banner und ein Symbol für jedes Egg. Eggs ohne Banner verwenden das obige.",
+      "egg": "Egg",
+      "eggBanner": "Bannerbild-URL",
+      "eggIcon": "Symbolbild-URL",
+      "layoutDescription": "Ziehen zum Neuanordnen, eine Karte in die andere Spalte verschieben oder ausblenden.",
+      "columnEmpty": "Hier sind noch keine Karten.",
+      "moveColumn": "In die andere Spalte verschieben",
+      "hideCard": "Karte ausblenden",
+      "showCard": "Karte einblenden",
+      "column": {
+        "left": "Linke Spalte",
+        "right": "Rechte Spalte"
+      },
+      "card": {
+        "information": "Serverinformationen",
+        "installed": "Installiert",
+        "articles": "Links für die ersten Schritte",
+        "console": "Konsole",
+        "usage": "Auslastung",
+        "network": "Netzwerk"
+      },
+      "login": {
+        "background": "Hintergrundbild-URL",
+        "backgroundDescription": "Leer lassen, um den normalen Hintergrund zu verwenden.",
+        "dim": "Abdunkeln",
+        "logo": "Logo-URL",
+        "logoDescription": "Ersetzt das Logo des Panels auf diesen Seiten. Leer lassen, um es zu behalten.",
+        "preview": "Die Vorschau zeigt die Anmeldeseite so, wie abgemeldete Besucher sie sehen."
+      },
+      "authLayout": {
+        "layoutTitle": "Layout",
+        "layout": "Anmelde-Layout",
+        "layoutDescription": "Das Banner zeigt den Anmeldehintergrund, sonst den Panel-Hintergrund, sonst einen Akzentverlauf. Auf Smartphones wird nur das Formular angezeigt.",
+        "layouts": {
+          "default": "Standard",
+          "flat": "Flach",
+          "sideBanner": "Seitliches Banner",
+          "floatingBanner": "Schwebendes Banner",
+          "panels": "Paneele"
+        },
+        "logoPosition": "Logo-Position",
+        "positions": {
+          "header": "Obere Leiste",
+          "aboveForm": "Über dem Formular"
+        },
+        "appearanceTitle": "Hintergrund & Logo",
+        "linksTitle": "Support-Links",
+        "linksDescription": "Bis zu {max} Links, etwa zu deinem Discord, der Dokumentation oder der Statusseite. Links ohne Bezeichnung oder URL werden nicht angezeigt.",
+        "linkLabel": "Bezeichnung",
+        "linkUrl": "URL",
+        "linkIcon": "Symbol",
+        "noIcon": "Kein Symbol",
+        "icons": {
+          "discord": "Discord",
+          "github": "GitHub",
+          "docs": "Doku",
+          "status": "Status",
+          "mail": "E-Mail",
+          "link": "Link"
+        },
+        "addLink": "Link hinzufügen",
+        "removeLink": "Link entfernen",
+        "linksPosition": "Link-Position",
+        "mockTitle": "Anmelden"
+      },
+      "interface": {
+        "toastStyle": "Toast-Stil",
+        "toastStyleDescription": "Die Meldungen, die nach dem Speichern, Kopieren und anderen Aktionen erscheinen.",
+        "toasts": {
+          "default": "Standard",
+          "glassy": "Gläsern"
+        },
+        "pageTransition": "Seitenübergang",
+        "pageTransitionDescription": "Wird auf dem Seiteninhalt abgespielt, wenn eine andere Seite geöffnet wird. Fahre mit der Maus über eine Kachel, um ihn zu sehen.",
+        "transitions": {
+          "none": "Keiner",
+          "fade": "Einblenden",
+          "fadeUp": "Von unten einblenden",
+          "fadeScale": "Einblenden und skalieren"
+        },
+        "pageTitles": "Seitentitel anzeigen",
+        "pageTitlesDescription": "Die Überschrift auf Serverseiten wie Dateien und Datenbanken. Suche und Buttons bleiben erhalten."
+      },
+      "boxes": {
+        "title": "Boxen",
+        "boxStyle": "Box-Stil",
+        "boxStyleDescription": "Die Titelzeile von Karten wie den Startseiten-Karten, Account-Einstellungen, Admin-Formularen und Diagrammen.",
+        "styles": {
+          "default": "Standard",
+          "line": "Linie",
+          "fill": "Füllung",
+          "pill": "Pille"
+        },
+        "statsTitle": "Diagramme & Statistiken",
+        "statStyle": "Stil der Statistikkarten",
+        "statStyleDescription": "Die kleinen Kacheln mit einem Symbol, etwa in der Admin-Übersicht und den Konsolendetails.",
+        "stats": {
+          "default": "Standard",
+          "reversed": "Umgekehrt",
+          "minimal": "Minimal",
+          "minimalReversed": "Minimal umgekehrt"
+        },
+        "mockTitle": "Box-Titel",
+        "mockLabel": "Feldbezeichnung",
+        "mockButton": "Speichern",
+        "mockStat": "CPU-Last"
+      },
+      "consoleLayout": {
+        "title": "Konsolenseite",
+        "description": "Ziehe Komponenten, um sie neu anzuordnen oder in einen anderen Bereich zu verschieben. Das Terminal bleibt in der Mitte; die Seitenspalten stehen auf breiten Bildschirmen daneben und auf schmalen darunter.",
+        "terminal": "Terminal",
+        "add": "Komponente hinzufügen",
+        "addTo": "Komponente hinzufügen zu: {slot}",
+        "remove": "{name} entfernen",
+        "allPlaced": "Alle Komponenten sind bereits auf der Seite.",
+        "reset": "Standard-Layout wiederherstellen",
+        "slot": {
+          "top": "Über dem Terminal",
+          "left": "Links vom Terminal",
+          "right": "Rechts vom Terminal",
+          "bottom": "Unter dem Terminal"
+        },
+        "widget": {
+          "banner": "Banner und Power-Buttons",
+          "stats": "Live-Statistikkacheln",
+          "info": "Serverinformationen",
+          "cpuChart": "CPU-Diagramm",
+          "memoryChart": "Arbeitsspeicher-Diagramm",
+          "networkChart": "Netzwerk-Diagramm",
+          "extensionCards": "Erweiterungskarten"
+        },
+        "widgetDescription": {
+          "banner": "Servername, Adresse, Live-Statistiken und die Power-Buttons.",
+          "stats": "Kompakte Kacheln für Laufzeit, CPU, Arbeitsspeicher, Speicherplatz und Netzwerk.",
+          "info": "Name, Adresse, Status, Standort, Node und SFTP.",
+          "cpuChart": "Live-Diagramm der CPU-Last.",
+          "memoryChart": "Live-Diagramm des Arbeitsspeichers.",
+          "networkChart": "Live-Diagramm des ein- und ausgehenden Datenverkehrs.",
+          "extensionCards": "Statistikkarten, die andere Erweiterungen zur Konsole hinzufügen."
+        }
+      },
+      "navStyle": {
+        "title": "Menü",
+        "hover": "Hover-Effekt",
+        "hoverDescription": "Wie Menülinks unter dem Mauszeiger und bei geöffneter Seite aussehen. Fahre mit der Maus über eine Kachel, um beides zu sehen.",
+        "hovers": {
+          "default": "Standard",
+          "filled": "Gefüllt",
+          "filledSecondary": "Gefüllt sekundär",
+          "iconPill": "Symbol-Pille",
+          "pill": "Pille",
+          "pillSecondary": "Pille sekundär"
+        },
+        "mockLink": "Konsole",
+        "search": "Suchkomponente",
+        "searchDescription": "Was im Menü unter dem Logo steht. Das Tastenkürzel für Schnellaktionen funktioniert mit allen.",
+        "searches": {
+          "palette": "Schnellaktionen (Standard)",
+          "serverSelector": "Serverauswahl",
+          "searchBar": "Suchleiste"
+        },
+        "searchHints": {
+          "palette": "Der Schnellaktionen-Button des Panels. Der Serverwechsler bleibt unten im Menü.",
+          "serverSelector": "Ein Dropdown zum Wechseln zu einem anderen Server, oben im Menü anstelle der Schnellaktionen.",
+          "searchBar": "Ein Suchfeld, das während der Eingabe Server auflistet; im Admin-Bereich auch alle Server und Benutzer. Die letzte Zeile öffnet die Schnellaktionen."
+        }
+      },
+      "serverCards": {
+        "title": "Serverliste",
+        "cardStyle": "Stil der Serverkarten",
+        "cardStyleDescription": "Die Karten in der Rasteransicht der Serverliste. Jeder Stil behält das Kontrollkästchen, den Status und das Power-Menü.",
+        "styles": {
+          "default": "Standard",
+          "banner": "Banner",
+          "flat": "Flach",
+          "linear": "Linear",
+          "minimal": "Minimal",
+          "compact": "Kompakt"
+        },
+        "tablesTitle": "Tabellen",
+        "tableStyle": "Tabellenstil",
+        "tableStyleDescription": "Listen im gesamten Panel, etwa Dateien, Backups, Datenbanken und die Admin-Seiten, sowie die Listenansicht der Serverliste.",
+        "tables": {
+          "table": "Tabelle",
+          "cards": "Karten"
+        }
+      },
+      "navLayout": {
+        "title": "Layout",
+        "layout": "Dashboard-Layout",
+        "layoutDescription": "Wie das Menü auf dem Desktop neben den Seiten sitzt. Schmal ist eine feste Symbolleiste, die ihre Links beim Überfahren benennt. Smartphones verwenden die Smartphone-Navigation unten.",
+        "layouts": {
+          "default": "Standard",
+          "floating": "Schwebend",
+          "pill": "Pille",
+          "slim": "Schmal",
+          "horizontal": "Horizontal"
+        },
+        "dock": "Dock-Position",
+        "dockDescription": "Wo das Logo, die Suche und auf Serverseiten der Servername, der Status und die Power-Buttons sitzen.",
+        "dockHorizontal": "Das horizontale Layout behält diese immer in seiner oberen Leiste.",
+        "docks": {
+          "sidebar": "Seitenleiste",
+          "header": "Kopfzeile",
+          "top": "Oben"
+        },
+        "mockConsole": "Konsole"
+      },
+      "mobileNav": {
+        "label": "Smartphone-Navigation",
+        "description": "Unterhalb der Desktop-Breite: der schwebende Menü-Button des Panels oder eine Leiste am unteren Bildschirmrand mit den Hauptseiten und einem Menü-Button für das vollständige Menü.",
+        "options": {
+          "drawer": "Schublade",
+          "bottomBar": "Untere Leiste"
+        }
+      }
+    },
+    "library": {
+      "saveAsPreset": "Als Vorlage speichern",
+      "saveAsPresetDescription": "Speichert das Aussehen des Entwurfs (Farben, Schriftarten, Blöcke, Navigation) als eigene Vorlage. Inhalte wie Artikel und die Anmeldeseite gehören nicht zu einer Vorlage.",
+      "name": "Name",
+      "save": "Speichern",
+      "cancel": "Abbrechen",
+      "created": "Vorlage gespeichert.",
+      "custom": "Deine Vorlagen",
+      "builtin": "Integriert",
+      "empty": "Noch keine eigenen Vorlagen.",
+      "limit": "Höchstens {max} Vorlagen; lösche eine, um eine weitere zu speichern.",
+      "rename": "Umbenennen",
+      "renameTitle": "Vorlage umbenennen",
+      "delete": "Löschen",
+      "deleteTitle": "Vorlage löschen",
+      "deleteConfirm": "{name} löschen? Benutzer, die sie gewählt haben, erhalten wieder den Panel-Standard.",
+      "users": "Benutzer können diese wählen",
+      "nameProblem": {
+        "empty": "Gib einen Namen ein.",
+        "long": "Höchstens {max} Zeichen.",
+        "control": "Keine Zeilenumbrüche oder Steuerzeichen."
+      },
+      "history": "Verlauf",
+      "historyTitle": "Verlauf gespeicherter Designs",
+      "historyDescription": "Die Designs, die durch die letzten {max} Speicherungen ersetzt wurden. Beim Laden wird eines in den Editor übernommen; klicke auf Speichern, um es zu verwenden.",
+      "historyEmpty": "Noch keine früheren Speicherungen.",
+      "historyUnknown": "Gespeichert, bevor der Verlauf geführt wurde",
+      "historyBy": "{time} von {user}",
+      "historyCurrent": "In Verwendung: gespeichert {time} von {user}",
+      "load": "In den Editor laden",
+      "loaded": "In den Editor geladen. Klicke auf Speichern, um es zu verwenden.",
+      "choice": {
+        "title": "Design",
+        "label": "Dein Design",
+        "description": "So sieht das Panel für dich aus. Nur du siehst es, auf jedem Gerät, auf dem du dich anmeldest.",
+        "default": "Panel-Standard"
+      }
+    }
+  }
+}

@@ -1,0 +1,569 @@
+{
+  "items": {},
+  "translations": {
+    "nav": {
+      "editor": "Éditeur de thème"
+    },
+    "home": {
+      "title": "Accueil",
+      "address": "Adresse du serveur",
+      "location": "Emplacement",
+      "gettingStarted": "Premiers pas",
+      "information": "Informations du serveur",
+      "installed": "Installé",
+      "serverName": "Nom du serveur",
+      "status": "Statut",
+      "uptime": "Temps d'activité",
+      "node": "Nœud",
+      "memory": "Mémoire",
+      "image": "Image",
+      "console": "Console",
+      "fullLog": "Journal complet du serveur",
+      "usage": "Utilisation",
+      "cpu": "CPU",
+      "ram": "RAM",
+      "storage": "Stockage",
+      "network": "Réseau",
+      "inbound": "Entrant",
+      "outbound": "Sortant",
+      "sftp": "SFTP"
+    },
+    "servers": {
+      "title": "Mes serveurs",
+      "subtitle": "Vos serveurs et ceux partagés avec vous.",
+      "actions": "Actions du serveur",
+      "cpu": "CPU",
+      "disk": "Disque",
+      "showing": "{count} affichés",
+      "select": "Sélectionner {name}",
+      "selectAll": "Sélectionner tous les serveurs visibles",
+      "column": {
+        "id": "ID",
+        "name": "Nom",
+        "game": "Jeu",
+        "status": "Statut",
+        "location": "Emplacement",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "uptime": "Temps d'activité",
+        "memory": "Mémoire"
+      },
+      "filter": {
+        "all": "Tous les serveurs",
+        "running": "En ligne",
+        "offline": "Hors ligne",
+        "suspended": "Suspendus",
+        "other": "Autres"
+      },
+      "view": {
+        "list": "Vue en liste",
+        "grid": "Vue en grille"
+      }
+    },
+    "serverSort": {
+      "sortBy": "Trier par",
+      "sort": {
+        "none": "Ordre par défaut",
+        "name": "Trier par nom",
+        "status": "Trier par statut",
+        "game": "Trier par jeu",
+        "location": "Trier par emplacement",
+        "cpu": "Trier par CPU",
+        "ram": "Trier par RAM",
+        "uptime": "Trier par temps d'activité",
+        "id": "Trier par ID"
+      },
+      "ascending": "Croissant, cliquez pour inverser",
+      "descending": "Décroissant, cliquez pour inverser",
+      "groupBy": "Grouper par",
+      "group": {
+        "none": "Aucun regroupement",
+        "location": "Grouper par emplacement",
+        "game": "Grouper par jeu",
+        "status": "Grouper par statut"
+      },
+      "selectGroup": "Tout sélectionner dans {name}"
+    },
+    "account": {
+      "changeBanner": "Changer la bannière",
+      "removeBanner": "Retirer la bannière",
+      "changeAvatar": "Changer l'avatar",
+      "bannerFile": "Image",
+      "bannerHint": "PNG, JPEG, WebP ou GIF. Faites-la glisser pour choisir la partie affichée. Vous seul la voyez.",
+      "admin": "Administrateur",
+      "twoFactorOn": "2FA activée",
+      "twoFactorOff": "2FA désactivée"
+    },
+    "announcementCta": {
+      "tab": "Appel à l'action",
+      "title": "Appel à l'action",
+      "description": "Afficher un bouton sur l'annonce.",
+      "enable": "Activer l'appel à l'action",
+      "enableDescription": "Ajoute un bouton sous le texte de l'annonce, dans la couleur de l'annonce.",
+      "buttonTitle": "Titre du bouton",
+      "buttonTitleDescription": "Le texte du bouton, jusqu'à {max} caractères.",
+      "buttonTitlePlaceholder": "Visiter la boutique",
+      "buttonLink": "Lien du bouton",
+      "buttonLinkDescription": "Sa destination : une page du panel comme /account s'ouvre sur place, une adresse https:// complète s'ouvre dans un nouvel onglet.",
+      "buttonLinkPlaceholder": "/account ou https://example.com",
+      "titleRequired": "Donnez un titre au bouton.",
+      "titleTooLong": "Limitez le titre à {max} caractères.",
+      "titleInvalid": "Retirez les tabulations et les sauts de ligne du titre.",
+      "linkInvalid": "Utilisez un chemin du panel commençant par un seul / ou une adresse http:// ou https:// complète, sans espaces, guillemets, chevrons, parenthèses, accolades, points-virgules ni barres obliques inverses.",
+      "linkTooLong": "Limitez le lien à {max} caractères.",
+      "saved": "Appel à l'action enregistré.",
+      "removed": "Appel à l'action supprimé."
+    },
+    "auth": {
+      "supportLinks": "Liens d'assistance"
+    },
+    "navSearch": {
+      "placeholder": "Rechercher...",
+      "servers": "Serveurs",
+      "allServers": "Tous les serveurs",
+      "users": "Utilisateurs",
+      "empty": "Aucun résultat",
+      "everything": "Tout rechercher pour « {query} »",
+      "quickActions": "Ouvrir les actions rapides",
+      "switchServer": "Changer de serveur"
+    },
+    "topBar": {
+      "navigation": "Menu principal"
+    },
+    "bottomNav": {
+      "label": "Navigation mobile",
+      "menu": "Menu"
+    },
+    "editor": {
+      "contrast": {
+        "title": "Certaines couleurs sont difficiles à lire",
+        "description": "En dessous du minimum WCAG ; l'enregistrement reste possible.",
+        "pair": "{fg} sur {bg} : {ratio}:1 (visez {min}:1)",
+        "low": "Contraste faible avec {other} : {ratio}:1 (visez {min}:1)",
+        "lowAs": "Contraste faible en tant que {role} sur {other} : {ratio}:1 (visez {min}:1)",
+        "named": "{name} ({role})",
+        "roles": {
+          "links": "liens",
+          "dimmed": "texte atténué"
+        }
+      },
+      "favicon": {
+        "label": "Icône de l'onglet du navigateur",
+        "description": "Remplace l'icône du panel dans les onglets du navigateur et sur les écrans d'accueil, pages de connexion comprises. Laissez vide pour conserver l'icône du panel. Un PNG, ICO ou SVG carré fonctionne le mieux.",
+        "preview": "Aperçu de l'onglet"
+      },
+      "close": "Fermer l'éditeur",
+      "undo": "Annuler",
+      "redo": "Rétablir",
+      "reset": "Rétablir les valeurs par défaut",
+      "import": "Importer un thème",
+      "export": "Exporter le thème",
+      "importFailed": "Ce fichier n'est pas un thème Mint.",
+      "save": "Enregistrer",
+      "saved": "Thème enregistré.",
+      "refresh": "Recharger l'aperçu",
+      "openTab": "Ouvrir dans un nouvel onglet",
+      "device": {
+        "desktop": "Ordinateur",
+        "tablet": "Tablette",
+        "mobile": "Mobile"
+      },
+      "scheme": {
+        "dark": "Sombre",
+        "light": "Clair"
+      },
+      "pages": {
+        "home": "Accueil du serveur",
+        "console": "Console du serveur",
+        "servers": "Serveurs",
+        "account": "Compte",
+        "admin": "Admin",
+        "login": "Page de connexion"
+      },
+      "section": {
+        "presets": "Préréglages",
+        "presetsDescription": "Partez d'un style prêt à l'emploi, enregistrez les vôtres et choisissez ceux que les utilisateurs peuvent sélectionner.",
+        "colours": "Couleurs",
+        "coloursDescription": "Tout le reste est dérivé de ces cinq couleurs.",
+        "style": "Style",
+        "styleDescription": "Police et arrondi des coins.",
+        "background": "Arrière-plan",
+        "backgroundDescription": "Une image derrière tout le panel, atténuée avec la couleur de la page, et l'icône de l'onglet du navigateur.",
+        "home": "Page d'accueil",
+        "homeDescription": "Bannière et images de jeux pour la page d'accueil.",
+        "articles": "Premiers pas",
+        "articlesDescription": "Liens affichés sur chaque page d'accueil de serveur.",
+        "layout": "Disposition",
+        "layoutDescription": "Quelles cartes la page d'accueil affiche, et où.",
+        "login": "Page de connexion",
+        "loginDescription": "Disposition, arrière-plan, logo et liens d'assistance des pages de connexion, d'inscription et de mot de passe.",
+        "interface": "Interface",
+        "interfaceDescription": "Notifications, transitions de page et titres de page.",
+        "navigation": "Navigation",
+        "navigationDescription": "Disposition de la barre latérale, effet de survol du menu et recherche.",
+        "components": "Composants",
+        "componentsDescription": "Cartes de serveur, tableaux, encadrés et cartes de statistiques.",
+        "console": "Console",
+        "consoleDescription": "Ce que la page console affiche autour du terminal, et où."
+      },
+      "accent": "Accent",
+      "accentDescription": "Boutons, liens et élément de menu actif",
+      "highlight": "Surbrillance",
+      "highlightDescription": "Icônes de statistiques sur la bannière de la console",
+      "background": "Arrière-plan",
+      "backgroundDescription": "La page derrière tout le reste",
+      "surface": "Surface",
+      "surfaceDescription": "Cartes, barre latérale et console",
+      "text": "Texte",
+      "textDescription": "Le texte atténué et les bordures en sont dérivés",
+      "derived": "Dérivée des couleurs ci-dessus",
+      "clearColor": "Revenir à la couleur dérivée",
+      "group": {
+        "accents": "Accents",
+        "surfaces": "Surfaces",
+        "surfacesExtra": "Couches supérieures",
+        "text": "Texte",
+        "textExtra": "Autres textes",
+        "lines": "Lignes",
+        "buttons": "Boutons",
+        "status": "Statut",
+        "charts": "Graphiques",
+        "light": "Mode clair"
+      },
+      "surfaceRaised": "Surélevée",
+      "surfaceOverlay": "Superposition",
+      "textMuted": "Texte atténué",
+      "textFaint": "Texte pâle",
+      "textOnAccent": "Texte sur accent",
+      "line": "Filet",
+      "buttonText": "Texte des boutons",
+      "success": "Succès",
+      "warning": "Avertissement",
+      "danger": "Danger",
+      "offline": "Hors ligne",
+      "chartOne": "Série 1",
+      "chartTwo": "Série 2",
+      "lightBackground": "Arrière-plan clair",
+      "lightSurface": "Surface claire",
+      "lightText": "Texte clair",
+      "font": "Police",
+      "fontExo": "Exo 2",
+      "fontMontserrat": "Montserrat",
+      "fontPanel": "Par défaut du panel",
+      "fontOutfit": "Outfit",
+      "fontJakarta": "Plus Jakarta Sans",
+      "fontSpace": "Space Grotesk",
+      "monoFont": "Police à chasse fixe",
+      "monoFontDescription": "Code, ID et console du serveur.",
+      "monoFontJetbrains": "JetBrains Mono",
+      "monoFontFira": "Fira Code",
+      "sidebarGroups": "Grouper le menu du serveur",
+      "sidebarGroupsDescription": "Sections repliables Gestion, Configuration et Accès.",
+      "buttonStyle": "Style des boutons",
+      "buttonAccent": "Les boutons utilisent la couleur d'accent",
+      "buttonColor": "Couleur des boutons",
+      "buttons": {
+        "filled": "Plein",
+        "tinted": "Teinté",
+        "outline": "Contour",
+        "glass": "Verre"
+      },
+      "radius": "Coins des cartes",
+      "elementRadius": "Coins des boutons et champs",
+      "blocks": {
+        "title": "Blocs",
+        "opacity": "Opacité des blocs",
+        "opacityDescription": "En dessous de 100 %, l'arrière-plan de la page, ou son image, transparaît à travers les cartes et la barre latérale.",
+        "glass": "Effet verre",
+        "glassHint": "Pour un aspect verre, réglez l'opacité des blocs à environ 80 % et activez Effet verre et Bordure des blocs.",
+        "glassOff": "Par défaut",
+        "glassOn": "Verre",
+        "border": "Bordure des blocs",
+        "withBorder": "Avec bordure",
+        "withoutBorder": "Sans bordure"
+      },
+      "elements": {
+        "title": "Éléments",
+        "inputBorder": "Bordure des champs",
+        "withBorder": "Avec bordure",
+        "withoutBorder": "Sans bordure",
+        "clickEffect": "Effet de clic",
+        "clickEffectDescription": "La réaction des boutons quand on appuie dessus.",
+        "click": {
+          "none": "Aucun",
+          "drop": "Enfoncement",
+          "shrink": "Rétrécissement",
+          "outline": "Contour"
+        },
+        "create": "Créer"
+      },
+      "backgroundImage": "URL de l'image",
+      "backgroundImageDescription": "Laissez vide pour un arrière-plan uni.",
+      "backgroundDim": "Atténuation",
+      "homeBanner": "URL de la bannière par défaut",
+      "homeBannerDescription": "Utilisée pour les Eggs sans bannière propre. Laissez vide pour un dégradé d'accent.",
+      "articles": "Liens Premiers pas",
+      "articlesDescription": "Jusqu'à {max} liens vers vos guides ou votre base de connaissances.",
+      "articleTitle": "Titre",
+      "articleDescription": "Description",
+      "articleUrl": "URL",
+      "addArticle": "Ajouter un lien",
+      "removeArticle": "Retirer le lien",
+      "eggImages": "Images des jeux",
+      "eggImagesDescription": "Une bannière et une icône pour chaque Egg. Les Eggs sans bannière utilisent celle ci-dessus.",
+      "egg": "Egg",
+      "eggBanner": "URL de l'image de bannière",
+      "eggIcon": "URL de l'image d'icône",
+      "layoutDescription": "Faites glisser pour réorganiser, déplacez une carte vers l'autre colonne ou masquez-la.",
+      "columnEmpty": "Aucune carte ici pour l'instant.",
+      "moveColumn": "Déplacer vers l'autre colonne",
+      "hideCard": "Masquer la carte",
+      "showCard": "Afficher la carte",
+      "column": {
+        "left": "Colonne de gauche",
+        "right": "Colonne de droite"
+      },
+      "card": {
+        "information": "Informations du serveur",
+        "installed": "Installé",
+        "articles": "Liens Premiers pas",
+        "console": "Console",
+        "usage": "Utilisation",
+        "network": "Réseau"
+      },
+      "login": {
+        "background": "URL de l'image d'arrière-plan",
+        "backgroundDescription": "Laissez vide pour utiliser l'arrière-plan normal.",
+        "dim": "Atténuation",
+        "logo": "URL du logo",
+        "logoDescription": "Remplace le logo du panel sur ces pages. Laissez vide pour le conserver.",
+        "preview": "L'aperçu montre la page de connexion telle que la voient les visiteurs non connectés."
+      },
+      "authLayout": {
+        "layoutTitle": "Disposition",
+        "layout": "Disposition de connexion",
+        "layoutDescription": "La bannière affiche l'arrière-plan de connexion, sinon celui du panel, sinon un dégradé d'accent. Les téléphones n'affichent que le formulaire.",
+        "layouts": {
+          "default": "Par défaut",
+          "flat": "Plat",
+          "sideBanner": "Bannière latérale",
+          "floatingBanner": "Bannière flottante",
+          "panels": "Panneaux"
+        },
+        "logoPosition": "Position du logo",
+        "positions": {
+          "header": "Barre supérieure",
+          "aboveForm": "Au-dessus du formulaire"
+        },
+        "appearanceTitle": "Arrière-plan et logo",
+        "linksTitle": "Liens d'assistance",
+        "linksDescription": "Jusqu'à {max} liens, comme votre Discord, votre documentation ou votre page de statut. Les liens sans libellé ou sans URL ne sont pas affichés.",
+        "linkLabel": "Libellé",
+        "linkUrl": "URL",
+        "linkIcon": "Icône",
+        "noIcon": "Aucune icône",
+        "icons": {
+          "discord": "Discord",
+          "github": "GitHub",
+          "docs": "Documentation",
+          "status": "Statut",
+          "mail": "E-mail",
+          "link": "Lien"
+        },
+        "addLink": "Ajouter un lien",
+        "removeLink": "Retirer le lien",
+        "linksPosition": "Position des liens",
+        "mockTitle": "Connexion"
+      },
+      "interface": {
+        "toastStyle": "Style des notifications",
+        "toastStyleDescription": "Les messages qui apparaissent après un enregistrement, une copie et d'autres actions.",
+        "toasts": {
+          "default": "Par défaut",
+          "glassy": "Verre"
+        },
+        "pageTransition": "Transition de page",
+        "pageTransitionDescription": "S'applique au contenu lorsqu'une autre page s'ouvre. Survolez une vignette pour la voir.",
+        "transitions": {
+          "none": "Aucune",
+          "fade": "Fondu",
+          "fadeUp": "Fondu montant",
+          "fadeScale": "Fondu zoom"
+        },
+        "pageTitles": "Afficher les titres de page",
+        "pageTitlesDescription": "Le titre des pages serveur comme Fichiers et Bases de données. Leur recherche et leurs boutons restent."
+      },
+      "boxes": {
+        "title": "Encadrés",
+        "boxStyle": "Style des encadrés",
+        "boxStyleDescription": "La ligne de titre des cartes comme celles de l'Accueil, des paramètres du compte, des formulaires d'administration et des graphiques.",
+        "styles": {
+          "default": "Par défaut",
+          "line": "Ligne",
+          "fill": "Rempli",
+          "pill": "Pilule"
+        },
+        "statsTitle": "Graphiques et statistiques",
+        "statStyle": "Style des cartes de statistiques",
+        "statStyleDescription": "Les petites vignettes avec une icône, comme la vue d'ensemble de l'administration et les détails de la console.",
+        "stats": {
+          "default": "Par défaut",
+          "reversed": "Inversé",
+          "minimal": "Minimal",
+          "minimalReversed": "Minimal inversé"
+        },
+        "mockTitle": "Titre de l'encadré",
+        "mockLabel": "Libellé du champ",
+        "mockButton": "Enregistrer",
+        "mockStat": "Charge CPU"
+      },
+      "consoleLayout": {
+        "title": "Page console",
+        "description": "Faites glisser les composants pour les réorganiser ou les déplacer vers un autre emplacement. Le terminal reste au centre ; les colonnes latérales se placent à côté sur les grands écrans et en dessous sur les petits.",
+        "terminal": "Terminal",
+        "add": "Ajouter un composant",
+        "addTo": "Ajouter un composant à : {slot}",
+        "remove": "Retirer {name}",
+        "allPlaced": "Tous les composants sont déjà sur la page.",
+        "reset": "Restaurer la disposition par défaut",
+        "slot": {
+          "top": "Au-dessus du terminal",
+          "left": "À gauche du terminal",
+          "right": "À droite du terminal",
+          "bottom": "Sous le terminal"
+        },
+        "widget": {
+          "banner": "Bannière et boutons d'alimentation",
+          "stats": "Vignettes de statistiques en direct",
+          "info": "Informations du serveur",
+          "cpuChart": "Graphique CPU",
+          "memoryChart": "Graphique de la mémoire",
+          "networkChart": "Graphique du réseau",
+          "extensionCards": "Cartes d'extensions"
+        },
+        "widgetDescription": {
+          "banner": "Nom du serveur, adresse, statistiques en direct et boutons d'alimentation.",
+          "stats": "Vignettes compactes pour le temps d'activité, le CPU, la mémoire, le disque et le réseau.",
+          "info": "Nom, adresse, statut, emplacement, nœud et SFTP.",
+          "cpuChart": "Graphique de charge CPU en direct.",
+          "memoryChart": "Graphique de la mémoire en direct.",
+          "networkChart": "Graphique du trafic entrant et sortant en direct.",
+          "extensionCards": "Cartes de statistiques ajoutées à la console par d'autres extensions."
+        }
+      },
+      "navStyle": {
+        "title": "Menu",
+        "hover": "Effet de survol",
+        "hoverDescription": "L'apparence des liens du menu sous le pointeur et lorsque leur page est ouverte. Survolez une vignette pour voir les deux.",
+        "hovers": {
+          "default": "Par défaut",
+          "filled": "Rempli",
+          "filledSecondary": "Rempli secondaire",
+          "iconPill": "Pilule d'icône",
+          "pill": "Pilule",
+          "pillSecondary": "Pilule secondaire"
+        },
+        "mockLink": "Console",
+        "search": "Composant de recherche",
+        "searchDescription": "Ce qui se trouve sous le logo dans le menu. Le raccourci Actions rapides fonctionne avec chacun d'eux.",
+        "searches": {
+          "palette": "Actions rapides (par défaut)",
+          "serverSelector": "Sélecteur de serveur",
+          "searchBar": "Barre de recherche"
+        },
+        "searchHints": {
+          "palette": "Le bouton Actions rapides du panel. Son sélecteur de serveur reste en bas du menu.",
+          "serverSelector": "Une liste déroulante pour passer à un autre serveur, en haut du menu à la place des Actions rapides.",
+          "searchBar": "Un champ de recherche qui liste les serveurs pendant la saisie ; dans l'administration, aussi tous les serveurs et utilisateurs. Sa dernière ligne ouvre les Actions rapides."
+        }
+      },
+      "serverCards": {
+        "title": "Liste des serveurs",
+        "cardStyle": "Style des cartes de serveur",
+        "cardStyleDescription": "Les cartes de la vue en grille de la liste des serveurs. Chaque style conserve la case à cocher, le statut et le menu d'alimentation.",
+        "styles": {
+          "default": "Par défaut",
+          "banner": "Bannière",
+          "flat": "Plat",
+          "linear": "Linéaire",
+          "minimal": "Minimal",
+          "compact": "Compact"
+        },
+        "tablesTitle": "Tableaux",
+        "tableStyle": "Style des tableaux",
+        "tableStyleDescription": "Les listes du panel, comme les fichiers, les sauvegardes, les bases de données et les pages d'administration, ainsi que la vue en liste de la liste des serveurs.",
+        "tables": {
+          "table": "Tableau",
+          "cards": "Cartes"
+        }
+      },
+      "navLayout": {
+        "title": "Disposition",
+        "layout": "Disposition du tableau de bord",
+        "layoutDescription": "La position du menu à côté des pages sur ordinateur. Compact est une barre d'icônes fixe qui affiche le nom des liens au survol. Les téléphones utilisent la navigation mobile ci-dessous.",
+        "layouts": {
+          "default": "Par défaut",
+          "floating": "Flottant",
+          "pill": "Pilule",
+          "slim": "Compact",
+          "horizontal": "Horizontal"
+        },
+        "dock": "Position du dock",
+        "dockDescription": "L'emplacement du logo, de la recherche et, sur les pages serveur, du nom du serveur, du statut et des boutons d'alimentation.",
+        "dockHorizontal": "La disposition horizontale les garde toujours dans sa barre supérieure.",
+        "docks": {
+          "sidebar": "Barre latérale",
+          "header": "En-tête",
+          "top": "Haut"
+        },
+        "mockConsole": "Console"
+      },
+      "mobileNav": {
+        "label": "Navigation mobile",
+        "description": "Sous la largeur ordinateur : le bouton de menu flottant du panel, ou une barre en bas de l'écran avec les pages principales et un bouton Menu pour le menu complet.",
+        "options": {
+          "drawer": "Tiroir",
+          "bottomBar": "Barre inférieure"
+        }
+      }
+    },
+    "library": {
+      "saveAsPreset": "Enregistrer comme préréglage",
+      "saveAsPresetDescription": "Conserve l'apparence du brouillon (couleurs, polices, blocs, navigation) comme préréglage personnel. Le contenu comme les articles et la page de connexion ne fait pas partie d'un préréglage.",
+      "name": "Nom",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "created": "Préréglage enregistré.",
+      "custom": "Vos préréglages",
+      "builtin": "Intégrés",
+      "empty": "Aucun préréglage personnel pour l'instant.",
+      "limit": "{max} préréglages au maximum ; supprimez-en un pour en enregistrer un autre.",
+      "rename": "Renommer",
+      "renameTitle": "Renommer le préréglage",
+      "delete": "Supprimer",
+      "deleteTitle": "Supprimer le préréglage",
+      "deleteConfirm": "Supprimer {name} ? Les utilisateurs qui l'ont choisi reviendront au thème par défaut du panel.",
+      "users": "Les utilisateurs peuvent le choisir",
+      "nameProblem": {
+        "empty": "Saisissez un nom.",
+        "long": "{max} caractères au maximum.",
+        "control": "Pas de sauts de ligne ni de caractères de contrôle."
+      },
+      "history": "Historique",
+      "historyTitle": "Historique des thèmes enregistrés",
+      "historyDescription": "Les thèmes remplacés par les {max} derniers enregistrements. En charger un le place dans l'éditeur ; appuyez sur Enregistrer pour l'utiliser.",
+      "historyEmpty": "Aucun enregistrement antérieur pour l'instant.",
+      "historyUnknown": "Enregistré avant la conservation de l'historique",
+      "historyBy": "{time} par {user}",
+      "historyCurrent": "En cours d'utilisation : enregistré {time} par {user}",
+      "load": "Charger dans l'éditeur",
+      "loaded": "Chargé dans l'éditeur. Appuyez sur Enregistrer pour l'utiliser.",
+      "choice": {
+        "title": "Thème",
+        "label": "Votre thème",
+        "description": "L'apparence du panel pour vous. Vous seul la voyez, sur chaque appareil où vous vous connectez.",
+        "default": "Par défaut du panel"
+      }
+    }
+  }
+}

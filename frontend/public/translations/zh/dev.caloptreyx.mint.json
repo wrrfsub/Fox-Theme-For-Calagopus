@@ -1,0 +1,569 @@
+{
+  "items": {},
+  "translations": {
+    "nav": {
+      "editor": "主題編輯器"
+    },
+    "home": {
+      "title": "首頁",
+      "address": "伺服器位址",
+      "location": "位置",
+      "gettingStarted": "快速入門",
+      "information": "伺服器資訊",
+      "installed": "已安裝",
+      "serverName": "伺服器名稱",
+      "status": "狀態",
+      "uptime": "運行時間",
+      "node": "節點",
+      "memory": "記憶體",
+      "image": "映像檔",
+      "console": "主控台",
+      "fullLog": "完整伺服器紀錄",
+      "usage": "使用量",
+      "cpu": "CPU",
+      "ram": "RAM",
+      "storage": "儲存空間",
+      "network": "網路",
+      "inbound": "傳入",
+      "outbound": "傳出",
+      "sftp": "SFTP"
+    },
+    "servers": {
+      "title": "我的伺服器",
+      "subtitle": "你的伺服器，以及他人與你共用的伺服器。",
+      "actions": "伺服器操作",
+      "cpu": "CPU",
+      "disk": "磁碟",
+      "showing": "顯示 {count}",
+      "select": "選取 {name}",
+      "selectAll": "選取所有顯示中的伺服器",
+      "column": {
+        "id": "ID",
+        "name": "名稱",
+        "game": "遊戲",
+        "status": "狀態",
+        "location": "位置",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "uptime": "運行時間",
+        "memory": "記憶體"
+      },
+      "filter": {
+        "all": "所有伺服器",
+        "running": "線上",
+        "offline": "離線",
+        "suspended": "已停權",
+        "other": "其他"
+      },
+      "view": {
+        "list": "清單檢視",
+        "grid": "格狀檢視"
+      }
+    },
+    "serverSort": {
+      "sortBy": "排序方式",
+      "sort": {
+        "none": "預設順序",
+        "name": "依名稱排序",
+        "status": "依狀態排序",
+        "game": "依遊戲排序",
+        "location": "依位置排序",
+        "cpu": "依 CPU 排序",
+        "ram": "依 RAM 排序",
+        "uptime": "依運行時間排序",
+        "id": "依 ID 排序"
+      },
+      "ascending": "遞增，點擊以反轉",
+      "descending": "遞減，點擊以反轉",
+      "groupBy": "分組方式",
+      "group": {
+        "none": "不分組",
+        "location": "依位置分組",
+        "game": "依遊戲分組",
+        "status": "依狀態分組"
+      },
+      "selectGroup": "選取 {name} 中的全部"
+    },
+    "account": {
+      "changeBanner": "變更橫幅",
+      "removeBanner": "移除橫幅",
+      "changeAvatar": "變更頭像",
+      "bannerFile": "圖片",
+      "bannerHint": "PNG、JPEG、WebP 或 GIF。拖曳以選擇要顯示的部分。僅你自己看得到。",
+      "admin": "管理員",
+      "twoFactorOn": "2FA 已啟用",
+      "twoFactorOff": "2FA 已停用"
+    },
+    "announcementCta": {
+      "tab": "行動呼籲",
+      "title": "行動呼籲",
+      "description": "在公告上顯示一個按鈕。",
+      "enable": "啟用行動呼籲",
+      "enableDescription": "在公告文字下方新增一個按鈕，使用公告的顏色。",
+      "buttonTitle": "按鈕標題",
+      "buttonTitleDescription": "按鈕上的文字，最多 {max} 個字元。",
+      "buttonTitlePlaceholder": "前往商店",
+      "buttonLink": "按鈕連結",
+      "buttonLinkDescription": "按鈕前往的位置：面板頁面（例如 /account）會在原頁面開啟，完整的 https:// 位址則會在新分頁開啟。",
+      "buttonLinkPlaceholder": "/account 或 https://example.com",
+      "titleRequired": "請為按鈕輸入標題。",
+      "titleTooLong": "標題不可超過 {max} 個字元。",
+      "titleInvalid": "請移除標題中的定位字元與換行。",
+      "linkInvalid": "請使用以單一 / 開頭的面板路徑，或完整的 http:// 或 https:// 位址，且不得包含空格、引號、角括號、圓括號、大括號、分號或反斜線。",
+      "linkTooLong": "連結不可超過 {max} 個字元。",
+      "saved": "行動呼籲已儲存。",
+      "removed": "行動呼籲已移除。"
+    },
+    "auth": {
+      "supportLinks": "支援連結"
+    },
+    "navSearch": {
+      "placeholder": "搜尋...",
+      "servers": "伺服器",
+      "allServers": "所有伺服器",
+      "users": "使用者",
+      "empty": "找不到任何結果",
+      "everything": "在所有內容中搜尋「{query}」",
+      "quickActions": "開啟快速操作",
+      "switchServer": "切換伺服器"
+    },
+    "topBar": {
+      "navigation": "主選單"
+    },
+    "bottomNav": {
+      "label": "手機導覽",
+      "menu": "選單"
+    },
+    "editor": {
+      "contrast": {
+        "title": "部分顏色難以閱讀",
+        "description": "低於 WCAG 最低標準；仍可儲存。",
+        "pair": "{fg} 在 {bg} 上：{ratio}:1（建議至少 {min}:1）",
+        "low": "與 {other} 的對比度過低：{ratio}:1（建議至少 {min}:1）",
+        "lowAs": "作為{role}在 {other} 上的對比度過低：{ratio}:1（建議至少 {min}:1）",
+        "named": "{name}（{role}）",
+        "roles": {
+          "links": "連結",
+          "dimmed": "淡化文字"
+        }
+      },
+      "favicon": {
+        "label": "瀏覽器分頁圖示",
+        "description": "取代瀏覽器分頁與主畫面上的面板圖示，包含登入頁面。留空則保留面板圖示。建議使用正方形的 PNG、ICO 或 SVG。",
+        "preview": "分頁預覽"
+      },
+      "close": "關閉編輯器",
+      "undo": "還原",
+      "redo": "重做",
+      "reset": "重設為預設值",
+      "import": "匯入主題",
+      "export": "匯出主題",
+      "importFailed": "該檔案不是 Mint 主題。",
+      "save": "儲存",
+      "saved": "主題已儲存。",
+      "refresh": "重新載入預覽",
+      "openTab": "在新分頁開啟",
+      "device": {
+        "desktop": "桌面",
+        "tablet": "平板",
+        "mobile": "手機"
+      },
+      "scheme": {
+        "dark": "深色",
+        "light": "淺色"
+      },
+      "pages": {
+        "home": "伺服器首頁",
+        "console": "伺服器主控台",
+        "servers": "伺服器",
+        "account": "帳戶",
+        "admin": "管理",
+        "login": "登入頁面"
+      },
+      "section": {
+        "presets": "預設集",
+        "presetsDescription": "從現成的外觀開始、儲存你自己的外觀，並選擇使用者可以挑選哪些。",
+        "colours": "顏色",
+        "coloursDescription": "其他所有顏色都由這五種調配而成。",
+        "style": "樣式",
+        "styleDescription": "字型與圓角。",
+        "background": "背景",
+        "backgroundDescription": "整個面板背後的圖片（以頁面顏色淡化），以及瀏覽器分頁圖示。",
+        "home": "首頁",
+        "homeDescription": "著陸頁的橫幅與遊戲圖片。",
+        "articles": "快速入門",
+        "articlesDescription": "顯示在每個伺服器首頁上的連結。",
+        "layout": "版面配置",
+        "layoutDescription": "首頁要顯示哪些卡片，以及放在哪裡。",
+        "login": "登入頁面",
+        "loginDescription": "登入、註冊與密碼頁面的版面配置、背景、標誌與支援連結。",
+        "interface": "介面",
+        "interfaceDescription": "通知、頁面轉場與頁面標題。",
+        "navigation": "導覽",
+        "navigationDescription": "側邊欄版面配置、選單懸停效果與搜尋。",
+        "components": "元件",
+        "componentsDescription": "伺服器卡片、表格、區塊與統計卡片。",
+        "console": "主控台",
+        "consoleDescription": "主控台頁面在終端機周圍顯示哪些內容，以及放在哪裡。"
+      },
+      "accent": "強調色",
+      "accentDescription": "按鈕、連結與目前選取的選單項目",
+      "highlight": "醒目色",
+      "highlightDescription": "主控台橫幅上的統計圖示",
+      "background": "背景",
+      "backgroundDescription": "位於所有內容背後的頁面",
+      "surface": "表面",
+      "surfaceDescription": "卡片、側邊欄與主控台",
+      "text": "文字",
+      "textDescription": "淡化文字與邊框由此調配而成",
+      "derived": "由上方顏色衍生",
+      "clearColor": "恢復為衍生顏色",
+      "group": {
+        "accents": "強調色",
+        "surfaces": "表面",
+        "surfacesExtra": "上層",
+        "text": "文字",
+        "textExtra": "更多文字",
+        "lines": "線條",
+        "buttons": "按鈕",
+        "status": "狀態",
+        "charts": "圖表",
+        "light": "淺色模式"
+      },
+      "surfaceRaised": "凸起",
+      "surfaceOverlay": "覆蓋層",
+      "textMuted": "柔和文字",
+      "textFaint": "淡色文字",
+      "textOnAccent": "強調色上的文字",
+      "line": "細線",
+      "buttonText": "按鈕文字",
+      "success": "成功",
+      "warning": "警告",
+      "danger": "危險",
+      "offline": "離線",
+      "chartOne": "數列一",
+      "chartTwo": "數列二",
+      "lightBackground": "淺色背景",
+      "lightSurface": "淺色表面",
+      "lightText": "淺色文字",
+      "font": "字型",
+      "fontExo": "Exo 2",
+      "fontMontserrat": "Montserrat",
+      "fontPanel": "面板預設",
+      "fontOutfit": "Outfit",
+      "fontJakarta": "Plus Jakarta Sans",
+      "fontSpace": "Space Grotesk",
+      "monoFont": "等寬字型",
+      "monoFontDescription": "程式碼、ID 與伺服器主控台。",
+      "monoFontJetbrains": "JetBrains Mono",
+      "monoFontFira": "Fira Code",
+      "sidebarGroups": "將伺服器選單分組",
+      "sidebarGroupsDescription": "可摺疊的「管理」、「設定」與「存取」區段。",
+      "buttonStyle": "按鈕樣式",
+      "buttonAccent": "按鈕使用強調色",
+      "buttonColor": "按鈕顏色",
+      "buttons": {
+        "filled": "實心",
+        "tinted": "淡色",
+        "outline": "外框",
+        "glass": "玻璃"
+      },
+      "radius": "卡片圓角",
+      "elementRadius": "按鈕與輸入框圓角",
+      "blocks": {
+        "title": "區塊",
+        "opacity": "區塊不透明度",
+        "opacityDescription": "低於 100% 時，頁面背景或其圖片會透過卡片與側邊欄顯示出來。",
+        "glass": "玻璃效果",
+        "glassHint": "若要呈現玻璃質感，請將區塊不透明度設為約 80%，並啟用「玻璃效果」與「區塊邊框」。",
+        "glassOff": "預設",
+        "glassOn": "玻璃",
+        "border": "區塊邊框",
+        "withBorder": "有邊框",
+        "withoutBorder": "無邊框"
+      },
+      "elements": {
+        "title": "元素",
+        "inputBorder": "輸入框邊框",
+        "withBorder": "有邊框",
+        "withoutBorder": "無邊框",
+        "clickEffect": "點擊效果",
+        "clickEffectDescription": "按鈕被按下時的反應方式。",
+        "click": {
+          "none": "無",
+          "drop": "下沉",
+          "shrink": "縮小",
+          "outline": "外框"
+        },
+        "create": "建立"
+      },
+      "backgroundImage": "圖片 URL",
+      "backgroundImageDescription": "留空則使用純色背景。",
+      "backgroundDim": "暗化",
+      "homeBanner": "預設橫幅圖片 URL",
+      "homeBannerDescription": "用於沒有自己橫幅的 Egg。留空則使用強調色漸層。",
+      "articles": "快速入門連結",
+      "articlesDescription": "最多 {max} 個連往你的指南或知識庫的連結。",
+      "articleTitle": "標題",
+      "articleDescription": "描述",
+      "articleUrl": "URL",
+      "addArticle": "新增連結",
+      "removeArticle": "移除連結",
+      "eggImages": "遊戲圖片",
+      "eggImagesDescription": "每個 Egg 的橫幅與圖示。沒有橫幅的 Egg 會使用上方的橫幅。",
+      "egg": "Egg",
+      "eggBanner": "橫幅圖片 URL",
+      "eggIcon": "圖示圖片 URL",
+      "layoutDescription": "拖曳以重新排序、將卡片移到另一欄，或將其隱藏。",
+      "columnEmpty": "這裡還沒有卡片。",
+      "moveColumn": "移到另一欄",
+      "hideCard": "隱藏卡片",
+      "showCard": "顯示卡片",
+      "column": {
+        "left": "左欄",
+        "right": "右欄"
+      },
+      "card": {
+        "information": "伺服器資訊",
+        "installed": "已安裝",
+        "articles": "快速入門連結",
+        "console": "主控台",
+        "usage": "使用量",
+        "network": "網路"
+      },
+      "login": {
+        "background": "背景圖片 URL",
+        "backgroundDescription": "留空則使用一般背景。",
+        "dim": "暗化",
+        "logo": "標誌 URL",
+        "logoDescription": "取代這些頁面上的面板標誌。留空則保留原標誌。",
+        "preview": "預覽會以未登入訪客所見的樣子顯示登入頁面。"
+      },
+      "authLayout": {
+        "layoutTitle": "版面配置",
+        "layout": "登入版面配置",
+        "layoutDescription": "橫幅會顯示登入背景；若未設定則顯示面板背景，再不然則顯示強調色漸層。手機上只會顯示表單。",
+        "layouts": {
+          "default": "預設",
+          "flat": "扁平",
+          "sideBanner": "側邊橫幅",
+          "floatingBanner": "浮動橫幅",
+          "panels": "面板"
+        },
+        "logoPosition": "標誌位置",
+        "positions": {
+          "header": "頂部列",
+          "aboveForm": "表單上方"
+        },
+        "appearanceTitle": "背景與標誌",
+        "linksTitle": "支援連結",
+        "linksDescription": "最多 {max} 個連結，例如你的 Discord、文件或狀態頁面。沒有標籤或 URL 的連結不會顯示。",
+        "linkLabel": "標籤",
+        "linkUrl": "URL",
+        "linkIcon": "圖示",
+        "noIcon": "無圖示",
+        "icons": {
+          "discord": "Discord",
+          "github": "GitHub",
+          "docs": "文件",
+          "status": "狀態",
+          "mail": "郵件",
+          "link": "連結"
+        },
+        "addLink": "新增連結",
+        "removeLink": "移除連結",
+        "linksPosition": "連結位置",
+        "mockTitle": "登入"
+      },
+      "interface": {
+        "toastStyle": "通知樣式",
+        "toastStyleDescription": "在儲存、複製及其他操作後彈出的訊息。",
+        "toasts": {
+          "default": "預設",
+          "glassy": "玻璃"
+        },
+        "pageTransition": "頁面轉場",
+        "pageTransitionDescription": "開啟其他頁面時套用在頁面內容上的動畫。將滑鼠移到方塊上即可預覽。",
+        "transitions": {
+          "none": "無",
+          "fade": "淡入",
+          "fadeUp": "向上淡入",
+          "fadeScale": "縮放淡入"
+        },
+        "pageTitles": "顯示頁面標題",
+        "pageTitlesDescription": "「檔案」與「資料庫」等伺服器頁面上的標題。其搜尋與按鈕仍會保留。"
+      },
+      "boxes": {
+        "title": "方框",
+        "boxStyle": "方框樣式",
+        "boxStyleDescription": "卡片的標題列，例如首頁卡片、帳戶設定、管理表單與圖表。",
+        "styles": {
+          "default": "預設",
+          "line": "線條",
+          "fill": "填滿",
+          "pill": "膠囊"
+        },
+        "statsTitle": "圖表與統計",
+        "statStyle": "統計卡片樣式",
+        "statStyleDescription": "帶有圖示的小方塊，例如管理總覽與主控台詳細資訊。",
+        "stats": {
+          "default": "預設",
+          "reversed": "反轉",
+          "minimal": "極簡",
+          "minimalReversed": "極簡反轉"
+        },
+        "mockTitle": "方框標題",
+        "mockLabel": "輸入框標籤",
+        "mockButton": "儲存",
+        "mockStat": "CPU 負載"
+      },
+      "consoleLayout": {
+        "title": "主控台頁面",
+        "description": "拖曳元件以重新排序，或將其移到其他位置。終端機固定在中間；兩側欄在寬螢幕上位於其旁邊，在窄螢幕上則位於其下方。",
+        "terminal": "終端機",
+        "add": "新增元件",
+        "addTo": "新增元件至：{slot}",
+        "remove": "移除 {name}",
+        "allPlaced": "所有元件都已在頁面上。",
+        "reset": "還原預設版面配置",
+        "slot": {
+          "top": "終端機上方",
+          "left": "終端機左側",
+          "right": "終端機右側",
+          "bottom": "終端機下方"
+        },
+        "widget": {
+          "banner": "橫幅與電源按鈕",
+          "stats": "即時統計方塊",
+          "info": "伺服器資訊",
+          "cpuChart": "CPU 圖表",
+          "memoryChart": "記憶體圖表",
+          "networkChart": "網路圖表",
+          "extensionCards": "擴充功能卡片"
+        },
+        "widgetDescription": {
+          "banner": "伺服器名稱、位址、即時統計與電源按鈕。",
+          "stats": "顯示運行時間、CPU、記憶體、磁碟與網路的精簡方塊。",
+          "info": "名稱、位址、狀態、位置、節點與 SFTP。",
+          "cpuChart": "即時 CPU 負載圖表。",
+          "memoryChart": "即時記憶體圖表。",
+          "networkChart": "即時傳入與傳出流量圖表。",
+          "extensionCards": "其他擴充功能新增至主控台的統計卡片。"
+        }
+      },
+      "navStyle": {
+        "title": "選單",
+        "hover": "懸停效果",
+        "hoverDescription": "選單連結在滑鼠指標下以及其頁面開啟時的外觀。將滑鼠移到方塊上即可預覽兩者。",
+        "hovers": {
+          "default": "預設",
+          "filled": "填滿",
+          "filledSecondary": "次要填滿",
+          "iconPill": "圖示膠囊",
+          "pill": "膠囊",
+          "pillSecondary": "次要膠囊"
+        },
+        "mockLink": "主控台",
+        "search": "搜尋元件",
+        "searchDescription": "選單中標誌下方顯示的內容。「快速操作」快捷鍵在所有選項中皆可使用。",
+        "searches": {
+          "palette": "快速操作（預設）",
+          "serverSelector": "伺服器選擇器",
+          "searchBar": "搜尋列"
+        },
+        "searchHints": {
+          "palette": "面板的「快速操作」按鈕。其伺服器切換器仍保留在選單底部。",
+          "serverSelector": "位於選單頂部、用來跳至其他伺服器的下拉選單，取代「快速操作」。",
+          "searchBar": "輸入時即列出伺服器的搜尋欄位；在管理區域中還會列出所有伺服器與使用者。最後一列會開啟「快速操作」。"
+        }
+      },
+      "serverCards": {
+        "title": "伺服器清單",
+        "cardStyle": "伺服器卡片樣式",
+        "cardStyleDescription": "伺服器清單格狀檢視中的卡片。所有樣式都保留核取方塊、狀態與電源選單。",
+        "styles": {
+          "default": "預設",
+          "banner": "橫幅",
+          "flat": "扁平",
+          "linear": "線性",
+          "minimal": "極簡",
+          "compact": "緊湊"
+        },
+        "tablesTitle": "表格",
+        "tableStyle": "表格樣式",
+        "tableStyleDescription": "面板中的各種清單，例如檔案、備份、資料庫與管理頁面，以及伺服器清單的清單檢視。",
+        "tables": {
+          "table": "表格",
+          "cards": "卡片"
+        }
+      },
+      "navLayout": {
+        "title": "版面配置",
+        "layout": "儀表板版面配置",
+        "layoutDescription": "桌面版中選單如何位於頁面旁。「窄版」是固定的圖示欄，懸停時會顯示連結名稱。手機使用下方的手機導覽。",
+        "layouts": {
+          "default": "預設",
+          "floating": "浮動",
+          "pill": "膠囊",
+          "slim": "窄版",
+          "horizontal": "水平"
+        },
+        "dock": "停駐位置",
+        "dockDescription": "標誌、搜尋，以及在伺服器頁面上的伺服器名稱、狀態與電源按鈕所在的位置。",
+        "dockHorizontal": "水平版面配置一律將這些項目放在頂部列。",
+        "docks": {
+          "sidebar": "側邊欄",
+          "header": "頁首",
+          "top": "頂部"
+        },
+        "mockConsole": "主控台"
+      },
+      "mobileNav": {
+        "label": "手機導覽",
+        "description": "低於桌面寬度時：使用核心的浮動選單按鈕，或是在螢幕底部顯示包含主要頁面與可開啟完整選單之「選單」按鈕的導覽列。",
+        "options": {
+          "drawer": "抽屜",
+          "bottomBar": "底部列"
+        }
+      }
+    },
+    "library": {
+      "saveAsPreset": "儲存為預設集",
+      "saveAsPresetDescription": "將草稿的外觀（顏色、字型、區塊、導覽）儲存為你自己的預設集。文章與登入頁面等內容不屬於預設集。",
+      "name": "名稱",
+      "save": "儲存",
+      "cancel": "取消",
+      "created": "預設集已儲存。",
+      "custom": "你的預設集",
+      "builtin": "內建",
+      "empty": "你還沒有自己的預設集。",
+      "limit": "最多 {max} 個預設集；請刪除一個以儲存新的預設集。",
+      "rename": "重新命名",
+      "renameTitle": "重新命名預設集",
+      "delete": "刪除",
+      "deleteTitle": "刪除預設集",
+      "deleteConfirm": "要刪除 {name} 嗎？已選擇它的使用者將恢復為面板預設。",
+      "users": "使用者可選擇此項",
+      "nameProblem": {
+        "empty": "請輸入名稱。",
+        "long": "最多 {max} 個字元。",
+        "control": "不可包含換行或控制字元。"
+      },
+      "history": "歷史紀錄",
+      "historyTitle": "已儲存的主題歷史紀錄",
+      "historyDescription": "最近 {max} 次儲存所取代的主題。載入後會放入編輯器；按下「儲存」即可套用。",
+      "historyEmpty": "尚無先前的儲存紀錄。",
+      "historyUnknown": "在開始保留歷史紀錄前儲存",
+      "historyBy": "{time}，由 {user} 儲存",
+      "historyCurrent": "使用中：{time} 由 {user} 儲存",
+      "load": "載入至編輯器",
+      "loaded": "已載入至編輯器。按下「儲存」即可套用。",
+      "choice": {
+        "title": "主題",
+        "label": "你的主題",
+        "description": "面板在你眼中的外觀。僅你自己看得到，並套用於你登入的每部裝置。",
+        "default": "面板預設"
+      }
+    }
+  }
+}

@@ -1,0 +1,569 @@
+{
+  "items": {},
+  "translations": {
+    "nav": {
+      "editor": "Editor de temă"
+    },
+    "home": {
+      "title": "Acasă",
+      "address": "Adresă server",
+      "location": "Locație",
+      "gettingStarted": "Primii pași",
+      "information": "Informații server",
+      "installed": "Instalat",
+      "serverName": "Nume server",
+      "status": "Stare",
+      "uptime": "Timp de funcționare",
+      "node": "Nod",
+      "memory": "Memorie",
+      "image": "Imagine",
+      "console": "Consolă",
+      "fullLog": "Jurnal complet al serverului",
+      "usage": "Utilizare",
+      "cpu": "CPU",
+      "ram": "RAM",
+      "storage": "Stocare",
+      "network": "Rețea",
+      "inbound": "Intrare",
+      "outbound": "Ieșire",
+      "sftp": "SFTP"
+    },
+    "servers": {
+      "title": "Serverele mele",
+      "subtitle": "Serverele tale și cele partajate cu tine.",
+      "actions": "Acțiuni server",
+      "cpu": "CPU",
+      "disk": "Disc",
+      "showing": "Se afișează {count}",
+      "select": "Selectează {name}",
+      "selectAll": "Selectează toate serverele vizibile",
+      "column": {
+        "id": "ID",
+        "name": "Nume",
+        "game": "Joc",
+        "status": "Stare",
+        "location": "Locație",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "uptime": "Timp de funcționare",
+        "memory": "Memorie"
+      },
+      "filter": {
+        "all": "Toate serverele",
+        "running": "Online",
+        "offline": "Offline",
+        "suspended": "Suspendate",
+        "other": "Altele"
+      },
+      "view": {
+        "list": "Vizualizare listă",
+        "grid": "Vizualizare grilă"
+      }
+    },
+    "serverSort": {
+      "sortBy": "Sortează după",
+      "sort": {
+        "none": "Ordine implicită",
+        "name": "Sortează după nume",
+        "status": "Sortează după stare",
+        "game": "Sortează după joc",
+        "location": "Sortează după locație",
+        "cpu": "Sortează după CPU",
+        "ram": "Sortează după RAM",
+        "uptime": "Sortează după timpul de funcționare",
+        "id": "Sortează după ID"
+      },
+      "ascending": "Crescător, apasă pentru a inversa",
+      "descending": "Descrescător, apasă pentru a inversa",
+      "groupBy": "Grupează după",
+      "group": {
+        "none": "Fără grupare",
+        "location": "Grupează după locație",
+        "game": "Grupează după joc",
+        "status": "Grupează după stare"
+      },
+      "selectGroup": "Selectează tot din {name}"
+    },
+    "account": {
+      "changeBanner": "Schimbă bannerul",
+      "removeBanner": "Elimină bannerul",
+      "changeAvatar": "Schimbă avatarul",
+      "bannerFile": "Imagine",
+      "bannerHint": "PNG, JPEG, WebP sau GIF. Trage-o pentru a alege partea afișată. Doar tu o vezi.",
+      "admin": "Administrator",
+      "twoFactorOn": "2FA activat",
+      "twoFactorOff": "2FA dezactivat"
+    },
+    "announcementCta": {
+      "tab": "Îndemn la acțiune",
+      "title": "Îndemn la acțiune",
+      "description": "Afișează un buton în anunț.",
+      "enable": "Activează îndemnul la acțiune",
+      "enableDescription": "Adaugă un buton sub textul anunțului, în culoarea anunțului.",
+      "buttonTitle": "Titlul butonului",
+      "buttonTitleDescription": "Textul de pe buton, de cel mult {max} caractere.",
+      "buttonTitlePlaceholder": "Vizitează magazinul",
+      "buttonLink": "Linkul butonului",
+      "buttonLinkDescription": "Unde duce: o pagină a panoului, cum ar fi /account, se deschide pe loc, iar o adresă https:// completă se deschide într-o filă nouă.",
+      "buttonLinkPlaceholder": "/account sau https://example.com",
+      "titleRequired": "Dă un titlu butonului.",
+      "titleTooLong": "Titlul poate avea cel mult {max} caractere.",
+      "titleInvalid": "Elimină tabulările și rândurile noi din titlu.",
+      "linkInvalid": "Folosește o cale din panou care începe cu un singur / sau o adresă http:// ori https:// completă, fără spații, ghilimele, paranteze unghiulare, paranteze rotunde, acolade, punct și virgulă sau bare oblice inverse.",
+      "linkTooLong": "Linkul poate avea cel mult {max} caractere.",
+      "saved": "Îndemnul la acțiune a fost salvat.",
+      "removed": "Îndemnul la acțiune a fost eliminat."
+    },
+    "auth": {
+      "supportLinks": "Linkuri de asistență"
+    },
+    "navSearch": {
+      "placeholder": "Caută...",
+      "servers": "Servere",
+      "allServers": "Toate serverele",
+      "users": "Utilizatori",
+      "empty": "Nu s-a găsit nimic",
+      "everything": "Caută peste tot „{query}”",
+      "quickActions": "Deschide acțiunile rapide",
+      "switchServer": "Schimbă serverul"
+    },
+    "topBar": {
+      "navigation": "Meniu principal"
+    },
+    "bottomNav": {
+      "label": "Navigare pe telefon",
+      "menu": "Meniu"
+    },
+    "editor": {
+      "contrast": {
+        "title": "Unele culori sunt greu de citit",
+        "description": "Sub minimul WCAG; salvarea funcționează în continuare.",
+        "pair": "{fg} pe {bg}: {ratio}:1 (țintește {min}:1)",
+        "low": "Contrast scăzut cu {other}: {ratio}:1 (țintește {min}:1)",
+        "lowAs": "Contrast scăzut ca {role} pe {other}: {ratio}:1 (țintește {min}:1)",
+        "named": "{name} ({role})",
+        "roles": {
+          "links": "linkuri",
+          "dimmed": "text estompat"
+        }
+      },
+      "favicon": {
+        "label": "Pictograma filei browserului",
+        "description": "Înlocuiește pictograma panoului în filele browserului și pe ecranele de pornire, inclusiv pe paginile de autentificare. Lasă gol pentru a păstra pictograma panoului. Un PNG, ICO sau SVG pătrat funcționează cel mai bine.",
+        "preview": "Previzualizare filă"
+      },
+      "close": "Închide editorul",
+      "undo": "Anulează",
+      "redo": "Refă",
+      "reset": "Resetează la implicit",
+      "import": "Importă tema",
+      "export": "Exportă tema",
+      "importFailed": "Fișierul nu este o temă Mint.",
+      "save": "Salvează",
+      "saved": "Tema a fost salvată.",
+      "refresh": "Reîncarcă previzualizarea",
+      "openTab": "Deschide într-o filă nouă",
+      "device": {
+        "desktop": "Desktop",
+        "tablet": "Tabletă",
+        "mobile": "Mobil"
+      },
+      "scheme": {
+        "dark": "Întunecat",
+        "light": "Luminos"
+      },
+      "pages": {
+        "home": "Pagina serverului",
+        "console": "Consola serverului",
+        "servers": "Servere",
+        "account": "Cont",
+        "admin": "Admin",
+        "login": "Pagina de autentificare"
+      },
+      "section": {
+        "presets": "Presetări",
+        "presetsDescription": "Pornește de la un aspect gata făcut, salvează-le pe ale tale și alege pe care le pot selecta utilizatorii.",
+        "colours": "Culori",
+        "coloursDescription": "Toate celelalte culori sunt amestecate din aceste cinci.",
+        "style": "Stil",
+        "styleDescription": "Font și rotunjirea colțurilor.",
+        "background": "Fundal",
+        "backgroundDescription": "O imagine în spatele întregului panou, estompată cu culoarea paginii, și pictograma filei browserului.",
+        "home": "Pagina de start",
+        "homeDescription": "Banner și imagini de joc pentru pagina de start.",
+        "articles": "Primii pași",
+        "articlesDescription": "Linkuri afișate pe pagina de start a fiecărui server.",
+        "layout": "Aranjament",
+        "layoutDescription": "Ce carduri afișează pagina de start și unde.",
+        "login": "Pagina de autentificare",
+        "loginDescription": "Aranjament, fundal, logo și linkuri de asistență pentru paginile de autentificare, înregistrare și parolă.",
+        "interface": "Interfață",
+        "interfaceDescription": "Notificări, tranziții între pagini și titluri de pagină.",
+        "navigation": "Navigare",
+        "navigationDescription": "Aranjamentul barei laterale, efectul la trecerea peste meniu și căutarea.",
+        "components": "Componente",
+        "componentsDescription": "Carduri de server, tabele, casete și carduri de statistici.",
+        "console": "Consolă",
+        "consoleDescription": "Ce afișează pagina consolei în jurul terminalului și unde."
+      },
+      "accent": "Accent",
+      "accentDescription": "Butoane, linkuri și elementul de meniu activ",
+      "highlight": "Evidențiere",
+      "highlightDescription": "Pictogramele statisticilor din bannerul consolei",
+      "background": "Fundal",
+      "backgroundDescription": "Pagina din spatele tuturor elementelor",
+      "surface": "Suprafață",
+      "surfaceDescription": "Carduri, bară laterală și consolă",
+      "text": "Text",
+      "textDescription": "Textul estompat și bordurile sunt amestecate din aceasta",
+      "derived": "Derivată din culorile de mai sus",
+      "clearColor": "Revino la culoarea derivată",
+      "group": {
+        "accents": "Accente",
+        "surfaces": "Suprafețe",
+        "surfacesExtra": "Straturi superioare",
+        "text": "Text",
+        "textExtra": "Mai mult text",
+        "lines": "Linii",
+        "buttons": "Butoane",
+        "status": "Stare",
+        "charts": "Grafice",
+        "light": "Mod luminos"
+      },
+      "surfaceRaised": "Ridicată",
+      "surfaceOverlay": "Suprapunere",
+      "textMuted": "Text atenuat",
+      "textFaint": "Text slab",
+      "textOnAccent": "Text pe accent",
+      "line": "Linie fină",
+      "buttonText": "Text buton",
+      "success": "Succes",
+      "warning": "Avertisment",
+      "danger": "Pericol",
+      "offline": "Offline",
+      "chartOne": "Seria unu",
+      "chartTwo": "Seria doi",
+      "lightBackground": "Fundal luminos",
+      "lightSurface": "Suprafață luminoasă",
+      "lightText": "Text luminos",
+      "font": "Font",
+      "fontExo": "Exo 2",
+      "fontMontserrat": "Montserrat",
+      "fontPanel": "Implicitul panoului",
+      "fontOutfit": "Outfit",
+      "fontJakarta": "Plus Jakarta Sans",
+      "fontSpace": "Space Grotesk",
+      "monoFont": "Font monospațiat",
+      "monoFontDescription": "Cod, ID-uri și consola serverului.",
+      "monoFontJetbrains": "JetBrains Mono",
+      "monoFontFira": "Fira Code",
+      "sidebarGroups": "Grupează meniul serverului",
+      "sidebarGroupsDescription": "Secțiuni pliabile Gestionare, Configurare și Acces.",
+      "buttonStyle": "Stil butoane",
+      "buttonAccent": "Butoanele folosesc culoarea de accent",
+      "buttonColor": "Culoare butoane",
+      "buttons": {
+        "filled": "Plin",
+        "tinted": "Nuanțat",
+        "outline": "Contur",
+        "glass": "Sticlă"
+      },
+      "radius": "Colțuri carduri",
+      "elementRadius": "Colțuri butoane și câmpuri",
+      "blocks": {
+        "title": "Blocuri",
+        "opacity": "Opacitate blocuri",
+        "opacityDescription": "Sub 100%, fundalul paginii sau imaginea sa se vede prin carduri și bara laterală.",
+        "glass": "Efect de sticlă",
+        "glassHint": "Pentru un aspect de sticlă, setează opacitatea blocurilor la aproximativ 80% și activează Efect de sticlă și Bordură blocuri.",
+        "glassOff": "Implicit",
+        "glassOn": "Sticlă",
+        "border": "Bordură blocuri",
+        "withBorder": "Cu bordură",
+        "withoutBorder": "Fără bordură"
+      },
+      "elements": {
+        "title": "Elemente",
+        "inputBorder": "Bordură câmpuri",
+        "withBorder": "Cu bordură",
+        "withoutBorder": "Fără bordură",
+        "clickEffect": "Efect la clic",
+        "clickEffectDescription": "Cum reacționează butoanele când sunt apăsate.",
+        "click": {
+          "none": "Niciunul",
+          "drop": "Coborâre",
+          "shrink": "Micșorare",
+          "outline": "Contur"
+        },
+        "create": "Creează"
+      },
+      "backgroundImage": "URL imagine",
+      "backgroundImageDescription": "Lasă gol pentru un fundal simplu.",
+      "backgroundDim": "Estompare",
+      "homeBanner": "URL imagine banner implicit",
+      "homeBannerDescription": "Folosit pentru egg-urile fără banner propriu. Lasă gol pentru un gradient de accent.",
+      "articles": "Linkuri Primii pași",
+      "articlesDescription": "Până la {max} linkuri către ghidurile sau baza ta de cunoștințe.",
+      "articleTitle": "Titlu",
+      "articleDescription": "Descriere",
+      "articleUrl": "URL",
+      "addArticle": "Adaugă link",
+      "removeArticle": "Elimină linkul",
+      "eggImages": "Imagini de joc",
+      "eggImagesDescription": "Un banner și o pictogramă pentru fiecare egg. Egg-urile fără banner îl folosesc pe cel de mai sus.",
+      "egg": "Egg",
+      "eggBanner": "URL imagine banner",
+      "eggIcon": "URL imagine pictogramă",
+      "layoutDescription": "Trage pentru a reordona, mută un card în cealaltă coloană sau ascunde-l.",
+      "columnEmpty": "Încă nu există carduri aici.",
+      "moveColumn": "Mută în cealaltă coloană",
+      "hideCard": "Ascunde cardul",
+      "showCard": "Afișează cardul",
+      "column": {
+        "left": "Coloana stângă",
+        "right": "Coloana dreaptă"
+      },
+      "card": {
+        "information": "Informații server",
+        "installed": "Instalat",
+        "articles": "Linkuri Primii pași",
+        "console": "Consolă",
+        "usage": "Utilizare",
+        "network": "Rețea"
+      },
+      "login": {
+        "background": "URL imagine de fundal",
+        "backgroundDescription": "Lasă gol pentru a folosi fundalul obișnuit.",
+        "dim": "Estompare",
+        "logo": "URL logo",
+        "logoDescription": "Înlocuiește logoul panoului pe aceste pagini. Lasă gol pentru a-l păstra.",
+        "preview": "Previzualizarea arată pagina de autentificare așa cum o văd vizitatorii neautentificați."
+      },
+      "authLayout": {
+        "layoutTitle": "Aranjament",
+        "layout": "Aranjament autentificare",
+        "layoutDescription": "Bannerul afișează fundalul de autentificare, altfel fundalul panoului, altfel un gradient de accent. Pe telefoane se afișează doar formularul.",
+        "layouts": {
+          "default": "Implicit",
+          "flat": "Plat",
+          "sideBanner": "Banner lateral",
+          "floatingBanner": "Banner flotant",
+          "panels": "Panouri"
+        },
+        "logoPosition": "Poziție logo",
+        "positions": {
+          "header": "Bara de sus",
+          "aboveForm": "Deasupra formularului"
+        },
+        "appearanceTitle": "Fundal și logo",
+        "linksTitle": "Linkuri de asistență",
+        "linksDescription": "Până la {max} linkuri, cum ar fi Discord-ul tău, documentația sau pagina de stare. Linkurile fără etichetă sau URL nu sunt afișate.",
+        "linkLabel": "Etichetă",
+        "linkUrl": "URL",
+        "linkIcon": "Pictogramă",
+        "noIcon": "Fără pictogramă",
+        "icons": {
+          "discord": "Discord",
+          "github": "GitHub",
+          "docs": "Documentație",
+          "status": "Stare",
+          "mail": "E-mail",
+          "link": "Link"
+        },
+        "addLink": "Adaugă link",
+        "removeLink": "Elimină linkul",
+        "linksPosition": "Poziție linkuri",
+        "mockTitle": "Autentificare"
+      },
+      "interface": {
+        "toastStyle": "Stil notificări",
+        "toastStyleDescription": "Mesajele care apar după salvare, copiere și alte acțiuni.",
+        "toasts": {
+          "default": "Implicit",
+          "glassy": "Sticlă"
+        },
+        "pageTransition": "Tranziție pagină",
+        "pageTransitionDescription": "Se redă pe conținutul paginii când se deschide altă pagină. Treci cu cursorul peste o casetă pentru a o vedea.",
+        "transitions": {
+          "none": "Niciuna",
+          "fade": "Apariție treptată",
+          "fadeUp": "Apariție în sus",
+          "fadeScale": "Apariție cu scalare"
+        },
+        "pageTitles": "Afișează titlurile paginilor",
+        "pageTitlesDescription": "Titlul de pe paginile serverului, precum Fișiere și Baze de date. Căutarea și butoanele lor rămân."
+      },
+      "boxes": {
+        "title": "Casete",
+        "boxStyle": "Stil casete",
+        "boxStyleDescription": "Rândul de titlu al cardurilor, precum cardurile de pe Acasă, setările contului, formularele de administrare și graficele.",
+        "styles": {
+          "default": "Implicit",
+          "line": "Linie",
+          "fill": "Umplere",
+          "pill": "Pastilă"
+        },
+        "statsTitle": "Grafice și statistici",
+        "statStyle": "Stil carduri de statistici",
+        "statStyleDescription": "Casetele mici cu pictogramă, precum prezentarea generală din administrare și detaliile consolei.",
+        "stats": {
+          "default": "Implicit",
+          "reversed": "Inversat",
+          "minimal": "Minimal",
+          "minimalReversed": "Minimal inversat"
+        },
+        "mockTitle": "Titlu casetă",
+        "mockLabel": "Etichetă câmp",
+        "mockButton": "Salvează",
+        "mockStat": "Încărcare CPU"
+      },
+      "consoleLayout": {
+        "title": "Pagina consolei",
+        "description": "Trage componentele pentru a le reordona sau a le muta în alt slot. Terminalul rămâne în mijloc; coloanele laterale stau lângă el pe ecranele late și sub el pe cele înguste.",
+        "terminal": "Terminal",
+        "add": "Adaugă componentă",
+        "addTo": "Adaugă o componentă în: {slot}",
+        "remove": "Elimină {name}",
+        "allPlaced": "Toate componentele sunt deja pe pagină.",
+        "reset": "Restaurează aranjamentul implicit",
+        "slot": {
+          "top": "Deasupra terminalului",
+          "left": "În stânga terminalului",
+          "right": "În dreapta terminalului",
+          "bottom": "Sub terminal"
+        },
+        "widget": {
+          "banner": "Banner și butoane de alimentare",
+          "stats": "Casete de statistici live",
+          "info": "Informații server",
+          "cpuChart": "Grafic CPU",
+          "memoryChart": "Grafic memorie",
+          "networkChart": "Grafic rețea",
+          "extensionCards": "Carduri de extensii"
+        },
+        "widgetDescription": {
+          "banner": "Numele serverului, adresa, statistici live și butoanele de alimentare.",
+          "stats": "Casete compacte pentru timpul de funcționare, CPU, memorie, disc și rețea.",
+          "info": "Nume, adresă, stare, locație, nod și SFTP.",
+          "cpuChart": "Grafic live al încărcării CPU.",
+          "memoryChart": "Grafic live al memoriei.",
+          "networkChart": "Grafic live al traficului de intrare și ieșire.",
+          "extensionCards": "Carduri de statistici adăugate în consolă de alte extensii."
+        }
+      },
+      "navStyle": {
+        "title": "Meniu",
+        "hover": "Efect la trecerea cursorului",
+        "hoverDescription": "Cum arată linkurile din meniu sub cursor și cât timp pagina lor este deschisă. Treci cu cursorul peste o casetă pentru a le vedea pe amândouă.",
+        "hovers": {
+          "default": "Implicit",
+          "filled": "Plin",
+          "filledSecondary": "Plin secundar",
+          "iconPill": "Pastilă pe pictogramă",
+          "pill": "Pastilă",
+          "pillSecondary": "Pastilă secundară"
+        },
+        "mockLink": "Consolă",
+        "search": "Componentă de căutare",
+        "searchDescription": "Ce se află sub logo în meniu. Scurtătura Acțiuni rapide funcționează cu toate.",
+        "searches": {
+          "palette": "Acțiuni rapide (implicit)",
+          "serverSelector": "Selector de server",
+          "searchBar": "Bară de căutare"
+        },
+        "searchHints": {
+          "palette": "Butonul Acțiuni rapide al panoului. Comutatorul său de servere rămâne în partea de jos a meniului.",
+          "serverSelector": "Un meniu derulant pentru a trece la alt server, în partea de sus a meniului, în locul butonului Acțiuni rapide.",
+          "searchBar": "Un câmp de căutare care listează serverele pe măsură ce tastezi; în zona de administrare, și toate serverele și utilizatorii. Ultimul său rând deschide Acțiuni rapide."
+        }
+      },
+      "serverCards": {
+        "title": "Lista de servere",
+        "cardStyle": "Stil carduri server",
+        "cardStyleDescription": "Cardurile din vizualizarea grilă a listei de servere. Fiecare stil păstrează caseta de selectare, starea și meniul de alimentare.",
+        "styles": {
+          "default": "Implicit",
+          "banner": "Banner",
+          "flat": "Plat",
+          "linear": "Liniar",
+          "minimal": "Minimal",
+          "compact": "Compact"
+        },
+        "tablesTitle": "Tabele",
+        "tableStyle": "Stil tabele",
+        "tableStyleDescription": "Listele din tot panoul, precum fișierele, backup-urile, bazele de date și paginile de administrare, precum și vizualizarea listă a listei de servere.",
+        "tables": {
+          "table": "Tabel",
+          "cards": "Carduri"
+        }
+      },
+      "navLayout": {
+        "title": "Aranjament",
+        "layout": "Aranjament tablou de bord",
+        "layoutDescription": "Cum stă meniul lângă pagini pe desktop. Îngust este o bară fixă de pictograme care își afișează numele linkurilor la trecerea cursorului. Telefoanele folosesc navigarea pe telefon de mai jos.",
+        "layouts": {
+          "default": "Implicit",
+          "floating": "Flotant",
+          "pill": "Pastilă",
+          "slim": "Îngust",
+          "horizontal": "Orizontal"
+        },
+        "dock": "Poziție bară",
+        "dockDescription": "Unde stau logoul, căutarea și, pe paginile serverului, numele serverului, starea și butoanele de alimentare.",
+        "dockHorizontal": "Aranjamentul orizontal le păstrează mereu în bara de sus.",
+        "docks": {
+          "sidebar": "Bară laterală",
+          "header": "Antet",
+          "top": "Sus"
+        },
+        "mockConsole": "Consolă"
+      },
+      "mobileNav": {
+        "label": "Navigare pe telefon",
+        "description": "Sub lățimea de desktop: butonul de meniu flotant din panou sau o bară în partea de jos a ecranului cu paginile principale și un buton Meniu pentru meniul complet.",
+        "options": {
+          "drawer": "Sertar",
+          "bottomBar": "Bară de jos"
+        }
+      }
+    },
+    "library": {
+      "saveAsPreset": "Salvează ca presetare",
+      "saveAsPresetDescription": "Păstrează aspectul ciornei (culori, fonturi, blocuri, navigare) ca presetare proprie. Conținutul, precum articolele și pagina de autentificare, nu face parte dintr-o presetare.",
+      "name": "Nume",
+      "save": "Salvează",
+      "cancel": "Anulează",
+      "created": "Presetarea a fost salvată.",
+      "custom": "Presetările tale",
+      "builtin": "Încorporate",
+      "empty": "Încă nu ai presetări proprii.",
+      "limit": "Cel mult {max} presetări; șterge una pentru a salva alta.",
+      "rename": "Redenumește",
+      "renameTitle": "Redenumește presetarea",
+      "delete": "Șterge",
+      "deleteTitle": "Șterge presetarea",
+      "deleteConfirm": "Ștergi {name}? Utilizatorii care au ales-o revin la tema implicită a panoului.",
+      "users": "Utilizatorii o pot alege",
+      "nameProblem": {
+        "empty": "Introdu un nume.",
+        "long": "Cel mult {max} caractere.",
+        "control": "Fără rânduri noi sau caractere de control."
+      },
+      "history": "Istoric",
+      "historyTitle": "Istoricul temelor salvate",
+      "historyDescription": "Temele înlocuite de ultimele {max} salvări. Încărcarea uneia o pune în editor; apasă Salvează pentru a o folosi.",
+      "historyEmpty": "Încă nu există salvări anterioare.",
+      "historyUnknown": "Salvată înainte de păstrarea istoricului",
+      "historyBy": "{time} de {user}",
+      "historyCurrent": "În uz: salvată {time} de {user}",
+      "load": "Încarcă în editor",
+      "loaded": "Încărcată în editor. Apasă Salvează pentru a o folosi.",
+      "choice": {
+        "title": "Temă",
+        "label": "Tema ta",
+        "description": "Cum arată panoul pentru tine. Doar tu o vezi, pe fiecare dispozitiv pe care te autentifici.",
+        "default": "Implicitul panoului"
+      }
+    }
+  }
+}

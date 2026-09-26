@@ -1,0 +1,569 @@
+{
+  "items": {},
+  "translations": {
+    "nav": {
+      "editor": "Motīvu redaktors"
+    },
+    "home": {
+      "title": "Sākums",
+      "address": "Servera adrese",
+      "location": "Atrašanās vieta",
+      "gettingStarted": "Darba sākšana",
+      "information": "Servera informācija",
+      "installed": "Instalēts",
+      "serverName": "Servera nosaukums",
+      "status": "Statuss",
+      "uptime": "Darbības laiks",
+      "node": "Mezgls",
+      "memory": "Atmiņa",
+      "image": "Attēls",
+      "console": "Konsole",
+      "fullLog": "Pilns servera žurnāls",
+      "usage": "Noslodze",
+      "cpu": "CPU",
+      "ram": "RAM",
+      "storage": "Krātuve",
+      "network": "Tīkls",
+      "inbound": "Ienākošā",
+      "outbound": "Izejošā",
+      "sftp": "SFTP"
+    },
+    "servers": {
+      "title": "Mani serveri",
+      "subtitle": "Jūsu serveri un tie, kas ir kopīgoti ar jums.",
+      "actions": "Servera darbības",
+      "cpu": "CPU",
+      "disk": "Disks",
+      "showing": "Rāda: {count}",
+      "select": "Atlasīt {name}",
+      "selectAll": "Atlasīt visus redzamos serverus",
+      "column": {
+        "id": "ID",
+        "name": "Nosaukums",
+        "game": "Spēle",
+        "status": "Statuss",
+        "location": "Atrašanās vieta",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "uptime": "Darbības laiks",
+        "memory": "Atmiņa"
+      },
+      "filter": {
+        "all": "Visi serveri",
+        "running": "Tiešsaistē",
+        "offline": "Bezsaistē",
+        "suspended": "Apturēti",
+        "other": "Citi"
+      },
+      "view": {
+        "list": "Saraksta skats",
+        "grid": "Režģa skats"
+      }
+    },
+    "serverSort": {
+      "sortBy": "Kārtot pēc",
+      "sort": {
+        "none": "Noklusējuma secība",
+        "name": "Kārtot pēc nosaukuma",
+        "status": "Kārtot pēc statusa",
+        "game": "Kārtot pēc spēles",
+        "location": "Kārtot pēc atrašanās vietas",
+        "cpu": "Kārtot pēc CPU",
+        "ram": "Kārtot pēc RAM",
+        "uptime": "Kārtot pēc darbības laika",
+        "id": "Kārtot pēc ID"
+      },
+      "ascending": "Augošā secībā, noklikšķiniet, lai apgrieztu",
+      "descending": "Dilstošā secībā, noklikšķiniet, lai apgrieztu",
+      "groupBy": "Grupēt pēc",
+      "group": {
+        "none": "Bez grupēšanas",
+        "location": "Grupēt pēc atrašanās vietas",
+        "game": "Grupēt pēc spēles",
+        "status": "Grupēt pēc statusa"
+      },
+      "selectGroup": "Atlasīt visus grupā {name}"
+    },
+    "account": {
+      "changeBanner": "Mainīt reklāmkarogu",
+      "removeBanner": "Noņemt reklāmkarogu",
+      "changeAvatar": "Mainīt avataru",
+      "bannerFile": "Attēls",
+      "bannerHint": "PNG, JPEG, WebP vai GIF. Velciet to, lai izvēlētos redzamo daļu. To redzat tikai jūs.",
+      "admin": "Administrators",
+      "twoFactorOn": "2FA ieslēgta",
+      "twoFactorOff": "2FA izslēgta"
+    },
+    "announcementCta": {
+      "tab": "Aicinājums rīkoties",
+      "title": "Aicinājums rīkoties",
+      "description": "Rādīt pogu paziņojumā.",
+      "enable": "Ieslēgt aicinājumu rīkoties",
+      "enableDescription": "Pievieno pogu zem paziņojuma teksta paziņojuma krāsā.",
+      "buttonTitle": "Pogas nosaukums",
+      "buttonTitleDescription": "Teksts uz pogas, līdz {max} rakstzīmēm.",
+      "buttonTitlePlaceholder": "Apmeklēt veikalu",
+      "buttonLink": "Pogas saite",
+      "buttonLinkDescription": "Kurp tā ved: paneļa lapa, piemēram, /account, atveras turpat, pilna https:// adrese atveras jaunā cilnē.",
+      "buttonLinkPlaceholder": "/account vai https://example.com",
+      "titleRequired": "Norādiet pogas nosaukumu.",
+      "titleTooLong": "Nosaukumā drīkst būt ne vairāk kā {max} rakstzīmes.",
+      "titleInvalid": "Noņemiet no nosaukuma tabulācijas un rindu pārtraukumus.",
+      "linkInvalid": "Izmantojiet paneļa ceļu, kas sākas ar vienu /, vai pilnu http:// vai https:// adresi bez atstarpēm, pēdiņām, leņķiekavām, iekavām, figūriekavām, semikoliem vai atpakaļvērstām slīpsvītrām.",
+      "linkTooLong": "Saitē drīkst būt ne vairāk kā {max} rakstzīmes.",
+      "saved": "Aicinājums rīkoties saglabāts.",
+      "removed": "Aicinājums rīkoties noņemts."
+    },
+    "auth": {
+      "supportLinks": "Atbalsta saites"
+    },
+    "navSearch": {
+      "placeholder": "Meklēt...",
+      "servers": "Serveri",
+      "allServers": "Visi serveri",
+      "users": "Lietotāji",
+      "empty": "Nekas netika atrasts",
+      "everything": "Meklēt visur „{query}”",
+      "quickActions": "Atvērt ātrās darbības",
+      "switchServer": "Pārslēgt serveri"
+    },
+    "topBar": {
+      "navigation": "Galvenā izvēlne"
+    },
+    "bottomNav": {
+      "label": "Tālruņa navigācija",
+      "menu": "Izvēlne"
+    },
+    "editor": {
+      "contrast": {
+        "title": "Dažas krāsas ir grūti salasāmas",
+        "description": "Zem WCAG minimuma; saglabāšana joprojām darbojas.",
+        "pair": "{fg} uz {bg}: {ratio}:1 (mērķis {min}:1)",
+        "low": "Zems kontrasts ar {other}: {ratio}:1 (mērķis {min}:1)",
+        "lowAs": "Zems kontrasts kā {role} uz {other}: {ratio}:1 (mērķis {min}:1)",
+        "named": "{name} ({role})",
+        "roles": {
+          "links": "saites",
+          "dimmed": "blāvs teksts"
+        }
+      },
+      "favicon": {
+        "label": "Pārlūka cilnes ikona",
+        "description": "Aizstāj paneļa ikonu pārlūka cilnēs un sākuma ekrānos, arī pieteikšanās lapās. Atstājiet tukšu, lai paturētu paneļa ikonu. Vislabāk der kvadrātveida PNG, ICO vai SVG.",
+        "preview": "Cilnes priekšskatījums"
+      },
+      "close": "Aizvērt redaktoru",
+      "undo": "Atsaukt",
+      "redo": "Atcelt atsaukšanu",
+      "reset": "Atiestatīt uz noklusējumu",
+      "import": "Importēt motīvu",
+      "export": "Eksportēt motīvu",
+      "importFailed": "Šis fails nav Mint motīvs.",
+      "save": "Saglabāt",
+      "saved": "Motīvs saglabāts.",
+      "refresh": "Pārlādēt priekšskatījumu",
+      "openTab": "Atvērt jaunā cilnē",
+      "device": {
+        "desktop": "Dators",
+        "tablet": "Planšete",
+        "mobile": "Mobilais"
+      },
+      "scheme": {
+        "dark": "Tumšs",
+        "light": "Gaišs"
+      },
+      "pages": {
+        "home": "Servera sākums",
+        "console": "Servera konsole",
+        "servers": "Serveri",
+        "account": "Konts",
+        "admin": "Administrēšana",
+        "login": "Pieteikšanās lapa"
+      },
+      "section": {
+        "presets": "Sagataves",
+        "presetsDescription": "Sāciet ar gatavu izskatu, saglabājiet savus un izvēlieties, kurus lietotāji var izvēlēties.",
+        "colours": "Krāsas",
+        "coloursDescription": "Viss pārējais tiek jaukts no šīm piecām.",
+        "style": "Stils",
+        "styleDescription": "Fonts un stūru noapaļojums.",
+        "background": "Fons",
+        "backgroundDescription": "Attēls aiz visa paneļa, aptumšots ar lapas krāsu, un pārlūka cilnes ikona.",
+        "home": "Sākumlapa",
+        "homeDescription": "Reklāmkarogs un spēļu attēli sākumlapai.",
+        "articles": "Darba sākšana",
+        "articlesDescription": "Saites, kas redzamas katra servera sākumlapā.",
+        "layout": "Izkārtojums",
+        "layoutDescription": "Kuras kartītes sākumlapā rādīt un kur.",
+        "login": "Pieteikšanās lapa",
+        "loginDescription": "Izkārtojums, fons, logotips un atbalsta saites pieteikšanās, reģistrācijas un paroles lapām.",
+        "interface": "Saskarne",
+        "interfaceDescription": "Paziņojumi, lapu pārejas un lapu virsraksti.",
+        "navigation": "Navigācija",
+        "navigationDescription": "Sānjoslas izkārtojums, izvēlnes kursora efekts un meklēšana.",
+        "components": "Komponenti",
+        "componentsDescription": "Serveru kartītes, tabulas, bloki un statistikas kartītes.",
+        "console": "Konsole",
+        "consoleDescription": "Ko konsoles lapa rāda ap termināli un kur."
+      },
+      "accent": "Akcents",
+      "accentDescription": "Pogas, saites un aktīvais izvēlnes vienums",
+      "highlight": "Izcēlums",
+      "highlightDescription": "Statistikas ikonas konsoles reklāmkarogā",
+      "background": "Fons",
+      "backgroundDescription": "Lapa aiz visa",
+      "surface": "Virsma",
+      "surfaceDescription": "Kartītes, sānjosla un konsole",
+      "text": "Teksts",
+      "textDescription": "No šī tiek jaukts blāvais teksts un apmales",
+      "derived": "Atvasināts no augstāk norādītajām krāsām",
+      "clearColor": "Atpakaļ uz atvasināto krāsu",
+      "group": {
+        "accents": "Akcenti",
+        "surfaces": "Virsmas",
+        "surfacesExtra": "Virsējie slāņi",
+        "text": "Teksts",
+        "textExtra": "Vairāk teksta",
+        "lines": "Līnijas",
+        "buttons": "Pogas",
+        "status": "Statuss",
+        "charts": "Diagrammas",
+        "light": "Gaišais režīms"
+      },
+      "surfaceRaised": "Pacelta",
+      "surfaceOverlay": "Pārklājums",
+      "textMuted": "Apslāpēts teksts",
+      "textFaint": "Bāls teksts",
+      "textOnAccent": "Teksts uz akcenta",
+      "line": "Smalka līnija",
+      "buttonText": "Pogas teksts",
+      "success": "Veiksmīgi",
+      "warning": "Brīdinājums",
+      "danger": "Bīstami",
+      "offline": "Bezsaistē",
+      "chartOne": "Pirmā sērija",
+      "chartTwo": "Otrā sērija",
+      "lightBackground": "Gaišs fons",
+      "lightSurface": "Gaiša virsma",
+      "lightText": "Gaišs teksts",
+      "font": "Fonts",
+      "fontExo": "Exo 2",
+      "fontMontserrat": "Montserrat",
+      "fontPanel": "Paneļa noklusējums",
+      "fontOutfit": "Outfit",
+      "fontJakarta": "Plus Jakarta Sans",
+      "fontSpace": "Space Grotesk",
+      "monoFont": "Vienplatuma fonts",
+      "monoFontDescription": "Kods, ID un servera konsole.",
+      "monoFontJetbrains": "JetBrains Mono",
+      "monoFontFira": "Fira Code",
+      "sidebarGroups": "Grupēt servera izvēlni",
+      "sidebarGroupsDescription": "Sakļaujamas sadaļas Pārvaldība, Konfigurācija un Piekļuve.",
+      "buttonStyle": "Pogu stils",
+      "buttonAccent": "Pogas izmanto akcenta krāsu",
+      "buttonColor": "Pogu krāsa",
+      "buttons": {
+        "filled": "Pilns",
+        "tinted": "Tonēts",
+        "outline": "Kontūra",
+        "glass": "Stikls"
+      },
+      "radius": "Kartīšu stūri",
+      "elementRadius": "Pogu un ievades lauku stūri",
+      "blocks": {
+        "title": "Bloki",
+        "opacity": "Bloku necaurredzamība",
+        "opacityDescription": "Zem 100% lapas fons vai tā attēls spīd cauri kartītēm un sānjoslai.",
+        "glass": "Stikla efekts",
+        "glassHint": "Stikla izskatam iestatiet bloku necaurredzamību aptuveni 80% un ieslēdziet Stikla efekts un Bloka apmale.",
+        "glassOff": "Noklusējums",
+        "glassOn": "Stikla",
+        "border": "Bloka apmale",
+        "withBorder": "Ar apmali",
+        "withoutBorder": "Bez apmales"
+      },
+      "elements": {
+        "title": "Elementi",
+        "inputBorder": "Ievades lauka apmale",
+        "withBorder": "Ar apmali",
+        "withoutBorder": "Bez apmales",
+        "clickEffect": "Klikšķa efekts",
+        "clickEffectDescription": "Kā pogas reaģē, kad tās nospiež.",
+        "click": {
+          "none": "Nav",
+          "drop": "Iespiešana",
+          "shrink": "Saraušanās",
+          "outline": "Kontūra"
+        },
+        "create": "Izveidot"
+      },
+      "backgroundImage": "Attēla URL",
+      "backgroundImageDescription": "Atstājiet tukšu vienkāršam fonam.",
+      "backgroundDim": "Aptumšojums",
+      "homeBanner": "Noklusējuma reklāmkaroga attēla URL",
+      "homeBannerDescription": "Tiek izmantots olām bez sava reklāmkaroga. Atstājiet tukšu akcenta krāsu pārejai.",
+      "articles": "Darba sākšanas saites",
+      "articlesDescription": "Līdz {max} saitēm uz jūsu ceļvežiem vai zināšanu bāzi.",
+      "articleTitle": "Virsraksts",
+      "articleDescription": "Apraksts",
+      "articleUrl": "URL",
+      "addArticle": "Pievienot saiti",
+      "removeArticle": "Noņemt saiti",
+      "eggImages": "Spēļu attēli",
+      "eggImagesDescription": "Reklāmkarogs un ikona katrai olai. Olas bez reklāmkaroga izmanto iepriekš norādīto.",
+      "egg": "Ola",
+      "eggBanner": "Reklāmkaroga attēla URL",
+      "eggIcon": "Ikonas attēla URL",
+      "layoutDescription": "Velciet, lai mainītu secību, pārvietotu kartīti uz otru kolonnu vai paslēptu to.",
+      "columnEmpty": "Šeit vēl nav kartīšu.",
+      "moveColumn": "Pārvietot uz otru kolonnu",
+      "hideCard": "Paslēpt kartīti",
+      "showCard": "Rādīt kartīti",
+      "column": {
+        "left": "Kreisā kolonna",
+        "right": "Labā kolonna"
+      },
+      "card": {
+        "information": "Servera informācija",
+        "installed": "Instalēts",
+        "articles": "Darba sākšanas saites",
+        "console": "Konsole",
+        "usage": "Noslodze",
+        "network": "Tīkls"
+      },
+      "login": {
+        "background": "Fona attēla URL",
+        "backgroundDescription": "Atstājiet tukšu, lai izmantotu parasto fonu.",
+        "dim": "Aptumšojums",
+        "logo": "Logotipa URL",
+        "logoDescription": "Aizstāj paneļa logotipu šajās lapās. Atstājiet tukšu, lai to paturētu.",
+        "preview": "Priekšskatījums rāda pieteikšanās lapu tā, kā to redz neautorizēti apmeklētāji."
+      },
+      "authLayout": {
+        "layoutTitle": "Izkārtojums",
+        "layout": "Pieteikšanās izkārtojums",
+        "layoutDescription": "Reklāmkarogā redzams pieteikšanās fons, citādi paneļa fons, citādi akcenta krāsu pāreja. Tālruņos redzama tikai veidlapa.",
+        "layouts": {
+          "default": "Noklusējums",
+          "flat": "Plakans",
+          "sideBanner": "Sānu reklāmkarogs",
+          "floatingBanner": "Peldošs reklāmkarogs",
+          "panels": "Paneļi"
+        },
+        "logoPosition": "Logotipa novietojums",
+        "positions": {
+          "header": "Augšējā josla",
+          "aboveForm": "Virs veidlapas"
+        },
+        "appearanceTitle": "Fons un logotips",
+        "linksTitle": "Atbalsta saites",
+        "linksDescription": "Līdz {max} saitēm, piemēram, uz jūsu Discord, dokumentāciju vai statusa lapu. Saites bez nosaukuma vai URL netiek rādītas.",
+        "linkLabel": "Nosaukums",
+        "linkUrl": "URL",
+        "linkIcon": "Ikona",
+        "noIcon": "Bez ikonas",
+        "icons": {
+          "discord": "Discord",
+          "github": "GitHub",
+          "docs": "Dokumentācija",
+          "status": "Statuss",
+          "mail": "E-pasts",
+          "link": "Saite"
+        },
+        "addLink": "Pievienot saiti",
+        "removeLink": "Noņemt saiti",
+        "linksPosition": "Saišu novietojums",
+        "mockTitle": "Pieteikšanās"
+      },
+      "interface": {
+        "toastStyle": "Paziņojumu stils",
+        "toastStyleDescription": "Ziņojumi, kas parādās pēc saglabāšanas, kopēšanas un citām darbībām.",
+        "toasts": {
+          "default": "Noklusējums",
+          "glassy": "Stikla"
+        },
+        "pageTransition": "Lapu pāreja",
+        "pageTransitionDescription": "Tiek atskaņota lapas saturam, kad atveras cita lapa. Novietojiet kursoru virs flīzes, lai to redzētu.",
+        "transitions": {
+          "none": "Nav",
+          "fade": "Parādīšanās",
+          "fadeUp": "Parādīšanās uz augšu",
+          "fadeScale": "Parādīšanās ar mērogošanu"
+        },
+        "pageTitles": "Rādīt lapu virsrakstus",
+        "pageTitlesDescription": "Virsraksts servera lapās, piemēram, Faili un Datubāzes. To meklēšana un pogas paliek."
+      },
+      "boxes": {
+        "title": "Bloki",
+        "boxStyle": "Bloku stils",
+        "boxStyleDescription": "Kartīšu virsraksta rinda, piemēram, sākumlapas kartītēm, konta iestatījumiem, administrēšanas veidlapām un diagrammām.",
+        "styles": {
+          "default": "Noklusējums",
+          "line": "Līnija",
+          "fill": "Aizpildījums",
+          "pill": "Kapsula"
+        },
+        "statsTitle": "Grafiki un statistika",
+        "statStyle": "Statistikas kartīšu stils",
+        "statStyleDescription": "Mazās flīzes ar ikonu, piemēram, administrēšanas pārskatā un konsoles informācijā.",
+        "stats": {
+          "default": "Noklusējums",
+          "reversed": "Apgriezts",
+          "minimal": "Minimāls",
+          "minimalReversed": "Minimāls apgriezts"
+        },
+        "mockTitle": "Bloka virsraksts",
+        "mockLabel": "Ievades nosaukums",
+        "mockButton": "Saglabāt",
+        "mockStat": "CPU noslodze"
+      },
+      "consoleLayout": {
+        "title": "Konsoles lapa",
+        "description": "Velciet komponentus, lai mainītu to secību vai pārvietotu uz citu vietu. Terminālis paliek vidū; sānu kolonnas platos ekrānos atrodas blakus tam, bet šauros – zem tā.",
+        "terminal": "Terminālis",
+        "add": "Pievienot komponentu",
+        "addTo": "Pievienot komponentu: {slot}",
+        "remove": "Noņemt {name}",
+        "allPlaced": "Visi komponenti jau ir lapā.",
+        "reset": "Atjaunot noklusējuma izkārtojumu",
+        "slot": {
+          "top": "Virs termināļa",
+          "left": "Pa kreisi no termināļa",
+          "right": "Pa labi no termināļa",
+          "bottom": "Zem termināļa"
+        },
+        "widget": {
+          "banner": "Reklāmkarogs un barošanas pogas",
+          "stats": "Tiešraides statistikas flīzes",
+          "info": "Servera informācija",
+          "cpuChart": "CPU diagramma",
+          "memoryChart": "Atmiņas diagramma",
+          "networkChart": "Tīkla diagramma",
+          "extensionCards": "Paplašinājumu kartītes"
+        },
+        "widgetDescription": {
+          "banner": "Servera nosaukums, adrese, tiešraides statistika un barošanas pogas.",
+          "stats": "Kompaktas flīzes darbības laikam, CPU, atmiņai, diskam un tīklam.",
+          "info": "Nosaukums, adrese, statuss, atrašanās vieta, mezgls un SFTP.",
+          "cpuChart": "Tiešraides CPU noslodzes grafiks.",
+          "memoryChart": "Tiešraides atmiņas grafiks.",
+          "networkChart": "Tiešraides ienākošās un izejošās datplūsmas grafiks.",
+          "extensionCards": "Statistikas kartītes, ko konsolei pievieno citi paplašinājumi."
+        }
+      },
+      "navStyle": {
+        "title": "Izvēlne",
+        "hover": "Kursora efekts",
+        "hoverDescription": "Kā izvēlnes saites izskatās zem kursora un kamēr to lapa ir atvērta. Novietojiet kursoru virs flīzes, lai redzētu abus.",
+        "hovers": {
+          "default": "Noklusējums",
+          "filled": "Aizpildīts",
+          "filledSecondary": "Aizpildīts sekundārs",
+          "iconPill": "Ikonas kapsula",
+          "pill": "Kapsula",
+          "pillSecondary": "Kapsula sekundāra"
+        },
+        "mockLink": "Konsole",
+        "search": "Meklēšanas komponents",
+        "searchDescription": "Kas atrodas zem logotipa izvēlnē. Ātro darbību saīsne darbojas ar visiem.",
+        "searches": {
+          "palette": "Ātrās darbības (noklusējums)",
+          "serverSelector": "Servera izvēle",
+          "searchBar": "Meklēšanas josla"
+        },
+        "searchHints": {
+          "palette": "Paneļa ātro darbību poga. Tās serveru pārslēdzējs paliek izvēlnes apakšā.",
+          "serverSelector": "Nolaižamais saraksts, lai pārietu uz citu serveri, izvēlnes augšā ātro darbību vietā.",
+          "searchBar": "Meklēšanas lauks, kas rakstot parāda serverus; administrēšanas sadaļā arī visus serverus un lietotājus. Tā pēdējā rinda atver ātrās darbības."
+        }
+      },
+      "serverCards": {
+        "title": "Serveru saraksts",
+        "cardStyle": "Servera kartīšu stils",
+        "cardStyleDescription": "Kartītes serveru saraksta režģa skatā. Katrs stils saglabā izvēles rūtiņu, statusu un barošanas izvēlni.",
+        "styles": {
+          "default": "Noklusējums",
+          "banner": "Reklāmkarogs",
+          "flat": "Plakans",
+          "linear": "Lineārs",
+          "minimal": "Minimāls",
+          "compact": "Kompakts"
+        },
+        "tablesTitle": "Tabulas",
+        "tableStyle": "Tabulu stils",
+        "tableStyleDescription": "Saraksti visā panelī, piemēram, faili, dublējumi, datubāzes un administrēšanas lapas, kā arī serveru saraksta saraksta skats.",
+        "tables": {
+          "table": "Tabula",
+          "cards": "Kartītes"
+        }
+      },
+      "navLayout": {
+        "title": "Izkārtojums",
+        "layout": "Vadības paneļa izkārtojums",
+        "layoutDescription": "Kā izvēlne novietota blakus lapām datorā. Šaurais ir fiksēta ikonu josla, kas parāda saišu nosaukumus, novietojot kursoru. Tālruņos tiek izmantota tālruņa navigācija zemāk.",
+        "layouts": {
+          "default": "Noklusējums",
+          "floating": "Peldošs",
+          "pill": "Kapsula",
+          "slim": "Šaurs",
+          "horizontal": "Horizontāls"
+        },
+        "dock": "Doka novietojums",
+        "dockDescription": "Kur atrodas logotips, meklēšana un servera lapās servera nosaukums, statuss un barošanas pogas.",
+        "dockHorizontal": "Horizontālais izkārtojums tos vienmēr tur savā augšējā joslā.",
+        "docks": {
+          "sidebar": "Sānjosla",
+          "header": "Galvene",
+          "top": "Augšā"
+        },
+        "mockConsole": "Konsole"
+      },
+      "mobileNav": {
+        "label": "Tālruņa navigācija",
+        "description": "Zem datora platuma: pamatpaneļa peldošā izvēlnes poga vai josla ekrāna apakšā ar galvenajām lapām un pogu Izvēlne pilnajai izvēlnei.",
+        "options": {
+          "drawer": "Izvelkamā izvēlne",
+          "bottomBar": "Apakšējā josla"
+        }
+      }
+    },
+    "library": {
+      "saveAsPreset": "Saglabāt kā sagatavi",
+      "saveAsPresetDescription": "Saglabā melnraksta izskatu (krāsas, fontus, blokus, navigāciju) kā jūsu sagatavi. Saturs, piemēram, raksti un pieteikšanās lapa, nav sagataves daļa.",
+      "name": "Nosaukums",
+      "save": "Saglabāt",
+      "cancel": "Atcelt",
+      "created": "Sagatave saglabāta.",
+      "custom": "Jūsu sagataves",
+      "builtin": "Iebūvētās",
+      "empty": "Jums vēl nav savu sagatavju.",
+      "limit": "Ne vairāk kā {max} sagataves; izdzēsiet vienu, lai saglabātu citu.",
+      "rename": "Pārdēvēt",
+      "renameTitle": "Pārdēvēt sagatavi",
+      "delete": "Dzēst",
+      "deleteTitle": "Dzēst sagatavi",
+      "deleteConfirm": "Dzēst {name}? Lietotāji, kas to izvēlējās, atgriezīsies pie paneļa noklusējuma.",
+      "users": "Lietotāji var šo izvēlēties",
+      "nameProblem": {
+        "empty": "Ievadiet nosaukumu.",
+        "long": "Ne vairāk kā {max} rakstzīmes.",
+        "control": "Bez rindu pārtraukumiem vai vadības rakstzīmēm."
+      },
+      "history": "Vēsture",
+      "historyTitle": "Saglabāto motīvu vēsture",
+      "historyDescription": "Motīvi, kurus aizstāja pēdējās {max} saglabāšanas. Ielādējot kādu, tas tiek ievietots redaktorā; nospiediet Saglabāt, lai to izmantotu.",
+      "historyEmpty": "Vēl nav agrāku saglabājumu.",
+      "historyUnknown": "Saglabāts, pirms tika glabāta vēsture",
+      "historyBy": "{time}, {user}",
+      "historyCurrent": "Lietošanā: saglabāja {user} {time}",
+      "load": "Ielādēt redaktorā",
+      "loaded": "Ielādēts redaktorā. Nospiediet Saglabāt, lai to izmantotu.",
+      "choice": {
+        "title": "Motīvs",
+        "label": "Jūsu motīvs",
+        "description": "Kā panelis izskatās jums. To redzat tikai jūs, katrā ierīcē, kurā piesakāties.",
+        "default": "Paneļa noklusējums"
+      }
+    }
+  }
+}
