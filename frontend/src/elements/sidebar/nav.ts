@@ -69,7 +69,7 @@ export function groupNav(nodes: ReactNode[]): NavEntry[] {
 }
 
 /** The Sidebar.Link in a menu node, which may sit inside a permission wrapper (`ServerCan`). */
-function findLink(node: ReactNode): SidebarLinkProps | null {
+export function findLink(node: ReactNode): SidebarLinkProps | null {
   if (!isValidElement(node)) return null;
   if (node.type === Sidebar.Link) return node.props as SidebarLinkProps;
   const { children } = node.props as { children?: unknown };

@@ -3,6 +3,8 @@ import Text from '@/elements/Text.tsx';
 import {
   DOCK_POSITIONS,
   type DockPosition,
+  MOBILE_NAVS,
+  type MobileNav,
   type NebulaTheme,
   SIDEBAR_LAYOUTS,
   type SidebarLayout,
@@ -136,7 +138,37 @@ function LayoutMock({ layout, dock, label }: { layout: SidebarLayout; dock: Dock
   );
 }
 
-/** Navigation section: the dashboard layout and where the dock sits. */
+/** A phone: core's floating menu button over the page, or the bottom bar with its current link in the accent. */
+function PhoneMock({ nav }: { nav: MobileNav }) {
+  return (
+    <div className='flex h-full w-8 flex-col overflow-hidden rounded-[6px] border-2 border-(--mantine-color-default-border)'>
+      <div className='flex min-h-0 flex-1 flex-col gap-0.5 p-0.5'>
+        {nav === 'drawer' && (
+          <span
+            className={`-ml-0.5 flex h-2 w-3 shrink-0 items-center justify-end rounded-r-[2px] border border-l-0 pr-0.5 ${SURFACE}`}
+          >
+            <span className='h-0.5 w-1 rounded-full bg-(--mantine-color-dimmed)' />
+          </span>
+        )}
+        <span className='h-0.5 w-1/2 shrink-0 rounded-full bg-(--mantine-color-text)' />
+        {/* too narrow for the console's name */}
+        <ConsoleBox label='' />
+      </div>
+      {nav === 'bottomBar' && (
+        <div className={`flex h-2.5 shrink-0 items-center justify-around border-t px-0.5 ${SURFACE}`}>
+          {[0, 1, 2, 3].map((index) => (
+            <span
+              key={index}
+              className={`size-1 rounded-full ${index === 0 ? 'bg-(--mantine-color-blue-filled)' : 'bg-(--mantine-color-dimmed)'}`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/** Navigation section: the dashboard layout, where the dock sits and the phone navigation. */
 export default function SidebarLayoutFields({ theme, set }: Props) {
   const { t } = useExtTranslations();
   const label = t('editor.navLayout.mockConsole', {});
@@ -176,6 +208,17 @@ export default function SidebarLayoutFields({ theme, set }: Props) {
           onChange={(dockPosition) => set({ dockPosition })}
         />
       </div>
+      <ChoiceCards
+        label={t('editor.mobileNav.label', {})}
+        description={t('editor.mobileNav.description', {})}
+        value={theme.mobileNav}
+        choices={MOBILE_NAVS.map((nav) => ({
+          value: nav,
+          label: t(`editor.mobileNav.options.${nav}`, {}),
+          preview: <PhoneMock nav={nav} />,
+        }))}
+        onChange={(mobileNav) => set({ mobileNav })}
+      />
     </Stack>
   );
 }
